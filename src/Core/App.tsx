@@ -1,10 +1,10 @@
 import { GlobalStyle } from "./GlobalStyles";
 import { ThemeProvider } from "styled-components"
-import { theme } from "./theme";
+import { normalTheme } from "./theme";
 function App() {
   return (
     <>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={normalTheme}>
       <GlobalStyle />
       <div>aaaa</div>
     </ThemeProvider>

@@ -7,7 +7,13 @@ function App() {
     <>
     <ThemeProvider theme={normalTheme}>
       <GlobalStyle />
-      <Header/>
+      <Header
+      pokemonPath='/pokemon'
+      myTeamPath='/myteam'
+      areasPath='/areas'
+      logoSrc={require("../Base/Header/images/International_Pokémon_logo.png")}
+      ballSrc={require("../Base/Header/images/Poké_Ball_icon.png")}
+      />
     </ThemeProvider>
     </>
   );

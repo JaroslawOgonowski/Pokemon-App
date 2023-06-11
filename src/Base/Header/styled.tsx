@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
@@ -9,6 +10,7 @@ export const StyledHeader = styled.header`
 `;
 
 export const Logo =  styled.img`
+height: 75px;
   cursor: pointer;
   transition: 500ms;
 
@@ -16,6 +18,14 @@ export const Logo =  styled.img`
     transform: scale(1.05);
   }
 `;
+
+export const StyledNavigation =  styled.nav`
+
+`
+export const StyledNavLink =  styled(NavLink)`
+
+`
+
 
 export const Ball = styled.img`
   cursor: pointer;

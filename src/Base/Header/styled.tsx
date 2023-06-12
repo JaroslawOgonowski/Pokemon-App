@@ -3,14 +3,18 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   width: 100%;
-  height: 80px;
+  height: 6vw;
   position: fixed;
   top: 0;
   background-color: #020F24DF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
-export const Logo =  styled.img`
-height: 75px;
+export const Logo = styled.img`
+  height: 5vw;
+  margin-left: 1vw;
   cursor: pointer;
   transition: 500ms;
 
@@ -19,13 +23,31 @@ height: 75px;
   }
 `;
 
-export const StyledNavigation =  styled.nav`
-
+export const StyledNavigation = styled.nav`
+margin-right: 5vw;
+display: flex;
+gap: 2vw;
 `
-export const StyledNavLink =  styled(NavLink)`
 
+export const StyledNavLink = styled(NavLink)`
+text-decoration: none;
+color: white;
+font-size: 1.6vw;
+font-weight: 700;
+transition: color 0.5s;
+padding: 10px 16px;
+
+&.active{
+  border: solid 1px white;
+  border-radius: 35px;
+}
+
+&:hover{  
+  background-image: linear-gradient(201deg, rgba(252, 119, 89, 1) 31%, rgba(255, 242, 34, 0.96) 75%, rgba(18, 38, 121, 1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;    
+}
 `
-
 
 export const Ball = styled.img`
   cursor: pointer;

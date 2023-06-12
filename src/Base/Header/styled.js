@@ -36,8 +36,8 @@ export const StyledNavLink = styled(NavLink)`
   color: white;
   font-size: 1.6vw;
   font-weight: 700;
-  transition: color 0.5s;
-  padding: 1vw 2vw;
+  transition: 0.5s;
+  padding: 0.8vw 2.4vw;
 
   &.active{
     border: solid 1px white;
@@ -45,7 +45,7 @@ export const StyledNavLink = styled(NavLink)`
   }
 
   &:hover{  
-    background-image: linear-gradient(201deg, rgba(252, 119, 89, 1) 31%, rgba(255, 242, 34, 0.96) 75%, rgba(18, 38, 121, 1) 100%);
+    background-image: linear-gradient(166deg, rgba(253, 255, 0, 1) 0%, rgba(159, 235, 32, 1) 97%);
     -webkit-background-clip: text;
     color: transparent;    
   }

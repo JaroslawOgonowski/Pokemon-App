@@ -1,5 +1,13 @@
+import { Main } from "../../Base/Main"
+
+
 export const Pokemon = () => {
-return(
-<div>pokemon</div>
-)
+  
+  return (
+    <Main
+      titleContent="pokemonzy"
+      articleContent="tu jest text"
+      sideBarText="bebok"
+    />
+  )
 }

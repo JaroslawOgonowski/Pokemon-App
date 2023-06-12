@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <>
       <StyledHeader>
-        <StyledNavLink to="/">
+        <StyledNavLink logo={true} to="/">
           <Logo src={logo} />
         </StyledNavLink>
         <StyledNavigation>

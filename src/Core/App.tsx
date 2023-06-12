@@ -1,4 +1,4 @@
-import { GlobalStyle } from "./GlobalStyles";
+import { GlobalStyle } from "./GlobalStyles"
 import { ThemeProvider } from "styled-components"
 import { normalTheme } from "./theme";
 import { Header } from "../Base/Header";
@@ -10,18 +10,18 @@ import { Areas } from "../Features/Areas";
 function App() {
   return (
     <>
+      <BrowserRouter>
       <ThemeProvider theme={normalTheme}>
-        <BrowserRouter>
-          <GlobalStyle />
-          <Header />
-          <Routes>
-            <Route path="/pokemon" element={<Pokemon />} />
-            <Route path="/myteam" element={<MyTeam />} />
-            <Route path="/areas" element={<Areas />} />
-            <Route path="/" element={<Pokemon />} />
-          </Routes>
-        </BrowserRouter>
+        <GlobalStyle />
+        <Header />
+        <Routes>
+          <Route path="/pokemon" element={<Pokemon />} />
+          <Route path="/myteam" element={<MyTeam />} />
+          <Route path="/areas" element={<Areas />} />
+          <Route path="/" element={<Pokemon />} />
+        </Routes>
       </ThemeProvider>
+      </BrowserRouter>
     </>
   );
 }

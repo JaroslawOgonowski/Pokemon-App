@@ -1,16 +1,18 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { css } from "styled-components";
 
 export const StyledHeader = styled.header`
   width: 100%;
   height: 6vw;
   position: fixed;
   top: 0;
-  background-color: #020F24DF;
+  background-color: ${({ theme }) => theme.color.headerColor};
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
+
 
 export const Logo = styled.img`
   height: 5vw;
@@ -30,23 +32,29 @@ gap: 2vw;
 `
 
 export const StyledNavLink = styled(NavLink)`
-text-decoration: none;
-color: white;
-font-size: 1.6vw;
-font-weight: 700;
-transition: color 0.5s;
-padding: 10px 16px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.6vw;
+  font-weight: 700;
+  transition: color 0.5s;
+  padding: 1vw 2vw;
 
-&.active{
-  border: solid 1px white;
-  border-radius: 35px;
-}
+  &.active{
+    border: solid 1px white;
+    border-radius: 2vw;
+  }
 
-&:hover{  
-  background-image: linear-gradient(201deg, rgba(252, 119, 89, 1) 31%, rgba(255, 242, 34, 0.96) 75%, rgba(18, 38, 121, 1) 100%);
+  &:hover{  
+    background-image: linear-gradient(201deg, rgba(252, 119, 89, 1) 31%, rgba(255, 242, 34, 0.96) 75%, rgba(18, 38, 121, 1) 100%);
     -webkit-background-clip: text;
     color: transparent;    
-}
+  }
+
+  ${({ logo }) => logo && css`
+    &.active{
+      border: none;
+    }
+   `}
 `
 
 export const Ball = styled.img`

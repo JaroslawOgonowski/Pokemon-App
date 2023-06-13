@@ -6,7 +6,9 @@ import { SideBarTextData } from "../../Common/SideBar";
 
 interface MainProps {
   titleContent: string;
-  articleContent: string;
+  articleContentHead: string;
+  readMoreButton: boolean;
+  articleContentFull: string | null;
   sideBarText: SideBarTextData[];
 }
 
@@ -18,7 +20,11 @@ export const Main = (props: MainProps) => {
         <SideBar sideBarText={props.sideBarText} />
         <ArticleColumn>
           <Title titleContent={props.titleContent} />
-          <Article articleContent={props.articleContent} />
+          <Article
+            articleContentHead={props.articleContentHead}
+            readMoreButton={props.readMoreButton}
+            articleContentFull={props.articleContentFull}
+          />
         </ArticleColumn>
       </StyledMain>
     </>

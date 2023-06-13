@@ -1,4 +1,4 @@
-import { Ball, Logo, StyledHeader, StyledNavLink, StyledNavigation } from "./styled";
+import { Logo, StyledHeader, StyledNavLink, StyledNavigation } from "./styled";
 import logo from "./images/International_Pokémon_logo.png"
 export const Header = () => {
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ball from "../../Base/Header/images/Poké_Ball_icon.png"
+import ball from "./images/Poké_Ball_icon.png"
 
 export const StyledSideBar = styled.ul`
   width: 20%;

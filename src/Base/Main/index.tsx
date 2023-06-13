@@ -6,7 +6,7 @@ import { ArticleColumn, StyledMain } from "./styled";
 interface MainProps {
   titleContent: string;
   articleContent: string;
-  sideBarText: string;
+  sideBarText: any;
 }
 
 export const Main = (props: MainProps) => {

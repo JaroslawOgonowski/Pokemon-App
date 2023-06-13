@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ListItem, StyledA, StyledSideBar } from "./styled";
 
-interface SideBarTextData {
+export interface SideBarTextData {
   name: string;
   link: string;
 }

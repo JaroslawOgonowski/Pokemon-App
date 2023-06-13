@@ -2,11 +2,12 @@ import { Article } from "../../Common/Article";
 import { SideBar } from "../../Common/SideBar";
 import { Title } from "../../Common/Title";
 import { ArticleColumn, StyledMain } from "./styled";
+import { SideBarTextData } from "../../Common/SideBar";
 
 interface MainProps {
   titleContent: string;
   articleContent: string;
-  sideBarText: any;
+  sideBarText: SideBarTextData[];
 }
 
 export const Main = (props: MainProps) => {

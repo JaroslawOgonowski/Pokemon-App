@@ -36,7 +36,7 @@ export const StyledNavLink = styled(NavLink)`
   color: white;
   font-size: 1.6vw;
   font-weight: 700;
-  transition: 0.5s;
+  transition: color 0.5s;
   padding: 0.8vw 2.4vw;
 
   &.active{

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { StyledSideBar } from "./styled";
+import { ListItem, StyledA, StyledSideBar } from "./styled";
 
 interface SideBarTextData {
   name: string;
@@ -13,7 +13,7 @@ export const SideBar: FC<SideBarProps> = ({ sideBarText }) => {
 return(
   <StyledSideBar>
   {sideBarText.map(object=>
-    <li><a href={object.link}>{object.name}</a></li>
+    <ListItem><StyledA href={object.link}>{object.name}</StyledA></ListItem>
   )}  
   </StyledSideBar>
 )

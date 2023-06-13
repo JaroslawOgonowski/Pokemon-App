@@ -14,10 +14,10 @@ export const Main = (props: MainProps) => {
   return (
     <>
       <StyledMain>
-        <SideBar sideBarText={props.sideBarText}/>
+        <SideBar sideBarText={props.sideBarText} />
         <ArticleColumn>
           <Title titleContent={props.titleContent} />
-          <Article articleContent={props.articleContent}/>
+          <Article articleContent={props.articleContent} />
         </ArticleColumn>
       </StyledMain>
     </>

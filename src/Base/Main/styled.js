@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const StyledMain = styled.main`
 width: 98%;
-margin: 0 auto;
+margin: 8vw auto;
 display: flex;
-flex: 20% 80%;
+gap: 2vw;
+justify-content: center;
 `
 
 export const ArticleColumn = styled.div`
 display: flex;
 flex-direction: column;
+width: calc(80% - 2vw);
 `

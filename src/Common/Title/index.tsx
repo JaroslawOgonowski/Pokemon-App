@@ -1,5 +1,7 @@
+import { StyledTitle } from "./styled"
+
 export const Title = ({ titleContent }: { titleContent: string }) => {
 return(
-  <h1>{titleContent}</h1>
+  <StyledTitle>{titleContent}</StyledTitle>
 )
 }

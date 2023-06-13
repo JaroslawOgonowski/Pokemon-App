@@ -1,5 +1,7 @@
+import { StyledArticle } from "./styled";
+
 export const Article = ({ articleContent }: { articleContent: string }) => {
 return(
-  <article>{articleContent}</article>
+  <StyledArticle>{articleContent}</StyledArticle>
 )
 };

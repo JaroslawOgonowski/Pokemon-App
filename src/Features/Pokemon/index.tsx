@@ -16,7 +16,7 @@ export const Pokemon = () => {
           },
           {
             name: "second element",
-            link: "https://cssgenerator.pl/en/gradient-generator/"
+            link: "/areas"
           }
         ]
       }

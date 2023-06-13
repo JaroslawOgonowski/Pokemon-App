@@ -12,4 +12,17 @@ export const ArticleColumn = styled.div`
 display: flex;
 flex-direction: column;
 width: calc(80% - 2vw);
+animation: articleColumnAnimation 0.5s ease;
+
+@keyframes articleColumnAnimation {
+	0% {
+		opacity: 0.5;
+		transform: translateX(30vw);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 `

@@ -1,9 +1,11 @@
 import { Main } from "../../Base/Main"
+import { PokemonTile } from "../../Common/PokemonTile"
 
 
 export const Pokemon = () => {
 
   return (
+    <>
     <Main
       titleContent="Pokémon"
 
@@ -33,5 +35,7 @@ export const Pokemon = () => {
         ]
       }
     />
+    <PokemonTile/>
+  </>
   )
 }

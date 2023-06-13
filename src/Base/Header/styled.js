@@ -26,10 +26,10 @@ export const Logo = styled.img`
 `;
 
 export const StyledNavigation = styled.nav`
-margin-right: 5vw;
-display: flex;
-gap: 2vw;
-`
+  margin-right: 5vw;
+  display: flex;
+  gap: 2vw;
+`;
 
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
@@ -55,7 +55,7 @@ export const StyledNavLink = styled(NavLink)`
       border: none;
     }
    `}
-`
+`;
 
 export const Ball = styled.img`
   cursor: pointer;

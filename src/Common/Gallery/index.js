@@ -1,15 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
-import { GalleryBox, StyledGallery } from "./styled";
+import { GalleryBox, NextButton, PrevButton, StyledGallery } from "./styled";
 import { PokemonTile } from "../PokemonTile";
 import { fetchGallery } from "../../Core/API";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.svg"
+import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg"
 
 export const Gallery = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [offset, setOffset] = useState(0); // początkowa wartość offset
-
+  const [offset, setOffset] = useState(0);
+  const limit = 100
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const offsetValue = searchParams.get('offset');
@@ -25,39 +27,41 @@ export const Gallery = () => {
   };
 
   const handlePrevPage = () => {
-    const newOffset = offset - 100;
-    setOffset(newOffset);
-    navigate(`/pokemon?offset=${newOffset}`);
+    if (offset < 100) {
+      const newOffset = offset - offset
+      setOffset(newOffset);
+      navigate(`/pokemon?offset=${newOffset}`);
+    } else {
+      const newOffset = offset - 100;
+      setOffset(newOffset);
+      navigate(`/pokemon?offset=${newOffset}`);
+    }
   };
 
-  const limit = 100
+const { isLoading, isError, data } = useQuery(
+  ["gallery", { limit: limit, offset: offset }],
+  () => fetchGallery(limit, offset)
+);
 
+if (isLoading) return (<div>Loading</div>)
+if (isError) return (<div>Error</div>)
 
-  const { isLoading, isError, data } = useQuery(
-    ["gallery", { limit: limit, offset: offset }],
-    () => fetchGallery(limit, offset)
-  );
+return data ? (
+  <GalleryBox>
+    <PrevButton disabled={offset === 0} onClick={handlePrevPage}>
+      <Prev />
+    </PrevButton>
+    <StyledGallery>
+      {data.results.map((item, index) => (<PokemonTile
+        key={index}
+        name={item.name}
+        id={index + offset}
+      />))}
+    </StyledGallery>
+    <NextButton onClick={handleNextPage} disabled={offset > 910}>
+      <Next />
+    </NextButton>
+  </GalleryBox>
 
-  if (isLoading) return (<div>Loading</div>)
-  if (isError) return (<div>Error</div>)
-
-  return data ? (
-    <GalleryBox>
-      <button disabled={offset === 0} onClick={handlePrevPage}>
-        Prev page
-      </button>
-      <button onClick={handleNextPage}>
-        Next page
-      </button>
-      <StyledGallery>
-        {data.results.map((item, index) => (<PokemonTile
-          key={index}
-          name={item.name}
-          id={index + offset}
-        />))}
-      </StyledGallery>
-
-    </GalleryBox>
-
-  ) : null
+) : null
 }

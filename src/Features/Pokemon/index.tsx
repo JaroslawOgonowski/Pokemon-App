@@ -1,6 +1,5 @@
 import { Main } from "../../Base/Main"
 import { Gallery } from "../../Common/Gallery"
-import { PokemonTile } from "../../Common/PokemonTile"
 
 
 export const Pokemon = () => {

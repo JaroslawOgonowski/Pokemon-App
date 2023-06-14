@@ -4,7 +4,7 @@ import { PokemonTile } from "../PokemonTile";
 
 export const Gallery = () => {
   const fetchGallery = async () => (
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0").then(
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=24&offset=0").then(
       (response) => response.json()
     )
   )
@@ -16,8 +16,7 @@ export const Gallery = () => {
   if (isLoading) return (<div>Loading</div>)
   if (error) return (<div>Error</div>)
 
-  const PokemonIndex = index +1 +offset
-  if (data) return (
+return data? (
     <StyledGallery>
       {data.results.map((item, index)=>(<PokemonTile
       key= {index}
@@ -25,5 +24,5 @@ export const Gallery = () => {
       id={index}      
       />))}
     </StyledGallery>
-  )
+  ) : null
       }

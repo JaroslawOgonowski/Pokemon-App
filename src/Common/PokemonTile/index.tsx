@@ -6,12 +6,15 @@ interface PokemonTileProps {
 }
 
 export const PokemonTile = (props: PokemonTileProps) => {
-  return (
+const pokemonName = props.name.slice(0, 1).toUpperCase()+props.name.slice(1)
+const realID = props.id + 1
+
+return (
     <Wrapper>
-      <PokemonImage src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${props.id + 1}.svg`} />
+      <PokemonImage src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${realID}.svg`} />
       <Details>
-        <PokemonId>#{props.id + 1}</PokemonId>
-        <PokemonName>{props.name}</PokemonName>
+        <PokemonId>#{realID}</PokemonId>
+        <PokemonName>{pokemonName}</PokemonName>
       </Details>
     </Wrapper>
   )

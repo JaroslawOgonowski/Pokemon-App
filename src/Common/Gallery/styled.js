@@ -8,4 +8,5 @@ export const StyledGallery = styled.div`
   justify-content: center;
   gap: 2vw;  
   margin: 0 auto;
+  padding-bottom: 5vw;
 `;

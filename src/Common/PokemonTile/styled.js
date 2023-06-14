@@ -4,7 +4,7 @@ export const Wrapper = styled.a`
   cursor: pointer;
   text-decoration: none;
   aspect-ratio: 3 / 4;
-  width: 15%;
+  width: 13%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,11 +43,11 @@ export const Details = styled.div`
 
 export const PokemonId = styled.div`
   font-family: 'Righteous', cursive;
-  font-size: 2vw;
+  font-size: 1.5vw;
 `;
 
 export const PokemonName = styled.div`
   font-family: 'Righteous', cursive;
-  font-size: 1.8vw;
+  font-size: 1.4vw;
   word-break: break-all;
 `;

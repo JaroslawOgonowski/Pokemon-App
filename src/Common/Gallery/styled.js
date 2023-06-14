@@ -28,6 +28,9 @@ position: sticky;
 top: 20vw;
 transition: 500ms;
 filter: brightness(80%);
+-webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 
 &:hover{
 transform: scale(1.1);

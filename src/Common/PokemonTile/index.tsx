@@ -11,7 +11,7 @@ const realID = props.id + 1
 
 return (
     <Wrapper>
-      <PokemonImage src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${realID}.svg`} />
+      <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`} />
       <Details>
         <PokemonId>#{realID}</PokemonId>
         <PokemonName>{pokemonName}</PokemonName>

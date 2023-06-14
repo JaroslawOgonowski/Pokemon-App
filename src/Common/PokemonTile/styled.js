@@ -26,7 +26,7 @@ export const Wrapper = styled.a`
 `;
 
 export const PokemonImage = styled.img`
-  aspect-ratio: 3/4;
+  aspect-ratio: 1/1;
   width: calc(100% - 2vw);
   padding: 1vw;
 `;

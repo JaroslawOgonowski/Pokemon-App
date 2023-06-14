@@ -14,6 +14,7 @@
     "@types/react-dom": "^18.2.4",
     "axios": "^1.4.0",
     "axios-cache-interceptor": "^1.2.0",
+    "colorthief": "^2.4.0",
     "gh-pages": "^5.0.0",
     "pokenode-ts": "^1.19.0",
     "react": "^18.2.0",

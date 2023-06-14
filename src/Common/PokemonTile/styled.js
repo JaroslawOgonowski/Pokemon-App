@@ -14,10 +14,10 @@ export const Wrapper = styled.a`
   border-radius: 0.5vw;
   transition: 500ms;
   background-color: rgba(230, 236, 237, 0.83);
-  background-image: linear-gradient(158deg, rgba(230, 236, 237, 0.83) 0%, rgba(212, 189, 71, 0.91) 79%);
-  -webkit-box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
-  -moz-box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
-  box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
+  background-image: linear-gradient(158deg, rgba(0, 0, 0, 1) 0%, ${(props) => props.dominantColor});
+  -webkit-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
+  -moz-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
+  box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
   filter: brightness(90%);
   &:hover{
     transform: scale(1.05);

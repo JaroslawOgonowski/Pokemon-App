@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const GalleryBox = styled.div`
+width: 96%;
+margin: 0 auto;
+`;
+
 export const StyledGallery = styled.div`
   width: 96%;
   display: flex;
@@ -9,4 +14,4 @@ export const StyledGallery = styled.div`
   gap: 2vw;  
   margin: 0 auto;
   padding-bottom: 5vw;
-`;
+  `

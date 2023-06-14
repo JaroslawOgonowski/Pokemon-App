@@ -6,6 +6,10 @@ export const StyledMain = styled.main`
   display: flex;
   gap: 2vw;
   justify-content: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const ArticleColumn = styled.div`

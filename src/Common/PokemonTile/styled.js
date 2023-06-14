@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Wrapper = styled.a`
   cursor: pointer;
   text-decoration: none;
-  aspect-ratio: 3 / 4;
-  width: 13%;
+  width: 13vw;
+  height: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,6 +36,7 @@ export const Details = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1vw;
   border-top: 2px solid black;
   border-radius: 0.5vw;

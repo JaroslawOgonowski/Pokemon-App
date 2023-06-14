@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { StyledGallery } from "./styled";
+import { GalleryBox, StyledGallery } from "./styled";
 import { PokemonTile } from "../PokemonTile";
 
 export const Gallery = () => {
@@ -8,21 +8,23 @@ export const Gallery = () => {
       (response) => response.json()
     )
   )
-  const { isLoading, error, data } = useQuery(
+  const { isLoading, isError, data } = useQuery(
     ["gallery"],
     fetchGallery
   );
 
   if (isLoading) return (<div>Loading</div>)
-  if (error) return (<div>Error</div>)
+  if (isError) return (<div>Error</div>)
 
-return data? (
-    <StyledGallery>
-      {data.results.map((item, index)=>(<PokemonTile
-      key= {index}
-      name={item.name}
-      id={index}      
-      />))}
-    </StyledGallery>
+  return data ? (
+    <GalleryBox>
+      <StyledGallery>
+        {data.results.map((item, index) => (<PokemonTile
+          key={index}
+          name={item.name}
+          id={index}
+        />))}
+      </StyledGallery>
+    </GalleryBox>
   ) : null
-      }
+}

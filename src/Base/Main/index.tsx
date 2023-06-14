@@ -3,6 +3,7 @@ import { SideBar } from "../../Common/SideBar";
 import { Title } from "../../Common/Title";
 import { ArticleColumn, StyledMain } from "./styled";
 import { SideBarTextData } from "../../Common/SideBar";
+import { Gallery } from "../../Common/Gallery";
 
 interface MainProps {
   titleContent: string;

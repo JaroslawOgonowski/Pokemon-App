@@ -3,7 +3,7 @@ import ball from "./images/Poké_Ball_icon.png"
 
 export const StyledSideBar = styled.ul`
   width: 20%;
-  min-height: 80vh;
+  min-height: 20vh;
   padding: 0;
   margin: 3vw;
   border-right: 1px solid black;

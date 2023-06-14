@@ -4,7 +4,7 @@ export const Wrapper = styled.a`
   cursor: pointer;
   text-decoration: none;
   aspect-ratio: 3 / 4;
-  width: 20%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,22 +32,22 @@ export const PokemonImage = styled.img`
 `;
 
 export const Details = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1vw;
   border-top: 2px solid black;
   border-radius: 0.5vw;
-  
 `;
 
 export const PokemonId = styled.div`
-font-family: 'Righteous', cursive;
-font-size: 3vw;
+  font-family: 'Righteous', cursive;
+  font-size: 2vw;
 `;
 
 export const PokemonName = styled.div`
-font-family: 'Righteous', cursive;
-font-size: 1.8vw;
-word-break: break-all;
+  font-family: 'Righteous', cursive;
+  font-size: 1.8vw;
+  word-break: break-all;
 `;

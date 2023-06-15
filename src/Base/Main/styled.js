@@ -6,7 +6,6 @@ export const StyledMain = styled.main`
   display: flex;
   gap: 2vw;
   justify-content: center;
-
   @media (max-width: 800px) {
     flex-direction: column;
   }
@@ -28,17 +27,4 @@ export const ArticleColumn = styled.div`
 		  transform: translateX(0);
 	  }
   }
-`;
-
-export const TitleBox = styled.div`
-width: 96%;
-display: flex;
-gap: 6vw;
-align-items: center;
-justify-content: center;
-margin-bottom: 2vw;
-`;
-
-export const PokemonImage = styled.img`
-height: 100%;
 `;

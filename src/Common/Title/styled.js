@@ -7,3 +7,17 @@ export const StyledTitle = styled.h1`
   text-align: center;
   margin: 2vw 0;  
 `;
+
+
+export const TitleBox = styled.div`
+width: 96%;
+display: flex;
+gap: 6vw;
+align-items: center;
+justify-content: center;
+margin-bottom: 2vw;
+`;
+
+export const PokemonImage = styled.img`
+width: 20%
+`;

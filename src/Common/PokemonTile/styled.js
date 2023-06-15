@@ -16,6 +16,7 @@ export const PokemonId = styled.div`
 export const Wrapper = styled.a`
   cursor: pointer;
   text-decoration: none;
+  color: black;
   width: 13vw;
   height: 20vw;
   display: flex;
@@ -65,7 +66,7 @@ export const PokemonImage = styled.img`
   transition: 0.5s;
 
   &:hover {
-    animation: pokemonAnimation 6s ease 0s 1 normal forwards;
+    animation: pokemonAnimation 5s ease 0s 1 normal forwards;
     @keyframes pokemonAnimation {
 	    0%,
 	    100% {
@@ -73,16 +74,16 @@ export const PokemonImage = styled.img`
 		  transform-origin: 50% 50%;
 	    }
 	    15% {
-		    transform: translateX(-30px) rotate(-6deg) scale(2);
+		    transform: translateX(-30px) rotate(-6deg) scale(2.5);
 	    }
 	    30% {
-		    transform: translateX(15px) rotate(6deg) scale(1.1);
+		    transform: translateX(15px) rotate(6deg) scale(2);
 	    }
 	    45% {
-		    transform: translateX(-15px) rotate(-3.6deg);
+		    transform: translateX(-15px) rotate(-3.6deg) scale(1.1);
 	    }
       60% {
-        transform: translateX(9px) rotate(2.4deg);
+        transform: translateX(9px) rotate(2.4deg)  scale(0.8);
       }
       75% {
         transform: translateX(-6px) rotate(-1.2deg);

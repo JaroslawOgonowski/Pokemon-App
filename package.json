@@ -2,6 +2,7 @@
   "name": "pokemon-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jaroslawogonowski.github.io/Pokemon-App/",
   "dependencies": {
     "@tanstack/react-query": "^4.29.12",
     "@tanstack/react-query-devtools": "^4.29.13",
@@ -30,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [

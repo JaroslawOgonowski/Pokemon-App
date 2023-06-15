@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/Pokemon-App/static/js/main.bc1faf5b.js",
+    "static/js/787.a8fe51ff.chunk.js": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js",
+    "static/media/International_Pokémon_logo.png": "/Pokemon-App/static/media/International_Pokémon_logo.de85592808a317c50539.png",
+    "static/media/Poké_Ball_icon.png": "/Pokemon-App/static/media/Poké_Ball_icon.54d4255fec80134cf02b.png",
+    "static/media/right-arrow-next-svgrepo-com.svg": "/Pokemon-App/static/media/right-arrow-next-svgrepo-com.9693704ffb350a64e280e53110e06cb5.svg",
+    "static/media/left-arrow-prev-svgrepo-com.svg": "/Pokemon-App/static/media/left-arrow-prev-svgrepo-com.ea317afbc1ca9f40c93d37cd4ee4afb8.svg",
+    "index.html": "/Pokemon-App/index.html",
+    "main.bc1faf5b.js.map": "/Pokemon-App/static/js/main.bc1faf5b.js.map",
+    "787.a8fe51ff.chunk.js.map": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.bc1faf5b.js"
+  ]
+}

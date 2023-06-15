@@ -5,12 +5,13 @@ import { useEffect, useState } from "react";
 interface PokemonTileProps {
   id: number;
   name: string;
+  key: any;
 }
 export const PokemonTile = (props: PokemonTileProps) => {
   const pokemonName = props.name.slice(0, 1).toUpperCase() + props.name.slice(1);
   const realID = props.id + 1;
   const [dominantColor, setDominantColor] = useState('');
-
+ 
   useEffect(() => {
     const imageUrl = realID < 1010
       ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`

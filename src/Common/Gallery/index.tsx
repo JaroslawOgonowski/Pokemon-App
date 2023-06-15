@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { GalleryBox, NextButton, PrevButton, StyledGallery } from "./styled";
+import { GalleryBox, GalleryTitle, NextButton, PrevButton, StyledGallery } from "./styled";
 import { PokemonTile } from "../PokemonTile";
 import { fetchGallery } from "../../Core/API";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.svg";
 import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg";
+import { StyledTitle } from "../Title/styled";
 
 interface Pokemon {
   name: string;
@@ -57,6 +58,8 @@ export const Gallery = () => {
   if (isError) return <div>Error</div>;
 
   return data ? (
+    <>
+    <GalleryTitle>Hall of fame</GalleryTitle>
     <GalleryBox>
       <PrevButton disabled={offset === 0} onClick={handlePrevPage}>
         <Prev />
@@ -70,5 +73,6 @@ export const Gallery = () => {
         <Next />
       </NextButton>
     </GalleryBox>
+    </>
   ) : null;
 };

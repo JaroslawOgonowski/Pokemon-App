@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const PokemonName = styled.div`
   font-family: 'Righteous', cursive;
   font-size: 1.4vw;
   word-break: break-all;
+  color: white;
   transition: color 500ms;
 `;
 
@@ -13,7 +15,7 @@ export const PokemonId = styled.div`
   transition: color 500ms;
 `;
 
-export const Wrapper = styled.a`
+export const Wrapper = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   color: black;
@@ -23,12 +25,11 @@ export const Wrapper = styled.a`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1vw;
-  border: 1px solid black;
+  gap: 0.1vw;
+  border: 0.2vw solid ${(props) => props.dominantColor};
   border-radius: 0.5vw;
   transition: 500ms;
-  background-color: rgba(230, 236, 237, 0.83);
-  background-image: linear-gradient(158deg, rgba(0, 0, 0, 1) 0%, ${(props) => props.dominantColor});
+  background-image: linear-gradient(349deg, rgba(0, 0, 0, 1) 43%, ${(props) => props.dominantColor} 100%);
   -webkit-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
   -moz-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
   box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
@@ -74,10 +75,10 @@ export const PokemonImage = styled.img`
 		  transform-origin: 50% 50%;
 	    }
 	    15% {
-		    transform: translateX(-30px) rotate(-6deg) scale(2.5);
+		    transform: translateX(-30px) rotate(-6deg) scale(1.4);
 	    }
 	    30% {
-		    transform: translateX(15px) rotate(6deg) scale(2);
+		    transform: translateX(15px) rotate(6deg) scale(1);
 	    }
 	    45% {
 		    transform: translateX(-15px) rotate(-3.6deg) scale(1.1);

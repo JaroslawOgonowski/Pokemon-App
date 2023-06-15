@@ -2,7 +2,7 @@ import { GlobalStyle } from "./GlobalStyles"
 import { ThemeProvider } from "styled-components"
 import { normalTheme } from "./theme";
 import { Header } from "../Base/Header";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Pokemon } from "../Features/Pokemon";
 import { MyTeam } from "../Features/MyTeam";
 import { Areas } from "../Features/Areas";
@@ -11,7 +11,7 @@ import { SinglePokemonPage } from "../Features/Pokemon/SinglePokemonPage";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <ThemeProvider theme={normalTheme}>
           <GlobalStyle />
           <Header />
@@ -23,7 +23,7 @@ function App() {
             <Route path="/" element={<Pokemon />} />
           </Routes>
         </ThemeProvider>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

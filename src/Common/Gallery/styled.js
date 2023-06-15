@@ -1,12 +1,21 @@
 import styled from "styled-components";
 
+export const GalleryTitle = styled.h2`
+  width: 100%;
+  font-size: 3vw;
+  font-family: 'Righteous', cursive;
+  color: #0f0e0eeb;
+  text-align: center;
+  margin: 2vw 0;  
+`;
+
 export const GalleryBox = styled.div`
-width: 96%;
-margin: 0 auto;
-display: flex;
-gap: 1vw;
-justify-content: center;
-align-items: flex-start;
+  width: 96%;
+  margin: 0 auto;
+  display: flex;
+  gap: 1vw;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 export const StyledGallery = styled.div`
@@ -15,35 +24,36 @@ export const StyledGallery = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2vw;  
+  gap: 1vw;  
   margin: 0 auto;
   padding-bottom: 5vw;
-  `
+  `;
+  
 const BaseButton = styled.button`
-cursor: pointer;
-background-color: #040119dc;
-color: white;
-margin-top: 6vw;
-position: sticky;
-top: 20vw;
-transition: 500ms;
-filter: brightness(80%);
--webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
--moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  cursor: pointer;
+  background-color: #040119dc;
+  color: white;
+  margin-top: 6vw;
+  position: sticky;
+  top: 20vw;
+  transition: 500ms;
+  filter: brightness(80%);
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 
-&:hover{
-transform: scale(1.1);
-filter: brightness(120%);
-}
-
-&:disabled{
-  background-color: #d3d2dd75;
   &:hover{
-    transform: scale(1.0);
-    filter: brightness(80%);
+  transform: scale(1.1);
+  filter: brightness(120%);
   }
-}
+
+  &:disabled{
+    background-color: #d3d2dd75;
+    &:hover{
+      transform: scale(1.0);
+      filter: brightness(80%);
+    }
+  }
 `;
 
 export const PrevButton = styled(BaseButton)``;

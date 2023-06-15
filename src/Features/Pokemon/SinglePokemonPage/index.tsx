@@ -1,11 +1,45 @@
+import { useQuery } from "@tanstack/react-query";
+import { useLocation } from "react-router-dom";
+import { fetchSoloPokemon, fetchSoloPokemonEvolution, fetchSoloPokemonInfo } from "../../../Core/API";
+import { Description, Images, StyledPokemonPage, Title } from "./styled";
+
+interface SoloPokemonInfo {
+  data: [];
+  dataInfo: [];
+  results: [];
+  name: string;
+  flavor_text_entries: any;
+}
 
 export const SinglePokemonPage = () => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const pokeId = searchParams.get("pokeId");
+
+  const { isLoading, isError, data } = useQuery<SoloPokemonInfo>(
+    ["soloPokemon", { pokeId: pokeId }],
+    () => fetchSoloPokemon(pokeId)
+  );
+
+  const { isLoading: isLoadingInfo, isError: isErrorInfo, data: dataInfo } = useQuery<SoloPokemonInfo>(
+    ["soloPokemonInfo", { pokeId: pokeId }],
+    () => fetchSoloPokemonInfo(pokeId)
+  );
+
+  const { isLoading: isLoadingEvolution, isError: isErrorEvolution, data: dataEvolution } = useQuery<SoloPokemonInfo>(
+    ["soloPokemonEvolution", { pokeId: pokeId }],
+    () => fetchSoloPokemonEvolution(pokeId)
+  );
 
   return (
     <>
-    <div>bababababa</div>
-    <h1>fasfasfasfasf</h1>
-    <h2>wadsadasdasdasd</h2>
+      <StyledPokemonPage>
+        <Title>#{pokeId} {data?.name}</Title>
+        <Description>{dataInfo?.flavor_text_entries[1].flavor_text.replace(/\f/g, ' ')}</Description>
+        <Images>
+
+        </Images>
+      </StyledPokemonPage>
     </>
   )
 }

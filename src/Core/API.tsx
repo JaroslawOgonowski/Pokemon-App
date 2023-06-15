@@ -6,3 +6,21 @@ export const fetchGallery = async (limit: number, offset: number): Promise<any> 
     (response) => response.json()
   )
 };
+
+export const fetchSoloPokemonInfo = async (pokeId: string | null): Promise<any> => {
+  return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokeId}`).then(
+    (response) => response.json()
+  )
+};
+
+export const fetchSoloPokemonEvolution = async (pokeId: string | null): Promise<any> => {
+  return fetch(`https://pokeapi.co/api/v2/evolution-chain/${pokeId}/`).then(
+    (response) => response.json()
+  )
+};
+
+export const fetchSoloPokemon = async (pokeId: string | null): Promise<any> => {
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}/`).then(
+    (response) => response.json()
+  )
+};

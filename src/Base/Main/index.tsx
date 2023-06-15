@@ -22,9 +22,9 @@ export const Main = (props: MainProps) => {
         <SideBar sideBarText={props.sideBarText} />
         <ArticleColumn>
           <TitleBox>
-            <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomNumber1}.png`}/>
+            <PokemonImage key="tilimg1" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomNumber1}.png`}/>
             <Title titleContent={props.titleContent} />
-            <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomNumber2}.png`} />
+            <PokemonImage key="tilimg2" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomNumber2}.png`} />
           </TitleBox>
           <Article
             articleContentHead={props.articleContentHead}

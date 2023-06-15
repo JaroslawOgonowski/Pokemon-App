@@ -13,7 +13,7 @@ export const PokemonTile = (props: PokemonTileProps) => {
   const [dominantColor, setDominantColor] = useState('');
  
   useEffect(() => {
-    const imageUrl = realID < 1010
+    const imageUrl = realID < 1011
       ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`
       : pokeball;
 
@@ -34,7 +34,7 @@ export const PokemonTile = (props: PokemonTileProps) => {
   };
   return (
     <Wrapper dominantColor={dominantColor} to="/pokemonDetails">
-      {realID < 1010 ? (
+      {realID < 1011 ? (
         <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`} />
       ) : (
         <PokemonImage src={pokeball} />

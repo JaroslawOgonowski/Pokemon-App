@@ -13,6 +13,7 @@ export const PokemonId = styled.div`
   font-family: 'Righteous', cursive;
   font-size: 1.5vw;
   transition: color 500ms;
+  visibility: hidden;
 `;
 
 export const Wrapper = styled(Link)`
@@ -29,7 +30,7 @@ export const Wrapper = styled(Link)`
   border: 0.2vw solid ${(props) => props.dominantColor};
   border-radius: 0.5vw;
   transition: 500ms;
-  background-image: linear-gradient(349deg, rgba(0, 0, 0, 1) 43%, ${(props) => props.dominantColor} 100%);
+  background-image: linear-gradient(349deg, rgba(11, 1, 19, 1) 43%, ${(props) => props.dominantColor} 100%);
   -webkit-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
   -moz-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
   box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
@@ -49,6 +50,7 @@ export const Wrapper = styled(Link)`
     }
 
     ${PokemonId} {
+      visibility: visible;
       background-image: linear-gradient(
         166deg,
         rgba(253, 255, 0, 1) 0%,

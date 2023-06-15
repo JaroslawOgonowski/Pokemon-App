@@ -1,7 +1,7 @@
 import { Article } from "../../Common/Article";
 import { SideBar } from "../../Common/SideBar";
 import { Title } from "../../Common/Title";
-import { ArticleColumn, StyledMain } from "./styled";
+import { ArticleColumn, PokemonImage, StyledMain, TitleBox } from "./styled";
 import { SideBarTextData } from "../../Common/SideBar";
 
 interface MainProps {
@@ -13,13 +13,19 @@ interface MainProps {
 }
 
 export const Main = (props: MainProps) => {
+  let randomNumber1 = Math.floor(Math.random() * 1009) + 1;
+  let randomNumber2 = Math.floor(Math.random() * 150) + 1;
 
   return (
     <>
       <StyledMain>
         <SideBar sideBarText={props.sideBarText} />
         <ArticleColumn>
-          <Title titleContent={props.titleContent} />
+          <TitleBox>
+            <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomNumber1}.png`}/>
+            <Title titleContent={props.titleContent} />
+            <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomNumber2}.png`} />
+          </TitleBox>
           <Article
             articleContentHead={props.articleContentHead}
             readMoreButton={props.readMoreButton}

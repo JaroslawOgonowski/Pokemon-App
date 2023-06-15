@@ -29,3 +29,16 @@ export const ArticleColumn = styled.div`
 	  }
   }
 `;
+
+export const TitleBox = styled.div`
+width: 96%;
+display: flex;
+gap: 6vw;
+align-items: center;
+justify-content: center;
+margin-bottom: 2vw;
+`;
+
+export const PokemonImage = styled.img`
+height: 100%;
+`;

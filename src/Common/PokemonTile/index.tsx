@@ -30,10 +30,8 @@ export const PokemonTile = (props: PokemonTileProps) => {
       const dominantColor = `rgb(${color.join(',')})`;
       setDominantColor(dominantColor);
     };
-
     image.src = imageUrl;
   };
-console.log(dominantColor)
   return (
     <Wrapper dominantColor={dominantColor} to="/pokemonDetails">
       {realID < 1010 ? (

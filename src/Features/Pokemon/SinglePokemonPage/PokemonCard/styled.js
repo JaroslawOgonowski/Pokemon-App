@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
 
 export const CardImage = styled.img`
   width: 30%;
+  min-width: 30%;
 `;
 
 export const RightBox = styled.div`
@@ -18,8 +19,8 @@ export const RightBox = styled.div`
   gap: 1vw;
   border: 1px solid gray;
   -webkit-box-shadow: -21px 22px 58px -35px ${(props) => props.color};
--moz-box-shadow: -21px 22px 58px -35px ${(props) => props.color};
-box-shadow: -21px 22px 58px -35px ${(props) => props.color};
+  -moz-box-shadow: -21px 22px 58px -35px ${(props) => props.color};
+  box-shadow: -21px 22px 58px -35px ${(props) => props.color};
 `;
 
 export const TextBox = styled.div`
@@ -30,11 +31,11 @@ export const TextBox = styled.div`
 `;
 
 export const Title = styled.h1`
-display: flex;
-align-items: center;
-justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   font-family: 'Righteous', cursive;
-   width: 100%;
+  width: 100%;
   color: black;
   font-size: 3vw;
   text-transform: uppercase;
@@ -48,18 +49,17 @@ export const Description = styled.div`
 `;
 
 export const Types = styled.div`
-display: flex;
-gap: 1vw;
+  display: flex;
+  gap: 1vw;
 `;
 
 export const Type = styled.div`
-padding: 0.5rem 2rem;
-border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
   font-size: 1.3vw;
   background-color:${(props) => props.typeBackgroundColor};
   color: ${(props) => props.typeFontColor};
-`;
-
-export const Stats = styled.div`
-padding: 0.5rem 2rem;
+  -webkit-box-shadow: 0px 0px 38px 6px ${(props) => props.typeBackgroundColor};
+-moz-box-shadow: 0px 0px 38px 6px rgba${(props) => props.typeBackgroundColor};
+box-shadow: 0px 0px 38px 6px rgba${(props) => props.typeBackgroundColor};
 `;

@@ -1,4 +1,5 @@
-import { CardImage, Description, RightBox, Stats, TextBox, Title, Type, Types, Wrapper } from "./styled";
+import { PokemonStat, Stats } from "./Stats";
+import { CardImage, Description, RightBox, TextBox, Title, Type, Types, Wrapper } from "./styled";
 import typesData from "./types.json";
 
 export interface PokemonType {
@@ -8,14 +9,6 @@ export interface PokemonType {
     url: string;
   };
 }
-
-export interface PokemonStat {
-  base_stat: number;
-  stat: {
-    name: string;
-  };
-}
-
 
 interface PokemonCardProps {
   pokeId: string | null;
@@ -37,7 +30,7 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
     const foundType = typesData.find((type) => type.name === typeName);
     return foundType?.fontColor || "black"
   };
-  console.log(pokemonStats)
+
   return (
     <Wrapper>
       <CardImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`} />
@@ -53,13 +46,9 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
                 </Type>
               ))}
             </Types></Title>
-          <Description>{description}</Description>
-          <Stats>
-            {pokemonStats.map((statistic) => (
-              <div key={statistic.stat.name}>{statistic.stat.name}- {statistic.base_stat}</div>
-            ))}
-          </Stats>
+          <Description>{description}</Description>          
         </TextBox>
+        <Stats pokemonStats={pokemonStats}/>  
       </RightBox>
 
     </Wrapper>

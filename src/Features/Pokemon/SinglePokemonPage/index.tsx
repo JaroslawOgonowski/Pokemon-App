@@ -3,7 +3,9 @@ import { useLocation } from "react-router-dom";
 import { fetchSoloPokemon, fetchSoloPokemonEvolution, fetchSoloPokemonInfo } from "../../../Core/API";
 import { StyledPokemonPage } from "./styled";
 import { Images } from "./Images";
-import { PokemonCard, PokemonStat, PokemonType } from "./PokemonCard";
+import { PokemonCard, PokemonType } from "./PokemonCard";
+import { PokemonStat } from "./PokemonCard/Stats";
+
 
 interface SinglePokemonPageProps {
   pokeId: string;
@@ -49,7 +51,7 @@ export const SinglePokemonPage = () => {
     (entry) => entry.language.name === "en"
   );
   const description = englishFlavorText?.flavor_text.replace(/\f/g, " ");
-console.log(dataInfo?.stats)
+
   return (
     <StyledPokemonPage color={color}>
       <PokemonCard

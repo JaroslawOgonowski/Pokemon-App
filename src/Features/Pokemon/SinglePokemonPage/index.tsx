@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { fetchSoloPokemon, fetchSoloPokemonEvolution, fetchSoloPokemonInfo } from "../../../Core/API";
 import { StyledPokemonPage } from "./styled";
 import { Images } from "./Images";
-import { PokemonCard, PokemonType } from "./PokemonCard";
+import { PokemonCard, PokemonStat, PokemonType } from "./PokemonCard";
 
 interface SinglePokemonPageProps {
   pokeId: string;
@@ -18,6 +18,7 @@ interface SoloPokemonInfo {
   flavor_text_entries: any[];
   color: any;
   types: PokemonType[];
+  stats: PokemonStat[];
   evolution_chain: {
     url: string;
   };
@@ -44,13 +45,11 @@ export const SinglePokemonPage = () => {
   );
 
   const color = dataInfo?.color?.name;
-
   const englishFlavorText = dataInfo?.flavor_text_entries.find(
     (entry) => entry.language.name === "en"
   );
-
   const description = englishFlavorText?.flavor_text.replace(/\f/g, " ");
-
+console.log(dataInfo?.stats)
   return (
     <StyledPokemonPage color={color}>
       <PokemonCard
@@ -59,6 +58,7 @@ export const SinglePokemonPage = () => {
         description={description}
         color={color}
         pokemonTypes={data?.types || []}
+        pokemonStats={data?.stats || []}
       />
       <Images pokeId={pokeId} />
     </StyledPokemonPage>

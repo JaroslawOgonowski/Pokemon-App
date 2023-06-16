@@ -59,3 +59,7 @@ border-radius: 1rem;
   background-color:${(props) => props.typeBackgroundColor};
   color: ${(props) => props.typeFontColor};
 `;
+
+export const Stats = styled.div`
+padding: 0.5rem 2rem;
+`;

@@ -54,12 +54,12 @@ export const Types = styled.div`
 `;
 
 export const Type = styled.div`
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
+  padding: 0.5vw 2vw;
+  border-radius: 1vw;
   font-size: 1.3vw;
   background-color:${(props) => props.typeBackgroundColor};
   color: ${(props) => props.typeFontColor};
-  -webkit-box-shadow: 0px 0px 38px 6px ${(props) => props.typeBackgroundColor};
--moz-box-shadow: 0px 0px 38px 6px rgba${(props) => props.typeBackgroundColor};
-box-shadow: 0px 0px 38px 6px rgba${(props) => props.typeBackgroundColor};
+  -webkit-box-shadow: 0vw 0vw 0.6959vw 0.1099vw ${(props) => props.typeBackgroundColor};
+  -moz-box-shadow: 0vw 0vw 0.6959vw 0.1099vw rgba${(props) => props.typeBackgroundColor};
+  box-shadow: 0vw 0vw 0.6959vw 0.1099vw rgba${(props) => props.typeBackgroundColor};
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledPokemonPage = styled.div`
-margin: 6vw auto;
+margin: 6vw auto 0 auto;
 width: 100%;
 min-height: 100vh;
 display: flex;
@@ -23,7 +23,7 @@ export const Title = styled.h1`
 
 export const Description = styled.div`
 text-align: center;
-font-size: 1vw;
+font-size: 1.3vw;
 color: #262626;
 margin: 0 1vw;
 `;
@@ -34,16 +34,6 @@ export const Subtitle = styled.h2`
   width: 100%;
   font-size: 3vw;
   color: #100414ce;
-`;
-
-export const Images = styled.div`
-margin-top: 2vw;
-width: 96%;
-display: flex;
-gap: 1vw;
-flex-wrap: wrap;
-justify-content: center;
-align-content: center;
 `;
 
 export const Imagesdsadas = styled.div`

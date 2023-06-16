@@ -1,5 +1,5 @@
 import { Container, Image, ImagesDescription, StyledImageBox } from "./styled"
-
+import { useState } from "react";
 interface ImageBoxProps {
   url1: string |null;
   url2: string | null;
@@ -7,7 +7,7 @@ interface ImageBoxProps {
   pokeId: string | null;
   format: string;
 }
-import { useState } from "react";
+
 
 export const ImageBox = ({ url1, url2, description, pokeId, format }: ImageBoxProps) => {
   const [imagesLoaded, setImagesLoaded] = useState(true);

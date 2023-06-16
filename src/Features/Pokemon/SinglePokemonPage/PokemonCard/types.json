@@ -1,0 +1,96 @@
+[
+  {
+    "name": "normal",
+    "backgroundColor": "beige"
+  },
+  {
+    "name": "fighting",
+    "backgroundColor": "crimson",
+    "fontColor": "white"
+  },
+  {
+    "name": "flying",
+    "backgroundColor": "rgb(77, 111, 153)",
+    "fontColor": "white"
+  },
+  {
+    "name": "poison",
+    "backgroundColor": "rgb(171, 45, 206)"
+  },
+  {
+    "name": "ground",
+    "backgroundColor": "rgb(135, 67, 14)",
+    "fontColor": "white"
+  },
+  {
+    "name": "rock",
+    "backgroundColor": "darkgrey",
+    "fontColor": "white"
+  },
+  {
+    "name": "bug",
+    "backgroundColor": "rgb(114, 224, 11)"
+  },
+  {
+    "name": "ghost",
+    "backgroundColor": "rgb(55, 14, 46)",
+    "fontColor": "white"
+  },
+  {
+    "name": "steel",
+    "backgroundColor": "silver"
+  },
+  {
+    "name": "fire",
+    "backgroundColor": "red",
+    "fontColor": "white"
+  },
+  {
+    "name": "water",
+    "backgroundColor": "rgb(66, 88, 198)",
+    "fontColor": "white"
+  },
+  {
+    "name": "grass",
+    "backgroundColor": "green",
+    "fontColor": "white"
+  },
+  {
+    "name": "electric",
+    "backgroundColor": "yellow"
+  },
+  {
+    "name": "psychic",
+    "backgroundColor": "rgb(216, 40, 178)",
+    "fontColor": "white"
+  },
+  {
+    "name": "ice",
+    "backgroundColor": "rgb(125, 191, 216)",
+    "fontColor": "white"
+  },
+  {
+    "name": "dragon",
+    "backgroundColor": "rgb(52, 4, 80)",
+    "fontColor": "white"
+  },
+  {
+    "name": "dark",
+    "backgroundColor": "rgb(14, 4, 20)",
+    "fontColor": "white"
+  },
+  {
+    "name": "fairy",
+    "backgroundColor": "pink"
+  },
+  {
+    "name": "unknown",
+    "backgroundColor": "rgb(38, 38, 38)",
+    "fontColor": "white"
+  },
+  {
+    "name": "shadow",
+    "backgroundColor": "rgb(38, 38, 38)",
+    "fontColor": "white"
+  }
+]

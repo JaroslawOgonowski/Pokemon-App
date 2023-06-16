@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledImageBox = styled.div`
-cursor: pointer;
 display: flex;
 flex-direction: column;
 gap: 0.5vw;

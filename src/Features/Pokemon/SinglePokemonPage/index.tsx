@@ -1,16 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
 import { fetchSoloPokemon, fetchSoloPokemonEvolution, fetchSoloPokemonInfo } from "../../../Core/API";
-import { Description, StyledPokemonPage, Title } from "./styled";
+import { StyledPokemonPage } from "./styled";
 import { Images } from "./Images";
+import { PokemonCard, PokemonType } from "./PokemonCard";
+
+interface SinglePokemonPageProps {
+  pokeId: string;
+}
 
 interface SoloPokemonInfo {
-  data: [];
-  dataInfo: [];
-  results: [];
+  data: any[];
+  dataInfo: any[];
+  results: any[];
   name: string;
-  flavor_text_entries: any;
+  flavor_text_entries: any[];
   color: any;
+  types: PokemonType[];
 }
 
 export const SinglePokemonPage = () => {
@@ -18,31 +24,38 @@ export const SinglePokemonPage = () => {
   const searchParams = new URLSearchParams(location.search);
   const pokeId = searchParams.get("pokeId");
 
-  const { isLoading, isError, data } = useQuery<SoloPokemonInfo>(
-    ["soloPokemon", { pokeId: pokeId }],
-    () => fetchSoloPokemon(pokeId)
+  const { isLoading, isError, data } = useQuery<SoloPokemonInfo>(["soloPokemon", { pokeId }], () =>
+    fetchSoloPokemon(pokeId)
   );
 
   const { isLoading: isLoadingInfo, isError: isErrorInfo, data: dataInfo } = useQuery<SoloPokemonInfo>(
-    ["soloPokemonInfo", { pokeId: pokeId }],
+    ["soloPokemonInfo", { pokeId }],
     () => fetchSoloPokemonInfo(pokeId)
   );
 
   const { isLoading: isLoadingEvolution, isError: isErrorEvolution, data: dataEvolution } = useQuery<SoloPokemonInfo>(
-    ["soloPokemonEvolution", { pokeId: pokeId }],
+    ["soloPokemonEvolution", { pokeId }],
     () => fetchSoloPokemonEvolution(pokeId)
   );
 
-  const color = dataInfo?.color?.name
+  const color = dataInfo?.color?.name;
+
+  const englishFlavorText = dataInfo?.flavor_text_entries.find(
+    (entry) => entry.language.name === "en"
+  );
+
+  const description = englishFlavorText?.flavor_text.replace(/\f/g, " ");
 
   return (
-    <>
-      <StyledPokemonPage color={color}>
-        <Title>#{pokeId} {data?.name}</Title>
-        <Description>{dataInfo?.flavor_text_entries[7].flavor_text.replace(/\f/g, ' ')}</Description>
-        <PokemonCard/>
-        <Images pokeId={pokeId}/>
-      </StyledPokemonPage>
-    </>
-  )
-}
+    <StyledPokemonPage color={color}>
+      <PokemonCard
+        pokeId={pokeId}
+        pokemonName={data?.name}
+        description={description}
+        color={color}
+        pokemonTypes={data?.types || []}
+      />
+      <Images pokeId={pokeId} />
+    </StyledPokemonPage>
+  );
+};

@@ -13,8 +13,8 @@ export const fetchSoloPokemonInfo = async (pokeId: string | null): Promise<any> 
   )
 };
 
-export const fetchSoloPokemonEvolution = async (pokeId: string | null): Promise<any> => {
-  return fetch(`https://pokeapi.co/api/v2/evolution-chain/${pokeId}/`).then(
+export const fetchSoloPokemonEvolution = async (evolutionChainURL: string | null): Promise<any> => {
+  return fetch(`${evolutionChainURL}`).then(
     (response) => response.json()
   )
 };

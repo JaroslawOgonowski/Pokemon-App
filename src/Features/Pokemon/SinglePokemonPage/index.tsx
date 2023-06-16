@@ -7,6 +7,7 @@ import { PokemonCard, PokemonType } from "./PokemonCard";
 
 interface SinglePokemonPageProps {
   pokeId: string;
+  evolutionChainURL: string | undefined;
 }
 
 interface SoloPokemonInfo {
@@ -17,6 +18,9 @@ interface SoloPokemonInfo {
   flavor_text_entries: any[];
   color: any;
   types: PokemonType[];
+  evolution_chain: {
+    url: string;
+  };
 }
 
 export const SinglePokemonPage = () => {
@@ -32,10 +36,11 @@ export const SinglePokemonPage = () => {
     ["soloPokemonInfo", { pokeId }],
     () => fetchSoloPokemonInfo(pokeId)
   );
+  const evolutionChainURL = dataInfo?.evolution_chain?.url;
 
   const { isLoading: isLoadingEvolution, isError: isErrorEvolution, data: dataEvolution } = useQuery<SoloPokemonInfo>(
-    ["soloPokemonEvolution", { pokeId }],
-    () => fetchSoloPokemonEvolution(pokeId)
+    ["soloPokemonEvolution", { evolutionChainURL }],
+    () => fetchSoloPokemonEvolution(`${evolutionChainURL}`)
   );
 
   const color = dataInfo?.color?.name;

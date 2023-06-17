@@ -1,4 +1,4 @@
-import { StyledLink } from "../../../../../Common/Link/styled";
+import { EvolutionBox, EvolutionTitle, Next, PokemonEvolutionName, StyledEvolutinImage, StyledEvolution, StyledLink } from "./styled";
 
 export interface PokemonEvolve {
   item: any | undefined;
@@ -22,34 +22,42 @@ export const Evolution = ({ pokemonEvolution }: PokemonEvolutionProps) => {
   const renderPokemon = (pokemon: { species: { name: any; url: string } }) => (
     <div key={pokemon.species.name}>
       <StyledLink to={`/pokemonDetails?pokeId=${getValue(pokemon.species.url, true)}`}>
-        <img src={pokemon.species.url ? getValue(pokemon.species.url, false).toString() : ""} alt={pokemon.species.name} />
-        {pokemon.species.name}
+        <StyledEvolutinImage src={pokemon.species.url ? getValue(pokemon.species.url, false).toString() : ""} alt={pokemon.species.name} />
+        <PokemonEvolutionName>
+          {pokemon.species.name.toUpperCase()}
+        </PokemonEvolutionName>
       </StyledLink>
     </div>
   );
 
   return (
-    <div>
-      Evolutionary cycle:
-      {pokemonEvolution?.chain.species.name && (
-        <StyledLink to={`/pokemonDetails?pokeId=${getValue(pokemonEvolution.chain.species.url, true)}`}>
-          <img
-            src={pokemonEvolution.chain.species.url ? getValue(pokemonEvolution.chain.species.url, false).toString() : ""}
-            alt={pokemonEvolution.chain.species.name}
-          />
-          {pokemonEvolution.chain.species.name}
-        </StyledLink>
-      )}
-
-      {pokemonEvolution?.chain.evolves_to[0] && "➡"}
-      <div>
-        {pokemonEvolution?.chain.evolves_to?.map(renderPokemon)}
-      </div>
-
-      {pokemonEvolution?.chain.evolves_to[0]?.evolves_to[0] && "➡"}
-      <div>
-        {pokemonEvolution?.chain.evolves_to[0]?.evolves_to?.map(renderPokemon)}
-      </div>
-    </div>
+    <StyledEvolution>
+      <EvolutionTitle>Evolutionary cycle:</EvolutionTitle>
+      <EvolutionBox>
+        {pokemonEvolution?.chain.species.name && (
+          <StyledLink to={`/pokemonDetails?pokeId=${getValue(pokemonEvolution.chain.species.url, true)}`}>
+            <StyledEvolutinImage
+              src={pokemonEvolution.chain.species.url ? getValue(pokemonEvolution.chain.species.url, false).toString() : ""}
+              alt={pokemonEvolution.chain.species.name.toUpperCase()}
+            />
+            <PokemonEvolutionName>
+              {pokemonEvolution.chain.species.name.toUpperCase()}
+            </PokemonEvolutionName>
+          </StyledLink>
+        )}
+        <Next>
+          {pokemonEvolution?.chain.evolves_to[0] && "➡"}
+        </Next>
+        <div>
+          {pokemonEvolution?.chain.evolves_to?.map(renderPokemon)}
+        </div>
+        <Next>
+          {pokemonEvolution?.chain.evolves_to[0]?.evolves_to[0] && "➡"}
+        </Next>
+        <div>
+          {pokemonEvolution?.chain.evolves_to[0]?.evolves_to?.map(renderPokemon)}
+        </div>
+      </EvolutionBox>
+    </StyledEvolution>
   );
 };

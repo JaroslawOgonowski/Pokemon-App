@@ -49,7 +49,7 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
               ))}
             </Types></Title>
           <Description>{description}</Description>
-          <Evolution pokemonEvolution={pokemonEvolution} />
+          <Evolution pokemonEvolution={pokemonEvolution}/>
         </TextBox>
         <Stats pokemonStats={pokemonStats} />
       </RightBox>

@@ -1,4 +1,4 @@
-import { EvolutionBox, EvolutionTitle, Next, PokemonEvolutionName, StyledEvolutinImage, StyledEvolution, StyledLink } from "./styled";
+import { EvolutionBox, EvolutionTitle, MultiEvolutionLayout, Next, PokemonEvolutionName, StyledEvolutinImage, StyledEvolution, StyledLink } from "./styled";
 
 export interface PokemonEvolve {
   item: any | undefined;
@@ -35,28 +35,30 @@ export const Evolution = ({ pokemonEvolution }: PokemonEvolutionProps) => {
       <EvolutionTitle>Evolutionary cycle:</EvolutionTitle>
       <EvolutionBox>
         {pokemonEvolution?.chain.species.name && (
-          <StyledLink to={`/pokemonDetails?pokeId=${getValue(pokemonEvolution.chain.species.url, true)}`}>
-            <StyledEvolutinImage
-              src={pokemonEvolution.chain.species.url ? getValue(pokemonEvolution.chain.species.url, false).toString() : ""}
-              alt={pokemonEvolution.chain.species.name.toUpperCase()}
-            />
-            <PokemonEvolutionName>
-              {pokemonEvolution.chain.species.name.toUpperCase()}
-            </PokemonEvolutionName>
-          </StyledLink>
+          <MultiEvolutionLayout>
+            <StyledLink to={`/pokemonDetails?pokeId=${getValue(pokemonEvolution.chain.species.url, true)}`}>
+              <StyledEvolutinImage
+                src={pokemonEvolution.chain.species.url ? getValue(pokemonEvolution.chain.species.url, false).toString() : ""}
+                alt={pokemonEvolution.chain.species.name.toUpperCase()}
+              />
+              <PokemonEvolutionName>
+                {pokemonEvolution.chain.species.name.toUpperCase()}
+              </PokemonEvolutionName>
+            </StyledLink>
+          </MultiEvolutionLayout>
         )}
         <Next>
           {pokemonEvolution?.chain.evolves_to[0] && "➡"}
         </Next>
-        <div>
+        <MultiEvolutionLayout>
           {pokemonEvolution?.chain.evolves_to?.map(renderPokemon)}
-        </div>
+        </MultiEvolutionLayout>
         <Next>
           {pokemonEvolution?.chain.evolves_to[0]?.evolves_to[0] && "➡"}
         </Next>
-        <div>
+        <MultiEvolutionLayout>
           {pokemonEvolution?.chain.evolves_to[0]?.evolves_to?.map(renderPokemon)}
-        </div>
+        </MultiEvolutionLayout>
       </EvolutionBox>
     </StyledEvolution>
   );

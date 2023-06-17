@@ -4,7 +4,10 @@ import styled from "styled-components";
 export const StyledEvolution = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
   width: 96%;
+  margin-bottom: 2vw;
 `;
 
 export const EvolutionTitle = styled.h2`
@@ -32,7 +35,8 @@ export const StyledLink = styled(Link)`
   align-content: center;
   gap: 0.5vw;
   transition: 500ms;
-  
+  padding: 0.5vw;
+
   &:hover{
     transform: scale(1.2);
   }
@@ -48,4 +52,13 @@ export const PokemonEvolutionName = styled.div`
 
 export const Next = styled.div`
 align-self: center;
+`;
+
+export const MultiEvolutionLayout = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 0.2vw;
+  justify-items: center;
+  align-content: center;
 `;

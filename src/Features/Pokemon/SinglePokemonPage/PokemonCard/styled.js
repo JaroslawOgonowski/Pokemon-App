@@ -39,8 +39,7 @@ export const Title = styled.h1`
   color: black;
   font-size: 3vw;
   text-transform: uppercase;
-  margin-top: 1vw;
-  margin-bottom: 1vw;
+  margin: 1vw 0;
 `;
 
 export const Description = styled.div`
@@ -49,6 +48,7 @@ export const Description = styled.div`
 `;
 
 export const Types = styled.div`
+  margin-left: 1vw;
   display: flex;
   gap: 1vw;
 `;

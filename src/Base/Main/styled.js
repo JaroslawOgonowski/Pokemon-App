@@ -6,9 +6,11 @@ export const StyledMain = styled.main`
   display: flex;
   gap: 2vw;
   justify-content: center;
-  @media (max-width: 800px) {
+  
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    margin: 80px auto;
     flex-direction: column;
-  }
+  };
 `;
 
 export const ArticleColumn = styled.div`
@@ -27,4 +29,8 @@ export const ArticleColumn = styled.div`
 		  transform: translateX(0);
 	  }
   }
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 96%;
+  };
 `;

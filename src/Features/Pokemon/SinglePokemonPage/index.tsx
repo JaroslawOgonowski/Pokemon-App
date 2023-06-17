@@ -5,7 +5,7 @@ import { StyledPokemonPage } from "./styled";
 import { Images } from "./Images";
 import { PokemonCard, PokemonType } from "./PokemonCard";
 import { PokemonStat } from "./PokemonCard/Stats";
-
+import { PokemonEvolve } from "./PokemonCard/Evolution";
 
 interface SinglePokemonPageProps {
   pokeId: string;
@@ -24,6 +24,7 @@ interface SoloPokemonInfo {
   evolution_chain: {
     url: string;
   };
+  pokemonEvolution: PokemonEvolve | undefined;
 }
 
 export const SinglePokemonPage = () => {
@@ -41,9 +42,9 @@ export const SinglePokemonPage = () => {
   );
   const evolutionChainURL = dataInfo?.evolution_chain?.url;
 
-  const { isLoading: isLoadingEvolution, isError: isErrorEvolution, data: dataEvolution } = useQuery<SoloPokemonInfo>(
+  const { isLoading: isLoadingEvolution, isError: isErrorEvolution, data: dataEvolution } = useQuery<PokemonEvolve | undefined>(
     ["soloPokemonEvolution", { evolutionChainURL }],
-    () => fetchSoloPokemonEvolution(`${evolutionChainURL}`)
+    async () => fetchSoloPokemonEvolution(`${evolutionChainURL}`)
   );
 
   const color = dataInfo?.color?.name;
@@ -61,8 +62,9 @@ export const SinglePokemonPage = () => {
         color={color}
         pokemonTypes={data?.types || []}
         pokemonStats={data?.stats || []}
+        pokemonEvolution={dataEvolution ? dataEvolution : undefined}
       />
       <Images pokeId={pokeId} />
     </StyledPokemonPage>
   );
-};
+}

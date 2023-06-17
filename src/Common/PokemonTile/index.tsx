@@ -10,7 +10,7 @@ interface PokemonTileProps {
 export const PokemonTile = (props: PokemonTileProps) => {
   const pokemonName = props.name.slice(0, 1).toUpperCase() + props.name.slice(1);
   const realID = props.id + 1;
-  const [dominantColor, setDominantColor] = useState('');
+  const [dominantcolor, setDominantColor] = useState('');
  
   useEffect(() => {
     const imageUrl = realID < 1011
@@ -33,7 +33,7 @@ export const PokemonTile = (props: PokemonTileProps) => {
     image.src = imageUrl;
   };
   return (
-    <Wrapper dominantColor={dominantColor} to={`/pokemonDetails?pokeId=${realID}`}>
+    <Wrapper dominantColor={dominantcolor} to={`/pokemonDetails?pokeId=${realID}`}>
       {realID < 1011 ? (
         <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`} />
       ) : (

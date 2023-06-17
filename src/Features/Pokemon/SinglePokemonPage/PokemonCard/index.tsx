@@ -1,3 +1,4 @@
+import { Evolution, PokemonEvolve } from "./Evolution";
 import { PokemonStat, Stats } from "./Stats";
 import { CardImage, Description, RightBox, TextBox, Title, Type, Types, Wrapper } from "./styled";
 import typesData from "./types.json";
@@ -17,9 +18,10 @@ interface PokemonCardProps {
   color: string;
   pokemonTypes: PokemonType[];
   pokemonStats: PokemonStat[];
+  pokemonEvolution: PokemonEvolve | undefined;
 }
 
-export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTypes, pokemonStats }: PokemonCardProps) => {
+export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTypes, pokemonStats, pokemonEvolution }: PokemonCardProps) => {
 
   function getBackgroundColorByType(typeName: string): string | undefined {
     const foundType = typesData.find((type) => type.name === typeName);
@@ -46,9 +48,10 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
                 </Type>
               ))}
             </Types></Title>
-          <Description>{description}</Description>          
+          <Description>{description}</Description>
+          <Evolution pokemonEvolution={pokemonEvolution} />
         </TextBox>
-        <Stats pokemonStats={pokemonStats}/>  
+        <Stats pokemonStats={pokemonStats} />
       </RightBox>
 
     </Wrapper>

@@ -27,13 +27,13 @@ export const Wrapper = styled(Link)`
   justify-content: center;
   align-items: center;
   gap: 0.1vw;
-  border: 0.2vw solid ${(props) => props.dominantColor};
+  border: 0.2vw solid ${(props) => props.dominantcolor};
   border-radius: 0.5vw;
   transition: 500ms;
   background-image: linear-gradient(349deg, rgba(11, 1, 19, 1) 43%, ${(props) => props.dominantColor} 100%);
-  -webkit-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
-  -moz-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
-  box-shadow: 8px 8px 24px 2px ${(props) => props.dominantColor};
+  -webkit-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
+  -moz-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
+  box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
   filter: brightness(90%);
 
   &:hover {
@@ -45,8 +45,8 @@ export const Wrapper = styled(Link)`
         166deg,
         rgba(253, 255, 0, 1) 0%,
         rgba(159, 235, 32, 1) 97%);
-      -webkit-background-clip: text;
-      color: transparent;
+        -webkit-background-clip: text;
+        color: transparent;
     }
 
     ${PokemonId} {

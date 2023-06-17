@@ -15,8 +15,15 @@ export const StyledHeader = styled.header`
   -moz-box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
   box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
   z-index: 99;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    height: 80px;
+  };
 `;
 
+export const LogoLink = styled.a`
+  text-decoration: none;
+`;
 
 export const Logo = styled.img`
   height: 5vw;
@@ -27,6 +34,13 @@ export const Logo = styled.img`
   &:hover{
     transform: scale(1.05);
   }
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    height: 40px;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    height: 20px;
+  };
 `;
 
 export const StyledNavigation = styled.nav`
@@ -46,6 +60,10 @@ export const StyledNavLink = styled(NavLink)`
   &.active{
     border: solid 1px white;
     border-radius: 2vw;
+    
+    @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+      border-radius: 35px;
+    };
   }
 
   &:hover{  
@@ -54,9 +72,8 @@ export const StyledNavLink = styled(NavLink)`
     color: transparent;    
   }
 
-  ${({ logo }) => logo && css`
-    &.active{
-      border: none;
-    }
-   `}
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 14px;
+    padding: 8px 12px;
+  };
 `;

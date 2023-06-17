@@ -6,7 +6,12 @@ export const GalleryTitle = styled.h2`
   font-family: 'Righteous', cursive;
   color: #0f0e0eeb;
   text-align: center;
-  margin: 2vw 0;  
+  margin: 2vw 0;
+  
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 28px;
+    margin: 20px 0;
+  };
 `;
 
 export const GalleryBox = styled.div`
@@ -35,13 +40,14 @@ const BaseButton = styled.button`
   color: white;
   margin-top: 6vw;
   position: sticky;
-  top: 20vw;
+  height: 70vh;
+  top: 20%;
   transition: 500ms;
   filter: brightness(80%);
   -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-
+  
   &:hover{
   transform: scale(1.1);
   filter: brightness(120%);

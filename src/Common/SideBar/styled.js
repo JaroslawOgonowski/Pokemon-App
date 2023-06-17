@@ -33,7 +33,7 @@ export const StyledSideBar = styled.ul`
       width: 24px;
       margin: 0;
     };
-  }
+  };
 
   @keyframes sideBarAnimation {
     0% {
@@ -62,6 +62,10 @@ export const StyledSideBar = styled.ul`
     justify-content: center;
     align-items: center;
   };
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+      flex-wrap: wrap;
+  };
 `;
 
 export const ListItem = styled.li`
@@ -74,6 +78,9 @@ export const ListItem = styled.li`
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: fit-content;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+      justify-content: center;
   };
 `;
 
@@ -95,6 +102,10 @@ export const StyledA = styled.a`
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin-left: 12px;
     font-size: 14px;
+  };
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 16px;
   };
 `;
 

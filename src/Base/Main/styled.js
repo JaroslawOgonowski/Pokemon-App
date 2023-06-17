@@ -16,6 +16,7 @@ export const StyledMain = styled.main`
 export const ArticleColumn = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: calc(80% - 2vw);
   animation: articleColumnAnimation 0.5s ease;
 
@@ -31,6 +32,6 @@ export const ArticleColumn = styled.div`
   }
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    width: 96%;
+    width: 100%;
   };
 `;

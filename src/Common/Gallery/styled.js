@@ -20,14 +20,13 @@ export const GalleryBox = styled.div`
   display: flex;
   gap: 1vw;
   justify-content: center;
-  align-items: flex-start;
 `;
 
 export const StyledGallery = styled.div`
   width: 96%;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 1vw;  
   margin: 0 auto;

@@ -2,25 +2,39 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const PokemonName = styled.div`
+  margin-right : 6%;
+  margin-left: 10%;
   font-family: 'Righteous', cursive;
   font-size: 1.4vw;
-  word-break: break-all;
+  overflow-wrap: break-word;
   color: white;
   transition: color 500ms;
+  align-self: flex-end;
+  text-align: right;
+  padding-bottom: 5%;
   
   @media(max-width: ${({ theme }) => theme.breakPoint.laptop}px) {
     font-size: 20px;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 18px;
-    margin-top: 22px;
+    font-size: 18px;    
+    margin-right: 5%;
+  };
+  @media(max-width: 800px) {
+    font-size: 15px;    
+    margin-right: 5%;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    font-size: 16px;
+    font-size: 3vw;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 6vw;
   };
 `;
 
 export const PokemonId = styled.div`
+  margin-top: 10%;
+  margin-left: 5%;
   font-family: 'Righteous', cursive;
   font-size: 1.5vw;
   transition: color 500ms;
@@ -30,8 +44,8 @@ export const PokemonId = styled.div`
     font-size: 24px;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    margin-top: 22px;
     font-size: 20px;
+    margin-left: 5%;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 18px;
@@ -44,11 +58,9 @@ export const Wrapper = styled(Link)`
   color: black;
   aspect-ratio: 13 / 20;
   width: 15%;
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 0.1vw;
   border: 0.2vw solid ${(props) => props.dominantcolor};
   border-radius: 0.5vw;
@@ -100,6 +112,11 @@ export const Wrapper = styled(Link)`
     width: 45%;
     height: auto;
   };
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {    
+    width: 85%;
+    height: auto;
+  };
 `;
 
 export const PokemonImage = styled.img`
@@ -107,6 +124,7 @@ export const PokemonImage = styled.img`
   width: calc(100% - 2vw);
   padding: 1vw;
   transition: 0.5s;
+  margin-bottom: 20%;
 
   &:hover {
     animation: pokemonAnimation 5s ease 0s 1 normal forwards;
@@ -145,12 +163,11 @@ export const PokemonImage = styled.img`
 export const Details = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1vw;
-  border-top: 2px solid black;
-  border-radius: 0.5vw;
-
-
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10%;
+  border-top: 2px solid ${(props) => props.dominantcolor};
+  border-radius: 50%;
+  flex: 1
 `;

@@ -11,7 +11,7 @@ export const PokemonTile = (props: PokemonTileProps) => {
   const pokemonName = props.name.slice(0, 1).toUpperCase() + props.name.slice(1);
   const realID = props.id + 1;
   const [dominantcolor, setDominantColor] = useState('');
- 
+
   useEffect(() => {
     const imageUrl = realID < 1011
       ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`
@@ -39,7 +39,7 @@ export const PokemonTile = (props: PokemonTileProps) => {
       ) : (
         <PokemonImage src={pokeball} />
       )}
-      <Details>
+      <Details dominantcolor={dominantcolor}>
         <PokemonId>#{realID}</PokemonId>
         <PokemonName>{pokemonName}</PokemonName>
       </Details>

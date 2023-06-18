@@ -1,4 +1,3 @@
-import { Title } from "../../Common/Title"
 import pika from "./images/sadPika.png"
 import toge from "./images/pngegg.png"
 import { Box, ErrorPage, ErrorText, ErrorTitle, Image, StyledNavLink } from "./styled"

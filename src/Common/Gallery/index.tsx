@@ -6,6 +6,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.svg";
 import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg";
+import { Loader } from "../../Base/Loader";
+import { Error } from "../../Base/Error";
 
 interface Pokemon {
   name: string;
@@ -64,8 +66,8 @@ export const Gallery = () => {
     () => fetchGallery(limit, offset)
   );
 
-  if (isLoading) return <div>Loading</div>;
-  if (isError) return <div>Error</div>;
+  if (isLoading) return <Loader/>;
+  if (isError) return <Error/>;
 
   return data ? (
     <>

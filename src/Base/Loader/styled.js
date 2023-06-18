@@ -3,7 +3,7 @@ import { ReactComponent as Pokeball } from "./pokeball-svgrepo-com.svg";
 
 export const StyledLoader = styled.article`
 width: 60%;
-margin: 2vw auto;
+margin: 20% auto;
 display: flex;
 flex-direction: column;
 align-items: center;

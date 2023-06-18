@@ -6,6 +6,8 @@ import { Images } from "./Images";
 import { PokemonCard, PokemonType } from "./PokemonCard";
 import { PokemonStat } from "./PokemonCard/Stats";
 import { PokemonEvolve } from "./PokemonCard/Evolution";
+import { Loader } from "../../../Base/Loader";
+import { Error } from "../../../Base/Error";
 interface SoloPokemonInfo {
   data: any[];
   dataInfo: any[];
@@ -52,6 +54,9 @@ export const SinglePokemonPage = () => {
   );
   const description = englishFlavorText?.flavor_text.replace(/\f/g, " ");
 
+  if (isLoading || isLoadingEvolution || isLoadingInfo) return <Loader />
+  if (isError || isErrorEvolution || isErrorInfo) return <Error />
+  
   return (
     <StyledPokemonPage color={color}>
       <PokemonCard

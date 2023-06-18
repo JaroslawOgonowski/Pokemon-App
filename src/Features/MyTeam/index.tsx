@@ -1,7 +1,9 @@
+import { Error } from "../../Base/Error"
 import { Main } from "../../Base/Main"
 
 export const MyTeam = () => {
   return(
+    <>
     <Main
     titleContent="My Team"
     articleContentHead="l
@@ -21,5 +23,7 @@ export const MyTeam = () => {
       ]
     }
   />
+  <Error/>
+  </>
 )
 }

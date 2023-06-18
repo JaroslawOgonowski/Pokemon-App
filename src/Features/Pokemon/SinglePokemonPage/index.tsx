@@ -6,12 +6,6 @@ import { Images } from "./Images";
 import { PokemonCard, PokemonType } from "./PokemonCard";
 import { PokemonStat } from "./PokemonCard/Stats";
 import { PokemonEvolve } from "./PokemonCard/Evolution";
-
-interface SinglePokemonPageProps {
-  pokeId: string;
-  evolutionChainURL: string | undefined;
-}
-
 interface SoloPokemonInfo {
   data: any[];
   dataInfo: any[];

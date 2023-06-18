@@ -7,9 +7,10 @@ export const Wrapper = styled.div`
   gap: 0;
 `;
 
-
 export const CardImage = styled.img`
+  aspect-ratio: 1 / 1 ;
   width: 30%;
+  height: 30%;
   min-width: 30%;
 `;
 

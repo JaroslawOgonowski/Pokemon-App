@@ -19,6 +19,3 @@ export const Subtitle = styled.h2`
   color: #100414ce;
 `;
 
-export const Imagesdsadas = styled.div`
-color: rgb(55, 14, 46)
-`;

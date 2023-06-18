@@ -17,7 +17,8 @@ export const EvolutionTitle = styled.h2`
 `;
 
 export const StyledEvolutinImage = styled.img`
-  height: 5vw;
+  height: 6vw;
+  width: 6vw;
 `;
 
 export const EvolutionBox = styled.div`
@@ -51,7 +52,7 @@ export const PokemonEvolutionName = styled.div`
 `;
 
 export const Next = styled.div`
-align-self: center;
+  align-self: center;
 `;
 
 export const MultiEvolutionLayout = styled.div`

@@ -32,36 +32,39 @@ export const StyledGallery = styled.div`
   margin: 0 auto;
   padding-bottom: 5vw;
   `;
-  
-const BaseButton = styled.button`
-  cursor: pointer;
-  background-color: #0401199e;
-  color: white;
+
+export const ButtonBox = styled.div`
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   margin-top: 6vw;
   position: sticky;
-  height: 70vh;
   top: 20%;
-  transition: 500ms;
+`;
+
+export const BaseButton = styled.button`
+  cursor: pointer;
+  height: 55vh;  
+  width: 3vw;
+  background-color: #0401199e;
+  color: white;  
+  transition: 200ms;
   filter: brightness(80%);
   -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-  
+  transition: visibility 0;
   &:hover{
-  transform: scale(1.1);
-  filter: brightness(120%);
+  filter: brightness(130%);
+  background-color: #28052fd1;
   }
 
   &:disabled{
-    cursor: not-allowed;
-    background-color: #d3d2dd75;
-    &:hover{
-      transform: scale(1.0);
-      filter: brightness(80%);
-    }
+    visibility: hidden;
   }
 `;
 
-export const PrevButton = styled(BaseButton)``;
-
-export const NextButton = styled(BaseButton)``;
+export const FastButton = styled(BaseButton)`
+height: 15vh;
+`;

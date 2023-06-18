@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const ErrorPage = styled.article`
   margin: 0 auto;
-  width: 60%;
+  width: 90%;
   height: 60%;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,10 @@ export const ErrorPage = styled.article`
 export const ErrorTitle = styled.h2`
   font-family: 'Righteous', cursive;
   font-size: 3vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 30px;
+  };
 `;
 
 export const Box = styled.div`
@@ -22,10 +26,29 @@ export const Box = styled.div`
   gap: 2vw;
   justify-content: center;
   align-items: center;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 16px;
+    flex-wrap: wrap;
+  };
 `;
 
 export const ErrorText = styled.div`
   text-align: center;
+  margin: 2vw 0;
+  width: 60%;
+`;
+
+export const Image = styled.img`
+  width: 15vw;
+  
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 15%;
+  };
+
+  @media(max-width: 550px) {
+    width: 50%;
+  };
 `;
 
 export const StyledNavLink = styled(Link)`
@@ -42,4 +65,8 @@ export const StyledNavLink = styled(Link)`
     transform: scale(1.1);
     filter: brightness(150%);
   }
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    padding: 20px;
+  };
 `;

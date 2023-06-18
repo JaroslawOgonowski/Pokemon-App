@@ -7,6 +7,7 @@ interface ImagesProps {
 }
 
 export const Images = ({ pokeId }: ImagesProps) => {
+  
   return (
     <StyledImages>
       <Subtitle>Images</Subtitle>
@@ -83,7 +84,7 @@ export const Images = ({ pokeId }: ImagesProps) => {
       <ImageBox
         url1="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/"
         url2={null}
-        description="PC icon"
+        description={<div>PC Icon</div>}
         pokeId={pokeId}
         format=".png"
       />

@@ -32,19 +32,24 @@ export const SinglePokemonPage = () => {
   const searchParams = new URLSearchParams(location.search);
   const pokeId = searchParams.get("pokeId");
 
-  const { isLoading, isError, data } = useQuery<SoloPokemonInfo>(["soloPokemon", { pokeId }], () =>
-    fetchSoloPokemon(pokeId)
-  );
-
   const { isLoading: isLoadingInfo, isError: isErrorInfo, data: dataInfo } = useQuery<SoloPokemonInfo>(
     ["soloPokemonInfo", { pokeId }],
     () => fetchSoloPokemonInfo(pokeId)
   );
-  const evolutionChainURL = dataInfo?.evolution_chain?.url;
 
+  const evolutionChainURL = dataInfo?.evolution_chain?.url || null;
   const { isLoading: isLoadingEvolution, isError: isErrorEvolution, data: dataEvolution } = useQuery<PokemonEvolve | undefined>(
     ["soloPokemonEvolution", { evolutionChainURL }],
-    async () => fetchSoloPokemonEvolution(`${evolutionChainURL}`)
+    async () => {
+      if (evolutionChainURL !== null) {
+        return fetchSoloPokemonEvolution(evolutionChainURL);
+      }
+      return null;
+    }
+  );
+
+  const { isLoading, isError, data } = useQuery<SoloPokemonInfo>(["soloPokemon", { pokeId }], () =>
+    fetchSoloPokemon(pokeId)
   );
 
   const color = dataInfo?.color?.name;
@@ -62,9 +67,9 @@ export const SinglePokemonPage = () => {
         color={color}
         pokemonTypes={data?.types || []}
         pokemonStats={data?.stats || []}
-        pokemonEvolution={dataEvolution ? dataEvolution : undefined}
+        pokemonEvolution={dataEvolution}
       />
       <Images pokeId={pokeId} />
     </StyledPokemonPage>
   );
-}
+};

@@ -44,12 +44,14 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
                 <Type
                   typeBackgroundColor={getBackgroundColorByType(object.type.name)}
                   typeFontColor={getFontColorByType(object.type.name)}
-                  key={object.slot}>{object.type.name}
+                  key={object.slot}
+                >
+                  {object.type.name}
                 </Type>
               ))}
             </Types></Title>
           <Description>{description}</Description>
-          <Evolution pokemonEvolution={pokemonEvolution}/>
+          <Evolution pokemonEvolution={pokemonEvolution} />
         </TextBox>
         <Stats pokemonStats={pokemonStats} />
       </RightBox>

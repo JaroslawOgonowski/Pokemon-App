@@ -16,7 +16,7 @@ export const PokemonName = styled.div`
     margin-top: 22px;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    font-size: 20px;
+    font-size: 16px;
   };
 `;
 
@@ -34,7 +34,7 @@ export const PokemonId = styled.div`
     font-size: 20px;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    font-size: 22px;
+    font-size: 18px;
   };
 `;
 

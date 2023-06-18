@@ -1,13 +1,12 @@
 import { Container, Image, ImagesDescription, StyledImageBox } from "./styled"
 import { useState } from "react";
 interface ImageBoxProps {
-  url1: string |null;
+  url1: string | null;
   url2: string | null;
   description: object | string;
   pokeId: string | null;
   format: string;
 }
-
 
 export const ImageBox = ({ url1, url2, description, pokeId, format }: ImageBoxProps) => {
   const [imagesLoaded, setImagesLoaded] = useState(true);
@@ -15,8 +14,8 @@ export const ImageBox = ({ url1, url2, description, pokeId, format }: ImageBoxPr
   const handleImageError = () => {
     setImagesLoaded(false);
   };
-
   if (!imagesLoaded) {
+    console.clear()
     return null;
   }
 

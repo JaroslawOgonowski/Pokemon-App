@@ -15,8 +15,8 @@ export const Stats = ({ pokemonStats }: PokemonStatsProps) => {
   return (
     <StatsBox>
       {pokemonStats.map((statistic) => (
-        <FullBar>
-          <StatValue statvalue={statistic.base_stat} key={statistic.stat.name} />
+        <FullBar key={statistic.stat.name}>
+          <StatValue statvalue={statistic.base_stat} />
           {statistic.stat.name.toUpperCase()}: {statistic.base_stat}
         </FullBar>
       ))}

@@ -14,8 +14,10 @@ export const ImageBox = ({ url1, url2, description, pokeId, format }: ImageBoxPr
   const handleImageError = () => {
     setImagesLoaded(false);
   };
+
   if (!imagesLoaded) {
     console.clear()
+    setImagesLoaded(true)
     return null;
   }
 

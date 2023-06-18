@@ -28,7 +28,7 @@ export const PokemonName = styled.div`
     font-size: 3vw;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    font-size: 6vw;
+    font-size: 4vw;
   };
 `;
 
@@ -49,6 +49,12 @@ export const PokemonId = styled.div`
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 18px;
+    visibility: visible;
+    color: white;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 14px;
+    margin-left: 15%;
   };
 `;
 
@@ -61,6 +67,7 @@ export const Wrapper = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 0.1vw;
   border: 0.2vw solid ${(props) => props.dominantcolor};
   border-radius: 0.5vw;
@@ -70,6 +77,9 @@ export const Wrapper = styled(Link)`
   -moz-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
   box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
   filter: brightness(90%);
+  animation: TileAnimation 1s ease 0s 1 normal forwards;
+  visibility: ${({ inview }) => (inview ? "visible" : "hidden")};
+  animation: ${({ inview }) => (inview ? "TileAnimation 0.3s ease-in-out" : "none")};
 
   &:hover {
     transform: scale(1.05);
@@ -113,10 +123,14 @@ export const Wrapper = styled(Link)`
     height: auto;
   };
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {    
-    width: 85%;
-    height: auto;
-  };
+  @keyframes TileAnimation {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 `;
 
 export const PokemonImage = styled.img`
@@ -125,6 +139,7 @@ export const PokemonImage = styled.img`
   padding: 1vw;
   transition: 0.5s;
   margin-bottom: 20%;
+  margin-top: 10%;
 
   &:hover {
     animation: pokemonAnimation 5s ease 0s 1 normal forwards;

@@ -1,16 +1,22 @@
-import { Details, PokemonId, PokemonImage, PokemonName, Wrapper } from "./styled"
-import pokeball from "../SideBar/images/Poké_Ball_icon.png"
+import { Details, PokemonId, PokemonImage, PokemonName, Wrapper } from "./styled";
+import pokeball from "../SideBar/images/Poké_Ball_icon.png";
 import ColorThief from 'colorthief';
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+
 interface PokemonTileProps {
   id: number;
   name: string;
-  key: any;
 }
-export const PokemonTile = (props: PokemonTileProps) => {
-  const pokemonName = props.name.slice(0, 1).toUpperCase() + props.name.slice(1);
-  const realID = props.id + 1;
-  const [dominantcolor, setDominantColor] = useState('');
+
+export const PokemonTile = ({ id, name }: PokemonTileProps) => {
+  const pokemonName = name.slice(0, 1).toUpperCase() + name.slice(1);
+  const realID = id + 1;
+  const [dominantcolor, setDominantColor] = useState("");
+  const [ref, inview] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   useEffect(() => {
     const imageUrl = realID < 1011
@@ -27,13 +33,14 @@ export const PokemonTile = (props: PokemonTileProps) => {
     image.onload = () => {
       const colorThief = new ColorThief();
       const color = colorThief.getColor(image);
-      const dominantColor = `rgb(${color.join(',')})`;
+      const dominantColor = `rgb(${color.join(",")})`;
       setDominantColor(dominantColor);
     };
     image.src = imageUrl;
   };
+
   return (
-    <Wrapper dominantcolor={dominantcolor} to={`/pokemonDetails?pokeId=${realID}`}>
+    <Wrapper ref={ref} dominantcolor={dominantcolor} to={`/pokemonDetails?pokeId=${realID}`} inview={inview ? "true" : undefined}>
       {realID < 1011 ? (
         <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`} />
       ) : (

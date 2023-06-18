@@ -13,7 +13,7 @@ export const SideBar: FC<SideBarProps> = ({ sideBarText }) => {
 return(
   <StyledSideBar>
   {sideBarText.map(object=>
-    <ListItem key={object.link}><StyledA href={object.link}><LinkText>{object.name}</LinkText></StyledA></ListItem>
+    <ListItem key={object.name}><StyledA href={object.link}><LinkText>{object.name}</LinkText></StyledA></ListItem>
   )}  
   </StyledSideBar>
 )

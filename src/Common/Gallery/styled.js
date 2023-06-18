@@ -4,7 +4,7 @@ export const GalleryTitle = styled.h2`
   width: 100%;
   font-size: 3vw;
   font-family: 'Righteous', cursive;
-  color: #0f0e0eeb;
+  color: ${({ theme }) => theme.color.titleFontColor};
   text-align: center;
   margin: 2vw 0;
   
@@ -36,7 +36,7 @@ export const StyledGallery = styled.div`
   
 const BaseButton = styled.button`
   cursor: pointer;
-  background-color: #040119dc;
+  background-color: #0401199e;
   color: white;
   margin-top: 6vw;
   position: sticky;
@@ -54,6 +54,7 @@ const BaseButton = styled.button`
   }
 
   &:disabled{
+    cursor: not-allowed;
     background-color: #d3d2dd75;
     &:hover{
       transform: scale(1.0);

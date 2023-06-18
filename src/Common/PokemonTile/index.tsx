@@ -33,7 +33,7 @@ export const PokemonTile = (props: PokemonTileProps) => {
     image.src = imageUrl;
   };
   return (
-    <Wrapper dominantColor={dominantcolor} to={`/pokemonDetails?pokeId=${realID}`}>
+    <Wrapper dominantcolor={dominantcolor} to={`/pokemonDetails?pokeId=${realID}`}>
       {realID < 1011 ? (
         <PokemonImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`} />
       ) : (

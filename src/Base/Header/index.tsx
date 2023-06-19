@@ -10,7 +10,7 @@ export const Header = () => {
         </LogoLink>
         <StyledNavigation>
           <StyledNavLink to="/pokemon">Pokémon</StyledNavLink>
-          <StyledNavLink to="/myteam">MyTeam</StyledNavLink>
+          <StyledNavLink to="/Abilities">Abilities</StyledNavLink>
           <StyledNavLink to="/areas">Areas</StyledNavLink>
         </StyledNavigation>
       </StyledHeader>

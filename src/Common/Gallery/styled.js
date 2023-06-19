@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const TopMarker = styled.div`
+position: relative;
+top: -10vh;
+
+@media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  top: -13vh;
+  };
+`;
+
 export const GalleryTitle = styled.h2`
   width: 100%;
   font-size: 3vw;

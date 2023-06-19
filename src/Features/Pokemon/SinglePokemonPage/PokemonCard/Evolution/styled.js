@@ -25,7 +25,8 @@ export const EvolutionBox = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  gap: 2vw;
+  gap: 0;
+  margin-left: 4vw;
 `;
 
 export const StyledLink = styled(Link)`

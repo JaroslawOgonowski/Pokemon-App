@@ -1,3 +1,5 @@
+import { readableColor } from "polished";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -46,6 +48,12 @@ export const Title = styled.h1`
 export const Description = styled.div`
   font-size: 1.3vw;
   color: #262626;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1vw;
+  margin: 1vw 0;
+  font-family: 'Righteous', cursive;
 `;
 
 export const Types = styled.div`
@@ -63,4 +71,27 @@ export const Type = styled.div`
   -webkit-box-shadow: 0vw 0vw 0.6959vw 0.1099vw ${(props) => props.typeBackgroundColor};
   -moz-box-shadow: 0vw 0vw 0.6959vw 0.1099vw rgba${(props) => props.typeBackgroundColor};
   box-shadow: 0vw 0vw 0.6959vw 0.1099vw rgba${(props) => props.typeBackgroundColor};
+`;
+
+export const Generation = styled.div`
+font-size: 1.2vw;
+font-weight: 700;
+`;
+
+export const Ability = styled(Link)`
+  text-decoration: none;
+  font-family: 'Righteous', cursive;
+  padding: 0.5vw 2vw;
+  border-radius: 1vw;
+  font-size: 1.3vw;
+  -webkit-box-shadow: 0vw 0vw 0.6959vw 0.1099vw  ${(props) => props.color};
+  -moz-box-shadow: 0vw 0vw 0.6959vw 0.1099vw  ${(props) => props.color};
+  box-shadow: 0vw 0vw 0.6959vw 0.1099vw  ${(props) => props.color};
+  background-color: ${(props) => props.color};
+  color: ${(props) => readableColor(props.color, '#FFFFFF', '#000000')};
+  transition: 300ms;
+
+  &:hover{
+    transform: scale(1.1);
+    }
 `;

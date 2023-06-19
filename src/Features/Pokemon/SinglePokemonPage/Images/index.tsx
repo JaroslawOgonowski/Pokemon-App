@@ -10,7 +10,7 @@ export const Images = ({ pokeId }: ImagesProps) => {
   
   return (
     <StyledImages>
-      <Subtitle>Images</Subtitle>
+      <Subtitle>Sprites</Subtitle>
       <ImageBox
         url1="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
         url2="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/"

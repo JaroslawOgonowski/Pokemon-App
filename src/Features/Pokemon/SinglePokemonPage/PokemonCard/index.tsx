@@ -1,7 +1,28 @@
 import { Evolution, PokemonEvolve } from "./Evolution";
 import { PokemonStat, Stats } from "./Stats";
-import { CardImage, Description, RightBox, TextBox, Title, Type, Types, Wrapper } from "./styled";
+import { Ability, CardImage, Description, Generation, RightBox, TextBox, Title, Type, Types, Wrapper } from "./styled";
 import typesData from "./types.json";
+
+export interface Generation {
+  name: string;
+}
+
+export interface Habitat {
+  name: string;
+}
+
+export interface Abilities {
+  map(arg0: (ability: { ability: { name: any; }; }) => any): any;
+  length: number;
+  [index: number]: {
+    ability: {
+      name: string;
+      url: string;
+    };
+    is_hidden: boolean;
+    slot: number;
+  };
+}
 
 export interface PokemonType {
   slot: number;
@@ -19,26 +40,30 @@ interface PokemonCardProps {
   pokemonTypes: PokemonType[];
   pokemonStats: PokemonStat[];
   pokemonEvolution: PokemonEvolve | undefined;
+  generation: Generation | undefined;
+  habitat: Habitat | undefined;
+  abilities: Abilities;
 }
 
-export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTypes, pokemonStats, pokemonEvolution }: PokemonCardProps) => {
+export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTypes, pokemonStats, pokemonEvolution, generation, habitat, abilities }: PokemonCardProps) => {
 
   function getBackgroundColorByType(typeName: string): string | undefined {
     const foundType = typesData.find((type) => type.name === typeName);
-    return foundType?.backgroundColor
-  };
+    return foundType?.backgroundColor;
+  }
 
   function getFontColorByType(typeName: string): string | undefined {
     const foundType = typesData.find((type) => type.name === typeName);
-    return foundType?.fontColor || "black"
-  };
+    return foundType?.fontColor || "black";
+  }
 
   return (
     <Wrapper>
       <CardImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`} />
       <RightBox color={color}>
         <TextBox>
-          <Title>#{pokeId} {pokemonName}
+          <Title>
+            #{pokeId} {pokemonName}
             <Types>
               {pokemonTypes.map((object) => (
                 <Type
@@ -49,13 +74,24 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
                   {object.type.name}
                 </Type>
               ))}
-            </Types></Title>
+            </Types>
+          </Title>
+          <Generation>{generation?.name.toUpperCase()}</Generation>
           <Description>{description}</Description>
+          <Description>Habitat: {habitat !== null ? habitat?.name.toUpperCase() : "Unknown"}</Description>
+          <Description>
+            Abilities:
+            {abilities.map((object) =>
+              <Ability key={`abilities${object.ability.name}`} color={color}>
+                {object.ability.name.toUpperCase()}
+              </Ability>
+            )}
+          </Description>
           <Evolution pokemonEvolution={pokemonEvolution} />
+          
         </TextBox>
         <Stats pokemonStats={pokemonStats} />
       </RightBox>
-
     </Wrapper>
   );
 };

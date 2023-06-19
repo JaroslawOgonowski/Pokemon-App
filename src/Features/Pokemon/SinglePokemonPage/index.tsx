@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { fetchSoloPokemon, fetchSoloPokemonEvolution, fetchSoloPokemonInfo } from "../../../Core/API";
 import { StyledPokemonPage } from "./styled";
 import { Images } from "./Images";
-import { PokemonCard, PokemonType } from "./PokemonCard";
+import { Abilities, Generation, Habitat, PokemonCard, PokemonType } from "./PokemonCard";
 import { PokemonStat } from "./PokemonCard/Stats";
 import { PokemonEvolve } from "./PokemonCard/Evolution";
 import { Loader } from "../../../Base/Loader";
@@ -21,6 +21,9 @@ interface SoloPokemonInfo {
     url: string;
   };
   pokemonEvolution: PokemonEvolve | undefined;
+  generation: Generation | undefined;
+  habitat: Habitat | undefined;
+  abilities: Abilities;
 }
 
 export const SinglePokemonPage = () => {
@@ -56,7 +59,7 @@ export const SinglePokemonPage = () => {
 
   if (isLoading || isLoadingEvolution || isLoadingInfo) return <Loader />
   if (isError || isErrorEvolution || isErrorInfo) return <Error />
-  
+
   return (
     <StyledPokemonPage color={color}>
       <PokemonCard
@@ -67,6 +70,9 @@ export const SinglePokemonPage = () => {
         pokemonTypes={data?.types || []}
         pokemonStats={data?.stats || []}
         pokemonEvolution={dataEvolution}
+        generation={dataInfo?.generation}
+        habitat={dataInfo?.habitat}
+        abilities={data?.abilities}
       />
       <Images pokeId={pokeId} />
     </StyledPokemonPage>

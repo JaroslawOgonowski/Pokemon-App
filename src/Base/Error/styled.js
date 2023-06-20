@@ -2,14 +2,17 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ErrorPage = styled.article`
-  margin: 0 auto;
+  margin: 10vw auto 5vw auto;
   width: 90%;
   height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    margin-top: 100px;
+  };
 `;
 
 export const ErrorTitle = styled.h2`

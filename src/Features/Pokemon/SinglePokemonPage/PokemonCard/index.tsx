@@ -1,16 +1,14 @@
-import { Evolution, PokemonEvolve } from "./Evolution";
-import { PokemonStat, Stats } from "./Stats";
+import { PokemonCardProps } from "../singlePokemonInterfaces";
+import { Evolution } from "./Evolution";
+import {  Stats } from "./Stats";
 import { Ability, CardImage, Description, Generation, CardBox, TextBox, Title, Type, Types, Wrapper, TitleImage, Abilities } from "./styled";
 import typesData from "./types.json";
-
 export interface Generation {
   name: string;
 }
-
 export interface Habitat {
   name: string;
 }
-
 export interface Abilities {
   map(arg0: (ability: { ability: { name: string; }; }) => any): any;
   length: number;
@@ -21,26 +19,12 @@ export interface Abilities {
     };
   };
 }
-
 export interface PokemonType {
   slot: number;
   type: {
     name: string;
     url: string;
   };
-}
-
-interface PokemonCardProps {
-  pokeId: string | null;
-  pokemonName: string | undefined;
-  description: string | null;
-  color: string;
-  pokemonTypes: PokemonType[];
-  pokemonStats: PokemonStat[];
-  pokemonEvolution: PokemonEvolve | undefined;
-  generation: Generation | undefined;
-  habitat: Habitat | undefined;
-  abilities: Abilities;
 }
 
 export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTypes, pokemonStats, pokemonEvolution, generation, habitat, abilities }: PokemonCardProps) => {

@@ -28,6 +28,7 @@ export const CardBox = styled.div`
   -webkit-box-shadow: -21px 22px 58px -35px ${(props) => props.color};
   -moz-box-shadow: -21px 22px 58px -35px ${(props) => props.color};
   box-shadow: -21px 22px 58px -35px ${(props) => props.color};
+  animation: pokeCardAnimation 500ms ease;
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     width: 100%;
@@ -37,6 +38,17 @@ export const CardBox = styled.div`
     -moz-box-shadow: none;
     box-shadow: none;
   };
+
+  @keyframes pokeCardAnimation {
+	0% {
+		opacity: 0;
+		transform: translateX(1000px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 `;
 
 export const TitleImage = styled.img`

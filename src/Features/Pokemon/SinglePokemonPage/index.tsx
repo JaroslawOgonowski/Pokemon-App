@@ -3,28 +3,10 @@ import { useLocation } from "react-router-dom";
 import { fetchSoloPokemon, fetchSoloPokemonEvolution, fetchSoloPokemonInfo } from "../../../Core/API";
 import { StyledPokemonPage } from "./styled";
 import { Images } from "./Images";
-import { Abilities, Generation, Habitat, PokemonCard, PokemonType } from "./PokemonCard";
-import { PokemonStat } from "./PokemonCard/Stats";
-import { PokemonEvolve } from "./PokemonCard/Evolution";
+import { PokemonCard } from "./PokemonCard";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
-interface SoloPokemonInfo {
-  data: any[];
-  dataInfo: any[];
-  results: any[];
-  name: string;
-  flavor_text_entries: any[];
-  color: any;
-  types: PokemonType[];
-  stats: PokemonStat[];
-  evolution_chain: {
-    url: string;
-  };
-  pokemonEvolution: PokemonEvolve | undefined;
-  generation: Generation | undefined;
-  habitat: Habitat | undefined;
-  abilities: Abilities;
-}
+import { PokemonEvolve, SoloPokemonInfo } from "./singlePokemonInterfaces";
 
 export const SinglePokemonPage = () => {
   const location = useLocation();

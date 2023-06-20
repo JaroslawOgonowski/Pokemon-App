@@ -1,13 +1,7 @@
+import { PokemonEvolutionProps } from "../../singlePokemonInterfaces";
 import { EvolutionBox, EvolutionTitle, MultiEvolutionLayout, Next, PokemonEvolutionName, StyledEvolutinImage, StyledEvolution, StyledLink } from "./styled";
 
-export interface PokemonEvolve {
-  item: any | undefined;
-  chain: any;
-}
 
-interface PokemonEvolutionProps {
-  pokemonEvolution: PokemonEvolve | undefined;
-}
 
 export const Evolution = ({ pokemonEvolution }: PokemonEvolutionProps) => {
   const getValue = (url: string, returnNumber: boolean) => {

@@ -1,13 +1,5 @@
+import { PokemonStatsProps } from "../../singlePokemonInterfaces";
 import { FullBar, StatValue, StatsBox, TotalStatValue } from "./styled";
-export interface PokemonStat {
-  base_stat: number;
-  stat: {
-    name: string;
-  };
-}
-interface PokemonStatsProps {
-  pokemonStats: PokemonStat[];
-}
 
 export const Stats = ({ pokemonStats }: PokemonStatsProps) => {
   const values = pokemonStats.map(obiect => obiect.base_stat)

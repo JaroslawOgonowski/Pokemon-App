@@ -50,7 +50,7 @@ export const Moves = ({ moves }: MovesProps) => {
               {capitalizedMoveName}
               <div>Level Learned At: {move.version_group_details[0].level_learned_at}</div>
               <div>Move Learn Method: {move.version_group_details[0].move_learn_method.name}</div>
-              <div>Move Learn Method URL: {move.version_group_details[0].move_learn_method.url}</div>
+              <div>Move URL: {move.move.url}</div>
             </div>
           );
         })}

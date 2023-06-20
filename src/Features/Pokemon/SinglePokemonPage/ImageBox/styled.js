@@ -19,7 +19,13 @@ margin-bottom: 1vw;
 
 export const Image = styled.img`
 height: 8vw;
-transition: 500ms;
+
+@media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  height: 80px;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 60px;
+  };
 `;
 
 export const ImagesDescription = styled.div`
@@ -27,4 +33,14 @@ font-size: 1.3vw;
 font-weight: 600;
 color: #262626;
 text-align: center;
+
+@media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 1.5vw;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 2.5vw;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 3vw;
+  };
 `;

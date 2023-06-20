@@ -1,6 +1,5 @@
 import { ImageBox } from "../ImageBox";
-import { Subtitle } from "../styled";
-import { StyledImages } from "./styled";
+import { StyledImages, Subtitle } from "./styled";
 
 interface ImagesProps {
   pokeId: string | null;

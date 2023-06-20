@@ -20,11 +20,3 @@ export const StyledPokemonPage = styled.div`
 
 `;
 
-export const Subtitle = styled.h2`
-  font-family: 'Righteous', cursive;
-  text-align: center;
-  width: 100%;
-  font-size: 3vw;
-  color: #100414ce;
-`;
-

@@ -38,7 +38,6 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
     const foundType = typesData.find((type) => type.name === typeName);
     return foundType?.fontColor || "black";
   }
-
   return (
     <Wrapper>
       <CardImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`} />

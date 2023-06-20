@@ -7,6 +7,7 @@ import { PokemonCard } from "./PokemonCard";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { PokemonEvolve, SoloPokemonInfo } from "./singlePokemonInterfaces";
+import { Moves } from "./Moves";
 
 export const SinglePokemonPage = () => {
   const location = useLocation();
@@ -39,8 +40,8 @@ export const SinglePokemonPage = () => {
   );
   const description = englishFlavorText?.flavor_text.replace(/\f/g, " ");
 
-  if (isLoading || isLoadingEvolution || isLoadingInfo) return <Loader />
-  if (isError || isErrorEvolution || isErrorInfo) return <Error />
+  if (isLoading || isLoadingEvolution || isLoadingInfo) return <Loader />;
+  if (isError || isErrorEvolution || isErrorInfo) return <Error />;
 
   return (
     <StyledPokemonPage color={color}>
@@ -56,6 +57,7 @@ export const SinglePokemonPage = () => {
         habitat={dataInfo?.habitat}
         abilities={data?.abilities}
       />
+      <Moves moves={data?.moves} />
       <Images pokeId={pokeId} />
     </StyledPokemonPage>
   );

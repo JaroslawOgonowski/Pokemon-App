@@ -1,3 +1,4 @@
+import { MoveEntry } from "./Moves";
 import { Abilities, Generation, Habitat, PokemonType } from "./PokemonCard";
 
 export interface SoloPokemonInfo {
@@ -15,6 +16,7 @@ export interface SoloPokemonInfo {
   generation: Generation | undefined;
   habitat: Habitat | undefined;
   abilities: Abilities;
+  moves: MoveEntry[] | undefined;
 };
 
 export interface PokemonCardProps {

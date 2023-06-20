@@ -1,6 +1,6 @@
 import { Evolution, PokemonEvolve } from "./Evolution";
 import { PokemonStat, Stats } from "./Stats";
-import { Ability, CardImage, Description, Generation, CardBox, TextBox, Title, Type, Types, Wrapper, TitleImage } from "./styled";
+import { Ability, CardImage, Description, Generation, CardBox, TextBox, Title, Type, Types, Wrapper, TitleImage, Abilities } from "./styled";
 import typesData from "./types.json";
 
 export interface Generation {
@@ -12,15 +12,13 @@ export interface Habitat {
 }
 
 export interface Abilities {
-  map(arg0: (ability: { ability: { name: any; }; }) => any): any;
+  map(arg0: (ability: { ability: { name: string; }; }) => any): any;
   length: number;
   [index: number]: {
     ability: {
       name: string;
       url: string;
     };
-    is_hidden: boolean;
-    slot: number;
   };
 }
 
@@ -82,11 +80,13 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
           <Description>Habitat: {habitat !== null ? habitat?.name.toUpperCase() : "Unknown"}</Description>
           <Description>
             Abilities:
-            {abilities.map((object) =>
-              <Ability key={`abilities${object.ability.name}`} color={color}>
-                {object.ability.name.toUpperCase()}
-              </Ability>
-            )}
+            <Abilities>
+              {abilities.map((object) =>
+                <Ability key={`abilities${object.ability.name}`} color={color}>
+                  {object.ability.name.toUpperCase()}
+                </Ability>
+              )}
+            </Abilities>
           </Description>
           <Evolution pokemonEvolution={pokemonEvolution} />
         </TextBox>

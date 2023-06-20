@@ -6,14 +6,23 @@ export const StyledEvolution = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: 96%;
+  width: 100%;
   margin-bottom: 2vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  };
 `;
 
 export const EvolutionTitle = styled.h2`
   font-family: 'Righteous', cursive;
   font-size: 1.8vw;
   text-align: center;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 20px;
+  };
 `;
 
 export const StyledEvolutinImage = styled.img`
@@ -24,6 +33,10 @@ export const StyledEvolutinImage = styled.img`
     height: 80px;
     width: 80px;
   };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    height: 60px;
+    width: 60px;
+  };
 `;
 
 export const EvolutionBox = styled.div`
@@ -32,6 +45,10 @@ export const EvolutionBox = styled.div`
   align-content: center;
   gap: 0;
   margin-left: 4vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    margin-left: 0;
+  };
 `;
 
 export const StyledLink = styled(Link)`
@@ -55,6 +72,10 @@ export const PokemonEvolutionName = styled.div`
   text-align: center;
   text-decoration: none;
   color: black;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 1.5vw;
+  };
 `;
 
 export const Next = styled.div`

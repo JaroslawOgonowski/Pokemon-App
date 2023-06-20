@@ -33,6 +33,9 @@ export const CardBox = styled.div`
     width: 100%;
     flex-wrap: wrap;
     gap: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   };
 `;
 
@@ -75,6 +78,7 @@ export const Title = styled.h1`
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 26px;
+    justify-content: space-between;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 17px;
@@ -106,6 +110,11 @@ export const Types = styled.div`
   margin-left: 1vw;
   display: flex;
   gap: 1vw;
+  flex-wrap: wrap;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    flex-direction: column;
+  };
 `;
 
 export const Type = styled.div`
@@ -145,10 +154,19 @@ font-weight: 700;
     font-size: 11px;
   };
 `;
+export const Abilities = styled.div`
+display: flex;
+flex-wrap: wrap;
+
+@media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    gap:8px;
+  };
+`;
 
 export const Ability = styled(Link)`
   text-decoration: none;
   font-family: 'Righteous', cursive;
+  margin: 0.5vw;
   padding: 0.5vw 2vw;
   border-radius: 1vw;
   font-size: 1.3vw;

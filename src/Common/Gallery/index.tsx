@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GalleryBox, GalleryTitle, StyledGallery, ButtonBox, BaseButton, FastButton, TopMarker } from "./styled";
@@ -8,6 +8,7 @@ import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.sv
 import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg";
 import { Loader } from "../../Base/Loader";
 import { Error } from "../../Base/Error";
+import { queryClient } from "../..";
 
 interface Pokemon {
   name: string;
@@ -74,12 +75,21 @@ export const Gallery = () => {
     () => fetchGallery(limit, offset)
   );
 
+  useEffect(() => {
+    setTimeout(() => {
+      queryClient.prefetchQuery(
+        ["gallery", { limit: limit, offset: offset + 100 }],
+        () => fetchGallery(limit, offset)
+      );
+    }, 300)
+  }, [offset, queryClient]);
+
   if (isLoading) return <Loader />;
   if (isError) return <Error />;
 
   return data ? (
     <>
-      <TopMarker ref={topGalleryRef}/>
+      <TopMarker ref={topGalleryRef} />
       <GalleryTitle >Hall of fame</GalleryTitle>
       <GalleryBox>
         <ButtonBox>

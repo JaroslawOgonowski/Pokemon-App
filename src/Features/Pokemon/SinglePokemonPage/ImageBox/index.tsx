@@ -16,7 +16,7 @@ export const ImageBox = ({ url1, url2, description, pokeId, format }: ImageBoxPr
     setImagesLoaded(false);
     setTimeout(() => {
       console.clear();
-    }, 4000);
+    }, 3000);
   };
 
   if (!imagesLoaded) {

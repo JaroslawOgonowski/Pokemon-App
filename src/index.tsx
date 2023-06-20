@@ -6,7 +6,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
   defaultOptions:{
     queries:{
       staleTime: 1000 * 600

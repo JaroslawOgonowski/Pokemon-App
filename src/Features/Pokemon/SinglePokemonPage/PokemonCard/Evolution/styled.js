@@ -19,6 +19,11 @@ export const EvolutionTitle = styled.h2`
 export const StyledEvolutinImage = styled.img`
   height: 6vw;
   width: 6vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    height: 80px;
+    width: 80px;
+  };
 `;
 
 export const EvolutionBox = styled.div`

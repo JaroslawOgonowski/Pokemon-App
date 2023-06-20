@@ -1,6 +1,6 @@
 import { Evolution, PokemonEvolve } from "./Evolution";
 import { PokemonStat, Stats } from "./Stats";
-import { Ability, CardImage, Description, Generation, RightBox, TextBox, Title, Type, Types, Wrapper } from "./styled";
+import { Ability, CardImage, Description, Generation, CardBox, TextBox, Title, Type, Types, Wrapper, TitleImage } from "./styled";
 import typesData from "./types.json";
 
 export interface Generation {
@@ -60,7 +60,8 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
   return (
     <Wrapper>
       <CardImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`} />
-      <RightBox color={color}>
+      <CardBox color={color}>
+        <TitleImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`} />
         <TextBox>
           <Title>
             #{pokeId} {pokemonName}
@@ -88,10 +89,9 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
             )}
           </Description>
           <Evolution pokemonEvolution={pokemonEvolution} />
-          
         </TextBox>
         <Stats pokemonStats={pokemonStats} />
-      </RightBox>
+      </CardBox>
     </Wrapper>
   );
 };

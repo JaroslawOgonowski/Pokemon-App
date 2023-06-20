@@ -14,6 +14,7 @@ export const Stats = ({ pokemonStats }: PokemonStatsProps) => {
   const statsSum = values.reduce((a, b) => a + b, 0)
   return (
     <StatsBox>
+      Stats:
       {pokemonStats.map((statistic) => (
         <FullBar key={statistic.stat.name}>
           <StatValue statvalue={statistic.base_stat} />

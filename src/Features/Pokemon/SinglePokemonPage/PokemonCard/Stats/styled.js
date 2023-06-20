@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const StatsBox = styled.div`
   font-family: 'Righteous', cursive;
-  font-size: 1vw;
+  font-size: 2vw;
   margin: 1vw;
   width: 30%;
   display: flex;
   flex-direction: column;
   gap: 0.5vw;
+  text-align: center;
 `;
 
 export const StatValue = styled.div`
@@ -16,6 +17,7 @@ export const StatValue = styled.div`
   margin-bottom: 0.5vw;
   background-color: red;
   border-radius: 0.3vw;
+  font-size: 1vw;
 `;
 
 export const FullBar = styled.div`
@@ -24,6 +26,7 @@ export const FullBar = styled.div`
   border: 1px solid black;
   text-align: center;
   border-radius: 0.1vw;
+  font-size: 1vw;
 
   &:first-child {
     ${StatValue} {

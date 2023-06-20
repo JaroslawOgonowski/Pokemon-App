@@ -9,6 +9,10 @@ export const StatsBox = styled.div`
   flex-direction: column;
   gap: 0.5vw;
   text-align: center;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    width: 100%;
+  };
 `;
 
 export const StatValue = styled.div`
@@ -18,6 +22,10 @@ export const StatValue = styled.div`
   background-color: red;
   border-radius: 0.3vw;
   font-size: 1vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    height: 12px;
+  };
 `;
 
 export const FullBar = styled.div`
@@ -27,6 +35,17 @@ export const FullBar = styled.div`
   text-align: center;
   border-radius: 0.1vw;
   font-size: 1vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 1.5vw;
+    padding: 4px;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 2.0vw;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 2.5vw;
+  };
 
   &:first-child {
     ${StatValue} {
@@ -92,4 +111,16 @@ export const TotalStatValue = styled.div`
   -webkit-box-shadow: 0vw 0vw 0.6959vw 0.1099vw rgba(51, 3, 48, 1);
   -moz-box-shadow: 0vw 0vw 0.6959vw 0.1099vw rgba(51, 3, 48, 1);
   box-shadow: 0vw 0vw 0.6959vw 0.1099vw rgba(51, 3, 48, 1);
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 1.5vw;
+    padding: 4px;
+    margin-top: 2px;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 2.0vw;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 2.5vw;
+  };
 `;

@@ -13,6 +13,10 @@ export const StyledEvolution = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
   };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    margin-left: -20%;
+  };
+
 `;
 
 export const EvolutionTitle = styled.h2`
@@ -75,6 +79,12 @@ export const PokemonEvolutionName = styled.div`
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 1.5vw;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 2vw;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 2.5vw;
   };
 `;
 

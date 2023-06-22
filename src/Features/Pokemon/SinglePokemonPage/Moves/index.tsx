@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export interface MoveLearnMethod {
   name: string;
   url: string;
@@ -29,17 +31,44 @@ export interface MovesProps {
 }
 
 export const Moves = ({ moves }: MovesProps) => {
-  console.log(moves);
+  const generations = ["black-white", "heartgold-soulsilver", "x-y"];
+  const [generationIndex, setGenerationIndex] = useState(1);
+
+  const handlePrevGen = () => {
+    if (generationIndex === 0) {
+      setGenerationIndex(generations.length - 1);
+    } else {
+      setGenerationIndex(generationIndex - 1);
+    }
+  };
+
+  const handleNextGen = () => {
+    if (generationIndex === generations.length - 1) {
+      setGenerationIndex(0);
+    } else {
+      setGenerationIndex(generationIndex + 1);
+    }
+  };
+
+  const generation = generations[generationIndex];
+
+  const getGenerationTitle = (index: number) => {
+    const romanNumerals = ["I", "II", "III"];
+    return `Generation ${romanNumerals[index]} ${generations[generationIndex]}`;
+  };
+
   const filteredMoves = moves?.filter((move) =>
     move.version_group_details.some(
-      (detail) => detail.version_group.name === "red-blue"
+      (detail) => detail.version_group.name === generation
     )
   );
 
   return (
     <>
       <h2>Moves</h2>
-      ⬅<div>Generation I</div>➡
+      <button onClick={handlePrevGen}>Prev gen ⬅</button>
+      <div>{getGenerationTitle(generationIndex)}</div>
+      <button onClick={handleNextGen}>Next gen ➡</button>
       <div>
         {filteredMoves?.map((move) => {
           const capitalizedMoveName =

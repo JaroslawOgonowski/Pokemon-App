@@ -29,33 +29,40 @@ export interface MoveEntry {
 export interface MovesProps {
   moves: MoveEntry[] | undefined;
 }
-
 export const Moves = ({ moves }: MovesProps) => {
-  const generations = ["black-white", "heartgold-soulsilver", "x-y"];
-  const [generationIndex, setGenerationIndex] = useState(1);
+  const games = moves?.reduce(
+    (groups: string[], move) => {
+      move.version_group_details.forEach((detail) => {
+        if (!groups.includes(detail.version_group.name)) {
+          groups.push(detail.version_group.name);
+        }
+      });
+      return groups;
+    },
+    []
+  );
+  
+  const [gameIndex, setGameIndex] = useState(1);
 
   const handlePrevGen = () => {
-    if (generationIndex === 0) {
-      setGenerationIndex(generations.length - 1);
+    if (gameIndex === 0) {
+      setGameIndex(games?.length ? games.length - 1 : 0);
     } else {
-      setGenerationIndex(generationIndex - 1);
+      setGameIndex(gameIndex - 1);
     }
   };
 
   const handleNextGen = () => {
-    if (generationIndex === generations.length - 1) {
-      setGenerationIndex(0);
+    if (gameIndex === (games?.length ? games.length - 1 : 0)) {
+      setGameIndex(0);
     } else {
-      setGenerationIndex(generationIndex + 1);
+      setGameIndex(gameIndex + 1);
     }
   };
 
-  const generation = generations[generationIndex];
+  const generation = games?.[gameIndex];
 
-  const getGenerationTitle = (index: number) => {
-    const romanNumerals = ["I", "II", "III"];
-    return `Generation ${romanNumerals[index]} ${generations[generationIndex]}`;
-  };
+  const title = generation ? generation.charAt(0).toUpperCase() + generation.slice(1).replace(/-/g, ", ") : "";
 
   const filteredMoves = moves?.filter((move) =>
     move.version_group_details.some(
@@ -66,9 +73,9 @@ export const Moves = ({ moves }: MovesProps) => {
   return (
     <>
       <h2>Moves</h2>
-      <button onClick={handlePrevGen}>Prev gen ⬅</button>
-      <div>{getGenerationTitle(generationIndex)}</div>
-      <button onClick={handleNextGen}>Next gen ➡</button>
+      <button onClick={handlePrevGen}>Previous game ⬅</button>
+      <h3>{title}</h3>
+      <button onClick={handleNextGen}>Next game ➡</button>
       <div>
         {filteredMoves?.map((move) => {
           const capitalizedMoveName =

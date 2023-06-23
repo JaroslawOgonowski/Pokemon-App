@@ -8,7 +8,6 @@ import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.sv
 import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg";
 import { Loader } from "../../Base/Loader";
 import { Error } from "../../Base/Error";
-import { queryClient } from "../..";
 
 interface Pokemon {
   name: string;
@@ -74,15 +73,6 @@ export const Gallery = () => {
     ["gallery", { limit: limit, offset: offset }],
     () => fetchGallery(limit, offset)
   );
-
-  useEffect(() => {
-    setTimeout(() => {
-      queryClient.prefetchQuery(
-        ["gallery", { limit: limit, offset: offset + 100 }],
-        () => fetchGallery(limit, offset)
-      );
-    }, 300)
-  }, [offset, queryClient]);
 
   if (isLoading) return <Loader />;
   if (isError) return <Error />;

@@ -48,3 +48,42 @@ export const GameTitle = styled.h3`
   };
 
 `;
+
+export const Table = styled.table`
+  width: 96%;
+  border-collapse: collapse;
+`;
+
+export const TableRow = styled.tr`
+ 
+
+  &:nth-child(odd) {
+    background-color: rgba(229, 232, 207, 0.809);
+  }; 
+  
+  &:hover{
+    background-color: rgba(117, 196, 78, 0.705);
+  }
+`;
+
+export const TableHeader = styled.th`
+border: 1px solid black;
+color: white;
+height: 3.2vw;
+background-color: rgba(25, 23, 23, 0.927);
+font-size: 1.2vw;
+  font-family: 'Righteous', cursive;
+  letter-spacing: 0.1vw;
+`;
+
+export const TableCell = styled.td`
+border: 1px solid black;
+height: 2.5vw;
+padding: 0.2vw;
+font-weight: 600;
+`;
+
+
+
+
+

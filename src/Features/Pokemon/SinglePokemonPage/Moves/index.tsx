@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { MovesProps } from "./movesInterface";
 import { TitleBox } from "../../../../Common/Title/styled";
 import { Subtitle } from "../Images/styled";
-import { Button, ButtonText, GameTitle } from "./styled";
+import { Button, ButtonText, GameTitle, Table, TableCell, TableHeader, TableRow } from "./styled";
 
 export const Moves = ({ moves }: MovesProps) => {
 
@@ -65,31 +65,31 @@ export const Moves = ({ moves }: MovesProps) => {
         <GameTitle>{title}</GameTitle>
         <Button onClick={handleNextGen}><ButtonText>Next game</ButtonText>➡</Button>
       </TitleBox>
-      <table>
+      <Table>
         <thead>
-          <tr>
-            <th>Move name</th>
-            <th>Learn method</th>
-            <th>Level</th>
-            <th>Details</th>
-          </tr>
+          <TableRow>
+            <TableHeader>Move name</TableHeader>
+            <TableHeader>Learn method</TableHeader>
+            <TableHeader>Level</TableHeader>
+            <TableHeader>Details</TableHeader>
+          </TableRow>
         </thead>
         <tbody>
           {filteredMoves?.map((move) => {
             const moveName = `${move.move.name.charAt(0).toUpperCase()}${move.move.name.slice(1)}`;
             return (
-              <tr key={move.move.name}>
-                <td>{moveName}</td>
-                <td>{move.version_group_details[0].move_learn_method.name}</td>
-                <td>{move.version_group_details[0].level_learned_at}</td>
-                <td>
+              <TableRow key={move.move.name}>
+                <TableCell>{moveName}</TableCell>
+                <TableCell>{move.version_group_details[0].move_learn_method.name}</TableCell>
+                <TableCell>{move.version_group_details[0].level_learned_at}</TableCell>
+                <TableCell>
                   <Link to={`move/details/id=${move.move.url}`}>Details</Link>
-                </td>
-              </tr>
+                </TableCell>
+              </TableRow>
             );
           })}
         </tbody>
-      </table>
+      </Table>
     </>
   );
 };

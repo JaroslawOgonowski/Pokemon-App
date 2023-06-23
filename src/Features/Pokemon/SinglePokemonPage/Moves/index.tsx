@@ -61,6 +61,13 @@ export const Moves = ({ moves }: MovesProps) => {
       const learningMethodsOrder = ["egg", "machine", "level-up"];
       return learningMethodsOrder.indexOf(learningMethodA) - learningMethodsOrder.indexOf(learningMethodB);
     }), [moves, game]);
+    
+    const getmoveIdValue = (url: string) => {
+      const parts = url.split("/");
+      const numberPart = parts[parts.length - 2];
+      const lastValue = numberPart !== "" ? parseInt(numberPart) : 0;
+      return lastValue
+    }
 
   return (
     <>
@@ -90,7 +97,7 @@ export const Moves = ({ moves }: MovesProps) => {
                 <TableCell>{learnMethod}</TableCell>
                 <TableCell>{move.version_group_details[0].level_learned_at}</TableCell>
                 <TableCell>
-                  <Link to={`move/details/id=${move.move.url}`}>Details</Link>
+                  <Link to={`move/details/id=${getmoveIdValue(move.move.url)}`}>Details</Link>
                 </TableCell>
               </TableRow>
             );

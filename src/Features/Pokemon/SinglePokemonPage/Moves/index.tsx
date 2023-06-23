@@ -67,7 +67,8 @@ export const Moves = ({ moves }: MovesProps) => {
       <Subtitle>Moves</Subtitle>
       <TitleBox>
         <Button onClick={handlePrevGen}><ButtonText>Prev game</ButtonText>⬅</Button>
-        <GameTitle>{title}</GameTitle>
+        
+        <GameTitle>Game: <br/>{title}</GameTitle>
         <Button onClick={handleNextGen}><ButtonText>Next game</ButtonText>➡</Button>
       </TitleBox>
       <Table>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Button = styled.button`
   cursor: pointer;
@@ -55,35 +56,42 @@ export const Table = styled.table`
 `;
 
 export const TableRow = styled.tr`
- 
-
   &:nth-child(odd) {
     background-color: rgba(229, 232, 207, 0.809);
   }; 
   
   &:hover{
     background-color: rgba(117, 196, 78, 0.705);
-  }
+  };
 `;
 
 export const TableHeader = styled.th`
-border: 1px solid black;
-color: white;
-height: 3.2vw;
-background-color: rgba(25, 23, 23, 0.927);
-font-size: 1.2vw;
+  border: 1px solid black;
+  color: white;
+  height: 3.2vw;
+  background-color: rgba(25, 23, 23, 0.927);
+  font-size: 1.2vw;
   font-family: 'Righteous', cursive;
   letter-spacing: 0.1vw;
 `;
 
 export const TableCell = styled.td`
-border: 1px solid black;
-height: 2.5vw;
-padding: 0.2vw;
-font-weight: 600;
+  border: 1px solid black;
+  height: 2.5vw;
+  padding: 0.2vw;
+  font-size: 1.2vw;
+  font-weight: 600;
 `;
 
-
+export const DetailLink = styled(Link)` 
+  text-decoration: none;
+  color: black;
+  font-weight: 900;
+  padding: 0.5vw;
+  border-radius: 1vw;
+  background-color: #1e1d1fba;
+  color: white;
+`;
 
 
 

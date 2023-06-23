@@ -1,9 +1,8 @@
 import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
 import { MovesProps } from "./movesInterface";
 import { TitleBox } from "../../../../Common/Title/styled";
 import { Subtitle } from "../Images/styled";
-import { Button, ButtonText, GameTitle, Table, TableCell, TableHeader, TableRow } from "./styled";
+import { Button, ButtonText, DetailLink, GameTitle, Table, TableCell, TableHeader, TableRow } from "./styled";
 
 export const Moves = ({ moves }: MovesProps) => {
   const games = moves?.reduce((groups: string[], move) => {
@@ -48,7 +47,7 @@ export const Moves = ({ moves }: MovesProps) => {
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(", ");
     }
-  }
+  };
 
   const filteredMoves = useMemo(() =>
     moves?.filter((move) =>
@@ -59,22 +58,31 @@ export const Moves = ({ moves }: MovesProps) => {
       const learningMethodA = a.version_group_details[0].move_learn_method.name;
       const learningMethodB = b.version_group_details[0].move_learn_method.name;
       const learningMethodsOrder = ["egg", "machine", "level-up"];
-      return learningMethodsOrder.indexOf(learningMethodA) - learningMethodsOrder.indexOf(learningMethodB);
+      const levelA = a.version_group_details[0].level_learned_at;
+      const levelB = b.version_group_details[0].level_learned_at;
+
+      if (learningMethodA === learningMethodB) {
+        return levelA - levelB;
+      }
+
+      return (
+        learningMethodsOrder.indexOf(learningMethodA) -
+        learningMethodsOrder.indexOf(learningMethodB)
+      );
     }), [moves, game]);
-    
-    const getmoveIdValue = (url: string) => {
-      const parts = url.split("/");
-      const numberPart = parts[parts.length - 2];
-      const lastValue = numberPart !== "" ? parseInt(numberPart) : 0;
-      return lastValue
-    }
+
+  const getmoveIdValue = (url: string) => {
+    const parts = url.split("/");
+    const numberPart = parts[parts.length - 2];
+    const lastValue = numberPart !== "" ? parseInt(numberPart) : 0;
+    return lastValue;
+  };
 
   return (
     <>
       <Subtitle>Moves</Subtitle>
       <TitleBox>
         <Button onClick={handlePrevGen}><ButtonText>Prev game</ButtonText>⬅</Button>
-        
         <GameTitle>Game: <br/>{title}</GameTitle>
         <Button onClick={handleNextGen}><ButtonText>Next game</ButtonText>➡</Button>
       </TitleBox>
@@ -97,7 +105,7 @@ export const Moves = ({ moves }: MovesProps) => {
                 <TableCell>{learnMethod}</TableCell>
                 <TableCell>{move.version_group_details[0].level_learned_at}</TableCell>
                 <TableCell>
-                  <Link to={`move/details/id=${getmoveIdValue(move.move.url)}`}>Details</Link>
+                  <DetailLink to={`move/details/id=${getmoveIdValue(move.move.url)}`}>Details</DetailLink>
                 </TableCell>
               </TableRow>
             );

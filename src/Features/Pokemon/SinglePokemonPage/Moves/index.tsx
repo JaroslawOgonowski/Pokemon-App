@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { MovesProps } from "./movesInterface";
 import { TitleBox } from "../../../../Common/Title/styled";
@@ -6,7 +6,6 @@ import { Subtitle } from "../Images/styled";
 import { Button, ButtonText, GameTitle, Table, TableCell, TableHeader, TableRow } from "./styled";
 
 export const Moves = ({ moves }: MovesProps) => {
-
   const games = moves?.reduce((groups: string[], move) => {
     move.version_group_details.forEach((detail) => {
       if (!groups.includes(detail.version_group.name)) {
@@ -51,16 +50,22 @@ export const Moves = ({ moves }: MovesProps) => {
     }
   }
 
-  const filteredMoves = moves?.filter((move) =>
-    move.version_group_details.some(
-      (detail) => detail.version_group.name === game
-    )
-  );
+  const filteredMoves = useMemo(() =>
+    moves?.filter((move) =>
+      move.version_group_details.some(
+        (detail) => detail.version_group.name === game
+      )
+    ).sort((a, b) => {
+      const learningMethodA = a.version_group_details[0].move_learn_method.name;
+      const learningMethodB = b.version_group_details[0].move_learn_method.name;
+      const learningMethodsOrder = ["egg", "machine", "level-up"];
+      return learningMethodsOrder.indexOf(learningMethodA) - learningMethodsOrder.indexOf(learningMethodB);
+    }), [moves, game]);
 
   return (
     <>
-    <Subtitle>Moves</Subtitle>
-      <TitleBox>        
+      <Subtitle>Moves</Subtitle>
+      <TitleBox>
         <Button onClick={handlePrevGen}><ButtonText>Prev game</ButtonText>⬅</Button>
         <GameTitle>{title}</GameTitle>
         <Button onClick={handleNextGen}><ButtonText>Next game</ButtonText>➡</Button>
@@ -77,10 +82,11 @@ export const Moves = ({ moves }: MovesProps) => {
         <tbody>
           {filteredMoves?.map((move) => {
             const moveName = `${move.move.name.charAt(0).toUpperCase()}${move.move.name.slice(1)}`;
+            const learnMethod = `${move.version_group_details[0].move_learn_method.name.charAt(0).toUpperCase()}${move.version_group_details[0].move_learn_method.name.slice(1)}`;
             return (
               <TableRow key={move.move.name}>
                 <TableCell>{moveName}</TableCell>
-                <TableCell>{move.version_group_details[0].move_learn_method.name}</TableCell>
+                <TableCell>{learnMethod}</TableCell>
                 <TableCell>{move.version_group_details[0].level_learned_at}</TableCell>
                 <TableCell>
                   <Link to={`move/details/id=${move.move.url}`}>Details</Link>

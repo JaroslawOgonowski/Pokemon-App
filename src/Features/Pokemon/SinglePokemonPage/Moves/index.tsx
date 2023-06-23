@@ -1,47 +1,18 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { MovesProps } from "./movesInterface";
 
-export interface MoveLearnMethod {
-  name: string;
-  url: string;
-}
-
-export interface VersionGroup {
-  name: string;
-  url: string;
-}
-
-export interface VersionGroupDetail {
-  level_learned_at: number;
-  move_learn_method: MoveLearnMethod;
-  version_group: VersionGroup;
-}
-
-export interface Move {
-  name: string;
-  url: string;
-}
-
-export interface MoveEntry {
-  move: Move;
-  version_group_details: VersionGroupDetail[];
-}
-
-export interface MovesProps {
-  moves: MoveEntry[] | undefined;
-}
 export const Moves = ({ moves }: MovesProps) => {
-  const games = moves?.reduce(
-    (groups: string[], move) => {
-      move.version_group_details.forEach((detail) => {
-        if (!groups.includes(detail.version_group.name)) {
-          groups.push(detail.version_group.name);
-        }
-      });
-      return groups;
-    },
-    []
-  );
   
+  const games = moves?.reduce((groups: string[], move) => {
+    move.version_group_details.forEach((detail) => {
+      if (!groups.includes(detail.version_group.name)) {
+        groups.push(detail.version_group.name);
+      }
+    });
+    return groups;
+  }, []);
+
   const [gameIndex, setGameIndex] = useState(1);
 
   const handlePrevGen = () => {
@@ -60,13 +31,26 @@ export const Moves = ({ moves }: MovesProps) => {
     }
   };
 
-  const generation = games?.[gameIndex];
-
-  const title = generation ? generation.charAt(0).toUpperCase() + generation.slice(1).replace(/-/g, ", ") : "";
+  const game = games?.[gameIndex];
+  let title = "";
+  if (game) {
+    if (game === "black-2-white-2") {
+      title = "Black 2, White 2";
+    } else if (game === "lets-go-pikachu-lets-go-eevee") {
+      title = "Let's Go Pikachu, Let's Go Eevee";
+    } else if (game === "ultra-sun-ultra-moon") {
+      title = "Ultra Sun, Ultra Moon";
+    } else {
+      title = game
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(", ");
+    }
+  }
 
   const filteredMoves = moves?.filter((move) =>
     move.version_group_details.some(
-      (detail) => detail.version_group.name === generation
+      (detail) => detail.version_group.name === game
     )
   );
 
@@ -76,21 +60,31 @@ export const Moves = ({ moves }: MovesProps) => {
       <button onClick={handlePrevGen}>Previous game ⬅</button>
       <h3>{title}</h3>
       <button onClick={handleNextGen}>Next game ➡</button>
-      <div>
-        {filteredMoves?.map((move) => {
-          const capitalizedMoveName =
-            move.move.name.charAt(0).toUpperCase() +
-            move.move.name.slice(1);
-          return (
-            <div key={move.move.name}>
-              {capitalizedMoveName}
-              <div>Level Learned At: {move.version_group_details[0].level_learned_at}</div>
-              <div>Move Learn Method: {move.version_group_details[0].move_learn_method.name}</div>
-              <div>Move URL: {move.move.url}</div>
-            </div>
-          );
-        })}
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Move name</th>
+            <th>Learn method</th>
+            <th>Level</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredMoves?.map((move) => {
+            const moveName = `${move.move.name.charAt(0).toUpperCase()}${move.move.name.slice(1)}`;
+            return (
+              <tr key={move.move.name}>
+                <td>{moveName}</td>
+                <td>{move.version_group_details[0].move_learn_method.name}</td>
+                <td>{move.version_group_details[0].level_learned_at}</td>
+                <td>
+                  <Link to={`move/details/id=${move.move.url}`}>Details</Link>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </>
   );
 };

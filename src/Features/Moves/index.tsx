@@ -1,9 +1,9 @@
 import { Main } from "../../Base/Main"
 
-export const Areas = () => {
+export const Moves = () => {
   return(
 <Main
-      titleContent="Areas"
+      titleContent="Moves"
       articleContentHead="Pokémon, able adventures, and the opportunity for collecting. This phenomenal world of gaming and entertainment continues to evolve and capture new generations of fans."
       readMoreButton={false}
       articleContentFull={null}

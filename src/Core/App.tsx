@@ -4,7 +4,7 @@ import { normalTheme } from "./theme";
 import { Header } from "../Base/Header";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Pokemon } from "../Features/Pokemon";
-import { Areas } from "../Features/Areas";
+import { Moves } from "../Features/Moves";
 import { SinglePokemonPage } from "../Features/Pokemon/SinglePokemonPage";
 import { Abilities } from "../Features/Abilities";
 
@@ -17,8 +17,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/pokemon" element={<Pokemon />} />
-            <Route path="/Abilities" element={<Abilities />} />
-            <Route path="/areas" element={<Areas />} />
+            <Route path="/abilities" element={<Abilities />} />
+            <Route path="/moves" element={<Moves />} />
             <Route path="/pokemonDetails" element={<SinglePokemonPage />} />
             <Route path="/" element={<Pokemon />} />
           </Routes>

@@ -73,6 +73,16 @@ export const TableHeader = styled.th`
   font-size: 1.2vw;
   font-family: 'Righteous', cursive;
   letter-spacing: 0.1vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    height: 40px;
+    font-size: 16px;
+  };
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    height: 30px;
+    font-size: 13px;
+  };
 `;
 
 export const TableCell = styled.td`
@@ -81,6 +91,18 @@ export const TableCell = styled.td`
   padding: 0.2vw;
   font-size: 1.2vw;
   font-weight: 600;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    height: 30px;
+    font-size: 14px;
+    padding: 4px;
+  };
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    height: 25px;
+    font-size: 11px;
+    padding: 2px;
+  };
 `;
 
 export const DetailLink = styled(Link)` 
@@ -91,6 +113,10 @@ export const DetailLink = styled(Link)`
   border-radius: 1vw;
   background-color: #1e1d1fba;
   color: white;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    padding: 4px;
+  };
 `;
 
 

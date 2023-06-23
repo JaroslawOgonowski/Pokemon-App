@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MovesProps } from "./movesInterface";
+import { TitleBox } from "../../../../Common/Title/styled";
+import { Subtitle } from "../Images/styled";
+import { Button, ButtonText, GameTitle } from "./styled";
 
 export const Moves = ({ moves }: MovesProps) => {
-  
+
   const games = moves?.reduce((groups: string[], move) => {
     move.version_group_details.forEach((detail) => {
       if (!groups.includes(detail.version_group.name)) {
@@ -13,7 +16,7 @@ export const Moves = ({ moves }: MovesProps) => {
     return groups;
   }, []);
 
-  const [gameIndex, setGameIndex] = useState(1);
+  const [gameIndex, setGameIndex] = useState(0);
 
   const handlePrevGen = () => {
     if (gameIndex === 0) {
@@ -56,10 +59,12 @@ export const Moves = ({ moves }: MovesProps) => {
 
   return (
     <>
-      <h2>Moves</h2>
-      <button onClick={handlePrevGen}>Previous game ⬅</button>
-      <h3>{title}</h3>
-      <button onClick={handleNextGen}>Next game ➡</button>
+    <Subtitle>Moves</Subtitle>
+      <TitleBox>        
+        <Button onClick={handlePrevGen}><ButtonText>Prev game</ButtonText>⬅</Button>
+        <GameTitle>{title}</GameTitle>
+        <Button onClick={handleNextGen}><ButtonText>Next game</ButtonText>➡</Button>
+      </TitleBox>
       <table>
         <thead>
           <tr>

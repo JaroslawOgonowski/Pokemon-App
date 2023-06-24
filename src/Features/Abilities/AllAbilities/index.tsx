@@ -5,7 +5,7 @@ import { Error } from "../../../Base/Error";
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { AllAbilitiesContainer, Button, Title } from "./styled";
+import { AbilityItem, AbilityList, AllAbilitiesContainer, Button, StyledAbilities, Title } from "./styled";
 
 export const AllAbilities = () => {
 
@@ -59,19 +59,21 @@ export const AllAbilities = () => {
   if (isError) return <Error />;
 
   return data ? (
-
-
-    <>
-      <Title>Abilities List</Title>
-      <AllAbilitiesContainer ref={topAbilityRef}>
+    <StyledAbilities>
+      <Title ref={topAbilityRef}>Abilities List</Title>
+      <AllAbilitiesContainer >
         <Button disabled={offset === 0} onClick={handlePrevPage}>
           ◀
         </Button>
-        <ul>{data.results.map((ability: { name: any; }) => <li>{ability.name}</li>)}</ul>
+        <AbilityList>
+          {data.results.map((ability: { name: any; }) =>
+            <AbilityItem key={ability.name}>{`${ability.name.charAt(0).toUpperCase()}${ability.name.slice(1)}`.replace("-", " ")}</AbilityItem>
+          )}
+        </AbilityList>
         <Button onClick={handleNextPage} disabled={offset === 258}>
           ▶
         </Button>
       </AllAbilitiesContainer >
-    </>
+    </StyledAbilities>
   ) : <Error />
 }

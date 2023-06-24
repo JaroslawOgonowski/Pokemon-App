@@ -1,5 +1,5 @@
 import { Main } from "../../Base/Main"
-import { Gallery } from "../../Common/Gallery"
+import { Gallery } from "./Gallery"
 import { PokemonContainer } from "./styled"
 
 

@@ -5,7 +5,8 @@ import { Loader } from "../../../Base/Loader";
 import { ErrorPage } from "../../../Base/Error/styled";
 import { Description, GenInfo, PokeAbility, StyledAbilityPage } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
-import { PokemonTile } from "../../Pokemon/PokemonTile";
+import { PokemonTile } from "../../../Common/PokemonTile";
+
 
 export const AbilityPage = (): JSX.Element => {
   const location = useLocation();
@@ -32,7 +33,7 @@ export const AbilityPage = (): JSX.Element => {
       <StyledAbilityPage>
         <CenteredTitle content={abilityName} />
         <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>
-        <Description>{data.effect_entries[1].effect}</Description>
+        <Description>{data.effect_entries[1]?.effect}</Description>
         <CenteredTitle content={"Pokemons with this ability:"} />
         <PokeAbility>
           {data.pokemon?.map((item: any) => (

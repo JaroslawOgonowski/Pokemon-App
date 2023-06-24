@@ -13,16 +13,18 @@ gap: 10%;
 
 export const LoadingText = styled.div`
   font-family: 'Righteous', cursive;
-  font-size: 3vw;
+  font-size: 5vw;
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    font-size: 30px;
+    font-size: 36px;
   };
 `;
 
 export const StyledPokeball = styled(Pokeball)`
+  width: 15vh;
+  height: 15vh;
   animation: LoaderAnim 2s ease 0s infinite alternate forwards;
-  margin-bottom: 50px;
+  margin-bottom: 5vh;
   @keyframes LoaderAnim {
     0% {
       transform: rotate(0);
@@ -33,5 +35,12 @@ export const StyledPokeball = styled(Pokeball)`
       color: #770808;
     }
   }
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 50px;
+  };
+
 `;
 

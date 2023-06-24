@@ -29,7 +29,7 @@ export const Box = styled.div`
   gap: 2vw;
   justify-content: center;
   align-items: center;
-
+  font-size: 1.6vw;
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 16px;
     flex-wrap: wrap;
@@ -40,6 +40,7 @@ export const ErrorText = styled.div`
   text-align: center;
   margin: 2vw 0;
   width: 60%;
+  font-size: 1.6vw;
 `;
 
 export const Image = styled.img`
@@ -63,7 +64,7 @@ export const StyledNavLink = styled(Link)`
   margin-top: 2vw;
   border-radius: 10px;
   transition: 300ms;
-
+  font-size: 1.6vw;
   &:hover{
     transform: scale(1.1);
     filter: brightness(150%);

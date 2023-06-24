@@ -31,3 +31,9 @@ export const fetchAbilities = async (limit: number, offset: number): Promise<any
     (response) => response.json()
   )
 };
+
+export const fetchAbility = async (id: string | null): Promise<any> => {
+  return fetch(`https://pokeapi.co/api/v2/ability/${id}/`).then(
+    (response) => response.json()
+  )
+};

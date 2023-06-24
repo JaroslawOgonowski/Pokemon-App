@@ -68,7 +68,7 @@ export const StyledNavLink = styled(Link)`
   &:hover{
     transform: scale(1.1);
     filter: brightness(150%);
-  }
+  };
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     padding: 20px;

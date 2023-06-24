@@ -1,31 +1,35 @@
-import { Error } from "../../Base/Error"
-import { Loader } from "../../Base/Loader"
-import { Main } from "../../Base/Main"
+import { Main } from "../../Base/Main";
+import { AllAbilities } from "./AllAbilities";
 
 export const Abilities = () => {
   return (
     <>
       <Main
         titleContent="Abilities"
-        articleContentHead="l
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe veniam illum sapiente voluptate reprehenderit eius fugiat doloremque dicta eum perferendis iure obcaecati beatae, corporis accusamus, atque in? Amet, iure iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deserunt a, neque exercitationem assumenda ullam? Doloremque error suscipit unde pariatur, aliquam id, eos in est placeat doloribus, laudantium ducimus reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eligendi exercitationem quaerat. Quas sint, nesciunt officia quo magnam nostrum eveniet eum? Delectus perspiciatis amet laudantium necessitatibus dolores nemo veritatis maxime?m"
+        articleContentHead="Pokémon possess a wide range of abilities that vary in terms of types, power, and effects. These abilities make them unique and give them an advantage in battles."
         readMoreButton={true}
-        articleContentFull="zźć"
-        sideBarText={
-          [
-            {
-              name: "daeefirst element",
-              link: "https://cssgenerator.pl/en/gradient-generator/"
-            },
-            {
-              name: "qeqf second element",
-              link: "https://cssgenerator.pl/en/gradient-generator/"
-            }
-          ]
-        }
+        articleContentFull="Some Pokémon have offensive abilities that allow them to deal greater damage to opponents. These can include energy-based attacks, the ability to manipulate elements, or the utilization of physical strength. Other offensive abilities involve striking opponents from a distance or up close, as well as speed and precision in attacks.
+
+        Certain Pokémon possess defensive abilities that enable them to avoid or reduce damage. These can include protective abilities that increase the Pokémon's endurance, such as energy shields or enhanced resistance to specific types of attacks. Other defensive abilities involve camouflage, evasiveness, the ability to heal wounds, or reflecting attacks back at the opponent.
+        
+        Some Pokémon have supportive abilities that can impact their own stats or the stats of opponents. These can include abilities that increase attack power, speed, endurance, or regenerative capabilities. Other supportive abilities can affect the opponent, such as slowing them down, causing confusion, draining energy, or reducing the opponent's accuracy.
+        
+        In addition to the basic abilities, some Pokémon possess hidden abilities that are harder to find and require special conditions or circumstances. Hidden abilities can grant additional skills, such as ignoring the opponent's defense, receiving boosted attacks under specific conditions, or manipulating the opponent's stats.
+        
+        In summary, Pokémon abilities are a crucial part of strategy and tactics in battles. The diversity and differences among abilities make each Pokémon unique and require the appropriate approach to fully utilize their potential in combat."
+        sideBarText={[
+          {
+            name: "First element",
+            link: "https://cssgenerator.pl/en/gradient-generator/"
+          },
+          {
+            name: "Second element",
+            link: "https://cssgenerator.pl/en/gradient-generator/"
+          }
+        ]}
       />
-      <Error />
-      <Loader />
+      <AllAbilities/>
     </>
-  )
-}
+  );
+};
+

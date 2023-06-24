@@ -90,6 +90,11 @@ export const PokemonEvolutionName = styled.div`
 
 export const Next = styled.div`
   align-self: center;
+  font-size: 2vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 14px;
+  };
 `;
 
 export const MultiEvolutionLayout = styled.div`

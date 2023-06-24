@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GalleryBox, GalleryTitle, StyledGallery, ButtonBox, BaseButton, FastButton, TopMarker } from "./styled";
-import { PokemonTile } from "../PokemonTile";
+import { PokemonTile } from "../../Features/Pokemon/PokemonTile";
 import { fetchGallery } from "../../Core/API";
 import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.svg";
 import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg";

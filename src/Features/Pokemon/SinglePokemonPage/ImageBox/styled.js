@@ -7,6 +7,7 @@ gap: 0.5vw;
 justify-content: center;
 align-content: center;
 padding: 2vw;
+margin-bottom: 5vw;
 `;
 
 export const Container = styled.div`

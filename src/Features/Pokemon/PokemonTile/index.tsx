@@ -1,5 +1,5 @@
 import { Details, PokemonId, PokemonImage, PokemonName, Wrapper } from "./styled";
-import pokeball from "../SideBar/images/Poké_Ball_icon.png";
+import pokeball from "./images/Poké_Ball_icon.png";
 import ColorThief from 'colorthief';
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";

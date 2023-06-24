@@ -1,6 +1,6 @@
 import { PokemonCardProps } from "../singlePokemonInterfaces";
 import { Evolution } from "./Evolution";
-import {  Stats } from "./Stats";
+import { Stats } from "./Stats";
 import { Ability, CardImage, Description, Generation, CardBox, TextBox, Title, Type, Types, Wrapper, TitleImage, Abilities } from "./styled";
 import typesData from "./types.json";
 export interface Generation {
@@ -65,7 +65,7 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
             Abilities:
             <Abilities>
               {abilities.map((object) =>
-                <Ability key={`abilities${object.ability.name}`} color={color}>
+                <Ability key={`abilities${object.ability.name}`} color={color} to={`/ability?id=${object.ability.name}`}>
                   {object.ability.name.toUpperCase()}
                 </Ability>
               )}

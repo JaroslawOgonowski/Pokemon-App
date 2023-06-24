@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledAbilities = styled.div`
@@ -11,6 +12,10 @@ export const Title = styled.h2`
   font-size: 4vw;
   font-family: 'Righteous', cursive;
   margin: 0 0 2vw 0;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 24px;
+  };
 `;
 
 export const AllAbilitiesContainer = styled.div`
@@ -44,12 +49,21 @@ export const Button = styled.button`
 
 export const AbilityList = styled.ul`
   width: 75%;
+  padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 2vw;
   justify-content: center;
   align-items: center;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    gap: 8px;
+  };
+`;
+
+export const StyledLink = styled(Link)`
+text-decoration: none;
 `;
 
 export const AbilityItem = styled.li`
@@ -65,5 +79,10 @@ export const AbilityItem = styled.li`
   &:hover{
     transform: scale(1.1);
     background-color: #060505f0;
+  };
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    padding: 10px;
+    font-size: 18px;
   };
 `;

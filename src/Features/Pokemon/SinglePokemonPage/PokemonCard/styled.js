@@ -17,7 +17,6 @@ export const CardImage = styled.img`
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     display: none;
   };
-
 `;
 
 export const CardBox = styled.div`

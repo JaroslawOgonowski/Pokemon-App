@@ -1,11 +1,10 @@
-
 import { fetchAbilities } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { AbilityItem, AbilityList, AllAbilitiesContainer, Button, StyledAbilities, Title } from "./styled";
+import { AbilityItem, AbilityList, AllAbilitiesContainer, Button, StyledAbilities, StyledLink, Title } from "./styled";
 
 export const AllAbilities = () => {
 
@@ -66,9 +65,14 @@ export const AllAbilities = () => {
           ◀
         </Button>
         <AbilityList>
-          {data.results.map((ability: { name: any; }) =>
-            <AbilityItem key={ability.name}>{`${ability.name.charAt(0).toUpperCase()}${ability.name.slice(1)}`.replace("-", " ")}</AbilityItem>
-          )}
+          {data.results
+            .map((ability: { name: string; }) => ability.name)
+            .sort((a: string, b: string) => a.localeCompare(b))
+            .map((ability: string) =>
+              <StyledLink key={`${ability}Link`} to={`/ability?id=${ability}`}>
+                <AbilityItem key={ability}>{`${ability.charAt(0).toUpperCase()}${ability.slice(1)}`.replace("-", " ")}</AbilityItem>
+              </StyledLink>)
+          }
         </AbilityList>
         <Button onClick={handleNextPage} disabled={offset === 258}>
           ▶

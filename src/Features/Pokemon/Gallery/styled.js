@@ -64,6 +64,7 @@ export const BaseButton = styled.button`
   -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   transition: visibility 0;
+  padding: 0.2vw;
   &:hover{
   filter: brightness(130%);
   background-color: #28052fd1;
@@ -72,8 +73,18 @@ export const BaseButton = styled.button`
   &:disabled{
     visibility: hidden;
   }
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 5vw;
+    };
 `;
 
 export const FastButton = styled(BaseButton)`
-height: 15vh;
+  height: 15vh;
+  width: 3vw;
+  padding: 0.2vw;
+  
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 5vw;
+  };
 `;

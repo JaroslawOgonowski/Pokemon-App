@@ -7,10 +7,18 @@ export const StyledAbilityPage = styled.div`
   flex-direction: column;
 `;
 
+export const TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  border-radius: 1vw;
+  border: 0.3vw solid #1d74c1;
+`;
+
 export const GenInfo = styled.div`
   color: #4B4B4B;
   font-size: 1.3vw;
-
+  align-self: flex-end;
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 13px;    
   };
@@ -18,8 +26,7 @@ export const GenInfo = styled.div`
 
 export const Description = styled.div`
   width: 100%;
-  text-align: center;
-  margin: 2vw 0;
+  margin: 2vw 1vw;
   font-size: 2vw;
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {

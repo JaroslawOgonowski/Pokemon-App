@@ -3,7 +3,7 @@ import { fetchAbility } from "../../../Core/API";
 import { useQuery } from "@tanstack/react-query";
 import { Loader } from "../../../Base/Loader";
 import { ErrorPage } from "../../../Base/Error/styled";
-import { Description, GenInfo, PokeAbility, StyledAbilityPage } from "./styled";
+import { Description, GenInfo, PokeAbility, StyledAbilityPage, TextBox } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { PokemonTile } from "../../../Common/PokemonTile";
 
@@ -32,8 +32,10 @@ export const AbilityPage = (): JSX.Element => {
     return (
       <StyledAbilityPage>
         <CenteredTitle content={abilityName} />
+        <TextBox>
         <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>
         <Description>{data.effect_entries[1]?.effect}</Description>
+        </TextBox>
         <CenteredTitle content={"Pokemons with this ability:"} />
         <PokeAbility>
           {data.pokemon?.map((item: any) => (

@@ -11,6 +11,7 @@ export const FlexBox = styled.div`
 export const StyledArticle = styled.article`
   font-size: 1.3vw;
   order: 1;
+  font-weight: 600;
 
   ${({ hideFullText }) => hideFullText && css`
     display: none;

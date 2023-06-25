@@ -52,6 +52,7 @@ export const StyledSideBar = styled.ul`
   };
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    margin: 30px auto 0 auto;
     width: 96%;
     min-height: 50px;
     flex-direction: row;

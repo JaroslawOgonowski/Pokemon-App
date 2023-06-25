@@ -37,3 +37,16 @@ export const fetchAbility = async (id: string | null): Promise<any> => {
     (response) => response.json()
   )
 };
+
+export const fetchMoves = async (limit: number, offset: number): Promise<any> => {
+  const params = new URLSearchParams({ limit: String(limit), offset: String(offset) })
+  return fetch(`https://pokeapi.co/api/v2/move/?${params}`).then(
+    (response) => response.json()
+  )
+};
+
+export const fetchMove = async (moveURL: string | null): Promise<any> => {
+  return fetch(`${moveURL}`).then(
+    (response) => response.json()
+  )
+};

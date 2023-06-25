@@ -1,7 +1,10 @@
 import { Main } from "../../Base/Main"
+import { CenteredTitle } from "../../Common/CenteredTitle"
+import { MovesTable } from "./MovesTable"
 
 export const Moves = () => {
   return (
+    <>
     <Main
       titleContent="Moves"
       articleContentHead=
@@ -21,7 +24,7 @@ export const Moves = () => {
       Status Moves: Some moves do not deal damage but have other effects on the opponent or alter statistics.\
       For instance, the move Sleep Powder can put the opponent to sleep,\
       while the move Thunder Wave can paralyze the opponent and reduce its accuracy.\
-      Moves in Pokémon games are a crucial element of strategy, and choosing the right moves and balancing them can greatly impact success in battles.Well - thought - out move combinations can help gain an advantage over opponents and secure victory in challenging encounters."
+      Moves in Pokémon games are a crucial element of strategy, and choosing the right moves and balancing them can greatly impact success in battles. Well - thought - out move combinations can help gain an advantage over opponents and secure victory in challenging encounters."
       }
       readMoreButton={false}
       articleContentFull={null}
@@ -38,5 +41,8 @@ export const Moves = () => {
         ]
       }
     />
+  <CenteredTitle content="Moves List"/>
+  <MovesTable/>
+  </>
   )
 }

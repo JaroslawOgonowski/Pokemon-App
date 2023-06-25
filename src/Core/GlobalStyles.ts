@@ -12,6 +12,7 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: 30%;
+  min-height: 100vh;
 }
 
 *, ::after, ::before {

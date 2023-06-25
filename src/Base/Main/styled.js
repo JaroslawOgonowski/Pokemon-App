@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledMain = styled.main`
   width: 98%;
-  margin: 8vw auto;
+  margin: 8vw auto 10vh auto;
   display: flex;
   gap: 2vw;
   justify-content: center;

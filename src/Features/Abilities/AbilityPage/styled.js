@@ -10,6 +10,10 @@ export const StyledAbilityPage = styled.div`
 export const GenInfo = styled.div`
   color: #4B4B4B;
   font-size: 1.3vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 13px;    
+  };
 `;
 
 export const Description = styled.div`
@@ -17,6 +21,10 @@ export const Description = styled.div`
   text-align: center;
   margin: 2vw 0;
   font-size: 2vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 16px;    
+  };
 `;
 
 

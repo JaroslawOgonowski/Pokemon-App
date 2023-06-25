@@ -24,18 +24,12 @@ export const CardBox = styled.div`
   display: flex;
   gap: 1vw;
   border: 1px solid gray;
-  -webkit-box-shadow: -21px 22px 58px -35px ${(props) => props.color};
-  -moz-box-shadow: -21px 22px 58px -35px ${(props) => props.color};
-  box-shadow: -21px 22px 58px -35px ${(props) => props.color};
   animation: pokeCardAnimation 500ms ease;
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     width: 100%;
     flex-wrap: wrap;
     gap: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
   };
 
   @keyframes pokeCardAnimation {

@@ -19,12 +19,12 @@ export const Abilities = () => {
         In summary, Pokémon abilities are a crucial part of strategy and tactics in battles. The diversity and differences among abilities make each Pokémon unique and require the appropriate approach to fully utilize their potential in combat."
         sideBarText={[
           {
-            name: "First element",
-            link: "https://cssgenerator.pl/en/gradient-generator/"
+            name: "Bulbapedia- abilities",
+            link: "https://bulbapedia.bulbagarden.net/wiki/Ability"
           },
           {
-            name: "Second element",
-            link: "https://cssgenerator.pl/en/gradient-generator/"
+            name: "Pokemon Database- abilities",
+            link: "https://pokemondb.net/ability"
           }
         ]}
       />

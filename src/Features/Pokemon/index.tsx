@@ -28,12 +28,20 @@ export const Pokemon = () => {
           sideBarText={
             [
               {
-                name: "first element",
-                link: "https://cssgenerator.pl/en/gradient-generator/"
+                name: "Pokemon.com- official pokedex",
+                link: "https://www.pokemon.com/us/pokedex"
               },
               {
-                name: "second element",
-                link: "/areas"
+                name: "Serebii- national pokedex",
+                link: "https://www.serebii.net/pokemon/nationalpokedex.shtml"
+              },
+              {
+                name: "Bulbagarden- pokedex",
+                link: "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number"
+              },
+              {
+                name: "Pokemon database",
+                link: "https://pokemondb.net/pokedex/national"
               }
             ]
           }

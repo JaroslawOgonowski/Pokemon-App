@@ -28,12 +28,12 @@ export const Moves = () => {
       sideBarText={
         [
           {
-            name: "abc first element",
-            link: "https://cssgenerator.pl/en/gradient-generator/"
+            name: "Bulbapedia- moves",
+            link: "https://bulbapedia.bulbagarden.net/wiki/List_of_moves"
           },
           {
-            name: "deasecond element",
-            link: "https://cssgenerator.pl/en/gradient-generator/"
+            name: "Serebi attackdex",
+            link: "https://www.serebii.net/attackdex/"
           }
         ]
       }

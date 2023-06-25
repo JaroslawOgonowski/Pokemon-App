@@ -33,7 +33,7 @@ export const ButtonText = styled.span`
   text-align: center;
   padding: 0.1vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     display: none;
   };  
 `;
@@ -43,11 +43,11 @@ export const GameTitle = styled.h3`
   width: 60%;
   font-size: 3vw;
   font-weight: 700;
+  font-family: 'Righteous', cursive;
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 20px;
   };
-
 `;
 
 export const Table = styled.table`
@@ -61,12 +61,12 @@ export const TableRow = styled.tr`
   }; 
   
   &:hover{
-    background-color: rgba(117, 196, 78, 0.705);
+    background-color: rgba(121, 208, 237, 0.705);
   };
 `;
 
 export const TableHeader = styled.th`
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   color: white;
   height: 3.2vw;
   background-color: rgba(25, 23, 23, 0.927);
@@ -86,7 +86,8 @@ export const TableHeader = styled.th`
 `;
 
 export const TableCell = styled.td`
-  border: 1px solid black;
+  text-align: center;
+  border-bottom: 1px solid black;
   height: 2.5vw;
   padding: 0.2vw;
   font-size: 1.2vw;

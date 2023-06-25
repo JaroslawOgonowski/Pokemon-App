@@ -3,35 +3,33 @@ import ball from "./images/Poké_Ball_icon.png"
 
 export const StyledSideBar = styled.ul`
   width: 20%;
-  min-height: 20vh;
+  min-height: 15vh;
   padding: 0;
-  margin: 3vw;
   border-right: 1px solid black;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1vw;
   animation: sideBarAnimation 0.5s ease;
+  flex-wrap: wrap;
 
   li::before {
     content: '';
     display: inline-block;
-    height: 1.4vw;
-    width: 1.4vw;
     background-size: contain;
     background-repeat: no-repeat;
-    margin:0 0 -0.3vw -2.2vw;
     background-image: url(${ball});
+    padding: 1vw;
     
     @media(max-width: ${({ theme }) => theme.breakPoint.laptop}px) {
-      height: 2vw;
-      width: 2vw;
+      padding: 1.5vw;
     };
 
     @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-      height: 24px;
-      width: 24px;
-      margin: 0;
+      padding: 2vw;
+    };
+    @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+      padding: 3vw;
     };
   };
 
@@ -61,6 +59,8 @@ export const StyledSideBar = styled.ul`
     gap: 20px;
     justify-content: center;
     align-items: center;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid black;
   };
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
@@ -69,8 +69,8 @@ export const StyledSideBar = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  width: 95%;
-  height: 2vw;
+  height: 5vw;
+  width: 96%;
   padding: 0;
   margin: 0;
   display: flex;
@@ -88,7 +88,8 @@ export const StyledA = styled.a`
   margin-left: 1vw;
   text-decoration: none;
   font-size: 1.4vw;
-
+  font-weight: 600;
+  color: black;
 
   @media(max-width: ${({ theme }) => theme.breakPoint.laptop}px) {
     margin-left: 2vw;
@@ -107,6 +108,10 @@ export const StyledA = styled.a`
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 16px;
   };
+
+  &:hover{
+    color: #384747
+  }
 `;
 
 export const LinkText = styled.div`

@@ -68,6 +68,10 @@ export const StyledNavLink = styled(NavLink)`
   ${({ activator }) => activator && css`
     border: solid 1px white;
     border-radius: 2vw;
+
+    @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+      border-radius: 35px;
+    };  
   `}
 
   &:hover{  

@@ -11,7 +11,7 @@ body{
   background-image: url(${bg});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: 50%;
+  background-position-x: 30%;
 }
 
 *, ::after, ::before {

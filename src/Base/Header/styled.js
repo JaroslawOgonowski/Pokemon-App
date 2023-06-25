@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledHeader = styled.header`
   width: 100%;
@@ -62,8 +62,13 @@ export const StyledNavLink = styled(NavLink)`
     
     @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
       border-radius: 35px;
-    };
+    };    
   }
+
+  ${({ activator }) => activator && css`
+    border: solid 1px white;
+    border-radius: 2vw;
+  `}
 
   &:hover{  
     background-image: linear-gradient(166deg, rgba(253, 255, 0, 1) 0%, rgba(159, 235, 32, 1) 97%);

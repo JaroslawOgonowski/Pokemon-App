@@ -1,8 +1,8 @@
 import { PokemonCardProps } from "../singlePokemonInterfaces";
 import { Evolution } from "./Evolution";
 import { Stats } from "./Stats";
-import { Ability, CardImage, Description, Generation, CardBox, TextBox, Title, Type, Types, Wrapper, TitleImage, Abilities } from "./styled";
-import typesData from "./types.json";
+import TypeIcon from "../../../../Common/TypeIcon";
+import { Ability, CardImage, Description, Generation, CardBox, TextBox, Title, Wrapper, TitleImage, Abilities } from "./styled";
 export interface Generation {
   name: string;
 }
@@ -29,15 +29,6 @@ export interface PokemonType {
 
 export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTypes, pokemonStats, pokemonEvolution, generation, habitat, abilities }: PokemonCardProps) => {
 
-  function getBackgroundColorByType(typeName: string): string | undefined {
-    const foundType = typesData.find((type) => type.name === typeName);
-    return foundType?.backgroundColor;
-  }
-
-  function getFontColorByType(typeName: string): string | undefined {
-    const foundType = typesData.find((type) => type.name === typeName);
-    return foundType?.fontColor || "black";
-  }
   return (
     <Wrapper>
       <CardImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`} />
@@ -46,17 +37,7 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
         <TextBox>
           <Title>
             #{pokeId} {pokemonName}
-            <Types>
-              {pokemonTypes.map((object) => (
-                <Type
-                  typeBackgroundColor={getBackgroundColorByType(object.type.name)}
-                  typeFontColor={getFontColorByType(object.type.name)}
-                  key={object.slot}
-                >
-                  {object.type.name}
-                </Type>
-              ))}
-            </Types>
+            <TypeIcon pokemonTypes={pokemonTypes}/>
           </Title>
           <Generation>{generation?.name.toUpperCase()}</Generation>
           <Description>{description}</Description>

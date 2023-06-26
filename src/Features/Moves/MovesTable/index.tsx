@@ -8,6 +8,7 @@ import { Move, MoveData } from "./moveInterface";
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 import { handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
+import TypeIcon from "../../../Common/TypeIcon";
 
 export const MovesTable = () => {
   const navigate = useNavigate();
@@ -108,7 +109,7 @@ export const MovesTable = () => {
             <tbody>
               <tr>
                 <td><Link to={`/move/details/id=${moveInfo.name}`}>{moveInfo.name}</Link></td>
-                <td>{moveInfo.type.name}</td>
+                <td><TypeIcon pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]}/></td>
                 <td>{moveInfo.damage_class.name}</td>
                 <td>{moveInfo.accuracy}</td>
                 <td>{moveInfo.power}</td>

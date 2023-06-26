@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 export const Header = () => {
   const location = useLocation().pathname;
-  
+  const activator = "true";
   return (
     <>
       <StyledHeader>
@@ -12,11 +12,11 @@ export const Header = () => {
           <Logo src={logo} />
         </LogoLink>
         <StyledNavigation>
-          <StyledNavLink to="/pokemon" activator={location.includes("/pokemonDetails")}>
+          <StyledNavLink to="/pokemon" activator={location.includes("/pokemonDetails") ? activator : null}>
             Pokémon
           </StyledNavLink>
-          <StyledNavLink to="/abilities" activator={location.includes("/ability")}>Abilities</StyledNavLink>
-          <StyledNavLink to="/moves" activator={location.includes("/move")}>Moves</StyledNavLink>
+          <StyledNavLink to="/abilities" activator={location.includes("/ability") ? activator : null}>Abilities</StyledNavLink>
+          <StyledNavLink to="/moves" activator={location.includes("/move") ? activator : null}>Moves</StyledNavLink>
         </StyledNavigation>
       </StyledHeader>
     </>

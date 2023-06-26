@@ -24,7 +24,7 @@
   },
   {
     "name": "rock",
-    "backgroundColor": "darkgrey",
+    "backgroundColor": "rgba(56, 61, 62, 1);",
     "fontColor": "white"
   },
   {

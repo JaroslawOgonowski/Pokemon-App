@@ -24,7 +24,7 @@ export const Gallery = () => {
 
   const navigate = useNavigate();
   const [offset, setOffset] = useState(0);
-  const limit = 50;
+  const limit = 100;
   const topRef = useRef<HTMLDivElement>(null);
   useOffsetFromLocationSearch(offset, setOffset);
 

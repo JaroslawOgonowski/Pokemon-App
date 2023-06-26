@@ -10,6 +10,7 @@ import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/u
 import { handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
 import TypeIcon from "../../../Common/TypeIcon";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
+import { Table, TableCell, TableRow } from "./styled";
 
 export const MovesTable = () => {
   const navigate = useNavigate();
@@ -85,46 +86,46 @@ export const MovesTable = () => {
       <div ref={topRef} />
       <button onClick={() => handlePrevPageClick()}>prev</button>
       <button onClick={() => handleNextPageClick()}>next</button>
-      {data.results.map((move: Move) => {
-        if (loading || !moveData[move.name]) return null;
-        if (!moveData[move.name]) return null;
-        const moveInfo = moveData[move.name];
+      <Table>
+        <thead>
+          <TableRow>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Damage Class</th>
+            <th>Accuracy</th>
+            <th>Power</th>
+            <th>PP</th>
+            <th>Effect</th>
+            <th>Crit</th>
+            <th>Drain</th>
+            <th>Flinch</th>
+            <th>Healing</th>
+          </TableRow>
+        </thead>
+        <tbody>
+          {data.results.map((move: Move) => {
+            if (loading || !moveData[move.name]) return null;
+            if (!moveData[move.name]) return null;
+            const moveInfo = moveData[move.name];
 
-        return (
-          <table key={move.name}>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Damage Class</th>
-                <th>Accuracy</th>
-                <th>Power</th>
-                <th>PP</th>
-                <th>Effect</th>
-                <th>Crit</th>
-                <th>Drain</th>
-                <th>Flinch</th>
-                <th>Healing</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><Link to={`/move/details/id=${moveInfo.name}`}>{ItemNamesEdit(moveInfo.name)}</Link></td>
-                <td><TypeIcon pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]}/></td>
-                <td>{moveInfo.damage_class.name}</td>
-                <td>{moveInfo.accuracy}</td>
-                <td>{moveInfo.power}</td>
-                <td>{moveInfo.pp}</td>
-                <td>{moveInfo.meta.ailment.name}</td>
-                <td>{moveInfo.meta.crit_rate}</td>
-                <td>{moveInfo.meta.drain}</td>
-                <td>{moveInfo.meta.flinch_chance}</td>
-                <td>{moveInfo.meta.healing}</td>
-              </tr>
-            </tbody>
-          </table>
-        );
-      })}
+            return (
+              <TableRow key={move.name}>
+                <TableCell><Link to={`/move/details/id=${moveInfo.name}`}>{ItemNamesEdit(moveInfo.name)}</Link></TableCell>
+                <TableCell><TypeIcon table={true} pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]}/></TableCell>
+                <TableCell>{moveInfo.damage_class.name}</TableCell>
+                <TableCell>{moveInfo.accuracy}</TableCell>
+                <TableCell>{moveInfo.power}</TableCell>
+                <TableCell>{moveInfo.pp}</TableCell>
+                <TableCell>{moveInfo.meta.ailment.name}</TableCell>
+                <TableCell>{moveInfo.meta.crit_rate}</TableCell>
+                <TableCell>{moveInfo.meta.drain}</TableCell>
+                <TableCell>{moveInfo.meta.flinch_chance}</TableCell>
+                <TableCell>{moveInfo.meta.healing}</TableCell>
+              </TableRow>
+            );
+          })}
+        </tbody>
+      </Table>
     </>
   );
 };

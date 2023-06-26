@@ -37,7 +37,7 @@ export const PokemonCard = ({ pokeId, pokemonName, description, color, pokemonTy
         <TextBox>
           <Title>
             #{pokeId} {pokemonName}
-            <TypeIcon pokemonTypes={pokemonTypes}/>
+            <TypeIcon pokemonTypes={pokemonTypes} table={false}/>
           </Title>
           <Generation>{generation?.name.toUpperCase()}</Generation>
           <Description>{description}</Description>

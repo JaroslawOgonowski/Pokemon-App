@@ -9,7 +9,7 @@ interface PokemonType {
   };
 }
 
-const TypeIcon = ({ pokemonTypes }: { pokemonTypes: PokemonType[] }) => {
+const TypeIcon = ({ pokemonTypes, table }: { pokemonTypes: PokemonType[], table: boolean }) => {
   function getBackgroundColorByType(typeName: string): string | undefined {
     const foundType = typesData.find((type) => type.name === typeName);
     return foundType?.backgroundColor;
@@ -22,7 +22,7 @@ const TypeIcon = ({ pokemonTypes }: { pokemonTypes: PokemonType[] }) => {
 
   return (
     <>
-      <Types>
+      <Types table={table}>
         {pokemonTypes.map((object) => (
           <Type
             typeBackgroundColor={getBackgroundColorByType(object.type.name)}

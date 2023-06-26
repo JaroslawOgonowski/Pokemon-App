@@ -8,6 +8,7 @@ import { AbilityItem, AbilityList, AllAbilitiesContainer, Button, StyledAbilitie
 import { handlePrevPage, handleNextPage } from "../../../Common/reusableFunctions/buttonFunctions";
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
+import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 
 export const AllAbilities = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export const AllAbilities = () => {
   const limit = 100;
   const topRef = useRef<HTMLDivElement>(null);
   useOffsetFromLocationSearch(offset, setOffset);
-  
+
   const handlePageChange = (newOffset: number) => {
     setOffset(newOffset);
     navigate(`/abilities?offset=${newOffset}`);
@@ -52,7 +53,7 @@ export const AllAbilities = () => {
             .map((ability: string) => (
               <StyledLink key={`${ability}Link`} to={`/ability?id=${ability}`}>
                 <AbilityItem key={ability}>
-                  {`${ability.charAt(0).toUpperCase()}${ability.slice(1)}`.replace("-", " ")}
+                  {ItemNamesEdit(ability)}
                 </AbilityItem>
               </StyledLink>
             ))}

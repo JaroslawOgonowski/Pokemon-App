@@ -3,6 +3,7 @@ import pokeball from "./images/Poké_Ball_icon.png";
 import ColorThief from 'colorthief';
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { ItemNamesEdit } from "../reusableFunctions/itemNamesEdit";
 
 interface PokemonTileProps {
   id: number;
@@ -10,7 +11,7 @@ interface PokemonTileProps {
 }
 
 export const PokemonTile = ({ id, name }: PokemonTileProps) => {
-  const pokemonName = name.slice(0, 1).toUpperCase() + name.slice(1);
+  const pokemonName = ItemNamesEdit(name)
   const realID = id + 1;
   const [dominantcolor, setDominantColor] = useState("");
   const [ref, inview] = useInView({

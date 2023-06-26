@@ -3,6 +3,7 @@ import { MovesProps } from "./movesInterface";
 import { TitleBox } from "../../../../Common/Title/styled";
 import { Subtitle } from "../Images/styled";
 import { Button, ButtonText, DetailLink, GameTitle, Table, TableCell, TableHeader, TableRow } from "./styled";
+import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 
 export const Moves = ({ moves }: MovesProps) => {
   const games = moves?.reduce((groups: string[], move) => {
@@ -83,7 +84,7 @@ export const Moves = ({ moves }: MovesProps) => {
       <Subtitle>Moves</Subtitle>
       <TitleBox>
         <Button onClick={handlePrevGen}><ButtonText>Prev game</ButtonText>⬅</Button>
-        <GameTitle>Game: <br/>{title}</GameTitle>
+        <GameTitle>Game: <br />{title}</GameTitle>
         <Button onClick={handleNextGen}><ButtonText>Next game</ButtonText>➡</Button>
       </TitleBox>
       <Table>
@@ -97,8 +98,8 @@ export const Moves = ({ moves }: MovesProps) => {
         </thead>
         <tbody>
           {filteredMoves?.map((move) => {
-            const moveName = `${move.move.name.charAt(0).toUpperCase()}${move.move.name.slice(1)}`;
-            const learnMethod = `${move.version_group_details[0].move_learn_method.name.charAt(0).toUpperCase()}${move.version_group_details[0].move_learn_method.name.slice(1)}`;
+            const moveName = ItemNamesEdit(move.move.name);
+            const learnMethod = ItemNamesEdit(move.version_group_details[0].move_learn_method.name)
             return (
               <TableRow key={move.move.name}>
                 <TableCell>{moveName}</TableCell>

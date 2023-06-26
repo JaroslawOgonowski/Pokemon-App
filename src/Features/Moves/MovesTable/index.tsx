@@ -10,7 +10,9 @@ import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/u
 import { handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
 import TypeIcon from "../../../Common/TypeIcon";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
-import { Table, TableCell, TableRow } from "./styled";
+import { Button, ButtonBox, MoveName, Table, TableCell, TableHead, TableRow } from "./styled";
+import { ailment, damageClass } from "./tableSwitches";
+
 
 export const MovesTable = () => {
   const navigate = useNavigate();
@@ -84,22 +86,24 @@ export const MovesTable = () => {
   return (
     <>
       <div ref={topRef} />
-      <button onClick={() => handlePrevPageClick()}>prev</button>
-      <button onClick={() => handleNextPageClick()}>next</button>
+      <ButtonBox>
+        <Button onClick={() => handlePrevPageClick()}>◀ Prev</Button>
+        <Button onClick={() => handleNextPageClick()}>Next ▶</Button>
+      </ButtonBox>
       <Table>
         <thead>
           <TableRow>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Damage Class</th>
-            <th>Accuracy</th>
-            <th>Power</th>
-            <th>PP</th>
-            <th>Effect</th>
-            <th>Crit</th>
-            <th>Drain</th>
-            <th>Flinch</th>
-            <th>Healing</th>
+            <TableHead>Name</TableHead>
+            <TableHead>Type</TableHead>
+            <TableHead>Effect</TableHead>
+            <TableHead>Damage Class</TableHead>
+            <TableHead>Accuracy</TableHead>
+            <TableHead>Power</TableHead>
+            <TableHead>PP</TableHead>
+            <TableHead>Crit</TableHead>
+            <TableHead>Drain</TableHead>
+            <TableHead>Flinch</TableHead>
+            <TableHead>Healing</TableHead>
           </TableRow>
         </thead>
         <tbody>
@@ -110,13 +114,13 @@ export const MovesTable = () => {
 
             return (
               <TableRow key={move.name}>
-                <TableCell><Link to={`/move/details/id=${moveInfo.name}`}>{ItemNamesEdit(moveInfo.name)}</Link></TableCell>
-                <TableCell><TypeIcon table={true} pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]}/></TableCell>
-                <TableCell>{moveInfo.damage_class.name}</TableCell>
+                <TableCell><MoveName to={`/move/details/id=${moveInfo.name}`}>{ItemNamesEdit(moveInfo.name)}</MoveName></TableCell>
+                <TableCell><TypeIcon table={true} pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]} /></TableCell>
+                <TableCell>{ailment(moveInfo.meta.ailment.name)}</TableCell>
+                <TableCell><img src={damageClass(moveInfo.damage_class.name)} alt={moveInfo.damage_class.name} /></TableCell>
                 <TableCell>{moveInfo.accuracy}</TableCell>
                 <TableCell>{moveInfo.power}</TableCell>
                 <TableCell>{moveInfo.pp}</TableCell>
-                <TableCell>{moveInfo.meta.ailment.name}</TableCell>
                 <TableCell>{moveInfo.meta.crit_rate}</TableCell>
                 <TableCell>{moveInfo.meta.drain}</TableCell>
                 <TableCell>{moveInfo.meta.flinch_chance}</TableCell>

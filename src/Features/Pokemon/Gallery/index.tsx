@@ -8,64 +8,44 @@ import { fetchGallery } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { PokemonTile } from "../../../Common/PokemonTile";
+import { handleFirstPage, handleLastPage, handleNextPage, handlePrevPage } from "../../../Common/buttonFunctions";
+import { useOffsetFromLocationSearch } from "../../../Common/useOffsetFromLocationSearch";
+import { scrollToTop } from "../../../Common/scrollToTop";
 interface Pokemon {
   name: string;
   id: number;
-}
-
+};
 interface GalleryData {
   results: Pokemon[];
-}
+  count: number;
+};
 
 export const Gallery = () => {
+
   const navigate = useNavigate();
-  const location = useLocation();
   const [offset, setOffset] = useState(0);
-  const limit = 100;
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const offsetValue = searchParams.get("offset");
-    if (offsetValue) {
-      setOffset(Number(offsetValue));
-    }
-  }, [location.search]);
-
-  const topGalleryRef = useRef<HTMLDivElement>(null);
-
-  const scrollToTop = () => {
-    if (topGalleryRef.current) {
-      topGalleryRef.current.scrollIntoView({
-        behavior: "auto",
-        block: "start",
-      });
-    }
-  };
+  const limit = 50;
+  const topRef = useRef<HTMLDivElement>(null);
+  useOffsetFromLocationSearch(offset, setOffset);
 
   const handlePageChange = (newOffset: number) => {
     setOffset(newOffset);
     navigate(`/pokemon?offset=${newOffset}`);
-    scrollToTop();
+    scrollToTop(topRef);
   };
 
-  const handleNextPage = () => {
-    const newOffset = offset + 100;
-    handlePageChange(newOffset);
+  const maxOffset = 910
+  const handlePrevPageClick = () => {
+    handlePrevPage(offset, limit, handlePageChange);
   };
-
-  const handleLastPage = () => {
-    const newOffset = 1000;
-    handlePageChange(newOffset);
+  const handleNextPageClick = () => {
+    handleNextPage(offset, limit, maxOffset, handlePageChange);
   };
-
-  const handlePrevPage = () => {
-    const newOffset = Math.max(0, offset - 100);
-    handlePageChange(newOffset);
+  const handleLastPageClick = () => {
+    handleLastPage(maxOffset, handlePageChange);
   };
-
-  const handleFirstPage = () => {
-    const newOffset = 0;
-    handlePageChange(newOffset);
+  const handleFirstPageClick = () => {
+    handleFirstPage(handlePageChange)
   };
 
   const { isLoading, isError, data } = useQuery<GalleryData>(
@@ -78,14 +58,14 @@ export const Gallery = () => {
 
   return data ? (
     <>
-      <TopMarker ref={topGalleryRef} />
+      <TopMarker ref={topRef} />
       <GalleryTitle >Hall of fame</GalleryTitle>
       <GalleryBox>
         <ButtonBox>
-          <BaseButton disabled={offset === 0} onClick={handlePrevPage}>
+          <BaseButton disabled={offset === 0} onClick={handlePrevPageClick}>
             <Prev />
           </BaseButton>
-          <FastButton disabled={offset === 0} onClick={handleFirstPage}>
+          <FastButton disabled={offset === 0} onClick={handleFirstPageClick}>
             <Prev />
             <Prev />
           </FastButton>
@@ -96,10 +76,10 @@ export const Gallery = () => {
           ))}
         </StyledGallery>
         <ButtonBox>
-          <BaseButton onClick={handleNextPage} disabled={offset > 910}>
+          <BaseButton onClick={handleNextPageClick} disabled={offset > 910}>
             <Next />
           </BaseButton>
-          <FastButton onClick={handleLastPage} disabled={offset > 910}>
+          <FastButton onClick={handleLastPageClick} disabled={offset > 910}>
             <Next />
             <Next />
           </FastButton>

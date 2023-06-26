@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GalleryBox, GalleryTitle, StyledGallery, ButtonBox, BaseButton, FastButton, TopMarker } from "./styled";
 import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.svg";
 import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg";
@@ -8,9 +8,9 @@ import { fetchGallery } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { PokemonTile } from "../../../Common/PokemonTile";
-import { handleFirstPage, handleLastPage, handleNextPage, handlePrevPage } from "../../../Common/buttonFunctions";
-import { useOffsetFromLocationSearch } from "../../../Common/useOffsetFromLocationSearch";
-import { scrollToTop } from "../../../Common/scrollToTop";
+import { handleFirstPage, handleLastPage, handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
+import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
+import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
 interface Pokemon {
   name: string;
   id: number;

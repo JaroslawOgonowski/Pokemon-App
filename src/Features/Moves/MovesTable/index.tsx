@@ -1,58 +1,39 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchMove, fetchMoves } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { useQuery } from "@tanstack/react-query";
 import { Move, MoveData } from "./moveInterface";
-
+import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
+import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
+import { handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
 
 export const MovesTable = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [offset, setOffset] = useState(0);
   const limit = 25;
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const offsetValue = searchParams.get("offset");
-    if (offsetValue) {
-      setOffset(Number(offsetValue));
-    }
-  }, [location.search]);
-
-  const topMovesRef = useRef<HTMLDivElement>(null);
-
-  const scrollToTop = () => {
-    if (topMovesRef.current) {
-      topMovesRef.current.scrollIntoView({
-        behavior: "auto",
-        block: "start",
-      });
-    }
-  };
-
-  const handlePageChange = (newOffset: number) => {
-    setOffset(newOffset);
-    navigate(`/moves?offset=${newOffset}`);
-    scrollToTop();
-  };
-
-  const handleNextPage = () => {
-    const newOffset = offset + limit;
-    const maxOffset = (data?.count || 0) - limit;
-    handlePageChange(Math.min(newOffset, maxOffset));
-  };
-
-  const handlePrevPage = () => {
-    const newOffset = Math.max(0, offset - 25);
-    handlePageChange(newOffset);
-  };
+  const topRef = useRef<HTMLDivElement>(null);
+  useOffsetFromLocationSearch(offset, setOffset);
 
   const { isLoading, isError, data } = useQuery(
     ["moves", { limit: limit, offset: offset }],
     () => fetchMoves(limit, offset)
   );
+  const maxOffset = (data?.count || 0) - limit;
+
+  const handlePageChange = (newOffset: number) => {
+    setOffset(newOffset);
+    navigate(`/moves?offset=${newOffset}`);
+    scrollToTop(topRef);
+  };
+
+  const handlePrevPageClick = () => {
+    handlePrevPage(offset, limit, handlePageChange);
+  };
+  const handleNextPageClick = () => {
+    handleNextPage(offset, limit, maxOffset, handlePageChange);
+  };
 
   const [moveData, setMoveData] = useState<Record<string, MoveData>>({});
   const [loading, setLoading] = useState(true);
@@ -64,7 +45,7 @@ export const MovesTable = () => {
       const newData: Record<string, MoveData> = {};
       for (const move of moves) {
         try {
-          const moveInfo = await fetchMove(move.url); console.log(moveInfo)          
+          const moveInfo = await fetchMove(move.url);
           const moveData: MoveData = {
             name: moveInfo.name,
             url: moveInfo.url,
@@ -99,11 +80,14 @@ export const MovesTable = () => {
 
   return (
     <>
-      <button onClick={() => handleNextPage()}>next</button>
+      <div ref={topRef} />
+      <button onClick={() => handlePrevPageClick()}>prev</button>
+      <button onClick={() => handleNextPageClick()}>next</button>
       {data.results.map((move: Move) => {
         if (loading || !moveData[move.name]) return null;
         if (!moveData[move.name]) return null;
         const moveInfo = moveData[move.name];
+
         return (
           <table key={move.name}>
             <thead>

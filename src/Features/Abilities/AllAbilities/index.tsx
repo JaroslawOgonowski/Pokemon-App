@@ -1,41 +1,26 @@
 import { fetchAbilities } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { AbilityItem, AbilityList, AllAbilitiesContainer, Button, StyledAbilities, StyledLink, Title } from "./styled";
-import { handlePrevPage, handleNextPage } from "../../../Common/buttonFunctions";
+import { handlePrevPage, handleNextPage } from "../../../Common/reusableFunctions/buttonFunctions";
+import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
+import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 
 export const AllAbilities = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [offset, setOffset] = useState(0);
   const limit = 100;
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const offsetValue = searchParams.get("offset");
-    if (offsetValue) {
-      setOffset(Number(offsetValue));
-    }
-  }, [location.search]);
-
-  const topAbilityRef = useRef<HTMLDivElement>(null);
-
-  const scrollToTop = () => {
-    if (topAbilityRef.current) {
-      topAbilityRef.current.scrollIntoView({
-        behavior: "auto",
-        block: "start",
-      });
-    }
-  };
-
+  const topRef = useRef<HTMLDivElement>(null);
+  useOffsetFromLocationSearch(offset, setOffset);
+  
   const handlePageChange = (newOffset: number) => {
     setOffset(newOffset);
     navigate(`/abilities?offset=${newOffset}`);
-    scrollToTop();
+    scrollToTop(topRef);
   };
 
   const { isLoading, isError, data } = useQuery(
@@ -43,21 +28,19 @@ export const AllAbilities = () => {
     () => fetchAbilities(limit, offset)
   );
   const maxOffset = (data?.count || 0) - limit;
-  
-  if (isLoading) return <Loader />;
-  if (isError) return <Error />;
 
   const handlePrevPageClick = () => {
     handlePrevPage(offset, limit, handlePageChange);
   };
-
   const handleNextPageClick = () => {
     handleNextPage(offset, limit, maxOffset, handlePageChange);
   };
 
+  if (isLoading) return <Loader />;
+  if (isError) return <Error />;
   return data ? (
     <StyledAbilities>
-      <Title ref={topAbilityRef}>Abilities List</Title>
+      <Title ref={topRef}>Abilities List</Title>
       <AllAbilitiesContainer>
         <Button disabled={offset === 0} onClick={handlePrevPageClick}>
           ◀

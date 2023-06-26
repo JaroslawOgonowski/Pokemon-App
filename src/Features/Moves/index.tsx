@@ -2,13 +2,14 @@ import { Main } from "../../Base/Main"
 import { CenteredTitle } from "../../Common/CenteredTitle"
 import { MovesTable } from "./MovesTable"
 
+
 export const Moves = () => {
   return (
     <>
-    <Main
-      titleContent="Moves"
-      articleContentHead=
-      {"Moves in Pokémon games play a crucial role in battle strategy and tactics.\
+      <Main
+        titleContent="Moves"
+        articleContentHead=
+        {"Moves in Pokémon games play a crucial role in battle strategy and tactics.\
       Each Pokémon can learn different moves, which can have various types, power, accuracy, and additional effects.\
       Here's a brief summary of the different types of moves that exist in Pokémon games:\
       Offensive Moves: These are moves that deal damage to the opponent.\
@@ -25,24 +26,24 @@ export const Moves = () => {
       For instance, the move Sleep Powder can put the opponent to sleep,\
       while the move Thunder Wave can paralyze the opponent and reduce its accuracy.\
       Moves in Pokémon games are a crucial element of strategy, and choosing the right moves and balancing them can greatly impact success in battles. Well - thought - out move combinations can help gain an advantage over opponents and secure victory in challenging encounters."
-      }
-      readMoreButton={false}
-      articleContentFull={null}
-      sideBarText={
-        [
-          {
-            name: "Bulbapedia- moves",
-            link: "https://bulbapedia.bulbagarden.net/wiki/List_of_moves"
-          },
-          {
-            name: "Serebi attackdex",
-            link: "https://www.serebii.net/attackdex/"
-          }
-        ]
-      }
-    />
-  <CenteredTitle content="Moves List"/>
-  <MovesTable/>
-  </>
+        }
+        readMoreButton={false}
+        articleContentFull={null}
+        sideBarText={
+          [
+            {
+              name: "Bulbapedia- moves",
+              link: "https://bulbapedia.bulbagarden.net/wiki/List_of_moves"
+            },
+            {
+              name: "Serebi attackdex",
+              link: "https://www.serebii.net/attackdex/"
+            }
+          ]
+        }
+      />
+      <CenteredTitle content="Moves List" />
+      <MovesTable />
+    </>
   )
 }

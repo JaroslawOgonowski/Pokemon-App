@@ -28,7 +28,7 @@ export const Abilities = () => {
           }
         ]}
       />
-      <AllAbilities/>
+      <AllAbilities />
     </>
   );
 };

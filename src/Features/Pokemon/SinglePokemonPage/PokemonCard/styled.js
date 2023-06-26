@@ -126,6 +126,7 @@ export const Type = styled.div`
   padding: 0.5vw 2vw;
   border-radius: 1vw;
   font-size: 1.3vw;
+  text-align: center;
   background-color:${(props) => props.typeBackgroundColor};
   color: ${(props) => props.typeFontColor};
   -webkit-box-shadow: 0vw 0vw 0.6959vw 0.1099vw ${(props) => props.typeBackgroundColor};

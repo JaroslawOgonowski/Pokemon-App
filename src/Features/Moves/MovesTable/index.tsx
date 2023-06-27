@@ -9,18 +9,28 @@ import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import { DmgImg, MoveName, Table, TableCell, TableHead, TableRow } from "./styled";
 import { ailment, damageClass } from "./tableSwitches";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
+import { MovesSorter } from "./MovesSorter";
 
 export const MovesTable = () => {
-  const offset = 0
+  const offset = 0;
   const limit = 933;
   const [moveData, setMoveData] = useState<Record<string, MoveData>>({});
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortKey, setSortKey] = useState("");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
   const { isLoading, isError, data } = useQuery(
     ["moves", { limit: limit, offset: offset }],
     () => fetchMoves(limit, offset)
   );
+  
+  const sortedMoves = MovesSorter({
+    data: data?.results || [],
+    moveData,
+    sortKey,
+    sortDirection,
+  });
 
   useEffect(() => {
     const fetchAllMoveData = async () => {
@@ -57,8 +67,18 @@ export const MovesTable = () => {
     fetchAllMoveData();
   }, [data]);
 
-  if (isLoading || loading) return <Loader />;
-  if (isError || !moveData) return <Error />;
+  const handleSort = (key: string) => {
+    if (sortKey === key) {
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setSortKey(key);
+      setSortDirection("asc");
+    }
+  };
+
+
+  if ((isLoading || loading) && !data) return <Loader />;
+  if (isError || !moveData || !data) return <Error />;
   return (
     <>
       <CenteredTitle content="Moves List" />
@@ -71,13 +91,19 @@ export const MovesTable = () => {
       <Table>
         <thead>
           <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Type</TableHead>
-            <TableHead>Effect</TableHead>
+            <TableHead onClick={() => handleSort("name")}>Name</TableHead>
+            <TableHead onClick={() => handleSort("type")}>Type</TableHead>
+            <TableHead onClick={() => handleSort("effect")}>Effect</TableHead>
             <TableHead>Damage Class</TableHead>
-            <TableHead mobileHidden>Accuracy</TableHead>
-            <TableHead mobileHidden>Power</TableHead>
-            <TableHead mobileHidden>PP</TableHead>
+            <TableHead mobileHidden onClick={() => handleSort("accuracy")}>
+              Accuracy
+            </TableHead>
+            <TableHead mobileHidden onClick={() => handleSort("power")}>
+              Power
+            </TableHead>
+            <TableHead mobileHidden onClick={() => handleSort("pp")}>
+              PP
+            </TableHead>
             <TableHead mobileHidden>Crit</TableHead>
             <TableHead mobileHidden>Drain</TableHead>
             <TableHead mobileHidden>Flinch</TableHead>
@@ -85,7 +111,7 @@ export const MovesTable = () => {
           </TableRow>
         </thead>
         <tbody>
-          {data.results
+          {sortedMoves
             .filter((move: Move) => move.name.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((move: Move) => {
               if (loading || !moveData[move.name]) return null;

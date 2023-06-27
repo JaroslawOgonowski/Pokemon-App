@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
+export const TableMarker = styled.div`
+`;
+
 export const ButtonBox = styled.div`
   display: flex;
   width: 96%;
@@ -11,6 +14,11 @@ export const ButtonBox = styled.div`
   position: sticky;
   top: 6.5vw;
   left: 2%;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    top: 80px;
+    padding-bottom: 3.2vw;
+  };
 `;
 
 export const Button = styled.button`
@@ -56,13 +64,17 @@ export const TableRow = styled.tr`
   &:hover{
     background-color: rgba(121, 208, 237, 0.705);
   };
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 98%;
+  };
 `;
 
 export const TableCell = styled.td`
   text-align: center;
   border-bottom: 1px solid black;
   height: 2.5vw;
-  padding: 0.2vw;
+  padding: 0.5vw;
   font-size: 1.2vw;
   font-weight: 600;
 
@@ -79,7 +91,8 @@ export const TableCell = styled.td`
     font-size: 16px;
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    font-size: 13px;
+    font-size: 11px;
+    padding: 0.5vw 4px;
   };
 `;
 
@@ -101,11 +114,13 @@ export const TableHead = styled.th`
   `}
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 200;
+    top: calc(7vw + 7.3vh);
   };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 13px;
+    top: calc(7.6vh + 80px);
   };
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {

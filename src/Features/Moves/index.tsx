@@ -1,7 +1,5 @@
 import { Main } from "../../Base/Main"
-import { CenteredTitle } from "../../Common/CenteredTitle"
 import { MovesTable } from "./MovesTable"
-
 
 export const Moves = () => {
   return (
@@ -42,7 +40,6 @@ export const Moves = () => {
           ]
         }
       />
-      <CenteredTitle content="Moves List" />
       <MovesTable />
     </>
   )

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { fetchMove, fetchMoves } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
@@ -10,27 +10,29 @@ import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/u
 import { handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
 import TypeIcon from "../../../Common/TypeIcon";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
-import { Button, ButtonBox, DmgImg, MoveName, Table, TableCell, TableHead, TableRow } from "./styled";
+import { Button, ButtonBox, DmgImg, MoveName, Table, TableCell, TableHead, TableMarker, TableRow } from "./styled";
 import { ailment, damageClass } from "./tableSwitches";
-
+import { CenteredTitle } from "../../../Common/CenteredTitle";
 
 export const MovesTable = () => {
   const navigate = useNavigate();
   const [offset, setOffset] = useState(0);
   const limit = 25;
-  const topRef = useRef<HTMLDivElement>(null);
+  const upRef = useRef<HTMLDivElement>(null);
   useOffsetFromLocationSearch(offset, setOffset);
 
   const { isLoading, isError, data } = useQuery(
     ["moves", { limit: limit, offset: offset }],
     () => fetchMoves(limit, offset)
   );
-  const maxOffset = (data?.count || 0) - limit;
+  const maxOffset = 825;
+  const [moveData, setMoveData] = useState<Record<string, MoveData>>({});
+  const [loading, setLoading] = useState(true);
 
   const handlePageChange = (newOffset: number) => {
     setOffset(newOffset);
     navigate(`/moves?offset=${newOffset}`);
-    scrollToTop(topRef);
+    scrollToTop(upRef);
   };
 
   const handlePrevPageClick = () => {
@@ -39,9 +41,6 @@ export const MovesTable = () => {
   const handleNextPageClick = () => {
     handleNextPage(offset, limit, maxOffset, handlePageChange);
   };
-
-  const [moveData, setMoveData] = useState<Record<string, MoveData>>({});
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchAllMoveData = async () => {
@@ -82,54 +81,55 @@ export const MovesTable = () => {
 
   if (isLoading || loading) return <Loader />;
   if (isError || !moveData) return <Error />;
-
   return (
     <>
-      <div ref={topRef} />
-      <ButtonBox>
-        <Button onClick={() => handlePrevPageClick()}>◀ Prev</Button>
-        <Button onClick={() => handleNextPageClick()}>Next ▶</Button>
-      </ButtonBox>
-      <Table>
-        <thead>
-          <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Type</TableHead>
-            <TableHead>Effect</TableHead>
-            <TableHead>Class</TableHead>
-            <TableHead mobileHidden>Accuracy</TableHead>
-            <TableHead mobileHidden>Power</TableHead>
-            <TableHead mobileHidden>PP</TableHead>
-            <TableHead mobileHidden>Crit</TableHead>
-            <TableHead mobileHidden>Drain</TableHead>
-            <TableHead mobileHidden>Flinch</TableHead>
-            <TableHead mobileHidden>Healing</TableHead>
-          </TableRow>
-        </thead>
-        <tbody>
-          {data.results.map((move: Move) => {
-            if (loading || !moveData[move.name]) return null;
-            if (!moveData[move.name]) return null;
-            const moveInfo = moveData[move.name];
+      <div ref={upRef} />
+      <>
+        <CenteredTitle content="Moves List" />
+        <ButtonBox>
+          <Button onClick={() => handlePrevPageClick()}>◀ Prev</Button>
+          <Button onClick={() => handleNextPageClick()}>Next ▶</Button>
+        </ButtonBox>
+        <Table>
+          <thead>
+            <TableRow>
+              <TableHead>Name</TableHead>
+              <TableHead>Type</TableHead>
+              <TableHead>Effect</TableHead>
+              <TableHead>Damage Class</TableHead>
+              <TableHead mobileHidden>Accuracy</TableHead>
+              <TableHead mobileHidden>Power</TableHead>
+              <TableHead mobileHidden>PP</TableHead>
+              <TableHead mobileHidden>Crit</TableHead>
+              <TableHead mobileHidden>Drain</TableHead>
+              <TableHead mobileHidden>Flinch</TableHead>
+              <TableHead mobileHidden>Healing</TableHead>
+            </TableRow>
+          </thead>
+          <tbody>
+            {data.results.map((move: Move) => {
+              if (loading || !moveData[move.name]) return null;
+              if (!moveData[move.name]) return null;
+              const moveInfo = moveData[move.name];
 
-            return (
-              <TableRow key={move.name}>
-                <TableCell><MoveName to={`/move/details/id=${moveInfo.name}`}>{ItemNamesEdit(moveInfo.name)}</MoveName></TableCell>
-                <TableCell><TypeIcon table={true} pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]} /></TableCell>
-                <TableCell>{ailment(moveInfo.meta.ailment.name)}</TableCell>
-                <TableCell><DmgImg src={damageClass(moveInfo.damage_class.name)} alt={moveInfo.damage_class.name} /></TableCell>
-                <TableCell mobileHidden>{moveInfo.accuracy}</TableCell>
-                <TableCell mobileHidden>{moveInfo.power}</TableCell>
-                <TableCell mobileHidden>{moveInfo.pp}</TableCell>
-                <TableCell mobileHidden>{moveInfo.meta.crit_rate}</TableCell>
-                <TableCell mobileHidden>{moveInfo.meta.drain}</TableCell>
-                <TableCell mobileHidden>{moveInfo.meta.flinch_chance}</TableCell>
-                <TableCell mobileHidden>{moveInfo.meta.healing}</TableCell>
-              </TableRow>
-            );
-          })}
-        </tbody>
-      </Table>
-    </>
+              return (
+                <TableRow key={move.name}>
+                  <TableCell><MoveName to={`/move/details/id=${moveInfo.name}`}>{ItemNamesEdit(moveInfo.name)}</MoveName></TableCell>
+                  <TableCell><TypeIcon table={true} pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]} /></TableCell>
+                  <TableCell>{ailment(moveInfo.meta.ailment.name)}</TableCell>
+                  <TableCell><DmgImg src={damageClass(moveInfo.damage_class.name)} alt={moveInfo.damage_class.name} /></TableCell>
+                  <TableCell mobileHidden>{moveInfo.accuracy}</TableCell>
+                  <TableCell mobileHidden>{moveInfo.power}</TableCell>
+                  <TableCell mobileHidden>{moveInfo.pp}</TableCell>
+                  <TableCell mobileHidden>{moveInfo.meta.crit_rate}</TableCell>
+                  <TableCell mobileHidden>{moveInfo.meta.drain}</TableCell>
+                  <TableCell mobileHidden>{moveInfo.meta.flinch_chance}</TableCell>
+                  <TableCell mobileHidden>{moveInfo.meta.healing}</TableCell>
+                </TableRow>
+              );
+            })}
+          </tbody>
+        </Table>
+      </></>
   );
 };

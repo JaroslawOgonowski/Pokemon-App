@@ -2,7 +2,7 @@ import { fetchAbilities } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { AbilityItem, AbilityList, AllAbilitiesContainer, Button, StyledAbilities, StyledLink, Title } from "./styled";
 import { handlePrevPage, handleNextPage } from "../../../Common/reusableFunctions/buttonFunctions";
@@ -12,7 +12,6 @@ import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 
 export const AllAbilities = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [offset, setOffset] = useState(0);
   const limit = 100;
   const topRef = useRef<HTMLDivElement>(null);

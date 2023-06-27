@@ -1,7 +1,7 @@
 export const scrollToTop = (topRef: React.RefObject<HTMLDivElement>) => {
   if (topRef.current) {
     topRef.current.scrollIntoView({
-      behavior: "auto",
+      behavior: "smooth",
       block: "start",
     });
   }

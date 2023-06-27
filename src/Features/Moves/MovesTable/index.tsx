@@ -10,12 +10,15 @@ import { DmgImg, MoveName, Table, TableCell, TableHead, TableRow } from "./style
 import { ailment, damageClass } from "./tableSwitches";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { MovesSorter } from "./MovesSorter";
+import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
 
 export const MovesTable = () => {
+  useScrollToTop()
   const offset = 0;
   const limit = 933;
   const [moveData, setMoveData] = useState<Record<string, MoveData>>({});
   const [loading, setLoading] = useState(true);
+  const [showLoader, setShowLoader] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortKey, setSortKey] = useState("");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
@@ -24,7 +27,7 @@ export const MovesTable = () => {
     ["moves", { limit: limit, offset: offset }],
     () => fetchMoves(limit, offset)
   );
-  
+
   const sortedMoves = MovesSorter({
     data: data?.results || [],
     moveData,
@@ -64,8 +67,13 @@ export const MovesTable = () => {
       setMoveData(newData);
       setLoading(false);
     };
+
+    setShowLoader(true);
     fetchAllMoveData();
-  }, [data]);
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 3000);
+  }, []);
 
   const handleSort = (key: string) => {
     if (sortKey === key) {
@@ -76,8 +84,8 @@ export const MovesTable = () => {
     }
   };
 
-
-  if ((isLoading || loading) && !data) return <Loader />;
+  if (showLoader) return <Loader />;
+  if ((isLoading || loading) && !data) return null;
   if (isError || !moveData || !data) return <Error />;
   return (
     <>
@@ -114,8 +122,8 @@ export const MovesTable = () => {
           {sortedMoves
             .filter((move: Move) => move.name.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((move: Move) => {
-              if (loading || !moveData[move.name]) return null;
-              if (!moveData[move.name]) return null;
+              if (loading && !moveData[move.name]) return;
+              if (!moveData[move.name]) return;
               const moveInfo = moveData[move.name];
               return (
                 <TableRow key={move.name}>

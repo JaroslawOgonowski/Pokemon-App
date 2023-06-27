@@ -2,19 +2,15 @@ import { useRef } from "react"
 import { Main } from "../../Base/Main"
 import { Gallery } from "./Gallery"
 import { PokemonContainer } from "./styled"
-import { scrollToTop } from "../../Common/reusableFunctions/scrollToTop"
-
-
+import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop"
 
 export const Pokemon = () => {
-  const topRef = useRef<HTMLDivElement>(null)
-  scrollToTop(topRef);
+  useScrollToTop()
   return (
     <>
-      <PokemonContainer ref={topRef}>
+      <PokemonContainer>
         <Main
           titleContent="Pokémon"
-
           articleContentHead={"Pokémon, also known as 'Pocket Monsters,' is one of the most recognizable and influential phenomena in the world of\
       ertainment. This Japanese brand, created by Satoshi Tajiri and Ken Sugimori, gained enormous popularity since its\
       debut in 1996.\

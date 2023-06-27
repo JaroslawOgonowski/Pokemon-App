@@ -1,9 +1,12 @@
 import { Main } from "../../Base/Main";
 import { AllAbilities } from "./AllAbilities";
+import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
 
 export const Abilities = () => {
+  useScrollToTop()
   return (
     <>
+      <div />
       <Main
         titleContent="Abilities"
         articleContentHead="Pokémon possess a wide range of abilities that vary in terms of types, power, and effects. These abilities make them unique and give them an advantage in battles."

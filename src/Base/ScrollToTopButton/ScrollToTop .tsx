@@ -3,12 +3,14 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #eaeaea;
+  right: 40px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 1vw;
+  background-color: #010101b0;
+  color: white;
+  font-size: 36px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -52,7 +54,7 @@ const ScrollToTopButton = () => {
     <>
       {isVisible && (
         <StyledButton onClick={scrollToTop}>
-          ⏫
+         ⬆
         </StyledButton>
       )}
     </>

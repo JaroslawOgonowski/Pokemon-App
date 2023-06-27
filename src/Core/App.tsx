@@ -8,7 +8,7 @@ import { Moves } from "../Features/Moves";
 import { SinglePokemonPage } from "../Features/Pokemon/SinglePokemonPage";
 import { Abilities } from "../Features/Abilities";
 import { AbilityPage } from "../Features/Abilities/AbilityPage";
-import ScrollToTopButton from "../Base/ScrollToTop ";
+import ScrollToTopButton from "../Base/ScrollToTopButton/ScrollToTop ";
 
 function App() {
   return (

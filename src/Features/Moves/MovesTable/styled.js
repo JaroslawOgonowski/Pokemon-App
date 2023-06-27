@@ -1,44 +1,6 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-export const ButtonBox = styled.div`
-  display: flex;
-  width: 96%;
-  height: 6vh;
-  margin: 0 auto;
-  justify-content: center; 
-  padding-bottom: 2vw;
-
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    top: 80px;
-    padding-bottom: 3.2vw;
-  };
-`;
-
-export const Button = styled.button`
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 7vh;
-  font-family: 'Righteous', cursive;
-  font-size: 5vh;
-  background-color: rgba(25, 23, 23, 0.927);
-  color: white; 
-  transition: 400ms;
-  &:hover{
-    filter: brightness(200%);
-  };
-
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    font-size: 16px;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    font-size: 13px;
-  };
-`;
-
 export const Table = styled.table`
   font-family: 'Righteous', cursive;
   border-collapse: collapse;

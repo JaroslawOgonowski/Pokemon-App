@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ButtonBox = styled.div`
   display: flex;
@@ -66,16 +66,20 @@ export const TableCell = styled.td`
   font-size: 1.2vw;
   font-weight: 600;
 
+  ${({ mobileHidden }) => mobileHidden && css`
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    height: 30px;
-    font-size: 14px;
-    padding: 4px;
-  };
+   display: none;
+    };  
+  `}
 
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 18px;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 16px;
+  };
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    height: 25px;
-    font-size: 11px;
-    padding: 2px;
+    font-size: 13px;
   };
 `;
 
@@ -85,19 +89,34 @@ export const TableHead = styled.th`
   height: 5vh;
   background-color: rgba(25, 23, 23, 0.927);
   font-size: 1.2vw;
-  letter-spacing: 0.1vw;
-  padding: 1vw 0;
+  letter-spacing: 0.1vw; 
   position: sticky;
-  top: calc(7vw + 7vh);
+  top: calc(7vw + 7.2vh);
   left: 2%;
+  
+  ${({ mobileHidden }) => mobileHidden && css`
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    height: 40px;
-    font-size: 16px;
+   display: none;
+    };  
+  `}
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 14px;
+    font-weight: 200;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 13px;
   };
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     height: 30px;
-    font-size: 13px;
+    font-size: 12px;
+  };
+`;
+
+export const DmgImg = styled.img`
+@media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 30px;
   };
 `;
 
@@ -105,13 +124,28 @@ export const MoveName = styled(Link)`
   text-decoration: none;
   font-size: 1.4vw;
   color: black;
+  
+  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 18px;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 16px;
+  };
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 13px;
+  };
 `;
 
 export const Ailment = styled.div`
   text-align: center;
-  padding: 6%;
+  padding: 3% 0;
   border-radius: 0.6vw;
   background-color: red;
+  margin: 0 1vw;
+
+  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    margin: 0 16px;
+  };
 `;
 
 export const Burn = styled(Ailment)`

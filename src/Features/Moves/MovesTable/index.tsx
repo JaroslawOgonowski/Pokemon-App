@@ -10,7 +10,7 @@ import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/u
 import { handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
 import TypeIcon from "../../../Common/TypeIcon";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
-import { Button, ButtonBox, MoveName, Table, TableCell, TableHead, TableRow } from "./styled";
+import { Button, ButtonBox, DmgImg, MoveName, Table, TableCell, TableHead, TableRow } from "./styled";
 import { ailment, damageClass } from "./tableSwitches";
 
 
@@ -96,14 +96,14 @@ export const MovesTable = () => {
             <TableHead>Name</TableHead>
             <TableHead>Type</TableHead>
             <TableHead>Effect</TableHead>
-            <TableHead>Damage Class</TableHead>
-            <TableHead>Accuracy</TableHead>
-            <TableHead>Power</TableHead>
-            <TableHead>PP</TableHead>
-            <TableHead>Crit</TableHead>
-            <TableHead>Drain</TableHead>
-            <TableHead>Flinch</TableHead>
-            <TableHead>Healing</TableHead>
+            <TableHead>Class</TableHead>
+            <TableHead mobileHidden>Accuracy</TableHead>
+            <TableHead mobileHidden>Power</TableHead>
+            <TableHead mobileHidden>PP</TableHead>
+            <TableHead mobileHidden>Crit</TableHead>
+            <TableHead mobileHidden>Drain</TableHead>
+            <TableHead mobileHidden>Flinch</TableHead>
+            <TableHead mobileHidden>Healing</TableHead>
           </TableRow>
         </thead>
         <tbody>
@@ -117,14 +117,14 @@ export const MovesTable = () => {
                 <TableCell><MoveName to={`/move/details/id=${moveInfo.name}`}>{ItemNamesEdit(moveInfo.name)}</MoveName></TableCell>
                 <TableCell><TypeIcon table={true} pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]} /></TableCell>
                 <TableCell>{ailment(moveInfo.meta.ailment.name)}</TableCell>
-                <TableCell><img src={damageClass(moveInfo.damage_class.name)} alt={moveInfo.damage_class.name} /></TableCell>
-                <TableCell>{moveInfo.accuracy}</TableCell>
-                <TableCell>{moveInfo.power}</TableCell>
-                <TableCell>{moveInfo.pp}</TableCell>
-                <TableCell>{moveInfo.meta.crit_rate}</TableCell>
-                <TableCell>{moveInfo.meta.drain}</TableCell>
-                <TableCell>{moveInfo.meta.flinch_chance}</TableCell>
-                <TableCell>{moveInfo.meta.healing}</TableCell>
+                <TableCell><DmgImg src={damageClass(moveInfo.damage_class.name)} alt={moveInfo.damage_class.name} /></TableCell>
+                <TableCell mobileHidden>{moveInfo.accuracy}</TableCell>
+                <TableCell mobileHidden>{moveInfo.power}</TableCell>
+                <TableCell mobileHidden>{moveInfo.pp}</TableCell>
+                <TableCell mobileHidden>{moveInfo.meta.crit_rate}</TableCell>
+                <TableCell mobileHidden>{moveInfo.meta.drain}</TableCell>
+                <TableCell mobileHidden>{moveInfo.meta.flinch_chance}</TableCell>
+                <TableCell mobileHidden>{moveInfo.meta.healing}</TableCell>
               </TableRow>
             );
           })}

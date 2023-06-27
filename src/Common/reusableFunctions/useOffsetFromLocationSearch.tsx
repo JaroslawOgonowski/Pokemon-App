@@ -12,6 +12,7 @@ export const useOffsetFromLocationSearch = (
     const offsetValue = searchParams.get("offset");
     if (offsetValue) {
       setOffset(Number(offsetValue));
+      
     }
   }, [location.search]);
 

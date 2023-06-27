@@ -10,7 +10,7 @@ import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/u
 import { handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
 import TypeIcon from "../../../Common/TypeIcon";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
-import { Button, ButtonBox, DmgImg, MoveName, Table, TableCell, TableHead, TableMarker, TableRow } from "./styled";
+import { Button, ButtonBox, DmgImg, MoveName, Table, TableCell, TableHead, TableRow } from "./styled";
 import { ailment, damageClass } from "./tableSwitches";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 
@@ -18,7 +18,6 @@ export const MovesTable = () => {
   const navigate = useNavigate();
   const [offset, setOffset] = useState(0);
   const limit = 25;
-  const upRef = useRef<HTMLDivElement>(null);
   useOffsetFromLocationSearch(offset, setOffset);
 
   const { isLoading, isError, data } = useQuery(
@@ -28,19 +27,6 @@ export const MovesTable = () => {
   const maxOffset = 825;
   const [moveData, setMoveData] = useState<Record<string, MoveData>>({});
   const [loading, setLoading] = useState(true);
-
-  const handlePageChange = (newOffset: number) => {
-    setOffset(newOffset);
-    navigate(`/moves?offset=${newOffset}`);
-    scrollToTop(upRef);
-  };
-
-  const handlePrevPageClick = () => {
-    handlePrevPage(offset, limit, handlePageChange);
-  };
-  const handleNextPageClick = () => {
-    handleNextPage(offset, limit, maxOffset, handlePageChange);
-  };
 
   useEffect(() => {
     const fetchAllMoveData = async () => {
@@ -79,12 +65,22 @@ export const MovesTable = () => {
     fetchAllMoveData();
   }, [data]);
 
+  const handlePageChange = (newOffset: number) => {
+    setOffset(newOffset);
+    navigate(`/moves?offset=${newOffset}`);
+  }; 
+
+  const handlePrevPageClick = () => {
+    handlePrevPage(offset, limit, handlePageChange);
+  };
+  const handleNextPageClick = () => {
+    handleNextPage(offset, limit, maxOffset, handlePageChange);
+  };
+
   if (isLoading || loading) return <Loader />;
   if (isError || !moveData) return <Error />;
   return (
     <>
-      <div ref={upRef} />
-      <>
         <CenteredTitle content="Moves List" />
         <ButtonBox>
           <Button onClick={() => handlePrevPageClick()}>◀ Prev</Button>
@@ -130,6 +126,6 @@ export const MovesTable = () => {
             })}
           </tbody>
         </Table>
-      </></>
+      </>
   );
 };

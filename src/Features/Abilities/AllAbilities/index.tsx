@@ -17,18 +17,18 @@ export const AllAbilities = () => {
   const topRef = useRef<HTMLDivElement>(null);
   useOffsetFromLocationSearch(offset, setOffset);
 
+  const { isLoading, isError, data } = useQuery(
+    ["abilities", { limit: limit, offset: offset }],
+    () => fetchAbilities(limit, offset)
+  );
+
+  const maxOffset = (data?.count || 0) - limit;
+  
   const handlePageChange = (newOffset: number) => {
     setOffset(newOffset);
     navigate(`/abilities?offset=${newOffset}`);
     scrollToTop(topRef);
   };
-
-  const { isLoading, isError, data } = useQuery(
-    ["abilities", { limit: limit, offset: offset }],
-    () => fetchAbilities(limit, offset)
-  );
-  const maxOffset = (data?.count || 0) - limit;
-
   const handlePrevPageClick = () => {
     handlePrevPage(offset, limit, handlePageChange);
   };

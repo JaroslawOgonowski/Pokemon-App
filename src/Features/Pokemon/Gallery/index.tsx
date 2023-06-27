@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { GalleryBox, GalleryTitle, StyledGallery, ButtonBox, BaseButton, FastButton, TopMarker } from "./styled";
@@ -28,11 +28,19 @@ export const Gallery = () => {
   const topRef = useRef<HTMLDivElement>(null);
   useOffsetFromLocationSearch(offset, setOffset);
 
+  const { isLoading, isError, data } = useQuery<GalleryData>(
+    ["gallery", { limit: limit, offset: offset }],
+    () => fetchGallery(limit, offset)
+  );
+
+  useEffect(() => {
+    navigate(`/pokemon?offset=${offset}`);
+    scrollToTop(topRef);
+  }, [offset, navigate, data]);
+  
   const handlePageChange = (newOffset: number) => {
     setOffset(newOffset);
-    navigate(`/pokemon?offset=${newOffset}`);
-    scrollToTop(topRef);
-  };
+  };  
 
   const maxOffset = 910
   const handlePrevPageClick = () => {
@@ -47,11 +55,6 @@ export const Gallery = () => {
   const handleFirstPageClick = () => {
     handleFirstPage(handlePageChange)
   };
-
-  const { isLoading, isError, data } = useQuery<GalleryData>(
-    ["gallery", { limit: limit, offset: offset }],
-    () => fetchGallery(limit, offset)
-  );
 
   if (isLoading) return <Loader />;
   if (isError) return <Error />;
@@ -76,10 +79,10 @@ export const Gallery = () => {
           ))}
         </StyledGallery>
         <ButtonBox>
-          <BaseButton onClick={handleNextPageClick} disabled={offset > 910}>
+          <BaseButton onClick={handleNextPageClick} disabled={offset >= 910}>
             <Next />
           </BaseButton>
-          <FastButton onClick={handleLastPageClick} disabled={offset > 910}>
+          <FastButton onClick={handleLastPageClick} disabled={offset >= 910}>
             <Next />
             <Next />
           </FastButton>

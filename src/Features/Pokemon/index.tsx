@@ -1,14 +1,17 @@
+import { useRef } from "react"
 import { Main } from "../../Base/Main"
 import { Gallery } from "./Gallery"
 import { PokemonContainer } from "./styled"
+import { scrollToTop } from "../../Common/reusableFunctions/scrollToTop"
 
 
 
 export const Pokemon = () => {
-
+  const topRef = useRef<HTMLDivElement>(null)
+  scrollToTop(topRef);
   return (
     <>
-      <PokemonContainer>
+      <PokemonContainer ref={topRef}>
         <Main
           titleContent="Pokémon"
 

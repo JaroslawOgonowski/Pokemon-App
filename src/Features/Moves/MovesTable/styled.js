@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-export const TableMarker = styled.div`
-`;
-
 export const ButtonBox = styled.div`
   display: flex;
   width: 96%;
@@ -11,9 +8,6 @@ export const ButtonBox = styled.div`
   margin: 0 auto;
   justify-content: center; 
   padding-bottom: 2vw;
-  position: sticky;
-  top: 6.5vw;
-  left: 2%;
 
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     top: 80px;
@@ -103,9 +97,6 @@ export const TableHead = styled.th`
   background-color: rgba(25, 23, 23, 0.927);
   font-size: 1.2vw;
   letter-spacing: 0.1vw; 
-  position: sticky;
-  top: calc(7vw + 7.2vh);
-  left: 2%;
   
   ${({ mobileHidden }) => mobileHidden && css`
   @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {

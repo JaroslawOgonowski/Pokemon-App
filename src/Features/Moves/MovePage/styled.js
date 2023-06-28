@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import topBanner from "./topBanner.jpg";
-import { ReactComponent as Ball } from "./pokeball-svgrepo-com.svg";
+import topBanner from "./images/topBanner.jpg";
+import { ReactComponent as Ball } from "./images/pokeball-svgrepo-com.svg";
 
 export const Banner = styled.div`
   width: 100%;
@@ -57,9 +57,22 @@ export const BallImg = styled(Ball)`
 `;
 
 export const Movestats = styled.div`
-width: 100%;
+  max-width: 96%;
+  width: 100%;
+  margin: 30px 2% 0 2%;
   color: white;
-  position: absolute; /* Zmienione */
+  position: absolute;
   top: 0;
-  text-align: center;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 `;
+
+export const DamageClass = styled.div`
+ 
+`;
+
+export const asa = styled.div`
+ 
+`;
+

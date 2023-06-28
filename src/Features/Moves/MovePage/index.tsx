@@ -6,6 +6,13 @@ import { Error } from "../../../Base/Error";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import { CentredMain } from "../../../Common/CentredMain";
 import { BallImg, Banner, MoveBaseInfo, Movestats, Title } from "./styled";
+import { ReactComponent as PowerIcon } from "./images/bolt_FILL0_wght400_GRAD0_opsz48.svg";
+import { ReactComponent as AccIcon } from "./images/visibility_FILL0_wght400_GRAD0_opsz48.svg";
+import { ReactComponent as PPIcon } from "./images/cycle_FILL0_wght400_GRAD0_opsz48.svg";
+import { ReactComponent as EffectIcon } from "./images/mode_heat_FILL0_wght400_GRAD0_opsz48.svg";
+
+import { MoveStat } from "./MoveStat";
+import { ailment, damageClass } from "../../../Common/reusableFunctions/tableSwitches";
 
 export const MovePage = () => {
   const location = useLocation();
@@ -30,8 +37,37 @@ export const MovePage = () => {
           <MoveBaseInfo>
             <BallImg />
             <Movestats>
-              Power: {data.power}
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis dolorum provident velit vero, rem optio similique magni sint repellat minus. Debitis aspernatur culpa nostrum provident exercitationem harum minima saepe aperiam.
+
+              <MoveStat
+                type="Power"
+                value={data.power}
+                icon={<PowerIcon />}
+              />
+              <MoveStat
+                type="Accuracy"
+                value={data.accuracy}
+                icon={<AccIcon />}
+              />
+              <MoveStat
+                type="PP"
+                value={data.pp}
+                icon={<PPIcon />}
+              />
+              <MoveStat
+                type="Effect chance"
+                value={data.effect_chance}
+                icon={<EffectIcon />}
+              />
+              <MoveStat
+                type="Damge Class"
+                value={ItemNamesEdit(data.damage_class.name)}
+                icon={<img src={damageClass(data.damage_class.name)}/>}
+              />
+              <MoveStat
+                type="Status Effect"
+                value={ItemNamesEdit(data.meta.ailment.name)}
+                icon={<img src={damageClass(data.damage_class.name)}/>}
+              />
             </Movestats>
           </MoveBaseInfo>
         </CentredMain>

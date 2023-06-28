@@ -2,7 +2,7 @@ import TypeIcon from "../../../../Common/TypeIcon";
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 import { Move, MoveData } from "../moveInterface";
 import { DmgImg, MoveName, TableCell, TableRow } from "../styled";
-import { ailment, damageClass } from "../tableSwitches";
+import { ailment, damageClass } from "../../../../Common/reusableFunctions/tableSwitches";
 
 interface MovesTableRowProps {
   sortedMoves: Move[];

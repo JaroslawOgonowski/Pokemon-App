@@ -1,20 +1,45 @@
 {
   "files": {
-    "main.js": "/Pokemon-App/static/js/main.706157d4.js",
+    "main.js": "/Pokemon-App/static/js/main.69caaf31.js",
     "static/js/787.a8fe51ff.chunk.js": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js",
     "static/media/pngegg.png": "/Pokemon-App/static/media/pngegg.c12483e80dd70e3801b5.png",
+    "static/media/contestBanner.jpg": "/Pokemon-App/static/media/contestBanner.695038e5ca20c199546e.jpg",
     "static/media/background.jpg": "/Pokemon-App/static/media/background.7f10483be2a9e839d3c5.jpg",
     "static/media/International_Pokémon_logo.png": "/Pokemon-App/static/media/International_Pokémon_logo.de85592808a317c50539.png",
+    "static/media/topBanner.jpg": "/Pokemon-App/static/media/topBanner.8984ae41224decb47196.jpg",
     "static/media/sadPika.png": "/Pokemon-App/static/media/sadPika.afd8711e791cea53be01.png",
     "static/media/Poké_Ball_icon.png": "/Pokemon-App/static/media/Poké_Ball_icon.54d4255fec80134cf02b.png",
     "static/media/pokeball-svgrepo-com.svg": "/Pokemon-App/static/media/pokeball-svgrepo-com.c557fa6966251373c9420158736bb99c.svg",
     "index.html": "/Pokemon-App/index.html",
+    "static/media/Perish.svg": "/Pokemon-App/static/media/Perish.a0e737cd130d67192dca795e8326fa09.svg",
     "static/media/right-arrow-next-svgrepo-com.svg": "/Pokemon-App/static/media/right-arrow-next-svgrepo-com.c8f19b4787229351bbb029c05fb0197d.svg",
     "static/media/left-arrow-prev-svgrepo-com.svg": "/Pokemon-App/static/media/left-arrow-prev-svgrepo-com.8b4b895a5d818358a07d8629d34587a0.svg",
-    "main.706157d4.js.map": "/Pokemon-App/static/js/main.706157d4.js.map",
+    "static/media/confusion.svg": "/Pokemon-App/static/media/confusion.ae78ada03829fcf2dda80689873e48fb.svg",
+    "static/media/visibility_FILL0_wght400_GRAD0_opsz48.svg": "/Pokemon-App/static/media/visibility_FILL0_wght400_GRAD0_opsz48.f2a2cf95e785620459975d134c6e230e.svg",
+    "static/media/ingrain.svg": "/Pokemon-App/static/media/ingrain.cb04d4b218354a0adb441b4248ae673e.svg",
+    "static/media/disable.svg": "/Pokemon-App/static/media/disable.ac321730b73272ce7a3b47b491bbf5a0.svg",
+    "static/media/fire.svg": "/Pokemon-App/static/media/fire.b68f799f853edc74430553bf89345372.svg",
+    "static/media/mode_heat_FILL0_wght400_GRAD0_opsz48.svg": "/Pokemon-App/static/media/mode_heat_FILL0_wght400_GRAD0_opsz48.e7bf45585aed5220fb2f339c2c2a8c38.svg",
+    "static/media/none.svg": "/Pokemon-App/static/media/none.9155924f081a00cc3635cdf820ca4d1d.svg",
+    "static/media/cycle_FILL0_wght400_GRAD0_opsz48.svg": "/Pokemon-App/static/media/cycle_FILL0_wght400_GRAD0_opsz48.d14e745bd9ec778ccad801740cc7aca6.svg",
+    "static/media/sleep.svg": "/Pokemon-App/static/media/sleep.0bcc3c7e7f1d732025958d6bd6efb1da.svg",
+    "static/media/health.svg": "/Pokemon-App/static/media/health.7dc7155e0c55d91cd8838e2599c3a6d7.svg",
+    "static/media/plant.svg": "/Pokemon-App/static/media/plant.fd7e57b9a5fbdcfba194dcaf26023f3e.svg",
+    "static/media/no shield.svg": "/Pokemon-App/static/media/no shield.604cc5adbe745e0613f06a8fb6aa9ac9.svg",
+    "static/media/poison (2).svg": "/Pokemon-App/static/media/poison (2).bb0285261d01a7c15aa26e189dcad7ed.svg",
+    "static/media/str.svg": "/Pokemon-App/static/media/str.4db1df909d377c37030d2b3093389664.svg",
+    "static/media/unknown.svg": "/Pokemon-App/static/media/unknown.abf9895ccf7fdc974411c39a4b29b798.svg",
+    "static/media/wounds.svg": "/Pokemon-App/static/media/wounds.877d29a043f35ed591d15d07ed60db88.svg",
+    "static/media/freeze.svg": "/Pokemon-App/static/media/freeze.00329db8ecdc9cdc4fd50f76044cdab5.svg",
+    "static/media/attract.svg": "/Pokemon-App/static/media/attract.8f2e2ddc29987c0a449c44ec7433a0e7.svg",
+    "static/media/achtung.svg": "/Pokemon-App/static/media/achtung.483752f4c567e9bbbbd3235ea3417241.svg",
+    "static/media/silence.svg": "/Pokemon-App/static/media/silence.f4dc596def223012fdb1be1ac70ebc54.svg",
+    "static/media/elektro.svg": "/Pokemon-App/static/media/elektro.6f01d10cec8b2fa5a266482dddfec67b.svg",
+    "static/media/bolt_FILL0_wght400_GRAD0_opsz48.svg": "/Pokemon-App/static/media/bolt_FILL0_wght400_GRAD0_opsz48.6f41745e7000983f40ca37dd4dce53c4.svg",
+    "main.69caaf31.js.map": "/Pokemon-App/static/js/main.69caaf31.js.map",
     "787.a8fe51ff.chunk.js.map": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.706157d4.js"
+    "static/js/main.69caaf31.js"
   ]
 }

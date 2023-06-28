@@ -5,16 +5,15 @@ import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import { CentredMain } from "../../../Common/CentredMain";
-import { BallImg, Banner, MoveBaseInfo, Movestats, Title } from "./styled";
+import { BallImg, Banner, Contest, ContestBanner, Description, MoveBaseInfo, Movestats, SubTitle, Title } from "./styled";
 import { ReactComponent as PowerIcon } from "./images/bolt_FILL0_wght400_GRAD0_opsz48.svg";
 import { ReactComponent as AccIcon } from "./images/visibility_FILL0_wght400_GRAD0_opsz48.svg";
 import { ReactComponent as PPIcon } from "./images/cycle_FILL0_wght400_GRAD0_opsz48.svg";
 import { ReactComponent as EffectIcon } from "./images/mode_heat_FILL0_wght400_GRAD0_opsz48.svg";
-
-import { MoveStat } from "./MoveStat";
+import { MoveInfo, MoveStat } from "./MoveStat";
 import { damageClass, statusIcons } from "../../../Common/reusableFunctions/tableSwitches";
 import TypeIcon from "../../../Common/TypeIcon";
-import { table } from "console";
+
 
 export const MovePage = () => {
   const location = useLocation();
@@ -28,7 +27,10 @@ export const MovePage = () => {
 
   if (isLoading) return <Loader />
   if (isError) return <Error />
-  else
+  else {
+    const englishFlavorText = data.flavor_text_entries.find(
+      (entry: any) => entry.language.name === "en"
+    );
     return (
 
       <>
@@ -43,7 +45,12 @@ export const MovePage = () => {
           <MoveBaseInfo>
             <BallImg />
             <Movestats>
-
+              <Description>
+                {englishFlavorText.flavor_text}
+                <br />
+                {data?.effect_entries[0]?.effect ?
+                  data.effect_entries[0].effect.replace("$effect_chance%", `${data.effect_chance}%`) : null}
+              </Description>
               <MoveStat
                 type="Power"
                 value={data.power}
@@ -61,7 +68,7 @@ export const MovePage = () => {
               />
               <MoveStat
                 type="Effect chance"
-                value={data.effect_chance}
+                value={data.effect_chance ? data.effect_chance : null}
                 icon={<EffectIcon />}
               />
               <MoveStat
@@ -74,9 +81,59 @@ export const MovePage = () => {
                 value={ItemNamesEdit(data.meta.ailment.name)}
                 icon={statusIcons(data.meta.ailment.name)}
               />
+              <MoveInfo
+                label="Generation:"
+                value={ItemNamesEdit(data.generation.name).toUpperCase()}
+              />
+              <MoveInfo
+                label="Target:"
+                value={ItemNamesEdit(data.target.name)}
+              />
+              <MoveInfo
+                label="Statistic chance:"
+                value={data.meta.stat_chance}
+              />
+              <MoveInfo
+                label="Critical rate:"
+                value={data.meta.crit_rate}
+              />
+              <MoveInfo
+                label="Drain:"
+                value={data.meta.drain}
+              />
+              <MoveInfo
+                label="Flinch chance:"
+                value={data.meta.flinch_chance}
+              />
+              <MoveInfo
+                label="Healing:"
+                value={data.meta.healing}
+              />
+              <MoveInfo
+                label="Min hits:"
+                value={data.meta.min_hits}
+              />
+              <MoveInfo
+                label="Max hits:"
+                value={data.meta.max_hits}
+              />
+              <MoveInfo
+                label="Min turns:"
+                value={data.meta.min_turns}
+              />
+              <MoveInfo
+                label="Max turns:"
+                value={data.meta.max_turns}
+              />
             </Movestats>
           </MoveBaseInfo>
+          <Contest>
+            <ContestBanner><SubTitle>Contest</SubTitle></ContestBanner>
+
+          </Contest>
+
         </CentredMain>
       </>
     )
+  }
 }

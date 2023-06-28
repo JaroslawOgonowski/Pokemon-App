@@ -22,6 +22,11 @@ const StyledButton = styled.button`
   &:hover {
     opacity: 0.7;
   }
+
+  @media (max-width:400px) {
+    right: 0;
+    bottom: 0;    
+  }
 `;
 
 const ScrollToTopButton = () => {
@@ -54,7 +59,7 @@ const ScrollToTopButton = () => {
     <>
       {isVisible && (
         <StyledButton onClick={scrollToTop}>
-         ⬆
+          ⬆
         </StyledButton>
       )}
     </>

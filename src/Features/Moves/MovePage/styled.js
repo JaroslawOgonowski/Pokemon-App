@@ -9,6 +9,9 @@ export const Banner = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  justify-content: center;
   align-items: center;
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     background-position: right;
@@ -18,6 +21,7 @@ export const Banner = styled.div`
 
 export const Title = styled.h1`
   max-width: 100%;
+  margin: 0 auto;
   font-family: 'Righteous', cursive;
   color: white;
   font-size: 18px;
@@ -69,10 +73,6 @@ export const Movestats = styled.div`
 `;
 
 export const DamageClass = styled.div`
- 
-`;
-
-export const asa = styled.div`
  
 `;
 

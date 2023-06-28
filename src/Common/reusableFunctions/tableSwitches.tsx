@@ -10,6 +10,18 @@ import { ReactComponent as CNF } from "./images/confusion.svg";
 import { ReactComponent as PLZ } from "./images/elektro.svg";
 import { ReactComponent as PSN } from "./images/poison (2).svg";
 import { ReactComponent as SLP } from "./images/sleep.svg";
+import { ReactComponent as TRP } from "./images/achtung.svg";
+import { ReactComponent as DSB } from "./images/disable.svg";
+import { ReactComponent as LSD } from "./images/plant.svg";
+import { ReactComponent as SLC } from "./images/silence.svg";
+import { ReactComponent as UKN } from "./images/unknown.svg";
+import { ReactComponent as DD } from "./images/Perish.svg";
+import { ReactComponent as NSI } from "./images/no shield.svg";
+import { ReactComponent as HBC } from "./images/health.svg";
+import { ReactComponent as IGN } from "./images/ingrain.svg";
+import { ReactComponent as ATC } from "./images/attract.svg";
+import { ReactComponent as EMB } from "./images/wounds.svg";
+import { ReactComponent as DFT } from "./images/str.svg";
 
 export const damageClass = (damageClass: string) => {
   switch (damageClass) {
@@ -42,16 +54,24 @@ export const statusIcons = (statusName: string) => {
     case "none": return <None />;
     case "burn": return <BRN />;
     case "freeze": return <FRZ />;
-    case "confusion": return <CNF/>;
-    case "paralysis": return <PLZ/>;
-    case "trap": return <Trap>Trapped</Trap>;
-    case "poison": return <Poison>Poison</Poison>;
-    case "sleep": return <Sleep>Sleep</Sleep>;
-    case "disable": return <Disable>Disable</Disable>;
-    case "leech-seed": return <LeechSeed>Leech seed</LeechSeed>;
-    case "nightmare": return <Confusion>Confusion</Confusion>;
-    case "yawn": return <Sleep>Sleep</Sleep>;
-    default: return 
+    case "confusion": return <CNF />;
+    case "paralysis": return <PLZ />;
+    case "trap": return <TRP />;
+    case "poison": return <PSN />;
+    case "sleep": return <SLP />;
+    case "disable": return <DSB />;
+    case "leech-seed": return <LSD />;
+    case "nightmare": return <CNF />;
+    case "yawn": return <SLP />;
+    case "silence": return <SLC />
+    case "unknown": return <UKN />
+    case "perish-song": return <DD />
+    case "no-type-immunity": return <NSI />
+    case "heal-block": return <HBC />
+    case "ingrain": return <IGN />
+    case "infatuation": return <ATC />
+    case "embargo": return <EMB />
+    default: return <DFT />
   }
 
 }

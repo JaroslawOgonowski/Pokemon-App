@@ -12,7 +12,9 @@ import { ReactComponent as PPIcon } from "./images/cycle_FILL0_wght400_GRAD0_ops
 import { ReactComponent as EffectIcon } from "./images/mode_heat_FILL0_wght400_GRAD0_opsz48.svg";
 
 import { MoveStat } from "./MoveStat";
-import { ailment, damageClass } from "../../../Common/reusableFunctions/tableSwitches";
+import { damageClass, statusIcons } from "../../../Common/reusableFunctions/tableSwitches";
+import TypeIcon from "../../../Common/TypeIcon";
+import { table } from "console";
 
 export const MovePage = () => {
   const location = useLocation();
@@ -33,6 +35,10 @@ export const MovePage = () => {
         <CentredMain>
           <Banner>
             <Title>{`${ItemNamesEdit(data.name)} (Move)`}</Title>
+            <TypeIcon
+              table={true}
+              pokemonTypes={[{ slot: 1, type: { name: data.type.name, url: "" } }]}
+            />
           </Banner>
           <MoveBaseInfo>
             <BallImg />
@@ -59,14 +65,14 @@ export const MovePage = () => {
                 icon={<EffectIcon />}
               />
               <MoveStat
-                type="Damge Class"
+                type="Dmg Class"
                 value={ItemNamesEdit(data.damage_class.name)}
-                icon={<img src={damageClass(data.damage_class.name)}/>}
+                icon={<img width="39.17vh" height="39.17vh" src={damageClass(data.damage_class.name)} />}
               />
               <MoveStat
-                type="Status Effect"
+                type="Status"
                 value={ItemNamesEdit(data.meta.ailment.name)}
-                icon={<img src={damageClass(data.damage_class.name)}/>}
+                icon={statusIcons(data.meta.ailment.name)}
               />
             </Movestats>
           </MoveBaseInfo>

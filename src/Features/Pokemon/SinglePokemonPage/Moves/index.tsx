@@ -106,7 +106,7 @@ export const Moves = ({ moves }: MovesProps) => {
                 <TableCell>{learnMethod}</TableCell>
                 <TableCell>{move.version_group_details[0].level_learned_at}</TableCell>
                 <TableCell>
-                  <DetailLink to={`/move/details/id=${getmoveIdValue(move.move.url)}`}>Details</DetailLink>
+                  <DetailLink to={`/move?id=${getmoveIdValue(move.move.url)}`}>Details</DetailLink>
                 </TableCell>
               </TableRow>
             );

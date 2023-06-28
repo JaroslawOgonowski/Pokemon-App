@@ -28,7 +28,7 @@ export const MovesTableRow = ({
           return (
             <TableRow key={move.name}>
               <TableCell>
-                <MoveName to={`/move/details/id=${moveInfo.name}`}>
+                <MoveName to={`/move?id=${moveInfo.name}`}>
                   {ItemNamesEdit(moveInfo.name)}
                 </MoveName>
               </TableCell>

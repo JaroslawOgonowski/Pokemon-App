@@ -9,6 +9,7 @@ import { SinglePokemonPage } from "../Features/Pokemon/SinglePokemonPage";
 import { Abilities } from "../Features/Abilities";
 import { AbilityPage } from "../Features/Abilities/AbilityPage";
 import ScrollToTopButton from "../Base/ScrollToTopButton/ScrollToTop ";
+import { MovePage } from "../Features/Moves/MovePage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/moves" element={<Moves />} />
             <Route path="/pokemonDetails" element={<SinglePokemonPage />} />
             <Route path="/ability" element={<AbilityPage />} />
+            <Route path="/move" element={<MovePage />} />
             <Route path="/" element={<Pokemon />} />
           </Routes>
           <ScrollToTopButton />

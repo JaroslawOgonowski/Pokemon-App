@@ -3,7 +3,7 @@ import bg from "./background.jpg"
 export const GlobalStyle = createGlobalStyle`
 
 html {
-  font-family: 'Comic Neue', cursive;;
+  font-family: 'Agdasima', sans-serif;
 };
 body{
   margin: 0;

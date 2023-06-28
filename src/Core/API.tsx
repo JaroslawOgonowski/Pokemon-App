@@ -50,3 +50,9 @@ export const fetchMove = async (moveURL: string | null): Promise<any> => {
     (response) => response.json()
   )
 };
+
+export const fetchMoveById = async (moveId: string | null): Promise<any> => {
+  return fetch(`https://pokeapi.co/api/v2/move/${moveId}/`).then(
+    (response) => response.json()
+  )
+};

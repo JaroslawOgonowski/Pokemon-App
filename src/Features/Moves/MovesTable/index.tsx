@@ -4,15 +4,16 @@ import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { useQuery } from "@tanstack/react-query";
 import { MoveData } from "./moveInterface";
-import { Table, TableHead, TableRow } from "./styled";
+import { Table} from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { MovesSorter } from "./MovesSorter";
 import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
 import { fetchAllMoveData } from "../fetchMoveData";
+import MovesTableHeader from "./MovesTableHeader";
 import { MovesTableRow } from "./MovesTableRow";
 
 export const MovesTable = () => {
-  useScrollToTop()
+  useScrollToTop();
   const offset = 0;
   const limit = 933;
   const [moveData, setMoveData] = useState<Record<string, MoveData>>({});
@@ -64,35 +65,7 @@ export const MovesTable = () => {
         placeholder="Search moves..."
       />
       <Table>
-        <thead>
-          <TableRow>
-            <TableHead onClick={() => handleSort("name")}>Name</TableHead>
-            <TableHead onClick={() => handleSort("type")}>Type</TableHead>
-            <TableHead onClick={() => handleSort("effect")}>Effect</TableHead>
-            <TableHead onClick={() => handleSort("damageClass")}>Damage Class</TableHead>
-            <TableHead mobileHidden onClick={() => handleSort("accuracy")}>
-              Accuracy
-            </TableHead>
-            <TableHead mobileHidden onClick={() => handleSort("power")}>
-              Power
-            </TableHead>
-            <TableHead mobileHidden onClick={() => handleSort("pp")}>
-              PP
-            </TableHead>
-            <TableHead mobileHidden onClick={() => handleSort("crit")}>
-              Crit
-            </TableHead>
-            <TableHead mobileHidden onClick={() => handleSort("drain")}>
-              Drain
-            </TableHead>
-            <TableHead mobileHidden onClick={() => handleSort("flinch")}>
-              Flinch
-            </TableHead>
-            <TableHead mobileHidden onClick={() => handleSort("healing")}>
-              Healing
-            </TableHead>
-          </TableRow>
-        </thead>
+        <MovesTableHeader handleSort={handleSort} />
         <tbody>
           <MovesTableRow
             sortedMoves={sortedMoves}

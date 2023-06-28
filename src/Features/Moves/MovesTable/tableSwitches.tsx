@@ -19,7 +19,7 @@ export const ailment = (ailment: string) => {
     case "freeze": return <Freeze>Freeze</Freeze>;
     case "confusion": return <Confusion>Confusion</Confusion>;
     case "paralysis": return <Paralysis>Paralysis</Paralysis>;
-    case "trap": return <Trap>Trap</Trap>;
+    case "trap": return <Trap>Trapped</Trap>;
     case "poison": return <Poison>Poison</Poison>;
     case "sleep": return <Sleep>Sleep</Sleep>;
     case "disable": return <Disable>Disable</Disable>;

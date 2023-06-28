@@ -52,6 +52,28 @@ export const MovesSorter = ({
         return sortDirection === "asc"
           ? ailmentA.localeCompare(ailmentB)
           : ailmentB.localeCompare(ailmentA);
+      } else if (sortKey === "damageClass") {
+        const damageClassA: string = moveA.damage_class.name;
+        const damageClassB: string = moveB.damage_class.name;
+        return sortDirection === "asc"
+          ? damageClassA.localeCompare(damageClassB)
+          : damageClassB.localeCompare(damageClassA);
+      } else if (sortKey === "crit") {
+        return sortDirection === "asc"
+          ? moveA.meta.crit_rate - moveB.meta.crit_rate
+          : moveB.meta.crit_rate - moveA.meta.crit_rate;
+      } else if (sortKey === "drain") {
+        return sortDirection === "asc"
+          ? moveA.meta.drain - moveB.meta.drain
+          : moveB.meta.drain - moveA.meta.drain;
+      } else if (sortKey === "flinch") {
+        return sortDirection === "asc"
+          ? moveA.meta.flinch_chance - moveB.meta.flinch_chance
+          : moveB.meta.flinch_chance - moveA.meta.flinch_chance;
+      } else if (sortKey === "healing") {
+        return sortDirection === "asc"
+          ? moveA.meta.healing - moveB.meta.healing
+          : moveB.meta.healing - moveA.meta.healing;
       }
     }
     return 0;

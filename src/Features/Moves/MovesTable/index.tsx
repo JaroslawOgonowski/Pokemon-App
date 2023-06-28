@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import { fetchMove, fetchMoves } from "../../../Core/API";
+import { fetchMoves } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { useQuery } from "@tanstack/react-query";
-import { Move, MoveData } from "./moveInterface";
-import TypeIcon from "../../../Common/TypeIcon";
-import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
-import { DmgImg, MoveName, Table, TableCell, TableHead, TableRow } from "./styled";
-import { ailment, damageClass } from "./tableSwitches";
+import { MoveData } from "./moveInterface";
+import { Table, TableHead, TableRow } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { MovesSorter } from "./MovesSorter";
 import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
+import { fetchAllMoveData } from "../fetchMoveData";
+import { MovesTableRow } from "./MovesTableRow";
 
 export const MovesTable = () => {
   useScrollToTop()
@@ -36,44 +35,12 @@ export const MovesTable = () => {
   });
 
   useEffect(() => {
-    const fetchAllMoveData = async () => {
-      setLoading(true);
-      const moves = data?.results || [];
-      const newData: Record<string, MoveData> = {};
-      for (const move of moves) {
-        try {
-          const moveInfo = await fetchMove(move.url);
-          const moveData: MoveData = {
-            name: moveInfo.name,
-            url: moveInfo.url,
-            accuracy: moveInfo.accuracy,
-            type: {
-              name: moveInfo.type.name
-            },
-            damage_class: { name: moveInfo.damage_class.name },
-            power: moveInfo.power,
-            pp: moveInfo.pp,
-            meta: {
-              crit_rate: moveInfo.meta.crit_rate,
-              drain: moveInfo.meta.drain,
-              flinch_chance: moveInfo.meta.flinch_chance,
-              healing: moveInfo.meta.healing,
-              ailment: { name: moveInfo.meta.ailment.name }
-            }
-          };
-          newData[move.name] = moveData;
-        } catch (error) { }
-      }
-      setMoveData(newData);
-      setLoading(false);
-    };
-
     setShowLoader(true);
-    fetchAllMoveData();
+    fetchAllMoveData(data?.results || [], setMoveData, setLoading);
     setTimeout(() => {
       setShowLoader(false);
-    }, 3000);
-  }, []);
+    }, 5000);
+  }, [data]);
 
   const handleSort = (key: string) => {
     if (sortKey === key) {
@@ -102,7 +69,7 @@ export const MovesTable = () => {
             <TableHead onClick={() => handleSort("name")}>Name</TableHead>
             <TableHead onClick={() => handleSort("type")}>Type</TableHead>
             <TableHead onClick={() => handleSort("effect")}>Effect</TableHead>
-            <TableHead>Damage Class</TableHead>
+            <TableHead onClick={() => handleSort("damageClass")}>Damage Class</TableHead>
             <TableHead mobileHidden onClick={() => handleSort("accuracy")}>
               Accuracy
             </TableHead>
@@ -112,43 +79,27 @@ export const MovesTable = () => {
             <TableHead mobileHidden onClick={() => handleSort("pp")}>
               PP
             </TableHead>
-            <TableHead mobileHidden>Crit</TableHead>
-            <TableHead mobileHidden>Drain</TableHead>
-            <TableHead mobileHidden>Flinch</TableHead>
-            <TableHead mobileHidden>Healing</TableHead>
+            <TableHead mobileHidden onClick={() => handleSort("crit")}>
+              Crit
+            </TableHead>
+            <TableHead mobileHidden onClick={() => handleSort("drain")}>
+              Drain
+            </TableHead>
+            <TableHead mobileHidden onClick={() => handleSort("flinch")}>
+              Flinch
+            </TableHead>
+            <TableHead mobileHidden onClick={() => handleSort("healing")}>
+              Healing
+            </TableHead>
           </TableRow>
         </thead>
         <tbody>
-          {sortedMoves
-            .filter((move: Move) => move.name.toLowerCase().includes(searchTerm.toLowerCase()))
-            .map((move: Move) => {
-              if (loading && !moveData[move.name]) return;
-              if (!moveData[move.name]) return;
-              const moveInfo = moveData[move.name];
-              return (
-                <TableRow key={move.name}>
-                  <TableCell>
-                    <MoveName to={`/move/details/id=${moveInfo.name}`}>
-                      {ItemNamesEdit(moveInfo.name)}
-                    </MoveName>
-                  </TableCell>
-                  <TableCell>
-                    <TypeIcon table={true} pokemonTypes={[{ slot: 1, type: { name: moveInfo.type.name, url: "" } }]} />
-                  </TableCell>
-                  <TableCell>{ailment(moveInfo.meta.ailment.name)}</TableCell>
-                  <TableCell>
-                    <DmgImg src={damageClass(moveInfo.damage_class.name)} alt={moveInfo.damage_class.name} />
-                  </TableCell>
-                  <TableCell mobileHidden>{moveInfo.accuracy}</TableCell>
-                  <TableCell mobileHidden>{moveInfo.power}</TableCell>
-                  <TableCell mobileHidden>{moveInfo.pp}</TableCell>
-                  <TableCell mobileHidden>{moveInfo.meta.crit_rate}</TableCell>
-                  <TableCell mobileHidden>{moveInfo.meta.drain}</TableCell>
-                  <TableCell mobileHidden>{moveInfo.meta.flinch_chance}</TableCell>
-                  <TableCell mobileHidden>{moveInfo.meta.healing}</TableCell>
-                </TableRow>
-              );
-            })}
+          <MovesTableRow
+            sortedMoves={sortedMoves}
+            loading={loading}
+            moveData={moveData}
+            searchTerm={searchTerm}
+          />
         </tbody>
       </Table>
     </>

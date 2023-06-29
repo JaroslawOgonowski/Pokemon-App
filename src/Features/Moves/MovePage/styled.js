@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import topBanner from "./images/topBanner.jpg";
-import constestBanner from "./images/contestBanner.jpg";
+import constestBanner from "./images/contestBanner.png";
 import { ReactComponent as Ball } from "./images/pokeball-svgrepo-com.svg";
+import { ReactComponent as lighting } from "./images/elektro.svg";
 
 export const Banner = styled.div`
   width: 100%;
@@ -36,10 +37,12 @@ export const Title = styled.h1`
 `;
 
 export const MoveBaseInfo = styled.div`
+  margin: 0 auto;
+  width: 100%;
   max-width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(162deg, rgba(0, 0, 0, 1) 25%, rgba(4, 14, 31, 1) 63%);
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 `;
 
@@ -76,33 +79,40 @@ export const Movestats = styled.div`
 export const Description = styled.div`
   max-width: 96%;
   width: 100%;
-  margin: 10px 2% 30px 2%;
+  margin: 10px 2% 10px 2%;
   text-align: center;
   font-weight: 700;
   font-size: 18px;
   color: #A19D9D;
 `;
 
-export const Contest = styled.div`
+export const AdditionalInfo = styled.div`
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   gap: 8px;
-  flex-wrap: wrap;
+    background-image: linear-gradient(116deg, rgb(249 202 62) 0%, rgb(233 179 63) 50%, rgb(231 177 62) 100%);
 `;
 
-export const ContestBanner = styled(Banner)`
+export const AdditionalInfoBanner = styled(Banner)`
   background-image: url(${constestBanner}); 
+  position: relative;
 `;
 
 export const SubTitle = styled.h2`
-  margin:0;
+  margin:0 0 20px 0;
   padding: 0;
   font-family: 'Righteous', cursive;
-  color: rgb(41 4 58);
+  color: #000000e7;
   font-size: 36px;
   font-weight: bolder;
-  background-color: #ffffff33;
   border-radius: 5px;
+  position: relative;
+`
+export const AdditionalInfoContent = styled.div`
+margin: 2vh 0 2vh 2%;
+color: black;
+font-size: 20px;
 `

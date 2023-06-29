@@ -5,7 +5,7 @@ import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import { CentredMain } from "../../../Common/CentredMain";
-import { BallImg, Banner, Contest, ContestBanner, Description, MoveBaseInfo, Movestats, SubTitle, Title } from "./styled";
+import { AdditionalInfo, AdditionalInfoBanner, AdditionalInfoContent, BallImg, Banner, Description, MoveBaseInfo, Movestats, SubTitle, Title } from "./styled";
 import { ReactComponent as PowerIcon } from "./images/bolt_FILL0_wght400_GRAD0_opsz48.svg";
 import { ReactComponent as AccIcon } from "./images/visibility_FILL0_wght400_GRAD0_opsz48.svg";
 import { ReactComponent as PPIcon } from "./images/cycle_FILL0_wght400_GRAD0_opsz48.svg";
@@ -13,6 +13,8 @@ import { ReactComponent as EffectIcon } from "./images/mode_heat_FILL0_wght400_G
 import { MoveInfo, MoveStat } from "./MoveStat";
 import { damageClass, statusIcons } from "../../../Common/reusableFunctions/tableSwitches";
 import TypeIcon from "../../../Common/TypeIcon";
+import { PokeAbility } from "../../Abilities/AbilityPage/styled";
+import { PokemonTile } from "../../../Common/PokemonTile";
 
 
 export const MovePage = () => {
@@ -24,13 +26,21 @@ export const MovePage = () => {
     useQuery<any>(["moveById", { moveId }], () =>
       fetchMoveById(moveId)
     );
-
+  console.log(data?.contest_type?.name)
   if (isLoading) return <Loader />
   if (isError) return <Error />
   else {
     const englishFlavorText = data.flavor_text_entries.find(
       (entry: any) => entry.language.name === "en"
     );
+
+    const getPokeIdValue = (url: string) => {
+      const parts = url.split("/");
+      const numberPart = parts[parts.length - 2];
+      const lastValue = numberPart !== "" ? parseInt(numberPart) : 0;
+      return lastValue - 1;
+    };
+
     return (
 
       <>
@@ -127,10 +137,22 @@ export const MovePage = () => {
               />
             </Movestats>
           </MoveBaseInfo>
-          <Contest>
-            <ContestBanner><SubTitle>Contest</SubTitle></ContestBanner>
-
-          </Contest>
+          <AdditionalInfoBanner><SubTitle>More...</SubTitle></AdditionalInfoBanner>
+          <AdditionalInfo>
+            <AdditionalInfoContent>
+              Contest Type: {data?.contest_type ? ItemNamesEdit(data?.contest_type?.name) : "None"}
+              <SubTitle>Pokemon that can learn to move:</SubTitle>
+              <PokeAbility>
+                {data.learned_by_pokemon?.map((item: any) => (
+                  <PokemonTile
+                    key={item.name}
+                    id={getPokeIdValue(item.url)}
+                    name={item.name}
+                  />
+                ))}
+              </PokeAbility>
+            </AdditionalInfoContent>
+          </AdditionalInfo>
 
         </CentredMain>
       </>

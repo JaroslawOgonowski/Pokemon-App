@@ -56,7 +56,7 @@ export const PokemonTile = ({ id, name }: PokemonTileProps) => {
       inview={inview ? "true" : undefined}
     >
       <CornerBall />
-      <PokemonId>#{realID}</PokemonId>
+      <PokemonId>{realID < 1011 ? `#${realID}` : `${realID}`}</PokemonId>
       {realID < 1011 ? (
         <PokemonImage
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`}

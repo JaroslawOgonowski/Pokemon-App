@@ -71,29 +71,31 @@ export const PokemonName = styled.div`
 export const PokemonId = styled.div`
   position: absolute;
   z-index: -1;
-  top: 56%;
+  top: 60%;
   right: 4%;
   font-family: Righteous, cursive;
   font-size: 9.8vh;
-  color: rgba(38, 43, 74, 0.67);
+  color: rgba(120, 120, 120, 0.719);
   transition: color 500ms ease 0s;
 
+  
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     top: 60%;
   }
-  @media (max-width: 600px) {
-    top: 56%;
-  }
-  @media (max-width: 600px) {
-    font-size: 8.8vh;
-  }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    top: 55%;
+    top: 65%;
     font-size: 9.8vh;
+  }
+  @media (max-width: 690px) {
+    top: 56%;
+    font-size: 8.2vw;
+  }
+  @media (max-width: 600px) {
+    top: 62%;
   }
   @media (max-width: 350px) {
-    top: 50%;
-    font-size: 9.8vh;
+    font-size: 8.8vw;
+    top: 58%;
   }
 `;
 
@@ -109,12 +111,12 @@ export const Wrapper = styled(Link)`
   align-items: center;
   gap: 0.1vw;
   position: relative;
-  border: 0.2vw solid ${(props) => props.dominantcolor};
+  border: 0.2vw solid rgba(6, 10, 27, 0.907) 43%;
   border-radius: 5px 45px 5px 0;
   transition: 500ms;
   background-image: linear-gradient(
     349deg,
-    rgba(6, 10, 27, 0.96) 43%,
+    rgba(6, 10, 27, 0.907) 43%,
     ${(props) => props.dominantcolor} 100%
   );
   -webkit-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
@@ -165,6 +167,10 @@ export const Wrapper = styled(Link)`
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 30%;
+    height: auto;
+  }
+  @media (max-width: 600px) {
     width: 45%;
     height: auto;
   }

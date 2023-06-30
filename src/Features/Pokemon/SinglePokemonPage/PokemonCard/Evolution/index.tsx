@@ -1,7 +1,14 @@
 import { PokemonEvolutionProps } from "../../singlePokemonInterfaces";
-import { EvolutionBox, EvolutionTitle, MultiEvolutionLayout, Next, PokemonEvolutionName, StyledEvolutinImage, StyledEvolution, StyledLink } from "./styled";
-
-
+import {
+  EvolutionBox,
+  EvolutionTitle,
+  MultiEvolutionLayout,
+  Next,
+  PokemonEvolutionName,
+  StyledEvolutinImage,
+  StyledEvolution,
+  StyledLink,
+} from "./styled";
 
 export const Evolution = ({ pokemonEvolution }: PokemonEvolutionProps) => {
   const getValue = (url: string, returnNumber: boolean) => {
@@ -15,8 +22,17 @@ export const Evolution = ({ pokemonEvolution }: PokemonEvolutionProps) => {
 
   const renderPokemon = (pokemon: { species: { name: any; url: string } }) => (
     <div key={pokemon.species.name}>
-      <StyledLink to={`/pokemonDetails?pokeId=${getValue(pokemon.species.url, true)}`}>
-        <StyledEvolutinImage src={pokemon.species.url ? getValue(pokemon.species.url, false).toString() : ""} alt={pokemon.species.name} />
+      <StyledLink
+        to={`/pokemonDetails?pokeId=${getValue(pokemon.species.url, true)}`}
+      >
+        <StyledEvolutinImage
+          src={
+            pokemon.species.url
+              ? getValue(pokemon.species.url, false).toString()
+              : ""
+          }
+          alt={pokemon.species.name}
+        />
         <PokemonEvolutionName>
           {pokemon.species.name.toUpperCase()}
         </PokemonEvolutionName>
@@ -30,9 +46,21 @@ export const Evolution = ({ pokemonEvolution }: PokemonEvolutionProps) => {
       <EvolutionBox>
         {pokemonEvolution?.chain.species.name && (
           <MultiEvolutionLayout>
-            <StyledLink to={`/pokemonDetails?pokeId=${getValue(pokemonEvolution.chain.species.url, true)}`}>
+            <StyledLink
+              to={`/pokemonDetails?pokeId=${getValue(
+                pokemonEvolution.chain.species.url,
+                true
+              )}`}
+            >
               <StyledEvolutinImage
-                src={pokemonEvolution.chain.species.url ? getValue(pokemonEvolution.chain.species.url, false).toString() : ""}
+                src={
+                  pokemonEvolution.chain.species.url
+                    ? getValue(
+                        pokemonEvolution.chain.species.url,
+                        false
+                      ).toString()
+                    : ""
+                }
                 alt={pokemonEvolution.chain.species.name.toUpperCase()}
               />
               <PokemonEvolutionName>
@@ -41,9 +69,7 @@ export const Evolution = ({ pokemonEvolution }: PokemonEvolutionProps) => {
             </StyledLink>
           </MultiEvolutionLayout>
         )}
-        <Next>
-          {pokemonEvolution?.chain.evolves_to[0] && "➡"}
-        </Next>
+        <Next>{pokemonEvolution?.chain.evolves_to[0] && "➡"}</Next>
         <MultiEvolutionLayout>
           {pokemonEvolution?.chain.evolves_to?.map(renderPokemon)}
         </MultiEvolutionLayout>
@@ -51,7 +77,9 @@ export const Evolution = ({ pokemonEvolution }: PokemonEvolutionProps) => {
           {pokemonEvolution?.chain.evolves_to[0]?.evolves_to[0] && "➡"}
         </Next>
         <MultiEvolutionLayout>
-          {pokemonEvolution?.chain.evolves_to[0]?.evolves_to?.map(renderPokemon)}
+          {pokemonEvolution?.chain.evolves_to[0]?.evolves_to?.map(
+            renderPokemon
+          )}
         </MultiEvolutionLayout>
       </EvolutionBox>
     </StyledEvolution>

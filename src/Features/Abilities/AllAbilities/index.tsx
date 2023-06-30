@@ -4,8 +4,19 @@ import { Error } from "../../../Base/Error";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { AbilityItem, AbilityList, AllAbilitiesContainer, Button, StyledAbilities, StyledLink, Title } from "./styled";
-import { handlePrevPage, handleNextPage } from "../../../Common/reusableFunctions/buttonFunctions";
+import {
+  AbilityItem,
+  AbilityList,
+  AllAbilitiesContainer,
+  Button,
+  StyledAbilities,
+  StyledLink,
+  Title,
+} from "./styled";
+import {
+  handlePrevPage,
+  handleNextPage,
+} from "../../../Common/reusableFunctions/buttonFunctions";
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
@@ -23,7 +34,7 @@ export const AllAbilities = () => {
   );
 
   const maxOffset = (data?.count || 0) - limit;
-  
+
   const handlePageChange = (newOffset: number) => {
     setOffset(newOffset);
     navigate(`/abilities?offset=${newOffset}`);

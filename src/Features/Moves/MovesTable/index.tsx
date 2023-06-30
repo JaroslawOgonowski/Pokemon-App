@@ -4,7 +4,7 @@ import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { useQuery } from "@tanstack/react-query";
 import { MoveData } from "./moveInterface";
-import { Table} from "./styled";
+import { Table } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { MovesSorter } from "./MovesSorter";
 import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";

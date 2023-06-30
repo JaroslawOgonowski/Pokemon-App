@@ -15,9 +15,9 @@ export const StyledHeader = styled.header`
   box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
   z-index: 99;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 80px;
-  };
+  }
 `;
 
 export const LogoLink = styled.a`
@@ -30,16 +30,16 @@ export const Logo = styled.img`
   cursor: pointer;
   transition: 500ms;
 
-  &:hover{
+  &:hover {
     transform: scale(1.05);
   }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 40px;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     height: 20px;
-  };
+  }
 `;
 
 export const StyledNavigation = styled.nav`
@@ -56,32 +56,38 @@ export const StyledNavLink = styled(NavLink)`
   transition: color 0.5s;
   padding: 0.8vw 2.4vw;
 
-  &.active{
+  &.active {
     border: solid 1px white;
     border-radius: 2vw;
-    
-    @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
       border-radius: 35px;
-    };    
+    }
   }
 
-  ${({ activator }) => activator && css`
-    border: solid 1px white;
-    border-radius: 2vw;
+  ${({ activator }) =>
+    activator &&
+    css`
+      border: solid 1px white;
+      border-radius: 2vw;
 
-    @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-      border-radius: 35px;
-    };  
-  `}
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        border-radius: 35px;
+      }
+    `}
 
-  &:hover{  
-    background-image: linear-gradient(166deg, rgba(253, 255, 0, 1) 0%, rgba(159, 235, 32, 1) 97%);
+  &:hover {
+    background-image: linear-gradient(
+      166deg,
+      rgba(253, 255, 0, 1) 0%,
+      rgba(159, 235, 32, 1) 97%
+    );
     -webkit-background-clip: text;
-    color: transparent;    
+    color: transparent;
   }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 14px;
     padding: 8px 12px;
-  };
+  }
 `;

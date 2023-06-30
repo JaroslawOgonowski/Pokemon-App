@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const Table = styled.table`
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   border-collapse: collapse;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -13,17 +13,17 @@ export const Table = styled.table`
 `;
 
 export const TableRow = styled.tr`
- &:nth-child(odd) {
+  &:nth-child(odd) {
     background-color: rgba(229, 232, 207, 0.809);
-  }; 
-  
-  &:hover{
-    background-color: rgba(121, 208, 237, 0.705);
-  };
+  }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  &:hover {
+    background-color: rgba(121, 208, 237, 0.705);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 98%;
-  };
+  }
 `;
 
 export const TableCell = styled.td`
@@ -34,22 +34,24 @@ export const TableCell = styled.td`
   font-size: 1.2vw;
   font-weight: 600;
 
-  ${({ mobileHidden }) => mobileHidden && css`
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-   display: none;
-    };  
-  `}
+  ${({ mobileHidden }) =>
+    mobileHidden &&
+    css`
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        display: none;
+      }
+    `}
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 16px;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 11px;
     padding: 0.5vw 4px;
-  };
+  }
 `;
 
 export const TableHead = styled.th`
@@ -58,50 +60,52 @@ export const TableHead = styled.th`
   height: 5vh;
   background-color: rgba(25, 23, 23, 0.927);
   font-size: 1.2vw;
-  letter-spacing: 0.1vw; 
-  
-  ${({ mobileHidden }) => mobileHidden && css`
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-   display: none;
-    };  
-  `}
+  letter-spacing: 0.1vw;
+
+  ${({ mobileHidden }) =>
+    mobileHidden &&
+    css`
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        display: none;
+      }
+    `}
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 13px;
     font-weight: 200;
     top: calc(7vw + 7.3vh);
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 13px;
     top: calc(7.6vh + 80px);
-  };
+  }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     height: 30px;
     font-size: 12px;
-  };
+  }
 `;
 
 export const DmgImg = styled.img`
-@media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 30px;
-  };
+  }
 `;
 
 export const MoveName = styled(Link)`
   text-decoration: none;
   font-size: 1.4vw;
   color: black;
-  
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 16px;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 13px;
-  };
+  }
 `;
 
 export const Ailment = styled.div`
@@ -111,9 +115,9 @@ export const Ailment = styled.div`
   background-color: red;
   margin: 0 1vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin: 0 16px;
-  };
+  }
 `;
 
 export const Burn = styled(Ailment)`

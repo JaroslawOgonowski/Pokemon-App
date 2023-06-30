@@ -1,8 +1,7 @@
-
 export interface Move {
   name: string;
   url: string;
-  results: any
+  results: any;
 }
 
 export interface MoveData {
@@ -14,10 +13,10 @@ export interface MoveData {
   accuracy: number;
   type: { name: string };
   meta: {
-    crit_rate: number,
-    drain: number,
-    flinch_chance: number,
-    healing: number,
-    ailment: { name: string }
+    crit_rate: number;
+    drain: number;
+    flinch_chance: number;
+    healing: number;
+    ailment: { name: string };
   };
 }

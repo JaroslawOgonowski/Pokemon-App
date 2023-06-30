@@ -5,11 +5,11 @@ export const Title = styled.h2`
   width: 100%;
   text-align: center;
   font-size: 4vw;
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   margin: 0 0 2vw 0;
   color: #131313;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 24px;
-  };
+  }
 `;

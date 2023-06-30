@@ -13,13 +13,13 @@ export const MoveStatBox = styled.div`
 
 export const IconBox = styled.div`
   width: 65%;
-  color: #A19D9D;
+  color: #a19d9d;
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 export const MoveInfoDiv = styled.div`
- width: 100%;
+  width: 100%;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -31,5 +31,5 @@ export const MoveInfoDiv = styled.div`
 
 export const Label = styled.span`
   font-size: 18px;
-  color: #A19D9D;
+  color: #a19d9d;
 `;

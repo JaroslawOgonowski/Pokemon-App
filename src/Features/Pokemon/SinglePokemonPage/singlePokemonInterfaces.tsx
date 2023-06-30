@@ -1,4 +1,3 @@
-
 import { MoveEntry } from "./Moves/movesInterface";
 import { Abilities, Generation, Habitat, PokemonType } from "./PokemonCard";
 
@@ -18,7 +17,7 @@ export interface SoloPokemonInfo {
   habitat: Habitat | undefined;
   abilities: Abilities;
   moves: MoveEntry[] | undefined;
-};
+}
 
 export interface PokemonCardProps {
   pokeId: string | null;
@@ -31,7 +30,7 @@ export interface PokemonCardProps {
   generation: Generation | undefined;
   habitat: Habitat | undefined;
   abilities: Abilities;
-};
+}
 
 export interface PokemonStat {
   base_stat: number;
@@ -41,7 +40,7 @@ export interface PokemonStat {
 }
 export interface PokemonStatsProps {
   pokemonStats: PokemonStat[];
-};
+}
 
 export interface PokemonEvolve {
   item: any | undefined;

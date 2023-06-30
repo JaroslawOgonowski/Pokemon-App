@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const StyledTitle = styled.h1`
   font-size: 6vw;
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   color: black;
   text-align: center;
-  margin: 2vw 0;  
+  margin: 2vw 0;
 `;
 
 export const TitleBox = styled.div`
@@ -18,5 +18,5 @@ export const TitleBox = styled.div`
 `;
 
 export const PokemonImage = styled.img`
-  width: 20%
+  width: 20%;
 `;

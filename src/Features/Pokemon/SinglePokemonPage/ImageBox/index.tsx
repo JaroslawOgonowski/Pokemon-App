@@ -1,4 +1,4 @@
-import { Container, Image, ImagesDescription, StyledImageBox } from "./styled"
+import { Container, Image, ImagesDescription, StyledImageBox } from "./styled";
 import { useState } from "react";
 
 interface ImageBoxProps {
@@ -9,7 +9,13 @@ interface ImageBoxProps {
   format: string;
 }
 
-export const ImageBox = ({ url1, url2, description, pokeId, format }: ImageBoxProps) => {
+export const ImageBox = ({
+  url1,
+  url2,
+  description,
+  pokeId,
+  format,
+}: ImageBoxProps) => {
   const [imagesLoaded, setImagesLoaded] = useState(true);
 
   const handleImageError = () => {
@@ -26,8 +32,12 @@ export const ImageBox = ({ url1, url2, description, pokeId, format }: ImageBoxPr
   return (
     <StyledImageBox>
       <Container>
-        {url1 && <Image src={`${url1}${pokeId}${format}`} onError={handleImageError} />}
-        {url2 && <Image src={`${url2}${pokeId}${format}`} onError={handleImageError} />}
+        {url1 && (
+          <Image src={`${url1}${pokeId}${format}`} onError={handleImageError} />
+        )}
+        {url2 && (
+          <Image src={`${url2}${pokeId}${format}`} onError={handleImageError} />
+        )}
       </Container>
       <ImagesDescription>{description}</ImagesDescription>
     </StyledImageBox>

@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
   position: fixed;
-  right: 40px;
-  bottom: 30px;
+  right: 0.2vw;
+  bottom: 0.2vw;
   width: 60px;
   height: 60px;
   border-radius: 1vw;
@@ -23,9 +23,9 @@ const StyledButton = styled.button`
     opacity: 0.7;
   }
 
-  @media (max-width:400px) {
+  @media (max-width: 400px) {
     right: 0;
-    bottom: 0;    
+    bottom: 0;
   }
 `;
 
@@ -56,13 +56,7 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <>
-      {isVisible && (
-        <StyledButton onClick={scrollToTop}>
-          ⬆
-        </StyledButton>
-      )}
-    </>
+    <>{isVisible && <StyledButton onClick={scrollToTop}>⬆</StyledButton>}</>
   );
 };
 

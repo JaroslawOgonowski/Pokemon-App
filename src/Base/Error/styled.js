@@ -10,18 +10,18 @@ export const ErrorPage = styled.article`
   justify-content: center;
   align-items: center;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     margin-top: 100px;
-  };
+  }
 `;
 
 export const ErrorTitle = styled.h2`
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   font-size: 3vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 30px;
-  };
+  }
 `;
 
 export const Box = styled.div`
@@ -30,10 +30,10 @@ export const Box = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.6vw;
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 16px;
     flex-wrap: wrap;
-  };
+  }
 `;
 
 export const ErrorText = styled.div`
@@ -45,14 +45,14 @@ export const ErrorText = styled.div`
 
 export const Image = styled.img`
   width: 15vw;
-  
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    width: 15%;
-  };
 
-  @media(max-width: 550px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 15%;
+  }
+
+  @media (max-width: 550px) {
     width: 50%;
-  };
+  }
 `;
 
 export const StyledNavLink = styled(Link)`
@@ -65,12 +65,12 @@ export const StyledNavLink = styled(Link)`
   border-radius: 10px;
   transition: 300ms;
   font-size: 1.6vw;
-  &:hover{
+  &:hover {
     transform: scale(1.1);
     filter: brightness(150%);
-  };
+  }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     padding: 20px;
-  };
+  }
 `;

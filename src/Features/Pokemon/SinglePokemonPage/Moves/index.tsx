@@ -2,7 +2,16 @@ import { useState, useMemo } from "react";
 import { MovesProps } from "./movesInterface";
 import { TitleBox } from "../../../../Common/Title/styled";
 import { Subtitle } from "../Images/styled";
-import { Button, ButtonText, DetailLink, GameTitle, Table, TableCell, TableHeader, TableRow } from "./styled";
+import {
+  Button,
+  ButtonText,
+  DetailLink,
+  GameTitle,
+  Table,
+  TableCell,
+  TableHeader,
+  TableRow,
+} from "./styled";
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 
 export const Moves = ({ moves }: MovesProps) => {
@@ -48,29 +57,36 @@ export const Moves = ({ moves }: MovesProps) => {
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(", ");
     }
-  };
+  }
 
-  const filteredMoves = useMemo(() =>
-    moves?.filter((move) =>
-      move.version_group_details.some(
-        (detail) => detail.version_group.name === game
-      )
-    ).sort((a, b) => {
-      const learningMethodA = a.version_group_details[0].move_learn_method.name;
-      const learningMethodB = b.version_group_details[0].move_learn_method.name;
-      const learningMethodsOrder = ["egg", "machine", "level-up"];
-      const levelA = a.version_group_details[0].level_learned_at;
-      const levelB = b.version_group_details[0].level_learned_at;
+  const filteredMoves = useMemo(
+    () =>
+      moves
+        ?.filter((move) =>
+          move.version_group_details.some(
+            (detail) => detail.version_group.name === game
+          )
+        )
+        .sort((a, b) => {
+          const learningMethodA =
+            a.version_group_details[0].move_learn_method.name;
+          const learningMethodB =
+            b.version_group_details[0].move_learn_method.name;
+          const learningMethodsOrder = ["egg", "machine", "level-up"];
+          const levelA = a.version_group_details[0].level_learned_at;
+          const levelB = b.version_group_details[0].level_learned_at;
 
-      if (learningMethodA === learningMethodB) {
-        return levelA - levelB;
-      }
+          if (learningMethodA === learningMethodB) {
+            return levelA - levelB;
+          }
 
-      return (
-        learningMethodsOrder.indexOf(learningMethodA) -
-        learningMethodsOrder.indexOf(learningMethodB)
-      );
-    }), [moves, game]);
+          return (
+            learningMethodsOrder.indexOf(learningMethodA) -
+            learningMethodsOrder.indexOf(learningMethodB)
+          );
+        }),
+    [moves, game]
+  );
 
   const getmoveIdValue = (url: string) => {
     const parts = url.split("/");
@@ -83,9 +99,16 @@ export const Moves = ({ moves }: MovesProps) => {
     <>
       <Subtitle>Moves</Subtitle>
       <TitleBox>
-        <Button onClick={handlePrevGen}><ButtonText>Prev game</ButtonText>⬅</Button>
-        <GameTitle>Game: <br />{title}</GameTitle>
-        <Button onClick={handleNextGen}><ButtonText>Next game</ButtonText>➡</Button>
+        <Button onClick={handlePrevGen}>
+          <ButtonText>Prev game</ButtonText>⬅
+        </Button>
+        <GameTitle>
+          Game: <br />
+          {title}
+        </GameTitle>
+        <Button onClick={handleNextGen}>
+          <ButtonText>Next game</ButtonText>➡
+        </Button>
       </TitleBox>
       <Table>
         <thead>
@@ -99,14 +122,20 @@ export const Moves = ({ moves }: MovesProps) => {
         <tbody>
           {filteredMoves?.map((move) => {
             const moveName = ItemNamesEdit(move.move.name);
-            const learnMethod = ItemNamesEdit(move.version_group_details[0].move_learn_method.name)
+            const learnMethod = ItemNamesEdit(
+              move.version_group_details[0].move_learn_method.name
+            );
             return (
               <TableRow key={move.move.name}>
                 <TableCell>{moveName}</TableCell>
                 <TableCell>{learnMethod}</TableCell>
-                <TableCell>{move.version_group_details[0].level_learned_at}</TableCell>
                 <TableCell>
-                  <DetailLink to={`/move?id=${getmoveIdValue(move.move.url)}`}>Details</DetailLink>
+                  {move.version_group_details[0].level_learned_at}
+                </TableCell>
+                <TableCell>
+                  <DetailLink to={`/move?id=${getmoveIdValue(move.move.url)}`}>
+                    Details
+                  </DetailLink>
                 </TableCell>
               </TableRow>
             );

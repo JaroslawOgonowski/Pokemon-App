@@ -16,12 +16,12 @@ export const TextBox = styled.div`
 `;
 
 export const GenInfo = styled.div`
-  color: #4B4B4B;
+  color: #4b4b4b;
   font-size: 1.3vw;
   align-self: flex-end;
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 13px;    
-  };
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 13px;
+  }
 `;
 
 export const Description = styled.div`
@@ -29,11 +29,10 @@ export const Description = styled.div`
   margin: 2vw 1vw;
   font-size: 2vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 16px;    
-  };
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 16px;
+  }
 `;
-
 
 export const PokeAbility = styled.div`
   margin-left: 3vw;
@@ -42,7 +41,7 @@ export const PokeAbility = styled.div`
   gap: 2vh 1%;
   justify-content: flex-start;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     margin-left: 6vw;
-  };
+  }
 `;

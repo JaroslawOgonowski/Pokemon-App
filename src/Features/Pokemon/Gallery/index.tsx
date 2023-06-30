@@ -1,27 +1,39 @@
 import { useState, useRef, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import { GalleryBox, GalleryTitle, StyledGallery, ButtonBox, BaseButton, FastButton, TopMarker } from "./styled";
+import {
+  GalleryBox,
+  GalleryTitle,
+  StyledGallery,
+  ButtonBox,
+  BaseButton,
+  FastButton,
+  TopMarker,
+} from "./styled";
 import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.svg";
 import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg";
 import { fetchGallery } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { PokemonTile } from "../../../Common/PokemonTile";
-import { handleFirstPage, handleLastPage, handleNextPage, handlePrevPage } from "../../../Common/reusableFunctions/buttonFunctions";
+import {
+  handleFirstPage,
+  handleLastPage,
+  handleNextPage,
+  handlePrevPage,
+} from "../../../Common/reusableFunctions/buttonFunctions";
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
 interface Pokemon {
   name: string;
   id: number;
-};
+}
 interface GalleryData {
   results: Pokemon[];
   count: number;
-};
+}
 
 export const Gallery = () => {
-
   const navigate = useNavigate();
   const [offset, setOffset] = useState(0);
   const limit = 100;
@@ -37,12 +49,12 @@ export const Gallery = () => {
     navigate(`/pokemon?offset=${offset}`);
     scrollToTop(topRef);
   }, [offset, navigate, data]);
-  
+
   const handlePageChange = (newOffset: number) => {
     setOffset(newOffset);
-  };  
+  };
 
-  const maxOffset = 910
+  const maxOffset = 910;
   const handlePrevPageClick = () => {
     handlePrevPage(offset, limit, handlePageChange);
   };
@@ -53,7 +65,7 @@ export const Gallery = () => {
     handleLastPage(maxOffset, handlePageChange);
   };
   const handleFirstPageClick = () => {
-    handleFirstPage(handlePageChange)
+    handleFirstPage(handlePageChange);
   };
 
   if (isLoading) return <Loader />;
@@ -62,7 +74,7 @@ export const Gallery = () => {
   return data ? (
     <>
       <TopMarker ref={topRef} />
-      <GalleryTitle >Hall of fame</GalleryTitle>
+      <GalleryTitle>Hall of fame</GalleryTitle>
       <GalleryBox>
         <ButtonBox>
           <BaseButton disabled={offset === 0} onClick={handlePrevPageClick}>

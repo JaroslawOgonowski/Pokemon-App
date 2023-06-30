@@ -10,11 +10,15 @@ interface SideBarProps {
 }
 
 export const SideBar: FC<SideBarProps> = ({ sideBarText }) => {
-return(
-  <StyledSideBar>
-  {sideBarText.map(object=>
-    <ListItem key={object.name}><StyledA href={object.link}><LinkText>{object.name}</LinkText></StyledA></ListItem>
-  )}  
-  </StyledSideBar>
-)
+  return (
+    <StyledSideBar>
+      {sideBarText.map((object) => (
+        <ListItem key={object.name}>
+          <StyledA href={object.link}>
+            <LinkText>{object.name}</LinkText>
+          </StyledA>
+        </ListItem>
+      ))}
+    </StyledSideBar>
+  );
 };

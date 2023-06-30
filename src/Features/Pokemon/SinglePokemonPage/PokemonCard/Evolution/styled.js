@@ -9,38 +9,37 @@ export const StyledEvolution = styled.div`
   width: 100%;
   margin-bottom: 2vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     justify-content: flex-start;
     align-items: flex-start;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     margin-left: -24%;
-  };
-
+  }
 `;
 
 export const EvolutionTitle = styled.h2`
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   font-size: 1.8vw;
   text-align: center;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 20px;
-  };
+  }
 `;
 
 export const StyledEvolutinImage = styled.img`
   height: 6vw;
   width: 6vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     height: 80px;
     width: 80px;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 60px;
     width: 60px;
-  };
+  }
 `;
 
 export const EvolutionBox = styled.div`
@@ -50,9 +49,9 @@ export const EvolutionBox = styled.div`
   gap: 0;
   margin-left: 4vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     margin-left: 0;
-  };
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -65,36 +64,36 @@ export const StyledLink = styled(Link)`
   transition: 500ms;
   padding: 0.5vw;
 
-  &:hover{
+  &:hover {
     transform: scale(1.2);
   }
 `;
 
 export const PokemonEvolutionName = styled.div`
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   font-size: 1vw;
   text-align: center;
   text-decoration: none;
   color: black;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 1.5vw;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 2vw;
-  };
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 2.5vw;
-  };
+  }
 `;
 
 export const Next = styled.div`
   align-self: center;
   font-size: 2vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 14px;
-  };
+  }
 `;
 
 export const MultiEvolutionLayout = styled.div`

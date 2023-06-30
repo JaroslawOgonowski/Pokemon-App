@@ -6,11 +6,11 @@ export const StyledMain = styled.main`
   display: flex;
   gap: 2vw;
   justify-content: center;
-  
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin: 80px auto;
     flex-direction: column;
-  };
+  }
 `;
 
 export const ArticleColumn = styled.div`
@@ -21,17 +21,17 @@ export const ArticleColumn = styled.div`
   animation: articleColumnAnimation 0.5s ease;
 
   @keyframes articleColumnAnimation {
-	  0% {
-		  opacity: 0.5;
-		  transform: translateX(30vw);
-	  }
-	  100% {
-		  opacity: 1;
-		  transform: translateX(0);
-	  }
+    0% {
+      opacity: 0.5;
+      transform: translateX(30vw);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 100%;
-  };
+  }
 `;

@@ -1,5 +1,11 @@
-import { Logo, LogoLink, StyledHeader, StyledNavLink, StyledNavigation } from "./styled";
-import logo from "./images/International_Pokémon_logo.png"
+import {
+  Logo,
+  LogoLink,
+  StyledHeader,
+  StyledNavLink,
+  StyledNavigation,
+} from "./styled";
+import logo from "./images/International_Pokémon_logo.png";
 import { useLocation } from "react-router-dom";
 
 export const Header = () => {
@@ -12,15 +18,26 @@ export const Header = () => {
           <Logo src={logo} />
         </LogoLink>
         <StyledNavigation>
-          <StyledNavLink to="/pokemon" activator={location.includes("/pokemonDetails") ? activator : null}>
+          <StyledNavLink
+            to="/pokemon"
+            activator={location.includes("/pokemonDetails") ? activator : null}
+          >
             Pokémon
           </StyledNavLink>
-          <StyledNavLink to="/abilities" activator={location.includes("/ability") ? activator : null}>Abilities</StyledNavLink>
-          <StyledNavLink to="/moves" activator={location.includes("/move") ? activator : null}>Moves</StyledNavLink>
+          <StyledNavLink
+            to="/abilities"
+            activator={location.includes("/ability") ? activator : null}
+          >
+            Abilities
+          </StyledNavLink>
+          <StyledNavLink
+            to="/moves"
+            activator={location.includes("/move") ? activator : null}
+          >
+            Moves
+          </StyledNavLink>
         </StyledNavigation>
       </StyledHeader>
     </>
   );
 };
-
-

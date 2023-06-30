@@ -15,7 +15,7 @@ export const Banner = styled.div`
   gap: 1vh;
   justify-content: center;
   align-items: center;
-  
+
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     background-position: right;
     margin-bottom: -5px;
@@ -25,7 +25,7 @@ export const Banner = styled.div`
 export const Title = styled.h1`
   max-width: 100%;
   margin: 0 auto;
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   color: rgb(159, 235, 32);
   font-size: 18px;
   background-color: rgb(0 0 0 / 84%);
@@ -41,7 +41,11 @@ export const MoveBaseInfo = styled.div`
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(162deg, rgba(0, 0, 0, 1) 25%, rgba(4, 14, 31, 1) 63%);
+  background-image: linear-gradient(
+    162deg,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(4, 14, 31, 1) 63%
+  );
   overflow: hidden;
   position: relative;
 `;
@@ -83,7 +87,7 @@ export const Description = styled.div`
   text-align: center;
   font-weight: 700;
   font-size: 18px;
-  color: #A19D9D;
+  color: #a19d9d;
 `;
 
 export const AdditionalInfo = styled.div`
@@ -93,26 +97,31 @@ export const AdditionalInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-    background-image: linear-gradient(116deg, rgb(249 202 62) 0%, rgb(233 179 63) 50%, rgb(231 177 62) 100%);
+  background-image: linear-gradient(
+    116deg,
+    rgb(249 202 62) 0%,
+    rgb(233 179 63) 50%,
+    rgb(231 177 62) 100%
+  );
 `;
 
 export const AdditionalInfoBanner = styled(Banner)`
-  background-image: url(${constestBanner}); 
+  background-image: url(${constestBanner});
   position: relative;
 `;
 
 export const SubTitle = styled.h2`
-  margin:0 0 20px 0;
+  margin: 0 0 20px 0;
   padding: 0;
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   color: #000000e7;
   font-size: 36px;
   font-weight: bolder;
   border-radius: 5px;
   position: relative;
-`
+`;
 export const AdditionalInfoContent = styled.div`
-margin: 2vh 0 2vh 2%;
-color: black;
-font-size: 20px;
-`
+  margin: 2vh 0 2vh 2%;
+  color: black;
+  font-size: 20px;
+`;

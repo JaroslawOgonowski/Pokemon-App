@@ -1,5 +1,5 @@
-import { GlobalStyle } from "./GlobalStyles"
-import { ThemeProvider } from "styled-components"
+import { GlobalStyle } from "./GlobalStyles";
+import { ThemeProvider } from "styled-components";
 import { normalTheme } from "./theme";
 import { Header } from "../Base/Header";
 import { HashRouter, Routes, Route } from "react-router-dom";

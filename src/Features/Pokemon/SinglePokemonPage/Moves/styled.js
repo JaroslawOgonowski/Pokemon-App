@@ -10,7 +10,7 @@ export const Button = styled.button`
   justify-content: center;
   border: none;
   border-radius: 35px;
-  background-color:  ${({ theme }) => theme.color.headerColor};
+  background-color: ${({ theme }) => theme.color.headerColor};
   color: white;
   font-size: 1.6vw;
   font-weight: 700;
@@ -19,23 +19,23 @@ export const Button = styled.button`
   -moz-box-shadow: 1px 9px 24px -6px rgba(67, 69, 88, 1);
   box-shadow: 1px 9px 24px -6px rgba(67, 69, 88, 1);
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 13px;
-  };
+  }
 
-  &:hover{
+  &:hover {
     filter: brightness(180%);
     transform: scale(1.05);
-  };
+  }
 `;
 
 export const ButtonText = styled.span`
   text-align: center;
   padding: 0.1vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     display: none;
-  };  
+  }
 `;
 
 export const GameTitle = styled.h3`
@@ -43,11 +43,11 @@ export const GameTitle = styled.h3`
   width: 60%;
   font-size: 3vw;
   font-weight: 700;
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 20px;
-  };
+  }
 `;
 
 export const Table = styled.table`
@@ -58,11 +58,11 @@ export const Table = styled.table`
 export const TableRow = styled.tr`
   &:nth-child(odd) {
     background-color: rgba(229, 232, 207, 0.809);
-  }; 
-  
-  &:hover{
+  }
+
+  &:hover {
     background-color: rgba(121, 208, 237, 0.705);
-  };
+  }
 `;
 
 export const TableHeader = styled.th`
@@ -71,18 +71,18 @@ export const TableHeader = styled.th`
   height: 3.2vw;
   background-color: rgba(25, 23, 23, 0.927);
   font-size: 1.2vw;
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   letter-spacing: 0.1vw;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 40px;
     font-size: 16px;
-  };
+  }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     height: 30px;
     font-size: 13px;
-  };
+  }
 `;
 
 export const TableCell = styled.td`
@@ -93,20 +93,20 @@ export const TableCell = styled.td`
   font-size: 1.2vw;
   font-weight: 600;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 30px;
     font-size: 14px;
     padding: 4px;
-  };
+  }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     height: 25px;
     font-size: 11px;
     padding: 2px;
-  };
+  }
 `;
 
-export const DetailLink = styled(Link)` 
+export const DetailLink = styled(Link)`
   text-decoration: none;
   color: black;
   font-weight: 900;
@@ -115,10 +115,7 @@ export const DetailLink = styled(Link)`
   background-color: #1e1d1fba;
   color: white;
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     padding: 4px;
-  };
+  }
 `;
-
-
-

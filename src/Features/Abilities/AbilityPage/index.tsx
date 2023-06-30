@@ -3,21 +3,32 @@ import { fetchAbility } from "../../../Core/API";
 import { useQuery } from "@tanstack/react-query";
 import { Loader } from "../../../Base/Loader";
 import { ErrorPage } from "../../../Base/Error/styled";
-import { Description, GenInfo, PokeAbility, StyledAbilityPage, TextBox } from "./styled";
+import {
+  Description,
+  GenInfo,
+  PokeAbility,
+  StyledAbilityPage,
+  TextBox,
+} from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { PokemonTile } from "../../../Common/PokemonTile";
-
 
 export const AbilityPage = (): JSX.Element => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const abilityId = searchParams.get("id");
 
-  const { isLoading, isError, data } = useQuery<any>(["ability", { abilityId }], () =>
-    fetchAbility(abilityId)
+  const { isLoading, isError, data } = useQuery<any>(
+    ["ability", { abilityId }],
+    () => fetchAbility(abilityId)
   );
 
-  const abilityName = data && `${data.name.charAt(0).toUpperCase()}${data.name.slice(1)}`.replace("-", " ");
+  const abilityName =
+    data &&
+    `${data.name.charAt(0).toUpperCase()}${data.name.slice(1)}`.replace(
+      "-",
+      " "
+    );
 
   const getPokeIdValue = (url: string) => {
     const parts = url.split("/");
@@ -33,16 +44,16 @@ export const AbilityPage = (): JSX.Element => {
       <StyledAbilityPage>
         <CenteredTitle content={abilityName} />
         <TextBox>
-        <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>
-        <Description>{data.effect_entries[1]?.effect}</Description>
+          <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>
+          <Description>{data.effect_entries[1]?.effect}</Description>
         </TextBox>
         <CenteredTitle content={"Pokemons with this ability:"} />
         <PokeAbility>
           {data.pokemon?.map((item: any) => (
-            <PokemonTile 
-            key={item.pokemon.name} 
-            id={getPokeIdValue(item.pokemon.url)} 
-            name={item.pokemon.name}
+            <PokemonTile
+              key={item.pokemon.name}
+              id={getPokeIdValue(item.pokemon.url)}
+              name={item.pokemon.name}
             />
           ))}
         </PokeAbility>

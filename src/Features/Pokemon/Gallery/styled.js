@@ -1,26 +1,26 @@
 import styled from "styled-components";
 
 export const TopMarker = styled.div`
-position: relative;
-top: -10vh;
+  position: relative;
+  top: -10vh;
 
-@media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-  top: -13vh;
-  };
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    top: -13vh;
+  }
 `;
 
 export const GalleryTitle = styled.h2`
   width: 100%;
   font-size: 3vw;
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   color: ${({ theme }) => theme.color.titleFontColor};
   text-align: center;
   margin: 2vw 0;
-  
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 28px;
     margin: 20px 0;
-  };
+  }
 `;
 
 export const GalleryBox = styled.div`
@@ -37,10 +37,10 @@ export const StyledGallery = styled.div`
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
-  gap: 1vw;  
+  gap: 1vw;
   margin: 0 auto;
   padding-bottom: 5vw;
-  `;
+`;
 
 export const ButtonBox = styled.div`
   height: 70vh;
@@ -54,10 +54,10 @@ export const ButtonBox = styled.div`
 
 export const BaseButton = styled.button`
   cursor: pointer;
-  height: 55vh;  
+  height: 55vh;
   width: 3vw;
   background-color: #0401199e;
-  color: white;  
+  color: white;
   transition: 200ms;
   filter: brightness(80%);
   -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
@@ -65,26 +65,26 @@ export const BaseButton = styled.button`
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   transition: visibility 0;
   padding: 0.2vw;
-  &:hover{
-  filter: brightness(130%);
-  background-color: #28052fd1;
+  &:hover {
+    filter: brightness(130%);
+    background-color: #28052fd1;
   }
 
-  &:disabled{
+  &:disabled {
     visibility: hidden;
   }
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 5vw;
-    };
+  }
 `;
 
 export const FastButton = styled(BaseButton)`
   height: 15vh;
   width: 3vw;
   padding: 0.2vw;
-  
-  @media(max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 5vw;
-  };
+  }
 `;

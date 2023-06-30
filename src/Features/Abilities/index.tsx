@@ -3,7 +3,7 @@ import { AllAbilities } from "./AllAbilities";
 import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
 
 export const Abilities = () => {
-  useScrollToTop()
+  useScrollToTop();
   return (
     <>
       <div />
@@ -23,16 +23,15 @@ export const Abilities = () => {
         sideBarText={[
           {
             name: "Bulbapedia- abilities",
-            link: "https://bulbapedia.bulbagarden.net/wiki/Ability"
+            link: "https://bulbapedia.bulbagarden.net/wiki/Ability",
           },
           {
             name: "Pokemon Database- abilities",
-            link: "https://pokemondb.net/ability"
-          }
+            link: "https://pokemondb.net/ability",
+          },
         ]}
       />
       <AllAbilities />
     </>
   );
 };
-

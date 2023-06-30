@@ -1,6 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
-import { fetchSoloPokemon, fetchSoloPokemonEvolution, fetchSoloPokemonInfo } from "../../../Core/API";
+import {
+  fetchSoloPokemon,
+  fetchSoloPokemonEvolution,
+  fetchSoloPokemonInfo,
+} from "../../../Core/API";
 import { StyledPokemonPage } from "./styled";
 import { Images } from "./Images";
 import { PokemonCard } from "./PokemonCard";
@@ -14,13 +18,20 @@ export const SinglePokemonPage = () => {
   const searchParams = new URLSearchParams(location.search);
   const pokeId = searchParams.get("pokeId");
 
-  const { isLoading: isLoadingInfo, isError: isErrorInfo, data: dataInfo } = useQuery<SoloPokemonInfo>(
-    ["soloPokemonInfo", { pokeId }],
-    () => fetchSoloPokemonInfo(pokeId)
+  const {
+    isLoading: isLoadingInfo,
+    isError: isErrorInfo,
+    data: dataInfo,
+  } = useQuery<SoloPokemonInfo>(["soloPokemonInfo", { pokeId }], () =>
+    fetchSoloPokemonInfo(pokeId)
   );
 
   const evolutionChainURL = dataInfo?.evolution_chain?.url || null;
-  const { isLoading: isLoadingEvolution, isError: isErrorEvolution, data: dataEvolution } = useQuery<PokemonEvolve | undefined>(
+  const {
+    isLoading: isLoadingEvolution,
+    isError: isErrorEvolution,
+    data: dataEvolution,
+  } = useQuery<PokemonEvolve | undefined>(
     ["soloPokemonEvolution", { evolutionChainURL }],
     async () => {
       if (evolutionChainURL !== null) {
@@ -30,8 +41,9 @@ export const SinglePokemonPage = () => {
     }
   );
 
-  const { isLoading, isError, data } = useQuery<SoloPokemonInfo>(["soloPokemon", { pokeId }], () =>
-    fetchSoloPokemon(pokeId)
+  const { isLoading, isError, data } = useQuery<SoloPokemonInfo>(
+    ["soloPokemon", { pokeId }],
+    () => fetchSoloPokemon(pokeId)
   );
 
   const color = dataInfo?.color?.name;

@@ -9,7 +9,13 @@ interface PokemonType {
   };
 }
 
-const TypeIcon = ({ pokemonTypes, table }: { pokemonTypes: PokemonType[], table: boolean }) => {
+const TypeIcon = ({
+  pokemonTypes,
+  table,
+}: {
+  pokemonTypes: PokemonType[];
+  table: boolean;
+}) => {
   function getBackgroundColorByType(typeName: string): string | undefined {
     const foundType = typesData.find((type) => type.name === typeName);
     return foundType?.backgroundColor;

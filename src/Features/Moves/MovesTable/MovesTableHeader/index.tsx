@@ -12,7 +12,9 @@ const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({ handleSort }) => {
         <TableHead onClick={() => handleSort("name")}>Name</TableHead>
         <TableHead onClick={() => handleSort("type")}>Type</TableHead>
         <TableHead onClick={() => handleSort("effect")}>Effect</TableHead>
-        <TableHead onClick={() => handleSort("damageClass")}>Damage Class</TableHead>
+        <TableHead onClick={() => handleSort("damageClass")}>
+          Damage Class
+        </TableHead>
         <TableHead mobileHidden onClick={() => handleSort("accuracy")}>
           Accuracy
         </TableHead>

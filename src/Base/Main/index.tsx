@@ -13,7 +13,6 @@ interface MainProps {
 }
 
 export const Main = (props: MainProps) => {
-
   return (
     <>
       <StyledMain key={props.titleContent}>
@@ -28,5 +27,5 @@ export const Main = (props: MainProps) => {
         </ArticleColumn>
       </StyledMain>
     </>
-  )
+  );
 };

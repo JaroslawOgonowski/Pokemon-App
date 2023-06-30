@@ -1,13 +1,13 @@
 export const normalTheme = {
-  color:{
+  color: {
     headerColor: "#020F24DF",
     headerTextColor: "#F5F5FA",
-    titleFontColor: "#0f0e0eeb"
+    titleFontColor: "#0f0e0eeb",
   },
-  breakPoint:{
+  breakPoint: {
     laptop: 1250,
     tablet: 900,
     mobileMax: 767,
-    mobileMin: 400
-  }
+    mobileMin: 450,
+  },
 };

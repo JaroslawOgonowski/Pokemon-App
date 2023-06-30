@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import bg from "./background.jpg"
+import bg from "./background.jpg";
 export const GlobalStyle = createGlobalStyle`
 
 html {
@@ -18,4 +18,4 @@ body{
 *, ::after, ::before {
   box-sizing: inherit;
 };
-`
+`;

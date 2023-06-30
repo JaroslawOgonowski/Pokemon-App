@@ -1,4 +1,3 @@
-
 import { fetchMove } from "../../Core/API";
 import { MoveData } from "./MovesTable/moveInterface";
 
@@ -17,7 +16,7 @@ export const fetchAllMoveData = async (
         url: moveInfo.url,
         accuracy: moveInfo.accuracy,
         type: {
-          name: moveInfo.type.name
+          name: moveInfo.type.name,
         },
         damage_class: { name: moveInfo.damage_class.name },
         power: moveInfo.power,
@@ -27,11 +26,11 @@ export const fetchAllMoveData = async (
           drain: moveInfo.meta.drain,
           flinch_chance: moveInfo.meta.flinch_chance,
           healing: moveInfo.meta.healing,
-          ailment: { name: moveInfo.meta.ailment.name }
-        }
+          ailment: { name: moveInfo.meta.ailment.name },
+        },
       };
       newData[move.name] = moveData;
-    } catch (error) { }
+    } catch (error) {}
   }
   setMoveData(newData);
   setLoading(false);

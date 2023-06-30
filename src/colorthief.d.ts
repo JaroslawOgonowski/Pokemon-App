@@ -1,7 +1,9 @@
-declare module 'colorthief' {
+declare module "colorthief" {
   class ColorThief {
     constructor();
-    getColor(sourceImage: HTMLImageElement | HTMLCanvasElement | string): number[];
+    getColor(
+      sourceImage: HTMLImageElement | HTMLCanvasElement | string
+    ): number[];
   }
 
   export default ColorThief;

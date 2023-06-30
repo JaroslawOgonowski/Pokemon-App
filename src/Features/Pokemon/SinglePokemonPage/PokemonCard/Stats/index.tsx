@@ -2,8 +2,8 @@ import { PokemonStatsProps } from "../../singlePokemonInterfaces";
 import { FullBar, StatValue, StatsBox, TotalStatValue } from "./styled";
 
 export const Stats = ({ pokemonStats }: PokemonStatsProps) => {
-  const values = pokemonStats.map(obiect => obiect.base_stat)
-  const statsSum = values.reduce((a, b) => a + b, 0)
+  const values = pokemonStats.map((obiect) => obiect.base_stat);
+  const statsSum = values.reduce((a, b) => a + b, 0);
   return (
     <StatsBox>
       Stats:

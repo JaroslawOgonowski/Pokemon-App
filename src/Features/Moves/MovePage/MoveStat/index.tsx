@@ -24,10 +24,11 @@ export const MoveStat = ({ type, value, icon }: MoveStatProps) => (
 
 export const MoveInfo = ({ label, value }: MoveInfoProps) => {
   if (!value) return null;
-  else return (
-    <MoveInfoDiv>
-      <Label>{label}</Label>
-      {value}
-    </MoveInfoDiv>
-);
+  else
+    return (
+      <MoveInfoDiv>
+        <Label>{label}</Label>
+        {value}
+      </MoveInfoDiv>
+    );
 };

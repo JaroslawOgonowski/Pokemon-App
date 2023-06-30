@@ -1,17 +1,17 @@
-import ReactDOM from 'react-dom/client';
-import App from './Core/App';
-import reportWebVitals from './reportWebVitals';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import ReactDOM from "react-dom/client";
+import App from "./Core/App";
+import reportWebVitals from "./reportWebVitals";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 export const queryClient = new QueryClient({
-  defaultOptions:{
-    queries:{
-      staleTime: 1000 * 600
-    }
-  }
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 600,
+    },
+  },
 });
 
 root.render(

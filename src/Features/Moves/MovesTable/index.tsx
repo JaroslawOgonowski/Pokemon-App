@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchMoves } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { MoveData } from "./moveInterface";
 import { Table } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
@@ -14,33 +14,36 @@ import { MovesTableRow } from "./MovesTableRow";
 
 export const MovesTable = () => {
   useScrollToTop();
-  const offset = 0;
-  const limit = 933;
+  const initialPageSize = 20;
   const [moveData, setMoveData] = useState<Record<string, MoveData>>({});
   const [loading, setLoading] = useState(true);
-  const [showLoader, setShowLoader] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortKey, setSortKey] = useState("");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
-  const { isLoading, isError, data } = useQuery(
-    ["moves", { limit: limit, offset: offset }],
-    () => fetchMoves(limit, offset)
+  const { isLoading, isError, data, fetchNextPage, hasNextPage } = useInfiniteQuery(
+    ["moves"],
+    ({ pageParam }) => fetchMoves(initialPageSize, pageParam),
+    {
+      getNextPageParam: (lastPage) => {
+        const { next } = lastPage as { next: string };
+        return next ? next.split("offset=")[1] : null;
+      },
+    }
   );
 
+  const allMoves = data?.pages.flatMap((page) => page.results) || [];
   const sortedMoves = MovesSorter({
-    data: data?.results || [],
+    data: allMoves,
     moveData,
     sortKey,
     sortDirection,
   });
 
   useEffect(() => {
-    setShowLoader(true);
-    fetchAllMoveData(data?.results || [], setMoveData, setLoading);
-    setTimeout(() => {
-      setShowLoader(false);
-    }, 5000);
+    if (!isLoading) {
+      fetchAllMoveData(allMoves, setMoveData, setLoading);
+    }
   }, [data]);
 
   const handleSort = (key: string) => {
@@ -52,8 +55,7 @@ export const MovesTable = () => {
     }
   };
 
-  if (showLoader) return <Loader />;
-  if ((isLoading || loading) && !data) return null;
+  if (isLoading && !data) return <Loader />;
   if (isError || !moveData || !data) return <Error />;
   return (
     <>
@@ -75,6 +77,11 @@ export const MovesTable = () => {
           />
         </tbody>
       </Table>
+      {hasNextPage && (
+        <button onClick={() => fetchNextPage()} disabled={isLoading}>
+          {isLoading ? "Loading..." : "Load More"}
+        </button>
+      )}
     </>
   );
 };

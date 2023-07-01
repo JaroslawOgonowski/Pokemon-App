@@ -13,8 +13,6 @@ export const Banner = styled.div`
   flex-direction: column;
   gap: 1vh;
   justify-content: center;
-  align-items: center;
-  position: relative;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     background-position: right;
@@ -24,7 +22,7 @@ export const Banner = styled.div`
 
 export const Title = styled.h1`
   max-width: 100%;
-  margin: 0 auto;
+  margin-left: 20%;
   font-family: "Righteous", cursive;
   color: rgb(186, 207, 255);
   font-size: 18px;
@@ -32,24 +30,23 @@ export const Title = styled.h1`
   -webkit-box-shadow: rgb(0 0 0) 0px 0px 35px 20px;
   -moz-box-shadow: rgb(0 0 0) 0px 0px 35px 20px;
   box-shadow: rgb(0 0 0) 0px 0px 35px 20px;
-  position: absolute;
   top: 20%;
   right: 10%;
 `;
 
 export const TypeDiv = styled.div`
+  margin-left: 20%;
   width: fit-content;
   height: fit-content;
-  position: absolute;
-  top: 60%;
-  right: 10%;
 `;
 
 export const MoveBaseInfo = styled.div`
-  position: relative;
   margin: 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
-  min-height: 100%;
   max-width: 100%;
   background-image: linear-gradient(
     162deg,
@@ -59,13 +56,16 @@ export const MoveBaseInfo = styled.div`
 `;
 
 export const BallImg = styled(Ball)`
-  width: fit-content;
-  height: fit-content;
-  margin-left: -40%;
-  color: #1f1e1ebf;
-  z-index: -1;
+  max-width: none;
+  position: absolute;
+  top: 21%;
+  right: -340px;
+  width: 700px;
+  height: 700px;
+  color: rgba(138, 134, 139, 0.136);
+  z-index: 0;
+  overflow: hidden;
   animation: rotateAnim 8s linear infinite;
-
   @keyframes rotateAnim {
     0% {
       transform: rotate(0);
@@ -83,7 +83,6 @@ export const Movestats = styled.div`
   height: fit-content;
   margin: 10px 2% 0 2%;
   color: white;
-  position: absolute;
   top: 0;
   display: flex;
   justify-content: center;
@@ -104,7 +103,6 @@ export const Description = styled.div`
 
 export const AdditionalInfoBanner = styled(Banner)`
   background-image: url(${constestBanner});
-  position: relative;
 `;
 
 export const AdditionalInfo = styled.div`
@@ -130,10 +128,17 @@ export const SubTitle = styled.h2`
   font-size: 36px;
   font-weight: bolder;
   border-radius: 5px;
-  position: relative;
+  align-self: flex-end;
+  margin-right: 2%;
 `;
 export const AdditionalInfoContent = styled.div`
   margin: 2vh 0 2vh 2%;
   color: black;
   font-size: 20px;
+`;
+
+export const BallImg2 = styled(BallImg)`
+top: 110%;
+left: -340px;
+color: rgba(16, 16, 17, 0.442);
 `;

@@ -10,6 +10,7 @@ import {
   AdditionalInfoBanner,
   AdditionalInfoContent,
   BallImg,
+  BallImg2,
   Banner,
   Description,
   MoveBaseInfo,
@@ -70,7 +71,6 @@ export const MovePage = () => {
             </TypeDiv>
           </Banner>
           <MoveBaseInfo>
-            <BallImg />
             <Movestats>
               <Description>
                 {englishFlavorText.flavor_text}
@@ -133,6 +133,7 @@ export const MovePage = () => {
               <MoveInfo label="Max hits:" value={data.meta.max_hits} />
               <MoveInfo label="Min turns:" value={data.meta.min_turns} />
               <MoveInfo label="Max turns:" value={data.meta.max_turns} />
+              <BallImg />
             </Movestats>
           </MoveBaseInfo>
 
@@ -141,6 +142,7 @@ export const MovePage = () => {
           </AdditionalInfoBanner>
           <AdditionalInfo>
             <AdditionalInfoContent>
+              <BallImg2 />
               Contest Type:{" "}
               {data?.contest_type
                 ? ItemNamesEdit(data?.contest_type?.name)

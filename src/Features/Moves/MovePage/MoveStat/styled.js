@@ -1,35 +1,39 @@
 import styled from "styled-components";
 
 export const MoveStatBox = styled.div`
-  width: 40%;
+  width: 39%;
   display: flex;
-  gap: 8px;
+  gap: 4px;
   align-items: center;
-  justify-content: space-between;
   padding: 10px;
   border: 1px solid #313131;
   border-radius: 5px;
 `;
 
 export const IconBox = styled.div`
+  text-align: center;
   width: 65%;
   color: #a19d9d;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
+
 export const MoveInfoDiv = styled.div`
-  width: 100%;
+  margin: 0 auto;
+  width: calc(2* 39% + 28px);
   display: flex;
-  gap: 8px;
+  gap: 4px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 10px;
   border: 1px solid #313131;
   border-radius: 5px;
 `;
 
 export const Label = styled.span`
-  font-size: 18px;
+  font-size: 16px;
   color: #a19d9d;
+  text-align: center;
 `;

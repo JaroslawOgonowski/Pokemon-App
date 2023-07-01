@@ -16,6 +16,7 @@ import {
   Movestats,
   SubTitle,
   Title,
+  TypeDiv,
 } from "./styled";
 import { ReactComponent as PowerIcon } from "./images/bolt_FILL0_wght400_GRAD0_opsz48.svg";
 import { ReactComponent as AccIcon } from "./images/visibility_FILL0_wght400_GRAD0_opsz48.svg";
@@ -59,12 +60,14 @@ export const MovePage = () => {
         <CentredMain>
           <Banner>
             <Title>{`${ItemNamesEdit(data.name)} (Move)`}</Title>
-            <TypeIcon
-              table={true}
-              pokemonTypes={[
-                { slot: 1, type: { name: data.type.name, url: "" } },
-              ]}
-            />
+            <TypeDiv>
+              <TypeIcon
+                table={true}
+                pokemonTypes={[
+                  { slot: 1, type: { name: data.type.name, url: "" } },
+                ]}
+              />
+            </TypeDiv>
           </Banner>
           <MoveBaseInfo>
             <BallImg />
@@ -87,7 +90,7 @@ export const MovePage = () => {
               />
               <MoveStat type="PP" value={data.pp} icon={<PPIcon />} />
               <MoveStat
-                type="Effect chance"
+                type="Status chance"
                 value={data.effect_chance ? data.effect_chance : null}
                 icon={<EffectIcon />}
               />
@@ -132,6 +135,7 @@ export const MovePage = () => {
               <MoveInfo label="Max turns:" value={data.meta.max_turns} />
             </Movestats>
           </MoveBaseInfo>
+
           <AdditionalInfoBanner>
             <SubTitle>More...</SubTitle>
           </AdditionalInfoBanner>

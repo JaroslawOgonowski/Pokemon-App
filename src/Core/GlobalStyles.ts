@@ -13,6 +13,8 @@ body{
   background-repeat: no-repeat;
   background-position-x: 30%;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 *, ::after, ::before {

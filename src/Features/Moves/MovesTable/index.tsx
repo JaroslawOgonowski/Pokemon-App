@@ -11,6 +11,7 @@ import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop
 import { fetchAllMoveData } from "../fetchMoveData";
 import MovesTableHeader from "./MovesTableHeader";
 import { MovesTableRow } from "./MovesTableRow";
+import { RenderNames } from "./RenderNames";
 
 export const MovesTable = () => {
   useScrollToTop();
@@ -40,7 +41,7 @@ export const MovesTable = () => {
     fetchAllMoveData(data?.results || [], setMoveData, setLoading);
     setTimeout(() => {
       setShowLoader(false);
-    }, 5000);
+    }, 200);
   }, [data]);
 
   const handleSort = (key: string) => {
@@ -53,28 +54,29 @@ export const MovesTable = () => {
   };
 
   if (showLoader) return <Loader />;
-  if ((isLoading || loading) && !data) return null;
+  if (isLoading || loading) return <>{RenderNames({ names: data.results })}</>;
   if (isError || !moveData || !data) return <Error />;
-  return (
-    <>
-      <CenteredTitle content="Moves List" />
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search moves..."
-      />
-      <Table>
-        <MovesTableHeader handleSort={handleSort} />
-        <tbody>
-          <MovesTableRow
-            sortedMoves={sortedMoves}
-            loading={loading}
-            moveData={moveData}
-            searchTerm={searchTerm}
-          />
-        </tbody>
-      </Table>
-    </>
-  );
+  else
+    return (
+      <>
+        <CenteredTitle content="Moves List" />
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search moves..."
+        />
+        <Table>
+          <MovesTableHeader handleSort={handleSort} />
+          <tbody>
+            <MovesTableRow
+              sortedMoves={sortedMoves}
+              loading={loading}
+              moveData={moveData}
+              searchTerm={searchTerm}
+            />
+          </tbody>
+        </Table>
+      </>
+    );
 };

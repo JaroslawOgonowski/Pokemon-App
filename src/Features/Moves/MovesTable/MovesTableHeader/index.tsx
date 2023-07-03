@@ -2,21 +2,31 @@ import React, { useState } from "react";
 import { TableHead, TableRow } from "../styled";
 
 interface MovesTableHeaderProps {
-  handleSort: ((key: string) => void) | null;
+  handleSort: ((key: string, direction: "asc" | "desc") => void) | null;
 }
 
 const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({ handleSort }) => {
   const [clickedHeader, setClickedHeader] = useState<string | null>(null);
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
   const handleHeaderClick = (key: string) => {
     if (handleSort) {
-      handleSort(key);
+      const direction = clickedHeader === key && sortDirection === "asc" ? "desc" : "asc";
+      handleSort(key, direction);
       setClickedHeader(key);
+      setSortDirection(direction);
     }
   };
 
   const isHeaderClicked = (key: string) => {
     return clickedHeader === key;
+  };
+
+  const getSortArrow = (key: string) => {
+    if (isHeaderClicked(key)) {
+      return sortDirection === "asc" ? "🔽" : "🔼";
+    }
+    return null;
   };
 
   return (
@@ -26,74 +36,74 @@ const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({ handleSort }) => {
           sortOn={isHeaderClicked("name") ? "clicked" : ""}
           onClick={() => handleHeaderClick("name")}
         >
-          {clickedHeader === "name" ? "Name 🔽" : "Name"}
+          Name {getSortArrow("name")}
         </TableHead>
         <TableHead
           onClick={() => handleHeaderClick("type")}
           sortOn={isHeaderClicked("type") ? "clicked" : ""}
         >
-          Type
+          Type {getSortArrow("type")}
         </TableHead>
         <TableHead
           onClick={() => handleHeaderClick("effect")}
           sortOn={isHeaderClicked("effect") ? "clicked" : ""}
         >
-          Effect
+          Effect {getSortArrow("effect")}
         </TableHead>
         <TableHead
           onClick={() => handleHeaderClick("damageClass")}
           sortOn={isHeaderClicked("damageClass") ? "clicked" : ""}
         >
-          Damage Class
+          Damage Class {getSortArrow("damageClass")}
         </TableHead>
         <TableHead
           mobileHidden
           onClick={() => handleHeaderClick("accuracy")}
           sortOn={isHeaderClicked("accuracy") ? "clicked" : ""}
         >
-          Accuracy
+          Accuracy {getSortArrow("accuracy")}
         </TableHead>
         <TableHead
           mobileHidden
           onClick={() => handleHeaderClick("power")}
           sortOn={isHeaderClicked("power") ? "clicked" : ""}
         >
-          Power
+          Power {getSortArrow("power")}
         </TableHead>
         <TableHead
           mobileHidden
           onClick={() => handleHeaderClick("pp")}
           sortOn={isHeaderClicked("pp") ? "clicked" : ""}
         >
-          PP
+          PP {getSortArrow("pp")}
         </TableHead>
         <TableHead
           mobileHidden
           onClick={() => handleHeaderClick("crit")}
           sortOn={isHeaderClicked("crit") ? "clicked" : ""}
         >
-          Crit
+          Crit {getSortArrow("crit")}
         </TableHead>
         <TableHead
           mobileHidden
           onClick={() => handleHeaderClick("drain")}
           sortOn={isHeaderClicked("drain") ? "clicked" : ""}
         >
-          Drain
+          Drain {getSortArrow("drain")}
         </TableHead>
         <TableHead
           mobileHidden
           onClick={() => handleHeaderClick("flinch")}
           sortOn={isHeaderClicked("flinch") ? "clicked" : ""}
         >
-          Flinch
+          Flinch {getSortArrow("flinch")}
         </TableHead>
         <TableHead
           mobileHidden
           onClick={() => handleHeaderClick("healing")}
           sortOn={isHeaderClicked("healing") ? "clicked" : ""}
         >
-          Healing
+          Healing {getSortArrow("healing")}
         </TableHead>
       </TableRow>
     </thead>

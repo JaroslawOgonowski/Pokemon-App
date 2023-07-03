@@ -42,9 +42,9 @@ export const Gallery = () => {
   const limit = 1010;
   const [searchTerm, setSearchTerm] = useState("");
   const [startIndex, setStartIndex] = useState(0);
-  const itemsInGallery = 36;
+  const [itemsInGallery, setItemsInGallery] = useState(30);
   const topRef = useRef<HTMLDivElement>(null);
-  const maxIndex = 974;
+  const maxIndex = 980;
 
   useOffsetFromLocationSearch(startIndex, setStartIndex);
   const { isLoading, isError, data } = useQuery<GalleryData>(
@@ -85,8 +85,15 @@ export const Gallery = () => {
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-    setStartIndex(0);
+    if (e.target.value !== "") {
+      setSearchTerm(e.target.value);
+      setStartIndex(0);
+      setItemsInGallery(980);
+    } else {
+      setSearchTerm(e.target.value);
+      setStartIndex(0);
+      setItemsInGallery(30);
+    }
   };
 
   if (isLoading) return <Loader />;
@@ -120,7 +127,7 @@ export const Gallery = () => {
             .filter((item: Pokemon) =>
               item.name.toLowerCase().includes(searchTerm.toLowerCase())
             )
-            .slice(startIndex, startIndex + 36)
+            .slice(startIndex, startIndex + itemsInGallery)
             .map((item: Pokemon, index: number) => (
               <PokemonTile
                 key={index}
@@ -132,13 +139,13 @@ export const Gallery = () => {
         <ButtonBox>
           <BaseButton
             onClick={handleNextPageClick}
-            disabled={startIndex >= maxIndex}
+            disabled={startIndex >= maxIndex || itemsInGallery === 980}
           >
             <Next />
           </BaseButton>
           <FastButton
             onClick={handleLastPageClick}
-            disabled={startIndex >= maxIndex}
+            disabled={startIndex >= maxIndex || itemsInGallery === 980}
           >
             <Next />
             <Next />

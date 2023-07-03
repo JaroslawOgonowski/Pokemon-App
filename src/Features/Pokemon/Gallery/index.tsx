@@ -24,11 +24,13 @@ import {
 } from "../../../Common/reusableFunctions/buttonFunctions";
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
+
 interface Pokemon {
   url: string;
   name: string;
   id: number;
 }
+
 interface GalleryData {
   results: Pokemon[];
   count: number;
@@ -62,12 +64,15 @@ export const Gallery = () => {
   const handlePrevPageClick = () => {
     handlePrevPage(startIndex, itemsInGallery, handlePageChange);
   };
+
   const handleNextPageClick = () => {
     handleNextPage(startIndex, itemsInGallery, maxIndex, handlePageChange);
   };
+
   const handleLastPageClick = () => {
     handleLastPage(maxIndex, handlePageChange);
   };
+
   const handleFirstPageClick = () => {
     handleFirstPage(handlePageChange);
   };
@@ -77,6 +82,11 @@ export const Gallery = () => {
     const numberPart = parts[parts.length - 2];
     const lastValue = numberPart !== "" ? parseInt(numberPart) : 0;
     return lastValue;
+  };
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    setStartIndex(0);
   };
 
   if (isLoading) return <Loader />;
@@ -89,7 +99,7 @@ export const Gallery = () => {
       <input
         type="text"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleSearch}
         placeholder="Search pokemon..."
       />
       <GalleryBox>
@@ -97,7 +107,10 @@ export const Gallery = () => {
           <BaseButton disabled={startIndex === 0} onClick={handlePrevPageClick}>
             <Prev />
           </BaseButton>
-          <FastButton disabled={startIndex === 0} onClick={handleFirstPageClick}>
+          <FastButton
+            disabled={startIndex === 0}
+            onClick={handleFirstPageClick}
+          >
             <Prev />
             <Prev />
           </FastButton>
@@ -117,10 +130,16 @@ export const Gallery = () => {
             ))}
         </StyledGallery>
         <ButtonBox>
-          <BaseButton onClick={handleNextPageClick} disabled={startIndex >= maxIndex}>
+          <BaseButton
+            onClick={handleNextPageClick}
+            disabled={startIndex >= maxIndex}
+          >
             <Next />
           </BaseButton>
-          <FastButton onClick={handleLastPageClick} disabled={startIndex >= maxIndex}>
+          <FastButton
+            onClick={handleLastPageClick}
+            disabled={startIndex >= maxIndex}
+          >
             <Next />
             <Next />
           </FastButton>

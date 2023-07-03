@@ -55,13 +55,16 @@ export const TableCell = styled.td`
 `;
 
 export const TableHead = styled.th`
-  border-bottom: 1px solid black;
-  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+  color: #cfc4c4;
   height: 5vh;
   background-color: rgba(25, 23, 23, 0.927);
   font-size: 1.2vw;
   letter-spacing: 0.1vw;
-
+  &:hover {
+    background-color: rgba(101, 18, 18, 0.927);
+  }
   ${({ mobileHidden }) =>
     mobileHidden &&
     css`
@@ -69,6 +72,13 @@ export const TableHead = styled.th`
         display: none;
       }
     `}
+
+  ${({ sortOn }) =>
+    sortOn &&
+    css`
+      background-color: #146486ce;
+    `}
+    
 
   @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 13px;

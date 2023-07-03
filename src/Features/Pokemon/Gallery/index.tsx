@@ -25,6 +25,7 @@ import {
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
 interface Pokemon {
+  url: string;
   name: string;
   id: number;
 }
@@ -35,37 +36,47 @@ interface GalleryData {
 
 export const Gallery = () => {
   const navigate = useNavigate();
-  const [offset, setOffset] = useState(0);
-  const limit = 100;
+  const offset = 0;
+  const limit = 1010;
+  const [searchTerm, setSearchTerm] = useState("");
+  const [startIndex, setStartIndex] = useState(0);
+  const itemsInGallery = 36;
   const topRef = useRef<HTMLDivElement>(null);
-  useOffsetFromLocationSearch(offset, setOffset);
+  const maxIndex = 974;
 
+  useOffsetFromLocationSearch(startIndex, setStartIndex);
   const { isLoading, isError, data } = useQuery<GalleryData>(
     ["gallery", { limit: limit, offset: offset }],
     () => fetchGallery(limit, offset)
   );
 
   useEffect(() => {
-    navigate(`/pokemon?offset=${offset}`);
+    navigate(`/pokemon?offset=${startIndex}`);
     scrollToTop(topRef);
-  }, [offset, navigate, data]);
+  }, [startIndex, navigate, data]);
 
-  const handlePageChange = (newOffset: number) => {
-    setOffset(newOffset);
+  const handlePageChange = (newStartIndex: number) => {
+    setStartIndex(newStartIndex);
   };
 
-  const maxOffset = 910;
   const handlePrevPageClick = () => {
-    handlePrevPage(offset, limit, handlePageChange);
+    handlePrevPage(startIndex, itemsInGallery, handlePageChange);
   };
   const handleNextPageClick = () => {
-    handleNextPage(offset, limit, maxOffset, handlePageChange);
+    handleNextPage(startIndex, itemsInGallery, maxIndex, handlePageChange);
   };
   const handleLastPageClick = () => {
-    handleLastPage(maxOffset, handlePageChange);
+    handleLastPage(maxIndex, handlePageChange);
   };
   const handleFirstPageClick = () => {
     handleFirstPage(handlePageChange);
+  };
+
+  const getId = (url: string) => {
+    const parts = url.split("/");
+    const numberPart = parts[parts.length - 2];
+    const lastValue = numberPart !== "" ? parseInt(numberPart) : 0;
+    return lastValue;
   };
 
   if (isLoading) return <Loader />;
@@ -75,26 +86,41 @@ export const Gallery = () => {
     <>
       <TopMarker ref={topRef} />
       <GalleryTitle>Hall of fame</GalleryTitle>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search pokemon..."
+      />
       <GalleryBox>
         <ButtonBox>
-          <BaseButton disabled={offset === 0} onClick={handlePrevPageClick}>
+          <BaseButton disabled={startIndex === 0} onClick={handlePrevPageClick}>
             <Prev />
           </BaseButton>
-          <FastButton disabled={offset === 0} onClick={handleFirstPageClick}>
+          <FastButton disabled={startIndex === 0} onClick={handleFirstPageClick}>
             <Prev />
             <Prev />
           </FastButton>
         </ButtonBox>
         <StyledGallery>
-          {data.results.map((item: Pokemon, index: number) => (
-            <PokemonTile key={index} name={item.name} id={index + offset} />
-          ))}
+          {data.results
+            .filter((item: Pokemon) =>
+              item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .slice(startIndex, startIndex + 36)
+            .map((item: Pokemon, index: number) => (
+              <PokemonTile
+                key={index}
+                name={item.name}
+                id={getId(item.url) - 1}
+              />
+            ))}
         </StyledGallery>
         <ButtonBox>
-          <BaseButton onClick={handleNextPageClick} disabled={offset >= 910}>
+          <BaseButton onClick={handleNextPageClick} disabled={startIndex >= maxIndex}>
             <Next />
           </BaseButton>
-          <FastButton onClick={handleLastPageClick} disabled={offset >= 910}>
+          <FastButton onClick={handleLastPageClick} disabled={startIndex >= maxIndex}>
             <Next />
             <Next />
           </FastButton>

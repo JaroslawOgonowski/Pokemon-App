@@ -1,33 +1,34 @@
 export const handleNextPage = (
-  offset: number,
-  limit: number,
-  maxOffset: number,
-  handlePageChange: (newOffset: number) => void
+  startIndex: number,
+  itemsInGallery: number,
+  maxIndex: number,
+
+  handlePageChange: (newStartIndex: number) => void
 ) => {
-  const newOffset = offset + limit;
-  handlePageChange(Math.min(newOffset, maxOffset));
+  const newStartIndex = startIndex + itemsInGallery;
+  handlePageChange(Math.min(newStartIndex, maxIndex));
 };
 
 export const handlePrevPage = (
-  offset: number,
-  limit: number,
-  handlePageChange: (newOffset: number) => void
+  startIndex: number,
+  itemsInGallery: number,
+  handlePageChange: (newStartIndex: number) => void
 ) => {
-  const newOffset = Math.max(0, offset - limit);
-  handlePageChange(newOffset);
+  const newStartIndex = Math.max(0, startIndex - itemsInGallery);
+  handlePageChange(newStartIndex);
 };
 
 export const handleLastPage = (
-  maxOffset: number,
-  handlePageChange: (newOffset: number) => void
+  maxIndex: number,
+  handlePageChange: (newStartIndex: number) => void
 ) => {
-  const newOffset = maxOffset;
-  handlePageChange(newOffset);
+  const newStartIndex = maxIndex;
+  handlePageChange(newStartIndex);
 };
 
 export const handleFirstPage = (
-  handlePageChange: (newOffset: number) => void
+  handlePageChange: (newStartIndex: number) => void
 ) => {
-  const newOffset = 0;
-  handlePageChange(newOffset);
+  const newStartIndex = 0;
+  handlePageChange(newStartIndex);
 };

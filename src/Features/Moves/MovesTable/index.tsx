@@ -38,6 +38,7 @@ export const MovesTable = () => {
 
   useEffect(() => {
     setShowLoader(true);
+    
     fetchAllMoveData(data?.results || [], setMoveData, setLoading);
     setTimeout(() => {
       setShowLoader(false);

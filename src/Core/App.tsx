@@ -10,10 +10,11 @@ import { Abilities } from "../Features/Abilities";
 import { AbilityPage } from "../Features/Abilities/AbilityPage";
 import ScrollToTopButton from "../Base/ScrollToTopButton/ScrollToTop ";
 import { MovePage } from "../Features/Moves/MovePage";
+import { StyledPage } from "./styled";
 
 function App() {
   return (
-    <>
+    <StyledPage>
       <HashRouter>
         <ThemeProvider theme={normalTheme}>
           <GlobalStyle />
@@ -30,7 +31,7 @@ function App() {
           <ScrollToTopButton />
         </ThemeProvider>
       </HashRouter>
-    </>
+    </StyledPage>
   );
 }
 

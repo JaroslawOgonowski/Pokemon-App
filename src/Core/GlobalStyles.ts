@@ -4,7 +4,9 @@ export const GlobalStyle = createGlobalStyle`
 
 html {
   font-family: 'Agdasima', sans-serif;
+
 };
+
 body{
   margin: 0;
   padding: 0;  
@@ -20,4 +22,9 @@ body{
 *, ::after, ::before {
   box-sizing: inherit;
 };
+
+body, html {
+overflow-x: hidden;
+}
+
 `;

@@ -6,7 +6,7 @@ import MovesTableHeader from "./MovesTableHeader";
 import { MovesTableRow } from "./MovesTableRow";
 import allMovesJSON from "./allMoves.json";
 import { AllMovesData } from "./moveInterface";
-import {sortMoves} from "./MovesSorter";
+import { sortMoves } from "./MovesSorter";
 
 export const MovesTable = () => {
   useScrollToTop();
@@ -25,7 +25,6 @@ export const MovesTable = () => {
   };
 
   const sortedMoves = sortMoves(movesArray, sortKey, sortDirection);
-  console.log(sortKey, " sortkey table", movesArray, "movearray table", sortedMoves,"sorted table")
   return (
     <>
       <CenteredTitle content="Moves List" />

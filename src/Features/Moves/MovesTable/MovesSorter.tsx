@@ -1,21 +1,13 @@
-import { Move, MoveData } from "./moveInterface";
+import { AllMovesData } from "./moveInterface";
 
-interface MovesSorterProps {
-  data: Move[];
-  moveData: Record<string, MoveData>;
-  sortKey: string;
-  sortDirection: "asc" | "desc";
-}
-
-export const MovesSorter = ({
-  data,
-  moveData,
-  sortKey,
-  sortDirection,
-}: MovesSorterProps) => {
-  const sortedMoves = [...data].sort((a: Move, b: Move) => {
-    const moveA = moveData[a.name];
-    const moveB = moveData[b.name];
+export const sortMoves = (
+  data: AllMovesData[],
+  sortKey: string,
+  sortDirection: "asc" | "desc"
+): AllMovesData[] => {
+  const sortedMoves = data.sort((a, b) => {
+    const moveA = a;
+    const moveB = b;
     if (moveA && moveB) {
       if (sortKey === "name") {
         return sortDirection === "asc"
@@ -62,22 +54,12 @@ export const MovesSorter = ({
         return sortDirection === "asc"
           ? moveA.meta.crit_rate - moveB.meta.crit_rate
           : moveB.meta.crit_rate - moveA.meta.crit_rate;
-      } else if (sortKey === "drain") {
-        return sortDirection === "asc"
-          ? moveA.meta.drain - moveB.meta.drain
-          : moveB.meta.drain - moveA.meta.drain;
-      } else if (sortKey === "flinch") {
-        return sortDirection === "asc"
-          ? moveA.meta.flinch_chance - moveB.meta.flinch_chance
-          : moveB.meta.flinch_chance - moveA.meta.flinch_chance;
-      } else if (sortKey === "healing") {
-        return sortDirection === "asc"
-          ? moveA.meta.healing - moveB.meta.healing
-          : moveB.meta.healing - moveA.meta.healing;
+      } else {
+        return 0;
       }
+    } else {
+      return 0;
     }
-    return 0;
   });
-
   return sortedMoves;
 };

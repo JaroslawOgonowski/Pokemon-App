@@ -3,18 +3,29 @@ import { TableHead, TableRow } from "../styled";
 
 interface MovesTableHeaderProps {
   handleSort: ((key: string, direction: "asc" | "desc") => void) | null;
+  sortKey: string;
+  sortDirection: "asc" | "desc";
 }
 
-const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({ handleSort }) => {
-  const [clickedHeader, setClickedHeader] = useState<string | null>(null);
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({
+  handleSort,
+  sortKey,
+  sortDirection,
+}) => {
+  const [clickedHeader, setClickedHeader] = useState<string | null>("");
+  const [currentSortDirection, setCurrentSortDirection] = useState<
+    "asc" | "desc"
+  >(sortDirection);
 
   const handleHeaderClick = (key: string) => {
     if (handleSort) {
-      const direction = clickedHeader === key && sortDirection === "asc" ? "desc" : "asc";
+      const direction =
+        clickedHeader === key && currentSortDirection === "asc"
+          ? "desc"
+          : "asc";
       handleSort(key, direction);
       setClickedHeader(key);
-      setSortDirection(direction);
+      setCurrentSortDirection(direction);
     }
   };
 
@@ -24,7 +35,7 @@ const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({ handleSort }) => {
 
   const getSortArrow = (key: string) => {
     if (isHeaderClicked(key)) {
-      return sortDirection === "asc" ? "🔽" : "🔼";
+      return currentSortDirection === "asc" ? "🔽" : "🔼";
     }
     return null;
   };

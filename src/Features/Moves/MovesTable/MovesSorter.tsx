@@ -18,15 +18,15 @@ export const sortMoves = (
           ? moveA.type.name.localeCompare(moveB.type.name)
           : moveB.type.name.localeCompare(moveA.type.name);
       } else if (sortKey === "accuracy") {
-        return sortDirection === "asc"
+        return sortDirection === "desc"
           ? moveA.accuracy - moveB.accuracy
           : moveB.accuracy - moveA.accuracy;
       } else if (sortKey === "power") {
-        return sortDirection === "asc"
+        return sortDirection === "desc"
           ? Number(moveA.power) - Number(moveB.power)
           : Number(moveB.power) - Number(moveA.power);
       } else if (sortKey === "pp") {
-        return sortDirection === "asc"
+        return sortDirection === "desc"
           ? Number(moveA.pp) - Number(moveB.pp)
           : Number(moveB.pp) - Number(moveA.pp);
       } else if (sortKey === "effect") {
@@ -51,19 +51,19 @@ export const sortMoves = (
           ? damageClassA.localeCompare(damageClassB)
           : damageClassB.localeCompare(damageClassA);
       } else if (sortKey === "crit") {
-        return sortDirection === "asc"
+        return sortDirection === "desc"
           ? moveA.meta.crit_rate - moveB.meta.crit_rate
           : moveB.meta.crit_rate - moveA.meta.crit_rate;
       } else if (sortKey === "healing") {
-        return sortDirection === "asc"
+        return sortDirection === "desc"
           ? moveA.meta.crit_rate - moveB.meta.healing
           : moveB.meta.crit_rate - moveA.meta.healing;
       } else if (sortKey === "flinch") {
-        return sortDirection === "asc"
+        return sortDirection === "desc"
           ? moveA.meta.crit_rate - moveB.meta.flinch_chance
           : moveB.meta.crit_rate - moveA.meta.flinch_chance;
       } else if (sortKey === "drain") {
-        return sortDirection === "asc"
+        return sortDirection === "desc"
           ? moveA.meta.crit_rate - moveB.meta.drain
           : moveB.meta.crit_rate - moveA.meta.drain;
       } else {

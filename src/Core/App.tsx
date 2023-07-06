@@ -12,6 +12,7 @@ import ScrollToTopButton from "../Base/ScrollToTopButton/ScrollToTop ";
 import { MovePage } from "../Features/Moves/MovePage";
 import { StyledPage } from "./styled";
 import { TypesPage } from "../Features/Types";
+import { TypePage } from "../Features/Types/TypePage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/ability" element={<AbilityPage />} />
             <Route path="/move" element={<MovePage />} />
             <Route path="/types" element={<TypesPage />} />
+            <Route path="/type" element={<TypePage />} />
             <Route path="/" element={<Pokemon />} />
           </Routes>
           <ScrollToTopButton />

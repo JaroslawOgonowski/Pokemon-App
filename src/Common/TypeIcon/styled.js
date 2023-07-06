@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const Types = styled.div`
@@ -46,4 +47,9 @@ export const Type = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 11px;
   }
+`;
+
+export const StyledLink = styled(Link)`
+text-decoration: none;
+
 `;

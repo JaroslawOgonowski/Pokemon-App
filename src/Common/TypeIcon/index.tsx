@@ -1,4 +1,4 @@
-import { Type, Types } from "./styled";
+import { StyledLink, Type, Types } from "./styled";
 import typesData from "./types.json";
 
 interface PokemonType {
@@ -30,13 +30,15 @@ const TypeIcon = ({
     <>
       <Types table={table}>
         {pokemonTypes.map((object) => (
-          <Type
-            typeBackgroundColor={getBackgroundColorByType(object.type.name)}
-            typeFontColor={getFontColorByType(object.type.name)}
-            key={object.slot}
-          >
-            {object.type.name}
-          </Type>
+          <StyledLink to={`/type?id=${object.type.name}`}>
+            <Type
+              typeBackgroundColor={getBackgroundColorByType(object.type.name)}
+              typeFontColor={getFontColorByType(object.type.name)}
+              key={object.slot}
+            >
+              {object.type.name}
+            </Type>
+          </StyledLink>
         ))}
       </Types>
     </>

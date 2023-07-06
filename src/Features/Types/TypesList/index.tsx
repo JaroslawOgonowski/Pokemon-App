@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchAllTypes } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
+import TypeIcon from "../../../Common/TypeIcon";
 
 export const TypesList = () => {
   const limit = 50;
@@ -13,11 +14,16 @@ export const TypesList = () => {
 
   if (isLoading) return <Loader />;
   if (isError) return <Error />;
-  return (
-    <ul>
-      {data.results.map((type: { name: string | null | undefined }) => (
-        <li key={type.name}>{type.name}</li>
-      ))}
-    </ul>
+
+  const pokemonTypes = data.results.map(
+    (type: { name: string | null | undefined }) => ({
+      slot: 1,
+      type: {
+        name: type.name,
+        url: "",
+      },
+    })
   );
+
+  return <TypeIcon pokemonTypes={pokemonTypes} table={false} />;
 };

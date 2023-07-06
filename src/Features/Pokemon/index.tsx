@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { Main } from "../../Base/Main";
 import { Gallery } from "./Gallery";
 import { PokemonContainer } from "./styled";
@@ -30,8 +29,8 @@ export const Pokemon = () => {
           }
           sideBarText={[
             {
-              name: "Pokemon.com- official pokedex",
-              link: "https://www.pokemon.com/us/pokedex",
+              name: "Pokemon Types",
+              link: "/Pokemon-App#/types",
             },
             {
               name: "Serebii- national pokedex",

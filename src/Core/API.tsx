@@ -74,3 +74,20 @@ export const fetchMoveById = async (moveId: string | null): Promise<any> => {
     response.json()
   );
 };
+
+ export const fetchAllTypes = async (
+  limit: number,
+): Promise<any> => {
+  const params = new URLSearchParams({
+    limit: String(limit),
+  });
+  return fetch(`https://pokeapi.co/api/v2/type/?${params}`).then((response) =>
+    response.json()
+  );
+};
+
+export const fetchTypeById = async (typeId: string | null): Promise<any> => {
+  return fetch(`https://pokeapi.co/api/v2/type/${typeId}/`).then((response) =>
+    response.json()
+  );
+};

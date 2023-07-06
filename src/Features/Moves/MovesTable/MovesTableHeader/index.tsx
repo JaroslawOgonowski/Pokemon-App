@@ -28,11 +28,9 @@ const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({
       setCurrentSortDirection(direction);
     }
   };
-
   const isHeaderClicked = (key: string) => {
     return clickedHeader === key;
   };
-
   const getSortArrow = (key: string) => {
     if (isHeaderClicked(key)) {
       return currentSortDirection === "asc" ? "🔽" : "🔼";

@@ -25,6 +25,7 @@ export const MovesTable = () => {
   };
 
   const sortedMoves = sortMoves(movesArray, sortKey, sortDirection);
+  
   return (
     <>
       <CenteredTitle content="Moves List" />

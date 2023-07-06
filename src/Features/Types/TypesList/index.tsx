@@ -15,9 +15,9 @@ export const TypesList = () => {
   if (isError) return <Error />;
   return (
     <ul>
-      {data.results.map((type: { name: string | null | undefined }) => {
-        <li key={type.name}>{type.name}</li>;
-      })}
+      {data.results.map((type: { name: string | null | undefined }) => (
+        <li key={type.name}>{type.name}</li>
+      ))}
     </ul>
   );
 };

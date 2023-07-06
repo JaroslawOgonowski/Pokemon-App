@@ -14,10 +14,9 @@ export const TypesList = () => {
   if (isLoading) return <Loader />;
   if (isError) return <Error />;
   return (
-
     <ul>
-      {data.response.map((type: { name: string | null | undefined }) => {
-        <li>{type.name}</li>;
+      {data.results.map((type: { name: string | null | undefined }) => {
+        <li key={type.name}>{type.name}</li>;
       })}
     </ul>
   );

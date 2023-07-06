@@ -54,6 +54,18 @@ export const sortMoves = (
         return sortDirection === "asc"
           ? moveA.meta.crit_rate - moveB.meta.crit_rate
           : moveB.meta.crit_rate - moveA.meta.crit_rate;
+      } else if (sortKey === "healing") {
+        return sortDirection === "asc"
+          ? moveA.meta.crit_rate - moveB.meta.healing
+          : moveB.meta.crit_rate - moveA.meta.healing;
+      } else if (sortKey === "flinch") {
+        return sortDirection === "asc"
+          ? moveA.meta.crit_rate - moveB.meta.flinch_chance
+          : moveB.meta.crit_rate - moveA.meta.flinch_chance;
+      } else if (sortKey === "drain") {
+        return sortDirection === "asc"
+          ? moveA.meta.crit_rate - moveB.meta.drain
+          : moveB.meta.crit_rate - moveA.meta.drain;
       } else {
         return 0;
       }

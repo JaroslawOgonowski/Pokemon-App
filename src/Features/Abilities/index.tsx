@@ -1,6 +1,7 @@
 import { Main } from "../../Base/Main";
 import { AllAbilities } from "./AllAbilities";
 import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
+import { TypesList } from "../Types/TypesList";
 
 export const Abilities = () => {
   useScrollToTop();
@@ -32,6 +33,7 @@ export const Abilities = () => {
         ]}
       />
       <AllAbilities />
+      <TypesList />
     </>
   );
 };

@@ -16,6 +16,7 @@ export const MovesTableRow = ({ move }: { move: AllMovesData }) => {
       </TableCell>
       <TableCell>
         <TypeIcon
+          img={false}
           table={true}
           pokemonTypes={[
             {

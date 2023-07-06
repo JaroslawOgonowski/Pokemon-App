@@ -138,7 +138,7 @@ export const AdditionalInfoContent = styled.div`
 `;
 
 export const BallImg2 = styled(BallImg)`
-top: 110%;
-left: -340px;
-color: rgba(16, 16, 17, 0.442);
+  top: 110%;
+  left: -340px;
+  color: rgba(16, 16, 17, 0.442);
 `;

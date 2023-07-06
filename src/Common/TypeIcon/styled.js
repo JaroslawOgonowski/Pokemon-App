@@ -51,5 +51,9 @@ export const Type = styled.div`
 
 export const StyledLink = styled(Link)`
 text-decoration: none;
-
+transition: 300ms;
+&:hover{
+  transform: scale(1.05);
+  filter: brightness(1.3);
+}
 `;

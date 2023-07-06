@@ -63,6 +63,7 @@ export const MovePage = () => {
             <Title>{`${ItemNamesEdit(data.name)} (Move)`}</Title>
             <TypeDiv>
               <TypeIcon
+                img={false}
                 table={true}
                 pokemonTypes={[
                   { slot: 1, type: { name: data.type.name, url: "" } },

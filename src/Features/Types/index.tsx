@@ -6,7 +6,7 @@ export const TypesPage = () => {
     <>
       <Main
         titleContent="Types"
-        articleContentHead="Content"
+        articleContentHead=""
         readMoreButton={false}
         articleContentFull={null}
         sideBarText={[

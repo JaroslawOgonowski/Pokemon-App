@@ -7,6 +7,7 @@ import dark from "./images/GO_Dark.png";
 import dragon from "./images/GO_Dragon.png";
 import electric from "./images/GO_Electric.png";
 import fairy from "./images/GO_Fairy.png";
+import fighting from "./images/GO_Fighting.png";
 import fire from "./images/GO_Fire.png";
 import flying from "./images/GO_Flying.png";
 import ghost from "./images/GO_Ghost.png";
@@ -62,6 +63,8 @@ const TypeIcon = ({
         return electric;
       case "fairy":
         return fairy;
+      case "fighting":
+        return fighting;
       case "fire":
         return fire;
       case "flying":
@@ -96,11 +99,12 @@ const TypeIcon = ({
       <Types table={table}>
         {pokemonTypes.map((object) => (
           <StyledLink
+            img={img}
             key={object.type.name}
             to={`/type?id=${object.type.name}`}
           >
             {console.log(object.type.name)}
-            <img src={getImageByType(object.type.name)} />
+            {img ? <img src={getImageByType(object.type.name)} /> : null}
             <Type
               typeBackgroundColor={getBackgroundColorByType(object.type.name)}
               typeFontColor={getFontColorByType(object.type.name)}

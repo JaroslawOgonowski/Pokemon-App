@@ -50,10 +50,19 @@ export const Type = styled.div`
 `;
 
 export const StyledLink = styled(Link)`
-text-decoration: none;
-transition: 300ms;
-&:hover{
-  transform: scale(1.05);
-  filter: brightness(1.3);
-}
+  text-decoration: none;
+  transition: 300ms;
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1.3);
+  }
+
+  ${({ img }) =>
+    img &&
+    css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    `};
 `;

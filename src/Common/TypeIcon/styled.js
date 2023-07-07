@@ -16,6 +16,7 @@ export const Types = styled.div`
     table &&
     css`
       justify-content: center;
+      align-items: center;
     `};
 
   ${({ img }) =>

@@ -20,6 +20,7 @@ import psychic from "./images/GO_Psychic.png";
 import rock from "./images/GO_Rock.png";
 import steel from "./images/GO_Steel.png";
 import water from "./images/GO_Water.png";
+
 interface PokemonType {
   slot: number;
   type: {
@@ -94,12 +95,16 @@ const TypeIcon = ({
     }
   }
 
+  const sortedPokemonTypes = pokemonTypes.sort((a, b) =>
+    a.type.name.localeCompare(b.type.name)
+  );
+
   return (
     <>
       <Types img={img} table={table}>
-        {pokemonTypes.map((object) => (
+        {sortedPokemonTypes.map((object) => (
           <StyledLink
-            img={img}
+            img={img.toString()}
             key={object.type.name}
             to={`/type?id=${object.type.name}`}
           >

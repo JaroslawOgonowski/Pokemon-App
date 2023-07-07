@@ -1,4 +1,4 @@
-import { StyledLink, Type, Types } from "./styled";
+import { Image, StyledLink, Type, Types } from "./styled";
 import typesData from "./types.json";
 import unknown from "./images/unknown.png";
 import shadow from "./images/Shadow.png";
@@ -96,15 +96,14 @@ const TypeIcon = ({
 
   return (
     <>
-      <Types table={table}>
+      <Types img={img} table={table}>
         {pokemonTypes.map((object) => (
           <StyledLink
             img={img}
             key={object.type.name}
             to={`/type?id=${object.type.name}`}
           >
-            {console.log(object.type.name)}
-            {img ? <img src={getImageByType(object.type.name)} /> : null}
+            {img ? <Image src={getImageByType(object.type.name)} /> : null}
             <Type
               typeBackgroundColor={getBackgroundColorByType(object.type.name)}
               typeFontColor={getFontColorByType(object.type.name)}

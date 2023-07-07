@@ -17,6 +17,32 @@ export const Types = styled.div`
     css`
       justify-content: center;
     `};
+
+  ${({ img }) =>
+    img &&
+    css`
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 1vw;
+      grid-row-gap: 1vw;
+
+      @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+      }
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+      }
+    `};
 `;
 
 export const Type = styled.div`
@@ -64,5 +90,16 @@ export const StyledLink = styled(Link)`
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-bottom: 3vw;
     `};
+`;
+
+export const Image = styled.img`
+  width: 8vh;
+  height: 8vh;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    width: 64px;
+    height: 64px;
+  }
 `;

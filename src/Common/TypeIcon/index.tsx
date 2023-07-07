@@ -1,6 +1,24 @@
 import { StyledLink, Type, Types } from "./styled";
 import typesData from "./types.json";
-
+import unknown from "./images/unknown.png";
+import shadow from "./images/Shadow.png";
+import bug from "./images/GO_Bug.png";
+import dark from "./images/GO_Dark.png";
+import dragon from "./images/GO_Dragon.png";
+import electric from "./images/GO_Electric.png";
+import fairy from "./images/GO_Fairy.png";
+import fire from "./images/GO_Fire.png";
+import flying from "./images/GO_Flying.png";
+import ghost from "./images/GO_Ghost.png";
+import grass from "./images/GO_Grass.png";
+import ground from "./images/GO_Ground.png";
+import ice from "./images/GO_Ice.png";
+import normal from "./images/GO_Normal.png";
+import poison from "./images/GO_Poison.png";
+import psychic from "./images/GO_Psychic.png";
+import rock from "./images/GO_Rock.png";
+import steel from "./images/GO_Steel.png";
+import water from "./images/GO_Water.png";
 interface PokemonType {
   slot: number;
   type: {
@@ -28,15 +46,65 @@ const TypeIcon = ({
     return foundType?.fontColor || "black";
   }
 
+  function getImageByType(typeName: string): string {
+    switch (typeName) {
+      case "unknown":
+        return unknown;
+      case "shadow":
+        return shadow;
+      case "bug":
+        return bug;
+      case "dark":
+        return dark;
+      case "dragon":
+        return dragon;
+      case "electric":
+        return electric;
+      case "fairy":
+        return fairy;
+      case "fire":
+        return fire;
+      case "flying":
+        return flying;
+      case "ghost":
+        return ghost;
+      case "grass":
+        return grass;
+      case "ground":
+        return ground;
+      case "ice":
+        return ice;
+      case "normal":
+        return normal;
+      case "poison":
+        return poison;
+      case "psychic":
+        return psychic;
+      case "rock":
+        return rock;
+      case "steel":
+        return steel;
+      case "water":
+        return water;
+      default:
+        return unknown;
+    }
+  }
+
   return (
     <>
       <Types table={table}>
         {pokemonTypes.map((object) => (
-          <StyledLink to={`/type?id=${object.type.name}`}>
+          <StyledLink
+            key={object.type.name}
+            to={`/type?id=${object.type.name}`}
+          >
+            {console.log(object.type.name)}
+            <img src={getImageByType(object.type.name)} />
             <Type
               typeBackgroundColor={getBackgroundColorByType(object.type.name)}
               typeFontColor={getFontColorByType(object.type.name)}
-              key={object.slot}
+              key={object.type.name}
             >
               {object.type.name}
             </Type>

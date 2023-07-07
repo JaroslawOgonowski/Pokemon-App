@@ -1,116 +1,96 @@
 [
   {
     "name": "normal",
-    "backgroundColor": "rgb(180, 181, 137)",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/2/22/GO_Normal.png"
+    "backgroundColor": "rgb(180, 181, 137)"
   },
   {
     "name": "fighting",
     "backgroundColor": "crimson",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/1/1e/GO_Fighting.png"
+    "fontColor": "white"
   },
   {
     "name": "flying",
     "backgroundColor": "rgb(77, 111, 153)",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/8/87/GO_Flying.png"
+    "fontColor": "white"
   },
   {
     "name": "poison",
-    "backgroundColor": "rgb(171, 45, 206)",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/f/ff/GO_Poison.png"
+    "backgroundColor": "rgb(171, 45, 206)"
   },
   {
     "name": "ground",
     "backgroundColor": "rgb(135, 67, 14)",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/2/21/GO_Ground.png"
+    "fontColor": "white"
   },
   {
     "name": "rock",
     "backgroundColor": "rgba(56, 61, 62, 1);",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/1/11/GO_Rock.png"
+    "fontColor": "white"
   },
   {
     "name": "bug",
-    "backgroundColor": "rgb(114, 224, 11)",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/9/94/GO_Bug.png"
+    "backgroundColor": "rgb(114, 224, 11)"
   },
   {
     "name": "ghost",
     "backgroundColor": "rgb(55, 14, 46)",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/a/a1/GO_Ghost.png"
+    "fontColor": "white"
   },
   {
     "name": "steel",
-    "backgroundColor": "silver",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/d/d2/GO_Steel.png"
+    "backgroundColor": "silver"
   },
   {
     "name": "fire",
     "backgroundColor": "red",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/0/0e/GO_Fire.png"
+    "fontColor": "white"
   },
   {
     "name": "water",
     "backgroundColor": "rgb(66, 88, 198)",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/a/aa/GO_Water.png"
+    "fontColor": "white"
   },
   {
     "name": "grass",
     "backgroundColor": "green",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/6/61/GO_Grass.png"
+    "fontColor": "white"
   },
   {
     "name": "electric",
-    "backgroundColor": "yellow",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/4/4a/GO_Electric.png"
+    "backgroundColor": "yellow"
   },
   {
     "name": "psychic",
     "backgroundColor": "rgb(216, 40, 178)",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/f/f2/GO_Psychic.png"
+    "fontColor": "white"
   },
   {
     "name": "ice",
     "backgroundColor": "rgb(125, 191, 216)",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/c/c6/GO_Ice.png"
+    "fontColor": "white"
   },
   {
     "name": "dragon",
     "backgroundColor": "rgb(52, 4, 80)",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/9/90/GO_Dragon.png"
+    "fontColor": "white"
   },
   {
     "name": "dark",
     "backgroundColor": "rgb(14, 4, 20)",
-    "fontColor": "white",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/7/73/GO_Dark.png"
+    "fontColor": "white"
   },
   {
     "name": "fairy",
-    "backgroundColor": "pink",
-    "imgSrc": "https://archives.bulbagarden.net/media/upload/a/ae/GO_Fairy.png"
+    "backgroundColor": "pink"
   },
   {
     "name": "unknown",
     "backgroundColor": "rgb(38, 38, 38)",
-    "fontColor": "white",
-    "imgSrc": "unknown"
+    "fontColor": "white"
   },
   {
     "name": "shadow",
     "backgroundColor": "rgb(38, 38, 38)",
-    "fontColor": "white",
-    "imgSrc": "shadow"
+    "fontColor": "white"
   }
 ]

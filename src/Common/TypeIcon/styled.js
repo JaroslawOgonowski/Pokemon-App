@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 export const Types = styled.div`
   margin-left: 1vw;
   display: flex;
-  gap: 1vw;
+  gap: 0.5vw;
   flex-wrap: wrap;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {

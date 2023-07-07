@@ -29,13 +29,16 @@ export const GalleryBox = styled.div`
   display: flex;
   gap: 1vw;
   justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
 `;
 
 export const StyledGallery = styled.div`
   width: 96%;
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   gap: 1vw;
   margin: 0 auto;
@@ -44,6 +47,7 @@ export const StyledGallery = styled.div`
 
 export const ButtonBox = styled.div`
   height: 70vh;
+  width: auto;
   display: flex;
   flex-direction: column;
   gap: 0;

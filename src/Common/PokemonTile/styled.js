@@ -95,7 +95,7 @@ export const PokemonId = styled.div`
   }
   @media (max-width: 350px) {
     font-size: 8.8vw;
-    top: 58%;
+    top: 54%;
   }
 `;
 

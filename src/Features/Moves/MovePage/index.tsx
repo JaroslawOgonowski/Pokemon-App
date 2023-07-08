@@ -41,7 +41,7 @@ export const MovePage = () => {
     ["moveById", { moveId }],
     () => fetchMoveById(moveId)
   );
-  console.log(data?.contest_type?.name);
+
   if (isLoading) return <Loader />;
   if (isError) return <Error />;
   else {

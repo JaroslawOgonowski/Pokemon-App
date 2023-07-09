@@ -8,7 +8,16 @@ import allMovesJSON from "./allMoves.json";
 import { AllMovesData } from "./moveInterface";
 import { sortMoves } from "./MovesSorter";
 
-export const MovesTable = () => {
+interface Move {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  moveList?: Move[];
+}
+
+export const MovesTable: React.FC<Props> = ({ moveList }) => {
   useScrollToTop();
 
   const movesArray = Object.entries(allMovesJSON).map(([key, value]) => ({
@@ -24,8 +33,18 @@ export const MovesTable = () => {
     setSortDirection(direction);
   };
 
-  const sortedMoves = sortMoves(movesArray, sortKey, sortDirection);
-  
+  let sortedMoves: AllMovesData[];
+
+  if (moveList) {
+    const moveNames = moveList.map((move) => move.name);
+    const filteredMoves = movesArray.filter((move) =>
+      moveNames.includes(move.object)
+    );
+    sortedMoves = sortMoves(filteredMoves, sortKey, sortDirection);
+  } else {
+    sortedMoves = sortMoves(movesArray, sortKey, sortDirection);
+  }
+
   return (
     <>
       <CenteredTitle content="Moves List" />

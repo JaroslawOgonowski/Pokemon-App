@@ -4,7 +4,6 @@ import { fetchTypeById } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { CentredMain } from "../../../Common/CentredMain";
-import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import {
   SubTitle,
@@ -15,6 +14,7 @@ import {
   TypeInfo,
 } from "./styled";
 import { getImageByType } from "../../../Common/TypeIcon/getImageByType";
+import { MovesTable } from "../../Moves/MovesTable";
 
 export const TypePage = () => {
   const location = useLocation();
@@ -41,30 +41,43 @@ export const TypePage = () => {
         <SubTitle>Damage relations</SubTitle>
         <div>
           Double damage from:
-          {data.damage_relations.double_damage_from.map(
-            (item: { name: any }) => item.name
-          )}
+          {data.damage_relations.double_damage_from.length > 0
+            ? data.damage_relations.double_damage_from.map(
+                (item: { name: any }) => item.name
+              )
+            : "no dependencies"}
           Half damage from:
-          {data.damage_relations.half_damage_from.map(
-            (item: { name: any }) => item.name
-          )}
-          Half damage to:
-          {data.damage_relations.half_damage_to.map(
-            (item: { name: any }) => item.name
-          )}
-          Double damage to:
-          {data.damage_relations.double_damage_to.map(
-            (item: { name: any }) => item.name
-          )}
+          {data.damage_relations.half_damage_from.length > 0
+            ? data.damage_relations.half_damage_from.map(
+                (item: { name: any }) => item.name
+              )
+            : "no dependencies"}
           No damage from:
-          {data.damage_relations.no_damage_from.map((item: { name: any }) =>
-            item ? item.name : "no condition"
-          )}
+          {data.damage_relations.no_damage_from.length > 0
+            ? data.damage_relations.no_damage_from.map(
+                (item: { name: any }) => item.name
+              )
+            : "no dependencies"}
+          Half damage to:
+          {data.damage_relations.half_damage_to.length > 0
+            ? data.damage_relations.half_damage_to.map(
+                (item: { name: any }) => item.name
+              )
+            : "no dependencies"}
+          Double damage to:
+          {data.damage_relations.double_damage_to.length > 0
+            ? data.damage_relations.double_damage_to.map(
+                (item: { name: any }) => item.name
+              )
+            : "no dependencies"}
           No damage to:
-          {data.damage_relations.no_damage_to.map((item: { name: any }) =>
-            item ? item.name : "no condition"
-          )}
+          {data.damage_relations.no_damage_to.length > 0
+            ? data.damage_relations.no_damage_to.map(
+                (item: { name: any }) => item.name
+              )
+            : "no dependencies"}
         </div>
+        <MovesTable moveList={data.moves} />
       </TypeInfo>
     </CentredMain>
   );

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Table } from "./styled";
-import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
 import MovesTableHeader from "./MovesTableHeader";
 import { MovesTableRow } from "./MovesTableRow";
@@ -47,8 +46,6 @@ export const MovesTable: React.FC<Props> = ({ moveList }) => {
 
   return (
     <>
-      <CenteredTitle content="Moves List" />
-
       <Table>
         <MovesTableHeader
           handleSort={(key, direction) => handleSort(key, direction)}

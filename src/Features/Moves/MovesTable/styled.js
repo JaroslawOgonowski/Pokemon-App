@@ -13,12 +13,13 @@ export const Table = styled.table`
 `;
 
 export const TableRow = styled.tr`
+  background-color: rgba(255, 255, 255, 0.539);
   &:nth-child(odd) {
-    background-color: rgba(229, 232, 207, 0.809);
+    background-color: rgba(229, 232, 207, 0.423);
   }
 
   &:hover {
-    background-color: rgba(121, 208, 237, 0.705);
+    background-color: rgba(121, 208, 237, 0.409);
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {

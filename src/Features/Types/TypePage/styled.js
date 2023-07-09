@@ -49,6 +49,7 @@ export const TypeInfo = styled.div`
 
 export const SubTitle = styled.h2`
   width: 96%;
+  text-align: center;
   margin: 2vw auto;
   font-family: "Righteous", cursive;
   font-size: 2.5vw;

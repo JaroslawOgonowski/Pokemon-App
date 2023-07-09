@@ -103,6 +103,7 @@ export const TypePage = () => {
               "No damage to:"
             )}
           </RelationBox>
+          <SubTitle>{`${ItemNamesEdit(data.name)} move list`} </SubTitle>
           <MovesTable moveList={data.moves} />
         </TypeInfo>
         <SubTitle>{ItemNamesEdit(data.name)} Pokemon</SubTitle>

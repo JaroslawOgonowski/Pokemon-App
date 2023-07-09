@@ -14,10 +14,12 @@ const TypeIcon = ({
   pokemonTypes,
   table,
   img,
+  flex,
 }: {
   pokemonTypes: PokemonType[];
   table: boolean;
   img: boolean;
+  flex: boolean;
 }) => {
   function getBackgroundColorByType(typeName: string): string | undefined {
     const foundType = typesData.find((type) => type.name === typeName);
@@ -29,14 +31,13 @@ const TypeIcon = ({
     return foundType?.fontColor || "black";
   }
 
-
   const sortedPokemonTypes = pokemonTypes.sort((a, b) =>
     a.type.name.localeCompare(b.type.name)
   );
 
   return (
     <>
-      <Types img={img} table={table}>
+      <Types img={img} table={table} flex={flex}>
         {sortedPokemonTypes.map((object) => (
           <StyledLink
             img={img}

@@ -44,6 +44,16 @@ export const Types = styled.div`
         grid-template-rows: repeat(7, 1fr);
       }
     `};
+
+  ${({ flex }) =>
+    flex &&
+    css`
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2vw;
+      justify-content: center;
+      align-items: center;
+    `};
 `;
 
 export const Type = styled.div`

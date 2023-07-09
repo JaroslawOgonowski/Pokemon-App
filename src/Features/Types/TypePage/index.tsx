@@ -6,6 +6,9 @@ import { Error } from "../../../Base/Error";
 import { CentredMain } from "../../../Common/CentredMain";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import {
+  RelationBox,
+  RelationDiv,
+  RelationTitle,
   SubTitle,
   Title,
   TitleBox,
@@ -17,6 +20,7 @@ import { getImageByType } from "../../../Common/TypeIcon/getImageByType";
 import { MovesTable } from "../../Moves/MovesTable";
 import { PokeAbility } from "../../Abilities/AbilityPage/styled";
 import { PokemonTile } from "../../../Common/PokemonTile";
+import TypeIcon from "../../../Common/TypeIcon";
 
 export const TypePage = () => {
   const location = useLocation();
@@ -38,6 +42,30 @@ export const TypePage = () => {
     return lastValue - 1;
   };
 
+  const renderRelation = (array: any[], title: string) => {
+    return (
+      <RelationDiv>
+        <RelationTitle>{title}</RelationTitle>
+        {array.length > 0 ? (
+          <TypeIcon
+            flex={true}
+            table={false}
+            img={true}
+            pokemonTypes={array.map((item: any) => ({
+              slot: 1,
+              type: {
+                name: item.name,
+                url: "",
+              },
+            }))}
+          />
+        ) : (
+          "No dependencies"
+        )}
+      </RelationDiv>
+    );
+  };
+
   return (
     <>
       <CentredMain>
@@ -49,44 +77,32 @@ export const TypePage = () => {
         </TopBanner>
         <TypeInfo>
           <SubTitle>Damage relations</SubTitle>
-          <div>
-            Double damage from:
-            {data.damage_relations.double_damage_from.length > 0
-              ? data.damage_relations.double_damage_from.map(
-                  (item: { name: any }) => item.name
-                )
-              : "no dependencies"}
-            Half damage from:
-            {data.damage_relations.half_damage_from.length > 0
-              ? data.damage_relations.half_damage_from.map(
-                  (item: { name: any }) => item.name
-                )
-              : "no dependencies"}
-            No damage from:
-            {data.damage_relations.no_damage_from.length > 0
-              ? data.damage_relations.no_damage_from.map(
-                  (item: { name: any }) => item.name
-                )
-              : "no dependencies"}
-            Half damage to:
-            {data.damage_relations.half_damage_to.length > 0
-              ? data.damage_relations.half_damage_to.map(
-                  (item: { name: any }) => item.name
-                )
-              : "no dependencies"}
-            Double damage to:
-            {data.damage_relations.double_damage_to.length > 0
-              ? data.damage_relations.double_damage_to.map(
-                  (item: { name: any }) => item.name
-                )
-              : "no dependencies"}
-            No damage to:
-            {data.damage_relations.no_damage_to.length > 0
-              ? data.damage_relations.no_damage_to.map(
-                  (item: { name: any }) => item.name
-                )
-              : "no dependencies"}
-          </div>
+          <RelationBox>
+            {renderRelation(
+              data.damage_relations.double_damage_from,
+              "Double damage from:"
+            )}
+            {renderRelation(
+              data.damage_relations.half_damage_from,
+              "Half damage from:"
+            )}
+            {renderRelation(
+              data.damage_relations.no_damage_from,
+              "No damage from:"
+            )}
+            {renderRelation(
+              data.damage_relations.double_damage_to,
+              "Double damage to:"
+            )}
+            {renderRelation(
+              data.damage_relations.half_damage_to,
+              "Half damage to:"
+            )}
+            {renderRelation(
+              data.damage_relations.no_damage_to,
+              "No damage to:"
+            )}
+          </RelationBox>
           <MovesTable moveList={data.moves} />
         </TypeInfo>
         <SubTitle>{ItemNamesEdit(data.name)} Pokemon</SubTitle>

@@ -27,7 +27,13 @@ export const TypesList = () => {
 
   return (
     <>
-      <TypeIcon pokemonTypes={pokemonTypes} table={false} img={true}/>;
+      <TypeIcon
+        flex={false}
+        pokemonTypes={pokemonTypes}
+        table={false}
+        img={true}
+      />
+      ;
     </>
   );
 };

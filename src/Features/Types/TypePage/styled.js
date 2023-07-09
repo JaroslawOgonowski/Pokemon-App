@@ -54,3 +54,34 @@ export const SubTitle = styled.h2`
   font-size: 2.5vw;
   color: #e1e4d0;
 `;
+
+export const RelationBox = styled.div`
+  text-align: center;
+  width: 96%;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1vw;
+`;
+
+export const RelationDiv = styled.div`
+  width: 96%;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  text-align: center;
+`;
+
+export const RelationTitle = styled.h3`
+  width: 96%;
+  margin: 0.5vw auto;
+  font-family: "Righteous", cursive;
+  font-size: 1.5vw;
+  color: #e1e4d0;
+`;

@@ -18,6 +18,7 @@ export const MovesTableRow = ({ move }: { move: AllMovesData }) => {
         <TypeIcon
           img={false}
           table={true}
+          flex={false}
           pokemonTypes={[
             {
               slot: 1,

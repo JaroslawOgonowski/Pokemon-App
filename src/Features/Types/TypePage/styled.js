@@ -45,7 +45,6 @@ export const TypeInfo = styled.div`
   background-image: url(${typeInfoBG});
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
 `;
 
 export const SubTitle = styled.h2`

@@ -43,6 +43,7 @@ export const TypeInfo = styled.div`
   width: 100%;
   margin: 0 auto;
   background-image: url(${typeInfoBG});
+  background-position-x: 40%;
   background-size: cover;
   background-repeat: no-repeat;
 `;
@@ -50,9 +51,10 @@ export const TypeInfo = styled.div`
 export const SubTitle = styled.h2`
   width: 96%;
   text-align: center;
-  margin: 2vw auto;
+  margin: 0 auto;
+  padding: 2vw 0;
   font-family: "Righteous", cursive;
-  font-size: 2.5vw;
+  font-size: 3vw;
   color: #e1e4d0;
 `;
 
@@ -89,12 +91,50 @@ export const RelationTitle = styled.h3`
 `;
 
 export const HideListButton = styled.button`
-
+  background: none;
+  border: none;
+  color: white;
 `;
 
 export const SubTitleBox = styled.div`
-width: 96%;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  background: linear-gradient(45deg, #000000, #2e0833);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+`;
+
+export const PokemonDiv = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(45deg, #eeee59, #ffff1d, #ffd700);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease-in-out infinite;
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 150%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 150%;
+    }
+  }
 `;

@@ -7,6 +7,7 @@ import { CentredMain } from "../../../Common/CentredMain";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import {
   HideListButton,
+  PokemonDiv,
   RelationBox,
   RelationDiv,
   RelationTitle,
@@ -106,25 +107,31 @@ export const TypePage = () => {
               "No damage to:"
             )}
           </RelationBox>
-          <SubTitleBox>
-            <SubTitle>{`${ItemNamesEdit(data.name)} move list`} </SubTitle>
+        </TypeInfo>
+        <SubTitleBox>
+          <SubTitle>
+            {`${ItemNamesEdit(data.name)} move list...`}{" "}
             <HideListButton onClick={() => setHideList(!hideList)}>
               {hideList ? "Show List 🔽" : "Hide list 🔼"}
             </HideListButton>
-          </SubTitleBox>
-          {hideList ? null : <MovesTable moveList={data.moves} />}
-        </TypeInfo>
-        <SubTitle>{ItemNamesEdit(data.name)} Pokemon</SubTitle>
+          </SubTitle>
+        </SubTitleBox>
+        {hideList ? null : <MovesTable moveList={data.moves} />}
       </CentredMain>
-      <PokeAbility>
-        {data.pokemon?.map((item: any) => (
-          <PokemonTile
-            key={item.pokemon.name}
-            id={getPokeIdValue(item.pokemon.url)}
-            name={item.pokemon.name}
-          />
-        ))}
-      </PokeAbility>
+      <PokemonDiv>
+        <SubTitle style={{ color: "black" }}>
+          {ItemNamesEdit(data.name)} Pokemon
+        </SubTitle>
+        <PokeAbility>
+          {data.pokemon?.map((item: any) => (
+            <PokemonTile
+              key={item.pokemon.name}
+              id={getPokeIdValue(item.pokemon.url)}
+              name={item.pokemon.name}
+            />
+          ))}
+        </PokeAbility>
+      </PokemonDiv>
     </>
   );
 };

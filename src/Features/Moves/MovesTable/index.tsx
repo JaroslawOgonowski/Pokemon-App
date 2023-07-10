@@ -17,7 +17,6 @@ interface Props {
 }
 
 export const MovesTable: React.FC<Props> = ({ moveList }) => {
-  useScrollToTop();
 
   const movesArray = Object.entries(allMovesJSON).map(([key, value]) => ({
     object: key,

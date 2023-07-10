@@ -81,8 +81,20 @@ export const RelationDiv = styled.div`
 
 export const RelationTitle = styled.h3`
   width: 96%;
+  height: 6vh;
   margin: 0.5vw auto;
   font-family: "Righteous", cursive;
   font-size: 1.5vw;
   color: #e1e4d0;
+`;
+
+export const HideListButton = styled.button`
+
+`;
+
+export const SubTitleBox = styled.div`
+width: 96%;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
 `;

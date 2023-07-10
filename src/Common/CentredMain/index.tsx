@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { useScrollToTop } from "../reusableFunctions/useScrollToTop";
 
 type CentredMainProps = {
   children: ReactNode;
@@ -20,6 +19,5 @@ const StyledMain = styled.main`
 `;
 
 export const CentredMain: React.FC<CentredMainProps> = ({ children }) => {
-  useScrollToTop();
   return <StyledMain>{children}</StyledMain>;
 };

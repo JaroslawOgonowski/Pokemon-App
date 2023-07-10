@@ -6,10 +6,12 @@ import { Error } from "../../../Base/Error";
 import { CentredMain } from "../../../Common/CentredMain";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import {
+  HideListButton,
   RelationBox,
   RelationDiv,
   RelationTitle,
   SubTitle,
+  SubTitleBox,
   Title,
   TitleBox,
   TopBanner,
@@ -21,12 +23,13 @@ import { MovesTable } from "../../Moves/MovesTable";
 import { PokeAbility } from "../../Abilities/AbilityPage/styled";
 import { PokemonTile } from "../../../Common/PokemonTile";
 import TypeIcon from "../../../Common/TypeIcon";
+import { useState } from "react";
 
 export const TypePage = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const typeId = searchParams.get("id");
-
+  const [hideList, setHideList] = useState(false);
   const { isLoading, isError, data } = useQuery<any>(
     ["TypeById", { typeId }],
     () => fetchTypeById(typeId)
@@ -103,8 +106,13 @@ export const TypePage = () => {
               "No damage to:"
             )}
           </RelationBox>
-          <SubTitle>{`${ItemNamesEdit(data.name)} move list`} </SubTitle>
-          <MovesTable moveList={data.moves} />
+          <SubTitleBox>
+            <SubTitle>{`${ItemNamesEdit(data.name)} move list`} </SubTitle>
+            <HideListButton onClick={() => setHideList(!hideList)}>
+              {hideList ? "Show List 🔽" : "Hide list 🔼"}
+            </HideListButton>
+          </SubTitleBox>
+          {hideList ? null : <MovesTable moveList={data.moves} />}
         </TypeInfo>
         <SubTitle>{ItemNamesEdit(data.name)} Pokemon</SubTitle>
       </CentredMain>

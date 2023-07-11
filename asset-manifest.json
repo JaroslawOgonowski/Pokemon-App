@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Pokemon-App/static/js/main.1a2c8d23.js",
+    "main.js": "/Pokemon-App/static/js/main.9eb4b8f7.js",
     "static/js/787.a8fe51ff.chunk.js": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js",
     "static/media/pngegg.png": "/Pokemon-App/static/media/pngegg.c12483e80dd70e3801b5.png",
     "static/media/contestBanner.png": "/Pokemon-App/static/media/contestBanner.135a40ce836eb6e72e68.png",
@@ -39,10 +39,10 @@
     "static/media/silence.svg": "/Pokemon-App/static/media/silence.f4dc596def223012fdb1be1ac70ebc54.svg",
     "static/media/elektro.svg": "/Pokemon-App/static/media/elektro.6f01d10cec8b2fa5a266482dddfec67b.svg",
     "static/media/bolt_FILL0_wght400_GRAD0_opsz48.svg": "/Pokemon-App/static/media/bolt_FILL0_wght400_GRAD0_opsz48.6f41745e7000983f40ca37dd4dce53c4.svg",
-    "main.1a2c8d23.js.map": "/Pokemon-App/static/js/main.1a2c8d23.js.map",
+    "main.9eb4b8f7.js.map": "/Pokemon-App/static/js/main.9eb4b8f7.js.map",
     "787.a8fe51ff.chunk.js.map": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.1a2c8d23.js"
+    "static/js/main.9eb4b8f7.js"
   ]
 }

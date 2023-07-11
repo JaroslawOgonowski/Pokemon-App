@@ -54,11 +54,11 @@ export const Gallery = () => {
 
   useEffect(() => {
     navigate(`/pokemon?offset=${startIndex}`);
-    scrollToTop(topRef);
   }, [startIndex, navigate, data]);
 
   const handlePageChange = (newStartIndex: number) => {
     setStartIndex(newStartIndex);
+    scrollToTop(topRef);
   };
 
   const handlePrevPageClick = () => {

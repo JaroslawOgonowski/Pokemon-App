@@ -123,13 +123,15 @@ export const TypePage = () => {
           {ItemNamesEdit(data.name)} Pokemon
         </SubTitle>
         <PokeAbility>
-          {data.pokemon?.map((item: any) => (
-            <PokemonTile
-              key={item.pokemon.name}
-              id={getPokeIdValue(item.pokemon.url)}
-              name={item.pokemon.name}
-            />
-          ))}
+          {data.pokemon?.map((item: any) =>
+            getPokeIdValue(item.pokemon.url) < 1011 ? (
+              <PokemonTile
+                key={item.pokemon.name}
+                id={getPokeIdValue(item.pokemon.url)}
+                name={item.pokemon.name}
+              />
+            ) : null
+          )}
         </PokeAbility>
       </PokemonDiv>
     </>

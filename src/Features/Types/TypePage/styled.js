@@ -111,7 +111,7 @@ export const RelationTitle = styled.h3`
   font-family: "Righteous", cursive;
   font-size: 1.5vw;
   color: #e1e4d0;
-  
+
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
   }
@@ -161,6 +161,7 @@ export const SubTitleBox = styled.div`
 export const PokemonDiv = styled.div`
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 10vh;
   background: linear-gradient(45deg, #eeee59, #ffff1d, #ffd700);
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease-in-out infinite;

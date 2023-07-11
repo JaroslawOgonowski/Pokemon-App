@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table } from "./styled";
+import { Table, TableContainer } from "./styled";
 import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
 import MovesTableHeader from "./MovesTableHeader";
 import { MovesTableRow } from "./MovesTableRow";
@@ -45,6 +45,7 @@ export const MovesTable: React.FC<Props> = ({ moveList }) => {
 
   return (
     <>
+    <TableContainer>
       <Table>
         <MovesTableHeader
           handleSort={(key, direction) => handleSort(key, direction)}
@@ -57,6 +58,7 @@ export const MovesTable: React.FC<Props> = ({ moveList }) => {
           ))}
         </tbody>
       </Table>
+      </TableContainer>
     </>
   );
 };

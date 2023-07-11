@@ -1,25 +1,49 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
+export const TableContainer = styled.div`
+  width: 100%;
+  background: linear-gradient(45deg, #000000, #2e0833);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+`;
+
 export const Table = styled.table`
   font-family: "Righteous", cursive;
   border-collapse: collapse;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  width: 96%;
+  width: 90%;
   margin: 0 auto;
   font-size: 1.3vw;
   margin-bottom: 4vw;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    width: 96%;
+  }
 `;
 
 export const TableRow = styled.tr`
-  background-color: rgba(255, 255, 255, 0.539);
+  color: #ebdbdb;
+  background-color: rgba(10, 9, 9, 0.539);
   &:nth-child(odd) {
-    background-color: rgba(229, 232, 207, 0.423);
+    background-color: rgba(229, 232, 207, 0);
   }
 
   &:hover {
-    background-color: rgba(121, 208, 237, 0.409);
+    background-color: rgba(5, 6, 6, 0.9);
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
@@ -56,16 +80,31 @@ export const TableCell = styled.td`
 `;
 
 export const TableHead = styled.th`
+  position: relative;
   cursor: pointer;
-  border: 1px solid white;
+  border: 1px solid #05c2f12a;
   color: #cfc4c4;
-  height: 5vh;
-  background-color: rgba(25, 23, 23, 0.927);
+  height: 8vh;
+  background-color: rgba(9, 9, 9, 0.927);
   font-size: 1.2vw;
   letter-spacing: 0.1vw;
+  transition: 300ms;
+
   &:hover {
-    background-color: rgba(101, 18, 18, 0.927);
+    border-color: #05c2f18d;
   }
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 1px;
+    height: 100%;
+    background-color: #05c2f18d;
+    transition: width 300ms ease;
+  }
+
   ${({ mobileHidden }) =>
     mobileHidden &&
     css`
@@ -77,15 +116,16 @@ export const TableHead = styled.th`
   ${({ sortOn }) =>
     sortOn &&
     css`
-      background-color: #146486ce;
+      background-color: #dce6eace;
+      color: black;
     `}
-    
 
-  @media(max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 13px;
     font-weight: 200;
     top: calc(7vw + 7.3vh);
   }
+
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 13px;
     top: calc(7.6vh + 80px);
@@ -106,7 +146,13 @@ export const DmgImg = styled.img`
 export const MoveName = styled(Link)`
   text-decoration: none;
   font-size: 1.4vw;
-  color: black;
+  color: #ebdbdb;
+  transition: 300ms;
+
+  &:hover {
+    filter: brightness(130%);
+    font-size: larger;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;

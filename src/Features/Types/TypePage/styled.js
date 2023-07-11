@@ -91,6 +91,7 @@ export const RelationTitle = styled.h3`
 `;
 
 export const HideListButton = styled.button`
+  cursor: pointer;
   background: none;
   border: none;
   color: white;

@@ -53,6 +53,12 @@ export const Types = styled.div`
       gap: 2vw;
       justify-content: center;
       align-items: center;
+      width: 98%;
+
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        flex-direction: row;
+        gap: 3%;
+      }
     `};
 `;
 
@@ -112,5 +118,9 @@ export const Image = styled.img`
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     width: 64px;
     height: 64px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    width: 40px;
+    height: 40px;
   }
 `;

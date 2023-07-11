@@ -33,6 +33,11 @@ export const Table = styled.table`
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     width: 96%;
   }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
 `;
 
 export const TableRow = styled.tr`
@@ -80,7 +85,6 @@ export const TableCell = styled.td`
 `;
 
 export const TableHead = styled.th`
-  position: relative;
   cursor: pointer;
   border: 1px solid #05c2f12a;
   color: #cfc4c4;
@@ -116,8 +120,8 @@ export const TableHead = styled.th`
   ${({ sortOn }) =>
     sortOn &&
     css`
-      background-color: #dce6eace;
-      color: black;
+      background-color: #0f3747ce;
+      color: white;
     `}
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {

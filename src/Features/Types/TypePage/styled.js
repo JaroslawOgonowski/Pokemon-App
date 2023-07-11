@@ -25,6 +25,29 @@ export const TitleBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 4vw;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    top: 5vh;
+  }
+
+  @media (max-width: 500px) {
+    top: 40%;
+  }
+  @media (max-width: 400px) {
+    top: 30%;
+    left: 10vw;
+  }
+`;
+
+export const TypeImage = styled.img`
+  width: 4vw;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    width: 67px;
+  }
+  @media (max-width: 550px) {
+    width: 40px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -33,10 +56,16 @@ export const Title = styled.h1`
   box-shadow: 0px 0px 53px 38px rgba(15, 15, 16, 0.96);
   font-family: "Righteous", cursive;
   font-size: 3vw;
-`;
 
-export const TypeImage = styled.img`
-  width: 4vw;
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 4vw;
+  }
+  @media (max-width: 650px) {
+    font-size: 5vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 25px;
+  }
 `;
 
 export const TypeInfo = styled.div`
@@ -46,6 +75,7 @@ export const TypeInfo = styled.div`
   background-position-x: 40%;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-bottom: 10vh;
 `;
 
 export const SubTitle = styled.h2`
@@ -56,38 +86,46 @@ export const SubTitle = styled.h2`
   font-family: "Righteous", cursive;
   font-size: 3vw;
   color: #e1e4d0;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 3.8vw;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 24px;
+  }
 `;
 
 export const RelationBox = styled.div`
-  text-align: center;
-  width: 96%;
-  margin: 0 auto;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1vw;
-`;
-
-export const RelationDiv = styled.div`
-  width: 96%;
+  width: 100%;
   margin: 0 auto;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 1vw;
-  text-align: center;
 `;
-
 export const RelationTitle = styled.h3`
-  width: 96%;
+  width: 100%;
   height: 6vh;
   margin: 0.5vw auto;
   font-family: "Righteous", cursive;
   font-size: 1.5vw;
   color: #e1e4d0;
+  
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 18px;
+  }
+`;
+export const RelationDiv = styled.div`
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+  text-align: center;
+  background-color: #3d083543;
 `;
 
 export const HideListButton = styled.button`

@@ -7,7 +7,7 @@ export const Title = styled.h2`
   font-size: 4vw;
   font-family: "Righteous", cursive;
   margin: 0 0 2vw 0;
-  color: #131313;
+  color: #c8bdbd;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 24px;

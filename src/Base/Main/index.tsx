@@ -1,7 +1,7 @@
 import { Article } from "../../Common/Article";
 import { SideBar } from "../../Common/SideBar";
 import { Title } from "../../Common/Title";
-import { ArticleColumn, StyledMain } from "./styled";
+import { ArticleColumn, MainBanner, StyledMain } from "./styled";
 import { SideBarTextData } from "../../Common/SideBar";
 
 interface MainProps {
@@ -16,6 +16,7 @@ export const Main = (props: MainProps) => {
   return (
     <>
       <StyledMain key={props.titleContent}>
+        <MainBanner>
         <SideBar sideBarText={props.sideBarText} />
         <ArticleColumn>
           <Title titleContent={props.titleContent} />
@@ -25,6 +26,7 @@ export const Main = (props: MainProps) => {
             articleContentFull={props.articleContentFull}
           />
         </ArticleColumn>
+        </MainBanner>
       </StyledMain>
     </>
   );

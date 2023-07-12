@@ -5,7 +5,6 @@ export const StyledSideBar = styled.ul`
   width: 20%;
   min-height: 15vh;
   padding: 0;
-  border-right: 1px solid black;
   list-style: none;
   display: flex;
   flex-direction: column;

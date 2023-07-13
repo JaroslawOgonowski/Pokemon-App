@@ -3,14 +3,17 @@ import ball from "./images/Poké_Ball_icon.png";
 
 export const StyledSideBar = styled.ul`
   width: 20%;
-  min-height: 15vh;
-  padding: 0;
+  flex-grow: 1;
+  padding: 1vw;
+  margin: 0;
   list-style: none;
   display: flex;
+  align-self: stretch;
   flex-direction: column;
   gap: 1vw;
   animation: sideBarAnimation 0.5s ease;
   flex-wrap: wrap;
+  background-color: #080303a7;
 
   li::before {
     content: "";
@@ -89,7 +92,7 @@ export const StyledA = styled.a`
   text-decoration: none;
   font-size: 1.4vw;
   font-weight: 600;
-  color: black;
+  color: #dbc8c8;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.laptop}px) {
     margin-left: 2vw;

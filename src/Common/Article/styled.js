@@ -6,12 +6,22 @@ export const FlexBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 5vh;
+  background-color: #080303a7;
+  margin-left: 15%;
+  margin-right: 5%;
+  border-radius: 1vw;
+  margin-bottom: 3vw;
 `;
 
 export const StyledArticle = styled.article`
-  font-size: 1.3vw;
+  padding: 2vh;
+  font-size: 1.2vw;
+  color: #dbc8c8;
   order: 1;
   font-weight: 600;
+  align-self: flex-end;
+  padding-bottom: 4vh;
 
   ${({ hideFullText }) =>
     hideFullText &&
@@ -36,14 +46,16 @@ export const StyledArticle = styled.article`
 export const ReadMoreButton = styled.button`
   cursor: pointer;
   width: 20%;
-  margin-top: 2vw;
+  margin-top: 2vh;
+  margin-right: 10vw;
   border: none;
   background-color: transparent;
   align-self: flex-end;
   font-family: "Righteous", cursive;
-  font-size: 1.3vw;
+  font-size: 1.1vw;
   transition: 500ms;
-  color: ${({ theme }) => theme.color.headerColor};
+  color: #dbc8c8;
+
   &:hover {
     transform: scale(1.1);
     filter: brightness(400%);

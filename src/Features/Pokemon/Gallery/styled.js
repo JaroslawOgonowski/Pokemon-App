@@ -16,7 +16,7 @@ export const GalleryTitle = styled.h2`
   color: ${({ theme }) => theme.color.titleFontColor};
   text-align: center;
   margin: 2vw 0;
-
+  
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 28px;
     margin: 20px 0;

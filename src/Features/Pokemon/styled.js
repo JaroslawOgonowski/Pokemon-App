@@ -5,5 +5,4 @@ export const PokemonContainer = styled.div`
   background-position: center;
   background-size: cover;
   min-height: 100vw;
-  padding-top: 2vw;
 `;

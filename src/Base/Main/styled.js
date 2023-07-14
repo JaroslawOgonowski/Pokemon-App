@@ -3,7 +3,7 @@ import mainBG from "./cute-pikachu-6o-2560x1440.jpg";
 
 export const StyledMain = styled.main`
   width: 100%;
-  margin: 4vw auto 10vh auto;
+  margin: 6vw auto 10vh auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +18,7 @@ export const StyledMain = styled.main`
 export const MainBanner = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +32,9 @@ export const ArticleColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: calc(80% - 2vw);
+  min-height: 80vh;
   animation: articleColumnAnimation 0.5s ease;
 
   @keyframes articleColumnAnimation {

@@ -3,6 +3,7 @@ import { css } from "styled-components";
 
 export const FlexBox = styled.div`
   display: flex;
+  align-self: flex-end;
   flex-direction: column;
   align-items: center;
   justify-content: center;

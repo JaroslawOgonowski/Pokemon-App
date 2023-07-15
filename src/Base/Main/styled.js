@@ -9,7 +9,7 @@ export const StyledMain = styled.main`
   align-items: center;
   gap: 2vw;
   justify-content: center;
-
+  box-shadow: 1px 14px 58px 1px rgba(0, 0, 0, 1);
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin: 80px auto;
   }

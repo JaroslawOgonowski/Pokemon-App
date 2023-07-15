@@ -9,6 +9,7 @@ import {
   BaseButton,
   FastButton,
   TopMarker,
+  Search,
 } from "./styled";
 import { ReactComponent as Next } from "./images/right-arrow-next-svgrepo-com.svg";
 import { ReactComponent as Prev } from "./images/left-arrow-prev-svgrepo-com.svg";
@@ -103,7 +104,7 @@ export const Gallery = () => {
     <>
       <TopMarker ref={topRef} />
       <GalleryTitle>Hall of fame</GalleryTitle>
-      <input
+      <Search
         type="text"
         value={searchTerm}
         onChange={handleSearch}

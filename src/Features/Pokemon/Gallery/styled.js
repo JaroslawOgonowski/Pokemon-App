@@ -13,14 +13,53 @@ export const GalleryTitle = styled.h2`
   width: 100%;
   font-size: 3vw;
   font-family: "Righteous", cursive;
-  color: ${({ theme }) => theme.color.titleFontColor};
   text-align: center;
   margin: 2vw 0;
+  background-image: linear-gradient(
+    50deg,
+    rgba(6, 6, 6, 1) 0%,
+    rgba(36, 7, 40, 1) 50%,
+    rgba(103, 4, 60, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 5s ease infinite;
   
+  @keyframes gradientAnimation {
+    0% {
+      background-size: 400% 400%;
+      background-position: 0% 50%;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: 100% 50%;
+    }
+    100% {
+      background-size: 400% 400%;
+      background-position: 0% 50%;
+    }
+  }
+
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 28px;
     margin: 20px 0;
   }
+`;
+
+export const Search = styled.input`
+margin-left: 25%;
+margin-bottom: 6vh;
+border-radius: 1vw;
+border: 2px solid rgba(36, 7, 40, 1) 50%,;
+display: block;
+width: 50%;
+padding: 1.2vh;
+transition: 300ms;
+&:focus{
+  transform: scale(1.2);
+}
+
 `;
 
 export const GalleryBox = styled.div`

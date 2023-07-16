@@ -110,13 +110,21 @@ export const RelationDiv = styled.div`
   width: 32%;
   color: white;
   display: flex;
-  margin: 1% auto;
+  margin: 0 auto;
   align-content: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1%;
   text-align: center;
   background-color: #3d083543;
+  font-size: 1.5vw;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 18px;
+  } 
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 14px;
+  }
 `;
 
 export const RelationTitle = styled.h3`
@@ -130,6 +138,9 @@ export const RelationTitle = styled.h3`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    margin-bottom: 40px;
   }
 
   @keyframes animation {

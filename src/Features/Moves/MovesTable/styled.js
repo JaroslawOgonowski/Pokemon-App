@@ -80,7 +80,7 @@ export const TableCell = styled.td`
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 11px;
-    padding: 0.5vw 4px;
+    padding: 8px 4px;
   }
 `;
 
@@ -142,6 +142,7 @@ export const TableHead = styled.th`
 `;
 
 export const DmgImg = styled.img`
+width: 4vw;
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 30px;
   }

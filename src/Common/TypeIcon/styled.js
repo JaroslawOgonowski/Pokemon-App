@@ -106,10 +106,12 @@ export const Type = styled.div`
         padding: 10px;
       }
       @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-        font-size: 18px;
+        font-size: 14px;
+        padding: 6px;
       }
       @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
         font-size: 11px;
+        padding: 4px;
       }
     `}
 `;

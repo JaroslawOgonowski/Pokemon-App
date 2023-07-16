@@ -121,7 +121,7 @@ export const RelationDiv = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 18px;
-  } 
+  }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 14px;
   }

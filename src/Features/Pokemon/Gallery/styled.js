@@ -50,14 +50,31 @@ export const GalleryTitle = styled.h2`
 export const Search = styled.input`
   margin-left: 25%;
   margin-bottom: 6vh;
-  border-radius: 1vw;
+  border-radius: 2vw;
   border: 2px solid rgba(36, 7, 40, 1) 50%;
   display: block;
   width: 50%;
   padding: 1.2vh;
   transition: 300ms;
+  font-size: 1.5vw;
+
   &:focus {
     transform: scale(1.2);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 18px;
+    border-radius: 35px;
+  }
+  @media (max-width: 600px) {
+    width: 90%;
+    margin: 20px auto;
+    font-size: 18px;
+    border-radius: 35px;
+    &:focus {
+    transform: scale(1.02);
+  }
+  
   }
 `;
 

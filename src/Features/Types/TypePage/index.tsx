@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
 import { fetchTypeById } from "../../../Core/API";
@@ -5,6 +6,9 @@ import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { CentredMain } from "../../../Common/CentredMain";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
+import TypeIcon from "../../../Common/TypeIcon";
+import { MovesTable } from "../../Moves/MovesTable";
+import { PokemonTile } from "../../../Common/PokemonTile";
 import {
   HideListButton,
   PokemonDiv,
@@ -19,12 +23,8 @@ import {
   TypeImage,
   TypeInfo,
 } from "./styled";
-import { getImageByType } from "../../../Common/TypeIcon/getImageByType";
-import { MovesTable } from "../../Moves/MovesTable";
 import { PokeAbility } from "../../Abilities/AbilityPage/styled";
-import { PokemonTile } from "../../../Common/PokemonTile";
-import TypeIcon from "../../../Common/TypeIcon";
-import { useState } from "react";
+import { getImageByType } from "../../../Common/TypeIcon/getImageByType";
 
 export const TypePage = () => {
   const location = useLocation();
@@ -70,6 +70,10 @@ export const TypePage = () => {
     );
   };
 
+  const handleTitleClick = () => {
+    setHideList(!hideList);
+  };
+
   return (
     <>
       <CentredMain>
@@ -111,12 +115,12 @@ export const TypePage = () => {
         <SubTitleBox>
           <SubTitle>
             {`${ItemNamesEdit(data.name)} move list...`}{" "}
-            <HideListButton onClick={() => setHideList(!hideList)}>
+            <HideListButton onClick={handleTitleClick}>
               {hideList ? "Show List 🔽" : "Hide list 🔼"}
             </HideListButton>
           </SubTitle>
         </SubTitleBox>
-        {hideList ? null : <MovesTable moveList={data.moves} />}
+        {!hideList && <MovesTable moveList={data.moves} />}
       </CentredMain>
       <PokemonDiv>
         <SubTitle style={{ color: "black" }}>
@@ -137,3 +141,5 @@ export const TypePage = () => {
     </>
   );
 };
+
+export default TypePage;

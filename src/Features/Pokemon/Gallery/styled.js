@@ -25,7 +25,7 @@ export const GalleryTitle = styled.h2`
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 5s ease infinite;
-  
+
   @keyframes gradientAnimation {
     0% {
       background-size: 400% 400%;
@@ -48,18 +48,17 @@ export const GalleryTitle = styled.h2`
 `;
 
 export const Search = styled.input`
-margin-left: 25%;
-margin-bottom: 6vh;
-border-radius: 1vw;
-border: 2px solid rgba(36, 7, 40, 1) 50%,;
-display: block;
-width: 50%;
-padding: 1.2vh;
-transition: 300ms;
-&:focus{
-  transform: scale(1.2);
-}
-
+  margin-left: 25%;
+  margin-bottom: 6vh;
+  border-radius: 1vw;
+  border: 2px solid rgba(36, 7, 40, 1) 50%;
+  display: block;
+  width: 50%;
+  padding: 1.2vh;
+  transition: 300ms;
+  &:focus {
+    transform: scale(1.2);
+  }
 `;
 
 export const GalleryBox = styled.div`

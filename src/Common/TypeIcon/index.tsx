@@ -49,6 +49,7 @@ const TypeIcon = ({
               typeBackgroundColor={getBackgroundColorByType(object.type.name)}
               typeFontColor={getFontColorByType(object.type.name)}
               key={object.type.name}
+              flex={flex}
             >
               {object.type.name}
             </Type>

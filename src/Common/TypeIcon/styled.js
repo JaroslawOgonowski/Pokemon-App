@@ -50,10 +50,10 @@ export const Types = styled.div`
     css`
       display: flex;
       flex-wrap: wrap;
-      gap: 2vw;
+      gap: 1vw;
       justify-content: center;
-      align-items: center;
       width: 98%;
+      margin: 0;
 
       @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
         flex-direction: row;
@@ -90,6 +90,28 @@ export const Type = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 11px;
   }
+
+  ${({ flex }) =>
+    flex &&
+    css`
+      margin: 0;
+      text-align: center;
+      width: 4vw;
+      font-size: 1vw;
+
+      @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+        font-size: 15px;
+        border-radius: 10px;
+        width: 70px;
+        padding: 10px;
+      }
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 18px;
+      }
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+        font-size: 11px;
+      }
+    `}
 `;
 
 export const StyledLink = styled(Link)`
@@ -114,6 +136,7 @@ export const StyledLink = styled(Link)`
 export const Image = styled.img`
   width: 8vh;
   height: 8vh;
+  margin-bottom: 1vh;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     width: 64px;

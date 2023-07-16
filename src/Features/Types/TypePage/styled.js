@@ -100,32 +100,50 @@ export const RelationBox = styled.div`
   margin: 0 auto;
   color: white;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1vw;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.5vw;
 `;
+
+export const RelationDiv = styled.div`
+  width: 32%;
+  color: white;
+  display: flex;
+  margin: 1% auto;
+  align-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1%;
+  text-align: center;
+  background-color: #3d083543;
+`;
+
 export const RelationTitle = styled.h3`
   width: 100%;
   height: 6vh;
-  margin: 0.5vw auto;
   font-family: "Righteous", cursive;
-  font-size: 1.5vw;
-  color: #e1e4d0;
+  font-size: 2vw;
+  color: #cdcbd0;
+  transition: 200ms;
+  animation: animation 5s ease infinite;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
   }
-`;
-export const RelationDiv = styled.div`
-  width: 100%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2%;
-  text-align: center;
-  background-color: #3d083543;
+
+  @keyframes animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+      color: #eceff0;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 `;
 
 export const HideListButton = styled.button`

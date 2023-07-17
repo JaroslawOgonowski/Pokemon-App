@@ -25,7 +25,6 @@ export const SidebarTitle = styled.button`
   @media (max-width: 550px) {
     top: 80px;
     max-width: 100%;
-    
     text-align: center;
     background-color: #080303a7;
   }
@@ -87,15 +86,22 @@ export const StyledSideBar = styled.ul`
     width: 100%;
     padding-top: 60px;
   }
-
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     flex-wrap: wrap;
+  }
+  @media (max-width: 550px) {
+    margin-bottom: 50px;
   }
 
   ${({ sideBarOn }) =>
     sideBarOn &&
     css`
       transform: translateX(-100%);
+
+      @media (max-width: 550px) {
+        transform: translateX(-0) translateY(-140%);
+        display: none;
+      }
     `};
 
   @keyframes sideBarAnimation {

@@ -19,10 +19,10 @@ export const SideBar: FC<SideBarProps> = ({ sideBarText }) => {
 
   return (
     <>
-      <StyledSideBar>
-        <SidebarTitle onClick={() => setSideBarOn(!sideBarOn)}>
-          {sideBarOn ? "MENU ≡" : "MENU X"}
-        </SidebarTitle>
+      <SidebarTitle onClick={() => setSideBarOn(!sideBarOn)}>
+        {sideBarOn ? "MENU ≡" : "MENU X"}
+      </SidebarTitle>{" "}
+      <StyledSideBar sideBarOn={sideBarOn}>
         {sideBarText.map((object) => (
           <ListItem key={object.name}>
             <StyledA href={object.link}>

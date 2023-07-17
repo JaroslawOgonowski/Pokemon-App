@@ -1,10 +1,33 @@
 import styled from "styled-components";
 import ball from "./images/Poké_Ball_icon.png";
+import { css } from "styled-components";
+
+export const SidebarTitle = styled.button`
+  position: absolute;
+  left: 1vw;
+  margin-top: 5vh;
+  border: none;
+  border-radius: 1%;
+  font-size: 1.5vw;
+  background: none;
+  color: white;
+  font-family: "Righteous", cursive;
+  align-self: start;
+
+  @media (max-width: 1000px) {
+    margin-top: 3vh;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    margin-top: 1vh;
+    font-size: 20px;
+  }
+`;
 
 export const StyledSideBar = styled.ul`
   width: 20%;
   flex-grow: 1;
   padding: 1vw;
+  padding-top: 5%;
   margin: 0;
   list-style: none;
   display: flex;
@@ -14,6 +37,7 @@ export const StyledSideBar = styled.ul`
   animation: sideBarAnimation 0.5s ease;
   flex-wrap: wrap;
   background-color: #080303a7;
+  transition: 500ms;
 
   li::before {
     content: "";
@@ -54,31 +78,23 @@ export const StyledSideBar = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    margin: 30px auto 0 auto;
-    width: 96%;
-    min-height: 50px;
+    margin: 0 auto;
     flex-direction: row;
-    border-right: none;
-    gap: 20px;
+    gap: 8px;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2vh;
-    border-bottom: 1px solid black;
+    padding-bottom: 1.5vh;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     flex-wrap: wrap;
   }
-`;
 
-export const SidebarTitle = styled.button`
-border: none;
-border-radius: 1%;
-font-size: 1.5vw;
-background: none;
-color: white;
-font-family: "Righteous", cursive;
-align-self: start;
+  ${({ sideBarOn }) =>
+    sideBarOn &&
+    css`
+      transform: translateX(-100%);
+    `};
 `;
 
 export const ListItem = styled.li`

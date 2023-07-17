@@ -21,6 +21,14 @@ export const SidebarTitle = styled.button`
     margin-top: 1vh;
     font-size: 20px;
   }
+
+  @media (max-width: 550px) {
+    top: 80px;
+    max-width: 100%;
+    
+    text-align: center;
+    background-color: #080303a7;
+  }
 `;
 
 export const StyledSideBar = styled.ul`
@@ -59,16 +67,6 @@ export const StyledSideBar = styled.ul`
     }
   }
 
-  @keyframes sideBarAnimation {
-    0% {
-      opacity: 0;
-      transform: translateX(-30vw);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
   @media (max-width: ${({ theme }) => theme.breakPoint.laptop}px) {
     gap: 1.5vw;
   }
@@ -85,6 +83,10 @@ export const StyledSideBar = styled.ul`
     align-items: center;
     padding-bottom: 1.5vh;
   }
+  @media (max-width: 550px) {
+    width: 100%;
+    padding-top: 60px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     flex-wrap: wrap;
@@ -95,6 +97,17 @@ export const StyledSideBar = styled.ul`
     css`
       transform: translateX(-100%);
     `};
+
+  @keyframes sideBarAnimation {
+    0% {
+      opacity: 0;
+      transform: translateX(-30vw);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 `;
 
 export const ListItem = styled.li`

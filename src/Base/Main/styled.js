@@ -10,6 +10,7 @@ export const StyledMain = styled.main`
   gap: 2vw;
   justify-content: center;
   box-shadow: 1px 14px 58px 1px rgba(0, 0, 0, 1);
+
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin: 80px auto;
   }
@@ -26,6 +27,10 @@ export const MainBanner = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
 `;
 
 export const ArticleColumn = styled.div`

@@ -33,6 +33,18 @@ export const Pokemon = () => {
               link: "/Pokemon-App#/types",
             },
             {
+              name: "Abilities",
+              link: "/Pokemon-App#/abilities",
+            },
+            {
+              name: "All moves",
+              link: "/Pokemon-App#/moves",
+            },
+            {
+              name: "Serebii- national pokedex",
+              link: "https://www.serebii.net/pokemon/nationalpokedex.shtml",
+            },
+            {
               name: "Serebii- national pokedex",
               link: "https://www.serebii.net/pokemon/nationalpokedex.shtml",
             },

@@ -71,6 +71,16 @@ export const StyledSideBar = styled.ul`
   }
 `;
 
+export const SidebarTitle = styled.button`
+border: none;
+border-radius: 1%;
+font-size: 1.5vw;
+background: none;
+color: white;
+font-family: "Righteous", cursive;
+align-self: start;
+`;
+
 export const ListItem = styled.li`
   height: 5vw;
   width: 96%;

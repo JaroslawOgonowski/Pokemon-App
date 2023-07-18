@@ -11,8 +11,8 @@ export const StyledPokemonPage = styled.div`
   background-image: linear-gradient(
     90deg,
     ${(props) => props.color} 0%,
-    rgba(0, 0, 0, 0) 0.5%,
-    rgba(0, 0, 0, 0) 99.5%,
+    rgba(251, 249, 249, 0.986) 5%,
+    rgba(251, 249, 249, 0.986) 95%,
     ${(props) => props.color} 100%
   );
 

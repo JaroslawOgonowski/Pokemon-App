@@ -28,12 +28,6 @@ export const Header = () => {
             to="/abilities"
             activator={location.includes("/ability") ? activator : null}
           >
-            Abilities
-          </StyledNavLink>
-          <StyledNavLink
-            to="/moves"
-            activator={location.includes("/move") ? activator : null}
-          >
             Moves
           </StyledNavLink>
         </StyledNavigation>

@@ -16,6 +16,8 @@ export const TypesPage = () => {
           },
         ]}
       />
+      /* types realtions image, short description, background, animation/ gif
+    
       <TypesList />
     </>
   );

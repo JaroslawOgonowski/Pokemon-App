@@ -13,6 +13,11 @@ export const FlexBox = styled.div`
   margin-right: 5%;
   border-radius: 1vw;
   margin-bottom: 3vw;
+
+  @media (max-width: 550px) {
+    margin: 0 auto;
+    width: 96%;
+  }
 `;
 
 export const StyledArticle = styled.article`
@@ -35,11 +40,11 @@ export const StyledArticle = styled.article`
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 2.2vw;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
+    margin: 0 8px;
+  }
+  @media (max-width: 550px) {
+    font-size: 13px;
     margin: 0 8px;
   }
 `;
@@ -73,16 +78,14 @@ export const ReadMoreButton = styled.button`
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 2.2vw;
     width: 30%;
     margin: 24px 8px 0 0;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
+    width: 60%;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    width: 60%;
+  @media (max-width: 550px) {
+    font-size: 12px;
+    margin-top: 1vh;
   }
 `;

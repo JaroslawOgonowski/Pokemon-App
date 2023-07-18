@@ -30,6 +30,7 @@ export const MainBanner = styled.div`
 
   @media (max-width: 550px) {
     flex-direction: column;
+    min-height: 80vh;
   }
 `;
 
@@ -42,6 +43,14 @@ export const ArticleColumn = styled.div`
   min-height: 80vh;
   animation: articleColumnAnimation 0.5s ease;
 
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 100%;
+  }
+
+  @media (max-width: 550px) {
+    justify-content: space-evenly;
+  }
+
   @keyframes articleColumnAnimation {
     0% {
       opacity: 0.5;
@@ -51,9 +60,5 @@ export const ArticleColumn = styled.div`
       opacity: 1;
       transform: translateX(0);
     }
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    width: 100%;
   }
 `;

@@ -91,6 +91,7 @@ export const StyledSideBar = styled.ul`
   }
   @media (max-width: 550px) {
     margin-bottom: 50px;
+    padding-bottom: 40px;
   }
 
   ${({ sideBarOn }) =>
@@ -129,6 +130,9 @@ export const ListItem = styled.li`
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     justify-content: center;
+  }
+  @media (max-width: 550px) {
+    padding: 8px 0;
   }
 `;
 

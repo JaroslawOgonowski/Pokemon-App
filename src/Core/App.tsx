@@ -13,6 +13,7 @@ import { MovePage } from "../Features/Moves/MovePage";
 import { StyledPage } from "./styled";
 import { TypesPage } from "../Features/Types";
 import { TypePage } from "../Features/Types/TypePage";
+import { Footer } from "../Base/Footer";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/type" element={<TypePage />} />
             <Route path="/" element={<Pokemon />} />
           </Routes>
+          <Footer/>
           <ScrollToTopButton />
         </ThemeProvider>
       </HashRouter>

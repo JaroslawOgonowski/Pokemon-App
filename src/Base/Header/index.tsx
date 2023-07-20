@@ -28,7 +28,7 @@ export const Header = () => {
             to="/abilities"
             activator={location.includes("/ability") ? activator : null}
           >
-            Moves
+            Abilities
           </StyledNavLink>
         </StyledNavigation>
       </StyledHeader>

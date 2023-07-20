@@ -9,10 +9,10 @@ export const Footer = () => {
         <SocialLink href="https://github.com/JaroslawOgonowski">
           GitHub
         </SocialLink>
-        <SocialLink href="https://www.linkedin.com/in/jaros%C5%82aw-ogonowski-a54ab324a/">Linkedin</SocialLink>
-        <SocialLink href="mailto:dza.ogonowski@gmail.com">
-          E-Mail
+        <SocialLink href="https://www.linkedin.com/in/jaros%C5%82aw-ogonowski-a54ab324a/">
+          Linkedin
         </SocialLink>
+        <SocialLink href="mailto:dza.ogonowski@gmail.com">E-Mail</SocialLink>
       </ContactBox>
     </StyledFooter>
   );

@@ -33,7 +33,7 @@ function App() {
             <Route path="/type" element={<TypePage />} />
             <Route path="/" element={<Pokemon />} />
           </Routes>
-          <Footer/>
+          <Footer />
           <ScrollToTopButton />
         </ThemeProvider>
       </HashRouter>

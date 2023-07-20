@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledButton = styled.button`
   position: fixed;
   right: 0.2vw;
-  bottom: 0.2vw;
+  bottom: 3vh;
   width: 60px;
   height: 60px;
   border-radius: 1vw;

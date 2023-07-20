@@ -22,6 +22,7 @@ export const Banner = styled.div`
 
 export const Title = styled.h1`
   max-width: 100%;
+  width: fit-content;
   margin-left: 20%;
   font-family: "Righteous", cursive;
   color: rgb(186, 207, 255);

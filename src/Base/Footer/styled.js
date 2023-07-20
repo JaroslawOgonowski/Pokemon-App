@@ -8,6 +8,7 @@ export const StyledFooter = styled.footer`
   background-color: #060505;
   height: 3vh;
   color: white;
+  z-index: 99;
 `;
 
 export const Title = styled.h2`

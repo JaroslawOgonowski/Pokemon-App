@@ -20,7 +20,7 @@ export const SideBar: FC<SideBarProps> = ({ sideBarText }) => {
   return (
     <>
       <SidebarTitle onClick={() => setSideBarOn(!sideBarOn)}>
-        {sideBarOn ? "MENU ≡" : "MENU X"}
+        {sideBarOn ? "MENU ≡" : "MENU ×"}
       </SidebarTitle>{" "}
       <StyledSideBar sideBarOn={sideBarOn}>
         {sideBarText.map((object) => (

@@ -2,6 +2,7 @@ import { Main } from "../../Base/Main";
 import { Gallery } from "./Gallery";
 import { PokemonContainer } from "./styled";
 import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
+import { Footer } from "../../Base/Footer";
 
 export const Pokemon = () => {
   useScrollToTop();

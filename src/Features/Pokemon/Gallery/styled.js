@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const TopMarker = styled.div`
-  position: relative;
   top: -10vh;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {

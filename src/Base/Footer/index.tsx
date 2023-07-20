@@ -1,17 +1,18 @@
-import { ContactBox, GitHub, LinkedIn, StyledFooter, Title } from "./styled";
+import { ContactBox, SocialLink, StyledFooter, Title } from "./styled";
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <Title>Created by Jarosław Ogonowski</Title>
       <ContactBox>
+        <Title>Created by Jarosław Ogonowski 2023</Title>
         Contact:
-        <GitHub>
-          <a>GitHub</a>
-        </GitHub>
-        <LinkedIn>
-          <a>Linkedin</a>
-        </LinkedIn>
+        <SocialLink href="https://github.com/JaroslawOgonowski">
+          GitHub
+        </SocialLink>
+        <SocialLink href="https://www.linkedin.com/in/jaros%C5%82aw-ogonowski-a54ab324a/">Linkedin</SocialLink>
+        <SocialLink href="mailto:dza.ogonowski@gmail.com">
+          E-Mail
+        </SocialLink>
       </ContactBox>
     </StyledFooter>
   );

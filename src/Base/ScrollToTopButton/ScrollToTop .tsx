@@ -25,7 +25,7 @@ const StyledButton = styled.button`
 
   @media (max-width: 400px) {
     right: 0;
-    bottom: 0;
+    bottom: 3vh;
   }
 `;
 

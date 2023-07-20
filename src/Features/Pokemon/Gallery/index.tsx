@@ -25,6 +25,7 @@ import {
 } from "../../../Common/reusableFunctions/buttonFunctions";
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
+import { Footer } from "../../../Base/Footer";
 
 interface Pokemon {
   url: string;
@@ -154,6 +155,7 @@ export const Gallery = () => {
           </FastButton>
         </ButtonBox>
       </GalleryBox>
+      <Footer/>
     </>
   ) : null;
 };

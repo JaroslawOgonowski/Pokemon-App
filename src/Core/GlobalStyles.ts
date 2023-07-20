@@ -4,11 +4,11 @@ export const GlobalStyle = createGlobalStyle`
 
 html {
   font-family: 'Agdasima', sans-serif;
-
+  position: relative;
 };
 
 body{
-  margin: 0;
+    margin: 0;
   padding: 0; 
   background-image: linear-gradient(90deg, rgba(235, 216, 26, 0.99) 0%, rgba(144, 94, 9, 1) 100%);
   background-size: 200% 200%;

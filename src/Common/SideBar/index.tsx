@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   LinkText,
   ListItem,
@@ -15,7 +15,15 @@ interface SideBarProps {
 }
 
 export const SideBar: FC<SideBarProps> = ({ sideBarText }) => {
-  const [sideBarOn, setSideBarOn] = useState(false);
+  const [sideBarOn, setSideBarOn] = useState(window.innerWidth <= 767);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setSideBarOn(window.innerWidth <= 767);
+    };
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   return (
     <>

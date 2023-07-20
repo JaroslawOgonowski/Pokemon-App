@@ -92,6 +92,8 @@ export const StyledSideBar = styled.ul`
   @media (max-width: 550px) {
     margin-bottom: 50px;
     padding-bottom: 40px;
+    height: 70vh;
+    background-color: #080303e3;
   }
 
   ${({ sideBarOn }) =>

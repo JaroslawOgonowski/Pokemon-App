@@ -15,11 +15,11 @@ interface SideBarProps {
 }
 
 export const SideBar: FC<SideBarProps> = ({ sideBarText }) => {
-  const [sideBarOn, setSideBarOn] = useState(window.innerWidth <= 767);
+  const [sideBarOn, setSideBarOn] = useState(window.innerWidth <= 550);
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setSideBarOn(window.innerWidth <= 767);
+      setSideBarOn(window.innerWidth <= 550);
     };
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);

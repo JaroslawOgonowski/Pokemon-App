@@ -20,6 +20,7 @@ import {
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
+import { BallImg } from "../../Moves/MovePage/styled";
 
 export const AllAbilities = () => {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ export const AllAbilities = () => {
     <StyledAbilities>
       <Title ref={topRef}>Abilities List</Title>
       <AllAbilitiesContainer>
+        <BallImg/>
         <Button disabled={offset === 0} onClick={handlePrevPageClick}>
           ◀
         </Button>

@@ -78,14 +78,15 @@ export const AbilityItem = styled.li`
   padding: 1vw;
   font-size: 3vw;
   font-family: "Righteous", cursive;
-  background-color: #100d0de1;
-  color: white;
+  background-color: #000000e1;
+  color: #9d9ea3;
   border-radius: 1vw;
   transition: 300ms;
 
   &:hover {
     transform: scale(1.1);
-    background-color: #060505f0;
+    color: #bbbcc3;
+    filter: brightness(150%);
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {

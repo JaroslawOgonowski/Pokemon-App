@@ -1,13 +1,11 @@
 import { Main } from "../../Base/Main";
 import { AllAbilities } from "./AllAbilities";
 import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
-import { TypesList } from "../Types/TypesList";
 
 export const Abilities = () => {
   useScrollToTop();
   return (
     <>
-      <div />
       <Main
         titleContent="Abilities"
         articleContentHead="Pokémon possess a wide range of abilities that vary in terms of types, power, and effects. These abilities make them unique and give them an advantage in battles."
@@ -22,6 +20,18 @@ export const Abilities = () => {
         
         In summary, Pokémon abilities are a crucial part of strategy and tactics in battles. The diversity and differences among abilities make each Pokémon unique and require the appropriate approach to fully utilize their potential in combat."
         sideBarText={[
+          {
+            name: "Pokemon",
+            link: "/Pokemon-App#/pokemon",
+          },
+          {
+            name: "Pokemon Types",
+            link: "/Pokemon-App#/types",
+          },          
+          {
+            name: "All moves",
+            link: "/Pokemon-App#/moves",
+          },
           {
             name: "Bulbapedia- abilities",
             link: "https://bulbapedia.bulbagarden.net/wiki/Ability",

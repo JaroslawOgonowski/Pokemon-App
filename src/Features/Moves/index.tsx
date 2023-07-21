@@ -30,6 +30,18 @@ export const Moves = () => {
         }
         sideBarText={[
           {
+            name: "Pokemon",
+            link: "/Pokemon-App#/pokemon",
+          },
+          {
+            name: "Pokemon Types",
+            link: "/Pokemon-App#/types",
+          },          
+          {
+            name: "All abilities",
+            link: "/Pokemon-App#/abilities",
+          },
+          {
             name: "Bulbapedia- moves",
             link: "https://bulbapedia.bulbagarden.net/wiki/List_of_moves",
           },

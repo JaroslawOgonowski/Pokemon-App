@@ -93,7 +93,7 @@ export const StyledSideBar = styled.ul`
     margin-bottom: 50px;
     padding-bottom: 40px;
     height: 70vh;
-    background-color: #080303e3;
+    background-color: #080303f6;
   }
 
   ${({ sideBarOn }) =>

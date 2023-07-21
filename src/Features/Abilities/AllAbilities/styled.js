@@ -2,19 +2,26 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledAbilities = styled.div`
-  margin-top: -8vh;
+  margin-top: -13vh;
+  background-image: linear-gradient(
+    126deg,
+    rgba(1, 3, 6, 1) 0%,
+    rgba(58, 4, 46, 1) 100%
+  );
+  padding-bottom: 10vh;
 `;
 
 export const Title = styled.h2`
-  padding-top: 12vh;
+  padding-top: 6vh;
   width: 100%;
   text-align: center;
   font-size: 4vw;
   font-family: "Righteous", cursive;
   margin: 0 0 2vw 0;
+  color: #b5d007;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 24px;
+    font-size: 28px;
   }
 `;
 

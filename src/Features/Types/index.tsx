@@ -11,6 +11,18 @@ export const TypesPage = () => {
         articleContentFull={null}
         sideBarText={[
           {
+            name: "Pokemon",
+            link: "/Pokemon-App#/pokemon",
+          },
+          {
+            name: "Pokemon moves",
+            link: "/Pokemon-App#/moves",
+          },          
+          {
+            name: "All abilities",
+            link: "/Pokemon-App#/abilities",
+          },
+          {
             name: "Fandom -types",
             link: "https://pokemon.fandom.com/wiki/Types",
           },

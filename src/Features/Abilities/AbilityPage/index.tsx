@@ -12,6 +12,7 @@ import {
 } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { PokemonTile } from "../../../Common/PokemonTile";
+import { BallImg } from "../../Moves/MovePage/styled";
 
 export const AbilityPage = (): JSX.Element => {
   const location = useLocation();
@@ -42,20 +43,23 @@ export const AbilityPage = (): JSX.Element => {
   else
     return (
       <StyledAbilityPage>
-        <CenteredTitle content={abilityName} />
+        <CenteredTitle content={`${abilityName} (Ability)`} />
         <TextBox>
           <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>
           <Description>{data.effect_entries[1]?.effect}</Description>
         </TextBox>
+        <BallImg/>
         <CenteredTitle content={"Pokemons with this ability:"} />
         <PokeAbility>
-          {data.pokemon?.map((item: any) => (
-            <PokemonTile
-              key={item.pokemon.name}
-              id={getPokeIdValue(item.pokemon.url)}
-              name={item.pokemon.name}
-            />
-          ))}
+          {data.pokemon?.map((item: any) =>
+            getPokeIdValue(item.pokemon.url) <= 1010 ? (
+              <PokemonTile
+                key={item.pokemon.name}
+                id={getPokeIdValue(item.pokemon.url)}
+                name={item.pokemon.name}
+              />
+            ) : null
+          )}
         </PokeAbility>
       </StyledAbilityPage>
     );

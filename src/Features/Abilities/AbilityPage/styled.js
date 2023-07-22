@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
 export const StyledAbilityPage = styled.div`
-  width: 96%;
-  margin: 18vh auto 5vh auto;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 18vh;
+  padding-bottom: 10vh;
   display: flex;
   flex-direction: column;
+  background-image: linear-gradient(
+    188deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(12, 17, 26, 1) 62%,
+    rgba(13, 14, 15, 1) 100%
+  );
 `;
 
 export const TextBox = styled.div`
@@ -12,11 +20,11 @@ export const TextBox = styled.div`
   flex-direction: column;
   padding: 2vw;
   border-radius: 1vw;
-  border: 0.3vw solid #1d74c1;
+  color: white;
 `;
 
 export const GenInfo = styled.div`
-  color: #4b4b4b;
+  color: #bbb6b6;
   font-size: 1.3vw;
   align-self: flex-end;
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {

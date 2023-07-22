@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Loader } from "../../../Base/Loader";
 import { ErrorPage } from "../../../Base/Error/styled";
 import {
+  Banner,
   Description,
   GenInfo,
   PokeAbility,
@@ -43,6 +44,7 @@ export const AbilityPage = (): JSX.Element => {
   else
     return (
       <StyledAbilityPage>
+        <Banner/>
         <CenteredTitle content={`${abilityName} (Ability)`} />
         <TextBox>
           <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>

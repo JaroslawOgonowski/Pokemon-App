@@ -1,9 +1,9 @@
 import styled from "styled-components";
-
+import banner from "./pokemon_play_pokemon_banner-02@2x.jpg";
 export const StyledAbilityPage = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding-top: 18vh;
+  padding-top: 6vw;
   padding-bottom: 10vh;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,18 @@ export const StyledAbilityPage = styled.div`
     rgba(12, 17, 26, 1) 62%,
     rgba(13, 14, 15, 1) 100%
   );
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    padding-top: 80px;
+  }
+`;
+export const Banner = styled.div`
+width: 100%;
+height: 20vh;
+background-image: url(${banner});
+background-position-x: 70%;
+background-repeat: no-repeat;
+background-size: cover;
 `;
 
 export const TextBox = styled.div`

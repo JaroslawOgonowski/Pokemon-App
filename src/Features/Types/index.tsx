@@ -17,7 +17,7 @@ export const TypesPage = () => {
           {
             name: "Pokemon moves",
             link: "/Pokemon-App#/moves",
-          },          
+          },
           {
             name: "All abilities",
             link: "/Pokemon-App#/abilities",
@@ -28,8 +28,6 @@ export const TypesPage = () => {
           },
         ]}
       />
-      /* types realtions image, short description, background, animation/ gif
-    
       <TypesList />
     </>
   );

@@ -63,6 +63,7 @@ export const AbilityList = styled.ul`
   gap: 2vw;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     gap: 8px;

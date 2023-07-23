@@ -34,7 +34,7 @@ export const Pokemon = () => {
               link: "/Pokemon-App#/types",
             },
             {
-              name: "Abilities",
+              name: "All abilities",
               link: "/Pokemon-App#/abilities",
             },
             {

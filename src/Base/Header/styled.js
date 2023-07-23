@@ -13,7 +13,7 @@ export const StyledHeader = styled.header`
   -webkit-box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
   -moz-box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
   box-shadow: 8px 8px 24px 2px rgba(156, 153, 108, 1);
-  z-index: 99;
+  z-index: 999;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 80px;

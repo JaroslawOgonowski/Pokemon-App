@@ -56,6 +56,7 @@ export const Button = styled.button`
 
 export const AbilityList = styled.ul`
   width: 75%;
+  min-height: 100vh;
   padding: 0;
   list-style: none;
   display: flex;
@@ -64,7 +65,7 @@ export const AbilityList = styled.ul`
   justify-content: center;
   align-items: center;
   z-index: 99;
-
+  
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     gap: 8px;
   }

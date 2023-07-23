@@ -13,6 +13,7 @@ export const SidebarTitle = styled.button`
   color: white;
   font-family: "Righteous", cursive;
   align-self: start;
+  cursor: pointer;
 
   @media (max-width: 1000px) {
     margin-top: 3vh;

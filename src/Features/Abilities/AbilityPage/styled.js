@@ -3,7 +3,7 @@ import bannerRed from "./images/pokemon_play_pokemon_banner-02@2x.jpg";
 import bannerBlue from "./images/pokemon_play_pokemon_banner-blue.jpg";
 import bannerGreen from "./images/pokemon_play_pokemon_banner-green.jpg";
 import bannerPurp from "./images/pokemon_play_pokemon_banner-purple.jpg";
-import bannerYellow from "./images/pokemon_play_pokemon_banner-yelow.jpg"
+import bannerYellow from "./images/pokemon_play_pokemon_banner-yelow.jpg";
 
 const banners = [bannerRed, bannerBlue, bannerGreen, bannerPurp, bannerYellow];
 
@@ -14,6 +14,7 @@ const randomBanner = () => {
 
 export const StyledAbilityPage = styled.div`
   width: 100%;
+  min-height: 150vh;
   margin: 0 auto;
   padding-top: 6vw;
   padding-bottom: 10vh;
@@ -32,13 +33,13 @@ export const StyledAbilityPage = styled.div`
 `;
 
 export const Banner = styled.div`
-width: 100%;
-height: 20vh;
-background-image: url(${randomBanner});
-background-position-x: 70%;
-background-repeat: no-repeat;
-background-size: cover;
-margin-bottom: 8vh;
+  width: 100%;
+  height: 20vh;
+  background-image: url(${randomBanner});
+  background-position-x: 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 8vh;
 `;
 
 export const TextBox = styled.div`

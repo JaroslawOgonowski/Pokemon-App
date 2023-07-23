@@ -5,6 +5,8 @@ import { Error } from "../../../Base/Error";
 import TypeIcon from "../../../Common/TypeIcon";
 import { StyledTypesList, TypesP, TypesRealationsImg } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
+import typesRelationsNormal from "./0ot60vi6qmax.png"
+import typesRelationsMobile from "./af1ba9d66bbe3862749f40a5f36441b9.jpg"
 
 export const TypesList = () => {
   const limit = 50;
@@ -52,7 +54,7 @@ export const TypesList = () => {
           mythology. Below I present a table of all damage relationships
           between types.
         </TypesP>
-        <TypesRealationsImg/>
+        <TypesRealationsImg src={window.innerWidth >= 767? typesRelationsNormal : typesRelationsMobile} alt="pokemon types relations table"/>
         <CenteredTitle content="Types List" />
         <TypeIcon
           flex={false}

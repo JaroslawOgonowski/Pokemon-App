@@ -1,7 +1,9 @@
 import { Main } from "../../Base/Main";
+import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
 import { TypesList } from "./TypesList";
 
 export const TypesPage = () => {
+  useScrollToTop();
   return (
     <>
       <Main

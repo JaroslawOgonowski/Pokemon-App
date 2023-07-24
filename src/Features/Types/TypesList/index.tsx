@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAllTypes } from "../../../Core/API";
 import { Loader } from "../../../Base/Loader";
@@ -5,29 +6,46 @@ import { Error } from "../../../Base/Error";
 import TypeIcon from "../../../Common/TypeIcon";
 import { StyledTypesList, TypesP, TypesRealationsImg } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
-import typesRelationsNormal from "./0ot60vi6qmax.png"
-import typesRelationsMobile from "./af1ba9d66bbe3862749f40a5f36441b9.jpg"
+import typesRelationsNormal from "./0ot60vi6qmax.png";
+import typesRelationsMobile from "./af1ba9d66bbe3862749f40a5f36441b9.jpg";
 
 export const TypesList = () => {
   const limit = 50;
-
   const { isLoading, isError, data } = useQuery(
     ["allTypes", { limit: limit }],
     () => fetchAllTypes(limit)
   );
 
+  const [typesRelationsImgSrc, setTypesRelationsImgSrc] = useState(
+    window.innerWidth >= 767 ? typesRelationsNormal : typesRelationsMobile
+  );
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth >= 767) {
+        setTypesRelationsImgSrc(typesRelationsNormal);
+      } else {
+        setTypesRelationsImgSrc(typesRelationsMobile);
+      }
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   if (isLoading) return <Loader />;
   if (isError) return <Error />;
 
-  const pokemonTypes = data.results.map(
-    (type: { name: string | null | undefined }) => ({
-      slot: 1,
-      type: {
-        name: type.name,
-        url: "",
-      },
-    })
-  );
+  const pokemonTypes = data.results.map((type: { name: any }) => ({
+    slot: 1,
+    type: {
+      name: type.name,
+      url: "",
+    },
+  }));
 
   return (
     <>
@@ -51,10 +69,13 @@ export const TypesList = () => {
         <TypesP>
           As mentioned, some types are based on elements, but there are also
           types that consider the materials the Pokémon uses, their history or
-          mythology. Below I present a table of all damage relationships
-          between types.
+          mythology. Below I present a table of all damage relationships between
+          types.
         </TypesP>
-        <TypesRealationsImg src={window.innerWidth >= 767? typesRelationsNormal : typesRelationsMobile} alt="pokemon types relations table"/>
+        <TypesRealationsImg
+          src={typesRelationsImgSrc}
+          alt="pokemon types relations table"
+        />
         <CenteredTitle content="Types List" />
         <TypeIcon
           flex={false}

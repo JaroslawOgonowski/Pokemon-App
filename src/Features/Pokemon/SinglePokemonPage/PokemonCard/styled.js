@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   width: 96%;
   display: flex;
   gap: 0;
+  
 `;
 
 export const CardImage = styled.img`

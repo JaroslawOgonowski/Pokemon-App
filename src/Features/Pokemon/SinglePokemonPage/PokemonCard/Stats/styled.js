@@ -32,7 +32,7 @@ export const FullBar = styled.div`
   padding: 0.5vw 0.6vw;
   border: 1px solid black;
   text-align: center;
-  border-radius: 0.1vw;
+  border-radius: 5px;
   font-size: 1vw;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {

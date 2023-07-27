@@ -4,6 +4,7 @@ import { useOffsetFromLocationSearch } from "../../Common/reusableFunctions/useO
 import { useState } from "react";
 import { Error } from "../../Base/Error";
 import { Loader } from "../../Base/Loader";
+import { PkmBox, RandomTeamPage, TeamImage, Title } from "./styled";
 
 export const Team = () => {
   const limit = 1010;
@@ -23,19 +24,23 @@ export const Team = () => {
   if (data && data.results && data.results.length > 0) {
     return (
       <>
-        <div>TEAM</div>
-        {[1, 2, 3, 4, 5, 6].map((teamMateNumber) => {
-          const randomIndex = getRandomIndex();
-          return (
-            <img
-              key={teamMateNumber}
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomIndex}.png`}
-              alt={`Team Mate ${teamMateNumber}`}
-            />
-          );
-        })}
+        <RandomTeamPage>
+          <Title>YOUR RANDOM TEAM</Title>
+          <PkmBox>
+          {[1, 2, 3, 4, 5, 6].map((teamMateNumber) => {
+            const randomIndex = getRandomIndex();
+            return (
+              <TeamImage
+                key={teamMateNumber}
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomIndex}.png`}
+                alt={`Team Mate ${teamMateNumber}`}
+              />
+            );
+          })}
+          </PkmBox>
+        </RandomTeamPage>
       </>
     );
   }
-  return null; // Or some other default render while loading data or when no data is available
+  return null;
 };

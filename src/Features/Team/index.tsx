@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Error } from "../../Base/Error";
 import { Loader } from "../../Base/Loader";
 import { PkmBox, RandomTeamPage, TeamImage, Title } from "./styled";
+import { PokemonTile } from "../../Common/PokemonTile";
 
 export const Team = () => {
   const limit = 1010;
@@ -27,16 +28,16 @@ export const Team = () => {
         <RandomTeamPage>
           <Title>YOUR RANDOM TEAM</Title>
           <PkmBox>
-          {[1, 2, 3, 4, 5, 6].map((teamMateNumber) => {
-            const randomIndex = getRandomIndex();
-            return (
-              <TeamImage
-                key={teamMateNumber}
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomIndex}.png`}
-                alt={`Team Mate ${teamMateNumber}`}
-              />
-            );
-          })}
+            {[1, 2, 3, 4, 5, 6].map((teamMateNumber) => {
+              const randomIndex = getRandomIndex();
+              const id = randomIndex + 1;
+              const name = data.results[id].name;
+              return (
+                <>
+                  <PokemonTile id={id} name={name} />
+                </>
+              );
+            })}
           </PkmBox>
         </RandomTeamPage>
       </>

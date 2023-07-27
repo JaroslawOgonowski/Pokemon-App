@@ -17,7 +17,7 @@ export const RandomTeamPage = styled.main`
   box-shadow: 1px 14px 58px 1px rgba(0, 0, 0, 1);
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    margin: 80px auto;
+    margin: 80px auto 0 auto;
   }
 `;
 
@@ -27,7 +27,7 @@ export const Title = styled.h1`
   font-family: "Righteous", cursive;
   text-align: center;
   margin: 2vw 0;
-    background-image: linear-gradient(
+  background-image: linear-gradient(
     90deg,
     rgba(182, 195, 195, 1) 0%,
     rgba(128, 135, 154, 1) 100%
@@ -59,6 +59,7 @@ export const Title = styled.h1`
 `;
 
 export const PkmBox = styled.div`
+  width: 96%;
   display: flex;
   gap: 2vw;
   justify-content: space-evenly;

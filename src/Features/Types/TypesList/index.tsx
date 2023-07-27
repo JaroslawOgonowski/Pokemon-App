@@ -85,7 +85,6 @@ export const TypesList = () => {
           img={true}
         />
       </StyledTypesList>
-    <Team/>
     </>
   );
 };

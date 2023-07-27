@@ -22,15 +22,15 @@ export const Header = () => {
           Abilities
         </StyledNavLink>
       );
-       } else if (location.includes("/ability")) {
-        return (
-          <StyledNavLink
-            to="/abilities"
-            activator={location.includes("/ability") ? activator : null}
-          >
-            Abilities
-          </StyledNavLink>
-        );
+    } else if (location.includes("/ability")) {
+      return (
+        <StyledNavLink
+          to="/abilities"
+          activator={location.includes("/ability") ? activator : null}
+        >
+          Abilities
+        </StyledNavLink>
+      );
     } else if (location.includes("/move")) {
       return (
         <StyledNavLink
@@ -58,13 +58,13 @@ export const Header = () => {
           <Logo src={logo} />
         </LogoLink>
         <StyledNavigation>
-          <StyledNavLink
-            to="/pokemon"
-            activator={location.includes("/pokemonDetails") ? activator : null}
-          >
-            Pokémon
-          </StyledNavLink>
           {activeLink()}
+          <StyledNavLink
+            to="/randomTeam"
+            activator={location.includes("/randomTeam") ? activator : null}
+          >
+            Your random Team
+          </StyledNavLink>
         </StyledNavigation>
       </StyledHeader>
     </>

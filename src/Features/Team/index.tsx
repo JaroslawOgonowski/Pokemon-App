@@ -26,11 +26,10 @@ export const Team = () => {
         <div>TEAM</div>
         {[1, 2, 3, 4, 5, 6].map((teamMateNumber) => {
           const randomIndex = getRandomIndex();
-          const teamMate = data.results[randomIndex];
           return (
             <img
               key={teamMateNumber}
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${teamMate.id}.png`}
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomIndex}.png`}
               alt={`Team Mate ${teamMateNumber}`}
             />
           );

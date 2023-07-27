@@ -14,6 +14,7 @@ import { StyledPage } from "./styled";
 import { TypesPage } from "../Features/Types";
 import { TypePage } from "../Features/Types/TypePage";
 import { Footer } from "../Base/Footer";
+import { Team } from "../Features/Team";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/move" element={<MovePage />} />
             <Route path="/types" element={<TypesPage />} />
             <Route path="/type" element={<TypePage />} />
+            <Route path="/randomTeam" element={<Team />} />
             <Route path="/" element={<Pokemon />} />
           </Routes>
           <Footer />

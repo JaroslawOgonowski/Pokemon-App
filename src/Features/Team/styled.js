@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const RandomTeamPage = styled.main`
   width: 100%;
   min-height: 100vh;
-  margin: 6vw auto;
+  margin: 6vw auto 0 auto;
   padding-bottom: 10vh;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ export const Title = styled.h1`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 28px;
-    margin: 20px 0;
+    margin: 20px 0 0 0;
   }
 `;
 

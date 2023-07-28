@@ -18,6 +18,7 @@ export const Team = () => {
   const limit = 1010;
   const [startIndex, setStartIndex] = useState(0);
   const [savedTeams, setSavedTeams] = useState<SavedTeams>([]);
+  const [currentTeam, setCurrentTeam] = useState<Pokemon[]>([]);
 
   useOffsetFromLocationSearch(startIndex, setStartIndex);
   const { isLoading, isError, data } = useQuery(
@@ -34,7 +35,7 @@ export const Team = () => {
 
   const getRandomIndex = () => Math.floor(Math.random() * 1010);
 
-  const handleSaveTeam = () => {
+  const handleGenerateRandomTeam = () => {
     const newTeam: Pokemon[] = [];
     for (let i = 0; i < 6; i++) {
       const randomIndex = getRandomIndex();
@@ -42,10 +43,15 @@ export const Team = () => {
       const name = data.results[id].name;
       newTeam.push({ id, name });
     }
+    setCurrentTeam(newTeam);
+  };
 
-    const updatedTeams: SavedTeams = [...savedTeams, newTeam];
-    setSavedTeams(updatedTeams);
-    localStorage.setItem("savedTeams", JSON.stringify(updatedTeams));
+  const handleSaveTeam = () => {
+    if (currentTeam.length > 0) {
+      const updatedTeams: SavedTeams = [...savedTeams, currentTeam];
+      setSavedTeams(updatedTeams);
+      localStorage.setItem("savedTeams", JSON.stringify(updatedTeams));
+    }
   };
 
   const handleDeleteTeam = (index: number) => {
@@ -60,33 +66,38 @@ export const Team = () => {
   return (
     <>
       <RandomTeamPage>
-        <Title>YOUR RANDOM TEAM</Title>
-        <PkmBox>
-          {[1, 2, 3, 4, 5, 6].map((teamMateNumber) => {
-            const randomIndex = getRandomIndex();
-            const id = randomIndex + 1;
-            const name = data.results[id].name;
-            return <PokemonTile key={teamMateNumber} id={id} name={name} />;
-          })
-          }
-          <button onClick={handleSaveTeam}>Save Team</button>
-        </PkmBox>
-      </RandomTeamPage>
-      {savedTeams.length > 0 && (
-        <div>
-          <Title>SAVED TEAMS</Title>
-          <PkmBox>
+        {currentTeam.length > 0 && (
+          <div>
+            <Title>YOUR RANDOM TEAM </Title>
+            <PkmBox>
+              {currentTeam.map(({ id, name }) => (
+                <PokemonTile key={id} id={id} name={name} />
+              ))}
+            </PkmBox>
+            <button
+              onClick={handleSaveTeam}
+              disabled={currentTeam.length === 0}
+            >
+              Save Team
+            </button>
+          </div>
+        )}
+<button onClick={handleGenerateRandomTeam}>Generate Random Team</button>
+        {savedTeams.length > 0 && (
+          <div>
+            <Title>SAVED TEAMS</Title>
+
             {savedTeams.map((team, index) => (
-              <div key={index}>
+              <PkmBox key={index}>
                 {team.map(({ id, name }) => (
                   <PokemonTile key={id} id={id} name={name} />
                 ))}
                 <button onClick={() => handleDeleteTeam(index)}>Delete</button>
-              </div>
+              </PkmBox>
             ))}
-          </PkmBox>
-        </div>
-      )}
+          </div>
+        )}
+      </RandomTeamPage>
     </>
   );
 };

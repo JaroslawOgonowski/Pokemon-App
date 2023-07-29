@@ -40,13 +40,22 @@ export const Header = () => {
           Moves
         </StyledNavLink>
       );
-    } else
+    } else if (location.includes("/type")) {
       return (
         <StyledNavLink
           to="/types"
-          activator={location.includes("/type") ? activator : null}
+          activator={location.includes("types") ? activator : null}
         >
           Types
+        </StyledNavLink>
+      );
+    } else
+      return (
+        <StyledNavLink
+          to="/pokemon"
+          activator={location.includes("/pokemon") ? activator : null}
+        >
+          Pokemon
         </StyledNavLink>
       );
   };

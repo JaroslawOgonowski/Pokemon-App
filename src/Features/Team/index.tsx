@@ -10,6 +10,8 @@ import {
   PkmBox,
   RandomTeamPage,
   SaveButton,
+  SavedTeams,
+  TeamBox,
   TeamImage,
   Title,
 } from "./styled";
@@ -81,37 +83,43 @@ export const Team = () => {
         {currentTeam.length > 0 && (
           <div>
             <Title>YOUR RANDOM TEAM </Title>
-            <PkmBox>
-              {currentTeam.map(({ id, name }) => (
-                <PokemonTile key={id} id={id} name={name} />
-              ))}
-            </PkmBox>
-            <SaveButton
-              onClick={handleSaveTeam}
-              disabled={currentTeam.length === 0}
-              isSaved={isTeamSaved}
-            >
-              <a>{isTeamSaved ? "Save ✔" : "Save Team"}</a>
-            </SaveButton>
+
+            <TeamBox>
+              <PkmBox>
+                {currentTeam.map(({ id, name }) => (
+                  <PokemonTile key={id} id={id} name={name} />
+                ))}
+              </PkmBox>
+              <SaveButton
+                onClick={handleSaveTeam}
+                disabled={currentTeam.length === 0}
+                isSaved={isTeamSaved}
+              >
+                {isTeamSaved ? "Save ✔" : "Save Team"}
+              </SaveButton>
+            </TeamBox>
           </div>
         )}
         <GenerateButton onClick={handleGenerateRandomTeam}>
           Generate New Random Team
         </GenerateButton>
         {savedTeams.length > 0 && (
-          <div>
+          <SavedTeams>
             <Title>SAVED TEAMS</Title>
             {savedTeams.map((team, index) => (
-              <PkmBox key={index}>
-                {team.map(({ id, name }) => (
-                  <PokemonTile key={id} id={id} name={name} />
-                ))}
+              <TeamBox>
+                <Title> Team {index+1}</Title>
+                <PkmBox key={index}>
+                  {team.map(({ id, name }) => (
+                    <PokemonTile key={id} id={id} name={name} />
+                  ))}
+                </PkmBox>
                 <DeleteButton onClick={() => handleDeleteTeam(index)}>
                   Delete
                 </DeleteButton>
-              </PkmBox>
+              </TeamBox>
             ))}
-          </div>
+          </SavedTeams>
         )}
       </RandomTeamPage>
     </>

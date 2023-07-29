@@ -59,11 +59,29 @@ export const Title = styled.h1`
   }
 `;
 
+export const TeamBox = styled.div`
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const PkmBox = styled.div`
   width: 96%;
   display: flex;
   gap: 2vw;
   justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const SavedTeams = styled.div`
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  gap: 8vh;
+  justify-content: center;
   align-items: center;
 `;
 

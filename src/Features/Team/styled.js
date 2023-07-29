@@ -158,78 +158,86 @@ const glowingAnimation = keyframes`
 `;
 
 export const SaveButton = styled.button`
-    width: 200px;
-    height: 40px;
-    font-family: "Righteous", cursive;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border: none;
+  width: 200px;
+  height: 40px;
+  font-family: "Righteous", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(
+    135deg,
+    ${props => (props.isSaved ? "#9c27b0" : "#0cbc0c")},
+    ${props => (props.isSaved ? "#6a0080" : "#106b16")}
+  );
+  box-shadow: 0 6px 20px rgba(27, 94, 32, 0.3);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 30px;
-    background: linear-gradient(135deg, #0cbc0c, #106b16);
-    box-shadow: 0 6px 20px rgba(27, 94, 32, 0.3);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    cursor: pointer;
-    user-select: none;
+    z-index: -1;
     transition: 0.2s;
+  }
+
+  &:before {
+    top: 2px;
+    left: 2px;
+  }
+
+  &:after {
+    bottom: 2px;
+    right: 2px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(27, 94, 32, 0.4);
 
     &:before,
     &:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 30px;
-        z-index: -1;
-        transition: 0.2s;
+      background: rgba(255, 255, 255, 0.081);
     }
+  }
 
-    &:before {
-        top: 2px;
-        left: 2px;
-    }
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(27, 94, 32, 0.4);
+  }
 
-    &:after {
-        bottom: 2px;
-        right: 2px;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+    transform: skewX(45deg) translate(0);
+    transition: 0.5s;
+    filter: blur(0px);
+  }
 
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(27, 94, 32, 0.4);
-
-        &:before,
-        &:after {
-            background: rgba(255, 255, 255, 0.081);
-        }
-    }
-
-    &:active {
-        transform: scale(0.95);
-        box-shadow: 0 3px 10px rgba(27, 94, 32, 0.4);
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
-        transform: skewX(45deg) translate(0);
-        transition: 0.5s;
-        filter: blur(0px);
-    }
-
-    &:hover::before {
-        transform: skewX(45deg) translate(200px);
-    }
+  &:hover::before {
+    transform: skewX(45deg) translate(200px);
+  }
 `;
 
 export const DeleteButton = styled(SaveButton)`

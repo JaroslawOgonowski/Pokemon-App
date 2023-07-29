@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchGallery } from "../../Core/API";
 import { useOffsetFromLocationSearch } from "../../Common/reusableFunctions/useOffsetFromLocationSearch";
-import { useState, useEffect } from "react";
 import { Error } from "../../Base/Error";
 import { Loader } from "../../Base/Loader";
 import {
@@ -27,6 +27,7 @@ export const Team = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [savedTeams, setSavedTeams] = useState<SavedTeams>([]);
   const [currentTeam, setCurrentTeam] = useState<Pokemon[]>([]);
+  const [isTeamSaved, setIsTeamSaved] = useState(false);
 
   useOffsetFromLocationSearch(startIndex, setStartIndex);
   const { isLoading, isError, data } = useQuery(
@@ -52,6 +53,7 @@ export const Team = () => {
       newTeam.push({ id, name });
     }
     setCurrentTeam(newTeam);
+    setIsTeamSaved(false);
   };
 
   const handleSaveTeam = () => {
@@ -59,6 +61,7 @@ export const Team = () => {
       const updatedTeams: SavedTeams = [...savedTeams, currentTeam];
       setSavedTeams(updatedTeams);
       localStorage.setItem("savedTeams", JSON.stringify(updatedTeams));
+      setIsTeamSaved(true);
     }
   };
 
@@ -86,25 +89,26 @@ export const Team = () => {
             <SaveButton
               onClick={handleSaveTeam}
               disabled={currentTeam.length === 0}
+              isSaved={isTeamSaved}
             >
-              <a>Save Team</a>
+              <a>{isTeamSaved ? "Save ✔" : "Save Team"}</a>
             </SaveButton>
           </div>
         )}
-
         <GenerateButton onClick={handleGenerateRandomTeam}>
           Generate New Random Team
         </GenerateButton>
         {savedTeams.length > 0 && (
           <div>
             <Title>SAVED TEAMS</Title>
-
             {savedTeams.map((team, index) => (
               <PkmBox key={index}>
                 {team.map(({ id, name }) => (
                   <PokemonTile key={id} id={id} name={name} />
                 ))}
-                <DeleteButton onClick={() => handleDeleteTeam(index)}>Delete</DeleteButton>
+                <DeleteButton onClick={() => handleDeleteTeam(index)}>
+                  Delete
+                </DeleteButton>
               </PkmBox>
             ))}
           </div>

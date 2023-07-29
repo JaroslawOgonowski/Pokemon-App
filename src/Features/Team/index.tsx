@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Error } from "../../Base/Error";
 import { Loader } from "../../Base/Loader";
 import {
+  DeleteButton,
   GenerateButton,
   PkmBox,
   RandomTeamPage,
@@ -103,7 +104,7 @@ export const Team = () => {
                 {team.map(({ id, name }) => (
                   <PokemonTile key={id} id={id} name={name} />
                 ))}
-                <button onClick={() => handleDeleteTeam(index)}>Delete</button>
+                <DeleteButton onClick={() => handleDeleteTeam(index)}>Delete</DeleteButton>
               </PkmBox>
             ))}
           </div>

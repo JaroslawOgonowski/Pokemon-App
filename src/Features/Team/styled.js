@@ -231,3 +231,23 @@ export const SaveButton = styled.button`
         transform: skewX(45deg) translate(200px);
     }
 `;
+
+export const DeleteButton = styled(SaveButton)`
+    background: linear-gradient(135deg, #ff4040, #a10b0b);
+    box-shadow: 0 6px 20px rgba(161, 11, 11, 0.3);
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(161, 11, 11, 0.4);
+
+        &:before,
+        &:after {
+            background: rgba(255, 255, 255, 0.081);
+        }
+    }
+
+    &:active {
+        transform: scale(0.95);
+        box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
+    }
+`;

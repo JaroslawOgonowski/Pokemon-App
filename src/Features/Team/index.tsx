@@ -4,7 +4,14 @@ import { useOffsetFromLocationSearch } from "../../Common/reusableFunctions/useO
 import { useState, useEffect } from "react";
 import { Error } from "../../Base/Error";
 import { Loader } from "../../Base/Loader";
-import { GenerateButton, PkmBox, RandomTeamPage, TeamImage, Title } from "./styled";
+import {
+  GenerateButton,
+  PkmBox,
+  RandomTeamPage,
+  SaveButton,
+  TeamImage,
+  Title,
+} from "./styled";
 import { PokemonTile } from "../../Common/PokemonTile";
 
 type Pokemon = {
@@ -66,7 +73,7 @@ export const Team = () => {
   return (
     <>
       <RandomTeamPage>
-      <Title>RANDOM TEAM GENERATOR</Title>
+        <Title>RANDOM TEAM GENERATOR</Title>
         {currentTeam.length > 0 && (
           <div>
             <Title>YOUR RANDOM TEAM </Title>
@@ -75,15 +82,18 @@ export const Team = () => {
                 <PokemonTile key={id} id={id} name={name} />
               ))}
             </PkmBox>
-            <button
+            <SaveButton
               onClick={handleSaveTeam}
               disabled={currentTeam.length === 0}
             >
-              Save Team
-            </button>
+              <a>Save Team</a>
+            </SaveButton>
           </div>
         )}
-        <GenerateButton onClick={handleGenerateRandomTeam}>Generate New Random Team</GenerateButton>
+
+        <GenerateButton onClick={handleGenerateRandomTeam}>
+          Generate New Random Team
+        </GenerateButton>
         {savedTeams.length > 0 && (
           <div>
             <Title>SAVED TEAMS</Title>

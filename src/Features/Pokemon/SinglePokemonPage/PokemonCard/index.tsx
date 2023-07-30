@@ -50,7 +50,14 @@ export const PokemonCard = ({
   habitat,
   abilities,
 }: PokemonCardProps) => {
+
+  
   return (
+<Wrapper>
+  
+</Wrapper>
+
+    /*
     <Wrapper>
       <CardImage
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`}
@@ -94,5 +101,6 @@ export const PokemonCard = ({
         <Stats pokemonStats={pokemonStats} />
       </CardBox>
     </Wrapper>
-  );
+*/
+);
 };

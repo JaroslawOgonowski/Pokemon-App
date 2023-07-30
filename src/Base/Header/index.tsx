@@ -72,7 +72,7 @@ export const Header = () => {
             to="/randomTeam"
             activator={location.includes("/randomTeam") ? activator : null}
           >
-            Your random Team
+            My Team
           </StyledNavLink>
         </StyledNavigation>
       </StyledHeader>

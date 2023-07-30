@@ -5,13 +5,14 @@ import {
   fetchSoloPokemonEvolution,
   fetchSoloPokemonInfo,
 } from "../../../Core/API";
-import { StyledPokemonPage } from "./styled";
+import { PokemonName, StyledPokemonPage, TitleBanner } from "./styled";
 import { Images } from "./Images";
 import { PokemonCard } from "./PokemonCard";
 import { Loader } from "../../../Base/Loader";
 import { Error } from "../../../Base/Error";
 import { PokemonEvolve, SoloPokemonInfo } from "./singlePokemonInterfaces";
 import { Moves } from "./Moves";
+import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 
 export const SinglePokemonPage = () => {
   const location = useLocation();
@@ -57,6 +58,11 @@ export const SinglePokemonPage = () => {
 
   return (
     <StyledPokemonPage color={color}>
+      <TitleBanner>
+        <PokemonName color={color}>
+          {ItemNamesEdit(data?.name)} #{pokeId}
+        </PokemonName>
+      </TitleBanner>
       <PokemonCard
         pokeId={pokeId}
         pokemonName={data?.name}

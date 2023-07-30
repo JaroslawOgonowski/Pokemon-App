@@ -33,7 +33,7 @@ const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({
   };
   const getSortArrow = (key: string) => {
     if (isHeaderClicked(key)) {
-      return currentSortDirection === "asc" ? "🔽" : "🔼";
+      return currentSortDirection === "asc" ? "▽" : "△";
     }
     return null;
   };

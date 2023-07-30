@@ -104,7 +104,7 @@ export const Team = () => {
         </GenerateButton>
         {savedTeams.length > 0 && (
           <StyledTeam>
-            <Title>SAVED TEAMS</Title>
+            <Title>⇩ SAVED TEAMS ⇩</Title>
             {savedTeams.map((team, index) => (
               <TeamBox>
                 <Title> Team {index+1}</Title>

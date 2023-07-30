@@ -56,7 +56,7 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <>{isVisible && <StyledButton onClick={scrollToTop}>⬆</StyledButton>}</>
+    <>{isVisible && <StyledButton onClick={scrollToTop}>⇮</StyledButton>}</>
   );
 };
 

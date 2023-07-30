@@ -10,9 +10,8 @@ import {
   PkmBox,
   RandomTeamPage,
   SaveButton,
-  SavedTeams,
+  StyledTeam,
   TeamBox,
-  TeamImage,
   Title,
   TitleBanner,
 } from "./styled";
@@ -82,9 +81,8 @@ export const Team = () => {
       <RandomTeamPage>
         <TitleBanner>RANDOM TEAM GENERATOR</TitleBanner>
         {currentTeam.length > 0 && (
-          <div>
+          <StyledTeam>
             <Title>YOUR RANDOM TEAM </Title>
-
             <TeamBox>
               <PkmBox>
                 {currentTeam.map(({ id, name }) => (
@@ -99,13 +97,13 @@ export const Team = () => {
                 {isTeamSaved ? "Saved ✔" : "Save Team"}
               </SaveButton>
             </TeamBox>
-          </div>
+          </StyledTeam>
         )}
         <GenerateButton onClick={handleGenerateRandomTeam}>
           Generate New Random Team
         </GenerateButton>
         {savedTeams.length > 0 && (
-          <SavedTeams>
+          <StyledTeam>
             <Title>SAVED TEAMS</Title>
             {savedTeams.map((team, index) => (
               <TeamBox>
@@ -120,7 +118,7 @@ export const Team = () => {
                 </DeleteButton>
               </TeamBox>
             ))}
-          </SavedTeams>
+          </StyledTeam>
         )}
       </RandomTeamPage>
     </>

@@ -36,6 +36,8 @@ export const TitleBanner = styled.h1`
   color: #e0d4d4;
   background-image: url(${banner});
   background-position-y: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 28px;
@@ -87,7 +89,7 @@ export const Title = styled.h2`
 `;
 
 export const TeamBox = styled.div`
-  width: 96%;
+  width: 98%;
   display: flex;
   flex-direction: column;
   gap: 5vh;
@@ -104,7 +106,7 @@ export const PkmBox = styled.div`
   align-items: center;
 `;
 
-export const SavedTeams = styled.div`
+export const StyledTeam = styled.div`
   width: 98%;
   display: flex;
   flex-direction: column;

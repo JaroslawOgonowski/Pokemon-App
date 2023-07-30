@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
+import banner from "./2022-TC-Web-banner-Pikachu-5.png";
 
 export const RandomTeamPage = styled.main`
   width: 100%;
@@ -22,7 +23,33 @@ export const RandomTeamPage = styled.main`
   }
 `;
 
-export const Title = styled.h1`
+export const TitleBanner = styled.h1`
+  width: 100%;
+  height: 20vh;
+  margin: 0;
+  padding-right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 3vw;
+  font-family: "Righteous", cursive;
+  color: #e0d4d4;
+  background-image: url(${banner});
+  background-position-y: 80%;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 28px;
+    background-position-x: 100%;
+    padding-right: 0;
+    justify-content: center;
+  }
+  @media (max-width: 400px) {
+    max-width: 100%;
+    padding-left: 16px;
+  }
+`;
+
+export const Title = styled.h2`
   width: 100%;
   font-size: 3vw;
   font-family: "Righteous", cursive;
@@ -69,10 +96,11 @@ export const TeamBox = styled.div`
 `;
 
 export const PkmBox = styled.div`
-  width: 96%;
+  width: 100%;
   display: flex;
-  gap: 2vw;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1vh;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -166,9 +194,12 @@ export const GenerateButton = styled.button`
     top: 0;
     border-radius: 10px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    width: 80%;
+    font-size: 18px;
+  }
 `;
-
-
 
 const glowingAnimation = keyframes`
     0% { transform: skewX(45deg) translate(0); }
@@ -187,8 +218,8 @@ export const SaveButton = styled.button`
   border-radius: 30px;
   background: linear-gradient(
     135deg,
-    ${props => (props.isSaved ? "#9c27b0" : "#0cbc0c")},
-    ${props => (props.isSaved ? "#6a0080" : "#106b16")}
+    ${(props) => (props.isSaved ? "#9c27b0" : "#0cbc0c")},
+    ${(props) => (props.isSaved ? "#6a0080" : "#106b16")}
   );
   box-shadow: 0 6px 20px rgba(27, 94, 32, 0.3);
   color: #fff;
@@ -259,21 +290,21 @@ export const SaveButton = styled.button`
 `;
 
 export const DeleteButton = styled(SaveButton)`
-    background: linear-gradient(135deg, #ff4040, #a10b0b);
-    box-shadow: 0 6px 20px rgba(161, 11, 11, 0.3);
+  background: linear-gradient(135deg, #ff4040, #a10b0b);
+  box-shadow: 0 6px 20px rgba(161, 11, 11, 0.3);
 
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(161, 11, 11, 0.4);
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(161, 11, 11, 0.4);
 
-        &:before,
-        &:after {
-            background: rgba(255, 255, 255, 0.081);
-        }
+    &:before,
+    &:after {
+      background: rgba(255, 255, 255, 0.081);
     }
+  }
 
-    &:active {
-        transform: scale(0.95);
-        box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
-    }
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
+  }
 `;

@@ -14,6 +14,7 @@ import {
   TeamBox,
   TeamImage,
   Title,
+  TitleBanner,
 } from "./styled";
 import { PokemonTile } from "../../Common/PokemonTile";
 
@@ -79,7 +80,7 @@ export const Team = () => {
   return (
     <>
       <RandomTeamPage>
-        <Title>RANDOM TEAM GENERATOR</Title>
+        <TitleBanner>RANDOM TEAM GENERATOR</TitleBanner>
         {currentTeam.length > 0 && (
           <div>
             <Title>YOUR RANDOM TEAM </Title>
@@ -95,7 +96,7 @@ export const Team = () => {
                 disabled={currentTeam.length === 0}
                 isSaved={isTeamSaved}
               >
-                {isTeamSaved ? "Save ✔" : "Save Team"}
+                {isTeamSaved ? "Saved ✔" : "Save Team"}
               </SaveButton>
             </TeamBox>
           </div>

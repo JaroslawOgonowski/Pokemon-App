@@ -13,7 +13,11 @@ import {
   Wrapper,
   TitleImage,
   Abilities,
+  Traits,
+  Trait,
 } from "./styled";
+import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
+import { BallImg } from "../../../Moves/MovePage/styled";
 export interface Generation {
   name: string;
 }
@@ -53,9 +57,22 @@ export const PokemonCard = ({
 
   
   return (
-<Wrapper>
-  
-</Wrapper>
+    <Wrapper>
+      <CardImage
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`}
+        color={color}
+      />
+      <Traits>
+    <Trait><div>Name</div> <div>{ItemNamesEdit(`${pokemonName}`)}</div></Trait>
+    <Trait><div>Number</div> <div>#{pokeId}</div></Trait>
+    <Trait><div>Color</div> <div>{ItemNamesEdit(`${color}`)}</div></Trait>
+    <Trait><div>Generation</div> <div>{generation?.name.toUpperCase()}</div></Trait>
+    <Trait><div>Habitat</div> <div>{habitat !== null ? habitat?.name.toUpperCase() : "Unknown"}</div></Trait>
+    <Trait><div>Generation</div> <div>{generation?.name.toUpperCase()}</div></Trait>
+    <Description>{description}</Description>
+    </Traits>
+    </Wrapper>
+
 
     /*
     <Wrapper>
@@ -76,12 +93,6 @@ export const PokemonCard = ({
               table={false}
             />
           </Title>
-          <Generation>{generation?.name.toUpperCase()}</Generation>
-          <Description>{description}</Description>
-          <Description>
-            Habitat:{" "}
-            {habitat !== null ? habitat?.name.toUpperCase() : "Unknown"}
-          </Description>
           <Description>
             Abilities:
             <Abilities>

@@ -4,19 +4,64 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   margin-top: 2vw;
-  width: 96%;
+  width: 98%;
   display: flex;
-  gap: 0;
-  
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  flex-wrap: wrap;
 `;
 
 export const CardImage = styled.img`
-  width: 30%;
-  height: 30%;
+  width: 25vw;
   align-self: center;
-
+  padding: 8vh;
+  background-image: linear-gradient(
+    328deg,
+    rgba(1, 4, 10, 0.523) 0%,
+    rgba(1, 4, 10, 0.661) 40%,
+    ${(props) => props.color} 100%
+  );
+  border-radius: 50%;
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     display: none;
+  }
+`;
+export const Traits = styled.div`
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1vw;
+`;
+
+export const Trait = styled.div`
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2vw;
+  border: 1px solid #938b8b;
+  border-radius: 1vw;
+  padding: 1vw;
+  color: #d7cece;
+`;
+
+export const Description = styled.div`
+width: calc(80% + 3vw);
+  border: 1px solid #938b8b;
+  border-radius: 1vw;
+  padding: 1vw;
+  color: #d7cece;
+  font-size: 2vw;
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 18px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 16px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 11px;
   }
 `;
 
@@ -87,27 +132,6 @@ export const Title = styled.h1`
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 17px;
-  }
-`;
-
-export const Description = styled.div`
-  font-size: 1.3vw;
-  color: #262626;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1vw;
-  margin: 1vw 0;
-  font-family: "Righteous", cursive;
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 18px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    font-size: 16px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    font-size: 11px;
   }
 `;
 

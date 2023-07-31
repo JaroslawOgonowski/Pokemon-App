@@ -58,8 +58,8 @@ export const SinglePokemonPage = () => {
 
   return (
     <StyledPokemonPage color={color}>
-      <TitleBanner>
-        <PokemonName color={color}>
+      <TitleBanner color={color}>
+        <PokemonName>
           {ItemNamesEdit(data?.name)} #{pokeId}
         </PokemonName>
       </TitleBanner>

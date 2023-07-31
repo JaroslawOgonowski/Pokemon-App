@@ -1,5 +1,15 @@
 import styled from "styled-components";
 import banner from "./unnamed.jpg";
+import { keyframes } from "styled-components";
+
+const gradientAnimation = keyframes`
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+`;
 
 export const StyledPokemonPage = styled.main`
   margin: 0 auto;
@@ -10,15 +20,16 @@ export const StyledPokemonPage = styled.main`
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(
-    90deg,
-    ${(props) => props.color} 0%,
-    rgba(251, 249, 249, 0.986) 5%,
-    rgba(251, 249, 249, 0.986) 95% 100%
+    82deg,
+    rgba(3, 3, 4, 1) 0%,
+    rgba(48, 39, 121, 0.9) 100%
   );
+  background-size: 200% 200%;
+  animation: ${gradientAnimation} 10s linear alternate infinite;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     padding-top: 80px;
-  }  
+  }
 `;
 
 export const TitleBanner = styled.div`
@@ -30,7 +41,7 @@ export const TitleBanner = styled.div`
   background-position: 50% 0%;
   display: flex;
   align-items: center;
-
+  box-shadow: 0px 10px 30px 10px rgba(12, 13, 12, 0.542);
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 15vh;
   }
@@ -71,9 +82,9 @@ export const PokemonName = styled.h1`
     margin: 0 8px;
 
     background-image: linear-gradient(
-    90deg,
-    rgba(248, 254, 254, 1) 0%,
-    rgba(212, 218, 234, 0.971) 100%
-  );
+      90deg,
+      rgba(248, 254, 254, 1) 0%,
+      rgba(212, 218, 234, 0.971) 100%
+    );
   }
 `;

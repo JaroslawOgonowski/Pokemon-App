@@ -31,7 +31,7 @@ export const Traits = styled.div`
   width: 65%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 1vw;
 `;
@@ -153,7 +153,6 @@ export const Generation = styled.div`
 export const Abilities = styled.div`
   display: flex;
   flex-wrap: wrap;
-
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     gap: 8px;
   }

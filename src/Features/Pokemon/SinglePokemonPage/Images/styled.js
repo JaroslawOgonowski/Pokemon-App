@@ -2,12 +2,15 @@ import styled from "styled-components";
 
 export const StyledImages = styled.div`
   margin-top: 2vw;
-  width: 96%;
+  width: 90%;
   display: flex;
   gap: 1vw;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  background-color: white;
+  border-radius: 1vw;
+  margin-bottom: 20vh;
 `;
 
 export const Subtitle = styled.h2`

@@ -54,8 +54,6 @@ export const PokemonCard = ({
   habitat,
   abilities,
 }: PokemonCardProps) => {
-
-  
   return (
     <Wrapper>
       <CardImage
@@ -63,39 +61,37 @@ export const PokemonCard = ({
         color={color}
       />
       <Traits>
-    <Trait><div>Name</div> <div>{ItemNamesEdit(`${pokemonName}`)}</div></Trait>
-    <Trait><div>Number</div> <div>#{pokeId}</div></Trait>
-    <Trait><div>Color</div> <div>{ItemNamesEdit(`${color}`)}</div></Trait>
-    <Trait><div>Generation</div> <div>{generation?.name.toUpperCase()}</div></Trait>
-    <Trait><div>Habitat</div> <div>{habitat !== null ? habitat?.name.toUpperCase() : "Unknown"}</div></Trait>
-    <Trait><div>Generation</div> <div>{generation?.name.toUpperCase()}</div></Trait>
-    <Description>{description}</Description>
-    </Traits>
-    </Wrapper>
-
-
-    /*
-    <Wrapper>
-      <CardImage
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`}
-      />
-      <CardBox color={color}>
-        <TitleImage
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`}
-        />
-        <TextBox>
-          <Title>
-            #{pokeId} {pokemonName}
-            <TypeIcon
-              flex={false}
-              img={false}
-              pokemonTypes={pokemonTypes}
-              table={false}
-            />
-          </Title>
-          <Description>
-            Abilities:
-            <Abilities>
+        <Trait>
+          <div>Name</div> <div>{ItemNamesEdit(`${pokemonName}`)}</div>
+        </Trait>
+        <Trait>
+          <div>Number</div> <div>#{pokeId}</div>
+        </Trait>
+        <Trait>
+          <div>Types</div>{" "}
+          <TypeIcon
+            flex={false}
+            img={false}
+            pokemonTypes={pokemonTypes}
+            table={false}
+          />
+        </Trait>
+        <Trait>
+          <div>Color</div> <div>{ItemNamesEdit(`${color}`)}</div>
+        </Trait>
+        <Trait>
+          <div>Generation</div> <div>{generation?.name.toUpperCase()}</div>
+        </Trait>
+        <Trait>
+          <div>Habitat</div>{" "}
+          <div>
+            {habitat !== null ? habitat?.name.toUpperCase() : "Unknown"}
+          </div>
+        </Trait>
+        <Trait>
+          <div>Generation</div> <div>{generation?.name.toUpperCase()}</div>
+        </Trait>
+        <Description>Abilities: <Abilities>
               {abilities.map((object) => (
                 <Ability
                   key={`abilities${object.ability.name}`}
@@ -105,13 +101,11 @@ export const PokemonCard = ({
                   {object.ability.name.toUpperCase()}
                 </Ability>
               ))}
-            </Abilities>
-          </Description>
-          <Evolution pokemonEvolution={pokemonEvolution} />
-        </TextBox>
-        <Stats pokemonStats={pokemonStats} />
-      </CardBox>
+            </Abilities></Description>
+        <Description>{description}</Description>
+      </Traits>
+      <Evolution pokemonEvolution={pokemonEvolution} />
+      <Stats pokemonStats={pokemonStats} />
     </Wrapper>
-*/
-);
+  );
 };

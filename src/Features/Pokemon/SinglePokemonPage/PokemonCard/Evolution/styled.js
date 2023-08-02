@@ -6,7 +6,7 @@ export const StyledEvolution = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: 100%;
+  width: 50%;
   margin-bottom: 2vw;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
@@ -15,6 +15,7 @@ export const StyledEvolution = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     margin-left: -24%;
+    width: 100%;
   }
 `;
 
@@ -74,7 +75,7 @@ export const PokemonEvolutionName = styled.div`
   font-size: 1vw;
   text-align: center;
   text-decoration: none;
-  color: black;
+  color: #e0d7d7;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 1.5vw;

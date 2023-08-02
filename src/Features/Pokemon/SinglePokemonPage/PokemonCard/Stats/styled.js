@@ -4,14 +4,14 @@ export const StatsBox = styled.div`
   font-family: "Righteous", cursive;
   font-size: 2vw;
   margin: 1vw;
-  width: 30%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   gap: 0.5vw;
   text-align: center;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    width: 100%;
+    width: 96%;
   }
 `;
 
@@ -30,7 +30,7 @@ export const StatValue = styled.div`
 export const FullBar = styled.div`
   width: calc(96%-1.2vw);
   padding: 0.5vw 0.6vw;
-  border: 1px solid black;
+  border: 1px solid white;
   text-align: center;
   border-radius: 5px;
   font-size: 1vw;

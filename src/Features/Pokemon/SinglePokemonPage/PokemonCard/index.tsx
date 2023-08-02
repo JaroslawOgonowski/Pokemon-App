@@ -7,17 +7,14 @@ import {
   CardImage,
   Description,
   Generation,
-  CardBox,
-  TextBox,
-  Title,
   Wrapper,
-  TitleImage,
   Abilities,
   Traits,
   Trait,
+  ContentBox,
 } from "./styled";
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
-import { BallImg } from "../../../Moves/MovePage/styled";
+import { useEffect, useState } from "react";
 export interface Generation {
   name: string;
 }
@@ -54,12 +51,32 @@ export const PokemonCard = ({
   habitat,
   abilities,
 }: PokemonCardProps) => {
+
+  const imageSources = [
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`,
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${pokeId}.png`,
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokeId}.svg`,
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${pokeId}.png`,
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentSource = imageSources[currentIndex];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((currentIndex) => (currentIndex + 1) % imageSources.length);
+    }, 6000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
   return (
     <Wrapper>
-      <CardImage
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`}
-        color={color}
-      />
+      <CardImage color={color}>
+        <img alt={pokemonName} src={currentSource} />
+      </CardImage>
       <Traits>
         <Trait>
           <div>Name</div> <div>{ItemNamesEdit(`${pokemonName}`)}</div>
@@ -88,24 +105,26 @@ export const PokemonCard = ({
             {habitat !== null ? habitat?.name.toUpperCase() : "Unknown"}
           </div>
         </Trait>
-        <Trait>
-          <div>Generation</div> <div>{generation?.name.toUpperCase()}</div>
-        </Trait>
-        <Description>Abilities: <Abilities>
-              {abilities.map((object) => (
-                <Ability
-                  key={`abilities${object.ability.name}`}
-                  color={color}
-                  to={`/ability?id=${object.ability.name}`}
-                >
-                  {object.ability.name.toUpperCase()}
-                </Ability>
-              ))}
-            </Abilities></Description>
+        <Description>
+          Abilities:{" "}
+          <Abilities>
+            {abilities.map((object) => (
+              <Ability
+                key={`abilities${object.ability.name}`}
+                color={color}
+                to={`/ability?id=${object.ability.name}`}
+              >
+                {object.ability.name.toUpperCase()}
+              </Ability>
+            ))}
+          </Abilities>
+        </Description>
         <Description>{description}</Description>
       </Traits>
-      <Evolution pokemonEvolution={pokemonEvolution} />
-      <Stats pokemonStats={pokemonStats} />
+      <ContentBox>
+        <Stats pokemonStats={pokemonStats} />
+        <Evolution pokemonEvolution={pokemonEvolution} />
+      </ContentBox>
     </Wrapper>
   );
 };

@@ -12,10 +12,10 @@ export const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-export const CardImage = styled.img`
-  width: 25vw;
+export const CardImage = styled.div`
+  width: 20vw;
+  height: 20vw;
   align-self: center;
-  padding: 8vh;
   background-image: linear-gradient(
     328deg,
     rgba(1, 4, 10, 0.523) 0%,
@@ -23,6 +23,16 @@ export const CardImage = styled.img`
     ${(props) => props.color} 100%
   );
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 25vw;
+    height: 25vw;
+    margin: 1vw 3vw 0 0;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     display: none;
   }
@@ -48,7 +58,7 @@ export const Trait = styled.div`
 `;
 
 export const Description = styled.div`
-width: calc(80% + 3vw);
+  width: calc(80% + 3vw);
   border: 1px solid #938b8b;
   border-radius: 1vw;
   padding: 1vw;
@@ -150,6 +160,15 @@ export const Generation = styled.div`
     font-size: 11px;
   }
 `;
+
+export const ContentBox = styled.div`
+  width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #cdc5c5;
+`;
+
 export const Abilities = styled.div`
   display: flex;
   flex-wrap: wrap;

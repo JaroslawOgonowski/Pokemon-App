@@ -3,29 +3,33 @@ import { Link } from "react-router-dom";
 
 export const Button = styled.button`
   cursor: pointer;
-  width: 20%;
+  width: 10%;
+  height: 0.2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 35px;
-  background-color: ${({ theme }) => theme.color.headerColor};
+  font-family: 'Agdasima', sans-serif;
+  border-radius: 5px;
   color: white;
   font-size: 1.6vw;
-  font-weight: 700;
   transition: 500ms;
-  -webkit-box-shadow: 1px 9px 24px -6px rgba(67, 69, 88, 1);
-  -moz-box-shadow: 1px 9px 24px -6px rgba(67, 69, 88, 1);
-  box-shadow: 1px 9px 24px -6px rgba(67, 69, 88, 1);
-
+  box-shadow: 0px 0px 12px 1px rgba(4, 46, 50, 1);
+  background-image: linear-gradient(
+    53deg,
+    rgba(6, 6, 6, 1) 15%,
+    rgba(14, 26, 66, 1) 100%
+  );
+  transition: 500ms;
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 13px;
   }
 
   &:hover {
     filter: brightness(180%);
-    transform: scale(1.05);
+    height: 9vh;
+    color: #c9c4c4;
   }
 `;
 
@@ -41,9 +45,9 @@ export const ButtonText = styled.span`
 export const GameTitle = styled.h3`
   text-align: center;
   width: 60%;
-  font-size: 3vw;
-  font-weight: 700;
+  font-size: 2.4vw;
   font-family: "Righteous", cursive;
+  color: #a8a0a0e5;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 20px;
@@ -51,17 +55,18 @@ export const GameTitle = styled.h3`
 `;
 
 export const Table = styled.table`
-  width: 96%;
+  width: 85%;
+  color: #baabab;
   border-collapse: collapse;
 `;
 
 export const TableRow = styled.tr`
   &:nth-child(odd) {
-    background-color: rgba(229, 232, 207, 0.809);
+    background-color: rgba(229, 232, 207, 0.157);
   }
 
   &:hover {
-    background-color: rgba(121, 208, 237, 0.705);
+    background-color: rgba(66, 90, 98, 0.705);
   }
 `;
 

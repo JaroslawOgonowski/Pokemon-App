@@ -15,6 +15,7 @@ import {
 } from "./styled";
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 import { useEffect, useState } from "react";
+import { BallImg, BallImg2 } from "../../../Moves/MovePage/styled";
 export interface Generation {
   name: string;
 }
@@ -51,12 +52,10 @@ export const PokemonCard = ({
   habitat,
   abilities,
 }: PokemonCardProps) => {
-
   const imageSources = [
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`,
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${pokeId}.png`,
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokeId}.svg`,
-    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${pokeId}.png`,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -64,8 +63,10 @@ export const PokemonCard = ({
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((currentIndex) => (currentIndex + 1) % imageSources.length);
-    }, 6000);
+      setCurrentIndex(
+        (currentIndex) => (currentIndex + 1) % imageSources.length
+      );
+    }, 10000);
 
     return () => {
       clearInterval(intervalId);
@@ -74,6 +75,7 @@ export const PokemonCard = ({
 
   return (
     <Wrapper>
+      <BallImg />
       <CardImage color={color}>
         <img alt={pokemonName} src={currentSource} />
       </CardImage>

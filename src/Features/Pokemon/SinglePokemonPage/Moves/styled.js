@@ -5,6 +5,7 @@ export const Button = styled.button`
   cursor: pointer;
   width: 10%;
   height: 0.2vh;
+  z-index: 9;
   display: flex;
   flex-direction: column;
   align-items: center;

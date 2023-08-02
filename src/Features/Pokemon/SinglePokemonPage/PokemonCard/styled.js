@@ -26,11 +26,26 @@ export const CardImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   img {
     width: 25vw;
     height: 25vw;
     margin: 1vw 3vw 0 0;
+    animation: fadeInOut 10s infinite;
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      85% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {

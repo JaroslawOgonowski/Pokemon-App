@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   width: 60px;
   height: 60px;
   border-radius: 1vw;
+  z-index: 99;
   background-color: #010101b0;
   color: white;
   font-size: 36px;

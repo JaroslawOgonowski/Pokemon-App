@@ -14,8 +14,9 @@ export const StyledEvolution = styled.div`
     align-items: flex-start;
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    margin-left: -24%;
     width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

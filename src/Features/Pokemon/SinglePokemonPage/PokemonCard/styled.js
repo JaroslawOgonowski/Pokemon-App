@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
   align-items: center;
   gap: 1vw;
   flex-wrap: wrap;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    flex-direction: column;
+  }
 `;
 
 export const CardImage = styled.div`
@@ -26,7 +30,7 @@ export const CardImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   img {
     width: 25vw;
     height: 25vw;
@@ -46,10 +50,17 @@ export const CardImage = styled.div`
         opacity: 0;
       }
     }
+    @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+      width: 40vh;
+      height: 40vh;
+    }
   }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    display: none;
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    margin-top: 30px;
+    width: 30vh;
+    height: 30vh;
+    margin-bottom: 60px;
   }
 `;
 export const Traits = styled.div`
@@ -59,6 +70,10 @@ export const Traits = styled.div`
   align-items: stretch;
   flex-wrap: wrap;
   gap: 1vw;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 100%;
+  }
 `;
 
 export const Trait = styled.div`
@@ -70,6 +85,12 @@ export const Trait = styled.div`
   border-radius: 1vw;
   padding: 1vw;
   color: #d7cece;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 40%;
+    font-size: 15px;
+    padding: 10px;
+  }
 `;
 
 export const Description = styled.div`
@@ -83,80 +104,9 @@ export const Description = styled.div`
     font-size: 18px;
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    font-size: 16px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    font-size: 11px;
-  }
-`;
-
-export const CardBox = styled.div`
-  width: 70%;
-  display: flex;
-  gap: 1vw;
-  border: 1px solid gray;
-  animation: pokeCardAnimation 500ms ease;
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 0;
-  }
-
-  @keyframes pokeCardAnimation {
-    0% {
-      opacity: 0;
-      transform: translateX(1000px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`;
-
-export const TitleImage = styled.img`
-  display: none;
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    display: inline-block;
-    width: 20%;
-    align-self: flex-start;
-  }
-`;
-
-export const TextBox = styled.div`
-  width: 70%;
-  margin-left: 1vw;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    width: 78%;
-    align-self: flex-end;
-  }
-`;
-
-export const Title = styled.h1`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  font-family: "Righteous", cursive;
-  width: 100%;
-  color: black;
-  font-size: 3vw;
-  text-transform: uppercase;
-  margin: 1vw 0;
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 28px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    font-size: 26px;
-    justify-content: space-between;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    font-size: 17px;
+    width: calc(80% + 26px);
+    font-size: 15px;
+    padding: 10px;
   }
 `;
 
@@ -182,6 +132,12 @@ export const ContentBox = styled.div`
   align-items: center;
   justify-content: space-between;
   color: #cdc5c5;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Abilities = styled.div`

@@ -9,9 +9,14 @@ export const StatsBox = styled.div`
   flex-direction: column;
   gap: 0.5vw;
   text-align: center;
-
+  color: #d3caca;
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     width: 96%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 26px;
+    padding: 20px 0;
   }
 `;
 
@@ -43,7 +48,7 @@ export const FullBar = styled.div`
     font-size: 2vw;
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    font-size: 2.5vw;
+    font-size: 13px;
   }
 
   &:first-child {

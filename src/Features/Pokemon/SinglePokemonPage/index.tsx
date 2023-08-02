@@ -13,7 +13,6 @@ import { Error } from "../../../Base/Error";
 import { PokemonEvolve, SoloPokemonInfo } from "./singlePokemonInterfaces";
 import { Moves } from "./Moves";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
-import { BallImg } from "../../Moves/MovePage/styled";
 
 export const SinglePokemonPage = () => {
   const location = useLocation();

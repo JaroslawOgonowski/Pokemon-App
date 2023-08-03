@@ -116,7 +116,7 @@ export const TypePage = () => {
           <SubTitle>
             {`${ItemNamesEdit(data.name)} move list...`}{" "}
             <HideListButton onClick={handleTitleClick}>
-              {hideList ? "Show List 🔽" : "Hide list 🔼"}
+              {hideList ? "Show List ▼" : "Hide list ▲"}
             </HideListButton>
           </SubTitle>
         </SubTitleBox>

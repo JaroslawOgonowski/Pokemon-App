@@ -80,6 +80,7 @@ export const Trait = styled.div`
   width: 40%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 2vw;
   border: 1px solid #938b8b;
   border-radius: 1vw;
@@ -100,6 +101,11 @@ export const Description = styled.div`
   padding: 1vw;
   color: #d7cece;
   font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1vh;
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
   }

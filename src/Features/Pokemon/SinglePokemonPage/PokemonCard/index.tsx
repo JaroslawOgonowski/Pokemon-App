@@ -99,7 +99,7 @@ export const PokemonCard = ({
           <div>Color</div> <div>{ItemNamesEdit(`${color}`)}</div>
         </Trait>
         <Trait>
-          <div>Generation</div> <div>{generation?.name.toUpperCase()}</div>
+          <div>{generation?.name.toUpperCase()}</div>
         </Trait>
         <Trait>
           <div>Habitat</div>{" "}

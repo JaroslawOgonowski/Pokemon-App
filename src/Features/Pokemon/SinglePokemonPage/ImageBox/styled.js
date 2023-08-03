@@ -7,7 +7,9 @@ export const StyledImageBox = styled.div`
   justify-content: center;
   align-content: center;
   padding: 2vw;
-  margin-bottom: 5vw;
+  margin-bottom: 2vh;
+  background-color: white;
+  border-radius: 1vw;
 `;
 
 export const Container = styled.div`

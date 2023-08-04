@@ -12,9 +12,9 @@ export const StyledTypesList = styled.div`
   padding-bottom: 10vh;
   background-image: linear-gradient(
     0deg,
-    rgba(40, 36, 36, 0.963) 19%,
+    rgba(10, 10, 10, 0.963) 19%,
     rgba(0, 0, 0, 0.97) 74%,
-    rgba(0, 0, 0, 1) 100%
+    rgba(10, 10, 10, 1) 100%
   );
 `;
 

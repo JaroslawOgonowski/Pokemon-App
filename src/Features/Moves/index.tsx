@@ -28,28 +28,6 @@ export const Moves = () => {
         while the move Thunder Wave can paralyze the opponent and reduce its accuracy.\
         Moves in Pokémon games are a crucial element of strategy, and choosing the right moves and balancing them can greatly impact success in battles. Well - thought - out move combinations can help gain an advantage over opponents and secure victory in challenging encounters."
         }
-        sideBarText={[
-          {
-            name: "Pokemon",
-            link: "/Pokemon-App#/pokemon",
-          },
-          {
-            name: "Pokemon Types",
-            link: "/Pokemon-App#/types",
-          },          
-          {
-            name: "All abilities",
-            link: "/Pokemon-App#/abilities",
-          },
-          {
-            name: "Bulbapedia- moves",
-            link: "https://bulbapedia.bulbagarden.net/wiki/List_of_moves",
-          },
-          {
-            name: "Serebi attackdex",
-            link: "https://www.serebii.net/attackdex/",
-          },
-        ]}
       />
       <MovesTable />
     </>

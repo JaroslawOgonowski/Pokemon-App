@@ -19,28 +19,7 @@ export const Abilities = () => {
         In addition to the basic abilities, some Pokémon possess hidden abilities that are harder to find and require special conditions or circumstances. Hidden abilities can grant additional skills, such as ignoring the opponent's defense, receiving boosted attacks under specific conditions, or manipulating the opponent's stats.
         
         In summary, Pokémon abilities are a crucial part of strategy and tactics in battles. The diversity and differences among abilities make each Pokémon unique and require the appropriate approach to fully utilize their potential in combat."
-        sideBarText={[
-          {
-            name: "Pokemon",
-            link: "/Pokemon-App#/pokemon",
-          },
-          {
-            name: "Pokemon Types",
-            link: "/Pokemon-App#/types",
-          },          
-          {
-            name: "All moves",
-            link: "/Pokemon-App#/moves",
-          },
-          {
-            name: "Bulbapedia- abilities",
-            link: "https://bulbapedia.bulbagarden.net/wiki/Ability",
-          },
-          {
-            name: "Pokemon Database- abilities",
-            link: "https://pokemondb.net/ability",
-          },
-        ]}
+
       />
       <AllAbilities />
     </>

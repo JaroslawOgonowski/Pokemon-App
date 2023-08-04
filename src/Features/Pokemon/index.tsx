@@ -27,32 +27,6 @@ export const Pokemon = () => {
       Pokémon attracts fans from different age groups and countries, thanks to its universal appeal and the ability to unite people around a shared passion. This phenomenon is proof that a simple yet brilliant game concept, combined with adorable characters and an endless array of Pokémon to discover, can transcend the screen and enter the real world.\
       In summary, Pokémon is a story full of fascinating characters, unforgettable adventures, and the opportunity for collecting. This phenomenal world of gaming and entertainment continues to evolve and capture new generations of fans."
           }
-          sideBarText={[
-            {
-              name: "Pokemon Types",
-              link: "/Pokemon-App#/types",
-            },
-            {
-              name: "All abilities",
-              link: "/Pokemon-App#/abilities",
-            },
-            {
-              name: "All moves",
-              link: "/Pokemon-App#/moves",
-            },
-            {
-              name: "Serebii- national pokedex",
-              link: "https://www.serebii.net/pokemon/nationalpokedex.shtml",
-            },
-            {
-              name: "Bulbagarden- pokedex",
-              link: "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number",
-            },
-            {
-              name: "Pokemon database",
-              link: "https://pokemondb.net/pokedex/national",
-            },
-          ]}
         />
         <Gallery />
       </PokemonContainer>

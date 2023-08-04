@@ -4,11 +4,13 @@ import { css } from "styled-components";
 
 export const SidebarTitle = styled.button`
   position: absolute;
+  width: 3.5vw;
+  height: 3.5vw;
   left: 1vw;
   margin-top: 5vh;
   border: none;
   border-radius: 1%;
-  font-size: 1.5vw;
+  font-size: 3vw;
   background: none;
   color: white;
   font-family: "Righteous", cursive;

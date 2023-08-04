@@ -107,7 +107,7 @@ export const Team = () => {
             <Title>⇩ SAVED TEAMS ⇩</Title>
             {savedTeams.map((team, index) => (
               <TeamBox>
-                <Title> Team {index+1}</Title>
+                <Title> Team {index + 1}</Title>
                 <PkmBox key={index}>
                   {team.map(({ id, name }) => (
                     <PokemonTile key={id} id={id} name={name} />

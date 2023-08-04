@@ -4,10 +4,11 @@ import { css } from "styled-components";
 
 export const SidebarTitle = styled.button`
   position: absolute;
+  top: 6vw;
+  left: 1vw;
+  z-index: 99;
   width: 3.5vw;
   height: 3.5vw;
-  left: 1vw;
-  margin-top: 5vh;
   border: none;
   border-radius: 1%;
   font-size: 3vw;
@@ -34,6 +35,9 @@ export const SidebarTitle = styled.button`
 `;
 
 export const StyledSideBar = styled.ul`
+  position: absolute;
+  top: 6vw;
+  left:0;
   width: 20%;
   flex-grow: 1;
   padding: 1vw;
@@ -78,6 +82,7 @@ export const StyledSideBar = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    top:80px;
     margin: 0 auto;
     flex-direction: row;
     gap: 8px;

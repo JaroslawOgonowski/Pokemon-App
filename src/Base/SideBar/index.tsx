@@ -23,23 +23,48 @@ export const SideBar = () => {
       <SidebarTitle onClick={() => setSideBarOn(!sideBarOn)}>
         {sideBarOn ? "≡" : "×"}
       </SidebarTitle>
-      <ListItem>
-        <StyledA href="/Pokemon-App#/pokemon">Pokemon</StyledA>
-      </ListItem>
-      <ListItem>
-        <StyledA href="/Pokemon-App#/randomTeam">Team</StyledA>
-      </ListItem>
-      <ListItem>
-        <StyledA href="/Pokemon-App#/types">Pokemon Types</StyledA>
-      </ListItem>
-      <ListItem>
-        <StyledA href="/Pokemon-App#/abilities">Pokemon Abilities</StyledA>
-      </ListItem>
-      <ListItem>
-        <StyledA href="/Pokemon-App#/moves">All moves</StyledA>
-      </ListItem>
-
-      <StyledSideBar sideBarOn={sideBarOn}></StyledSideBar>
+      <StyledSideBar sideBarOn={sideBarOn}>
+        <ListItem>
+          <StyledA
+            onClick={() => setSideBarOn(!sideBarOn)}
+            href="/Pokemon-App#/pokemon"
+          >
+            Pokemon
+          </StyledA>
+        </ListItem>
+        <ListItem>
+          <StyledA
+            onClick={() => setSideBarOn(!sideBarOn)}
+            href="/Pokemon-App#/randomTeam"
+          >
+            Team
+          </StyledA>
+        </ListItem>
+        <ListItem>
+          <StyledA
+            onClick={() => setSideBarOn(!sideBarOn)}
+            href="/Pokemon-App#/types"
+          >
+            Pokemon Types
+          </StyledA>
+        </ListItem>
+        <ListItem>
+          <StyledA
+            onClick={() => setSideBarOn(!sideBarOn)}
+            href="/Pokemon-App#/abilities"
+          >
+            Pokemon Abilities
+          </StyledA>
+        </ListItem>
+        <ListItem>
+          <StyledA
+            onClick={() => setSideBarOn(!sideBarOn)}
+            href="/Pokemon-App#/moves"
+          >
+            All moves
+          </StyledA>
+        </ListItem>
+      </StyledSideBar>
     </>
   );
 };

@@ -15,6 +15,7 @@ import { TypesPage } from "../Features/Types";
 import { TypePage } from "../Features/Types/TypePage";
 import { Footer } from "../Base/Footer";
 import { Team } from "../Features/Team";
+import { SideBar } from "../Base/SideBar";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <ThemeProvider theme={normalTheme}>
           <GlobalStyle />
           <Header />
+          <SideBar/>
           <Routes>
             <Route path="/pokemon" element={<Pokemon />} />
             <Route path="/abilities" element={<Abilities />} />

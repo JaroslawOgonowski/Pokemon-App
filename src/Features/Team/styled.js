@@ -130,7 +130,7 @@ const glowingAnimationGenerate = keyframes`
 `;
 
 export const GenerateButton = styled.button`
-  width: 60%;
+  width: 50%;
   height: 10vh;
   margin-top: 10vh;
   margin-bottom: 8vh;

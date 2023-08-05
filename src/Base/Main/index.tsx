@@ -1,6 +1,6 @@
 import { Article } from "../../Common/Article";
 import { Title } from "../../Common/Title";
-import { ArticleColumn, MainBanner, StyledMain } from "./styled";
+import { ArticleColumn, Empty, MainBanner, StyledMain } from "./styled";
 
 interface MainProps {
   titleContent: string;
@@ -14,6 +14,7 @@ export const Main = (props: MainProps) => {
     <>
       <StyledMain key={props.titleContent}>
         <MainBanner>
+          <Empty/>
           <ArticleColumn>
             <Title titleContent={props.titleContent} />
             <Article

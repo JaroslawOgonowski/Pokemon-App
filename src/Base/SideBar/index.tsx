@@ -1,6 +1,5 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
-  LinkText,
   ListItem,
   SidebarTitle,
   StyledA,
@@ -20,7 +19,7 @@ export const SideBar = () => {
 
   return (
     <>
-      <SidebarTitle onClick={() => setSideBarOn(!sideBarOn)}>
+      <SidebarTitle sideBarOn={!sideBarOn} onClick={() => setSideBarOn(!sideBarOn)}>
         {sideBarOn ? "≡" : "×"}
       </SidebarTitle>
       <StyledSideBar sideBarOn={sideBarOn}>

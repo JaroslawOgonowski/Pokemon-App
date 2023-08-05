@@ -5,18 +5,20 @@ import { css } from "styled-components";
 export const SidebarTitle = styled.button`
   position: absolute;
   top: 6vw;
-  left: 1vw;
+  left: 0;
   z-index: 99;
   width: 3.5vw;
   height: 3.5vw;
   border: none;
-  border-radius: 1%;
+  border-radius: 0 0 0.5vw 0;
   font-size: 3vw;
   background: none;
   color: white;
   font-family: "Righteous", cursive;
   align-self: start;
   cursor: pointer;
+  transition: 500ms;
+  background-color: #080303a7;
 
   @media (max-width: 1000px) {
     margin-top: 3vh;
@@ -32,16 +34,23 @@ export const SidebarTitle = styled.button`
     text-align: center;
     background-color: #080303a7;
   }
+
+  ${({ sideBarOn }) =>
+    sideBarOn &&
+    css`
+      transform: translateX(17vw);
+      background-color: transparent;
+    `};
 `;
 
 export const StyledSideBar = styled.ul`
   position: absolute;
   top: 6vw;
-  left:0;
+  left: 0;
   width: 20%;
   flex-grow: 1;
   padding: 1vw;
-  padding-top: 5%;
+  padding-top: 3%;
   margin: 0;
   list-style: none;
   display: flex;
@@ -50,9 +59,10 @@ export const StyledSideBar = styled.ul`
   gap: 1vw;
   animation: sideBarAnimation 0.5s ease;
   flex-wrap: wrap;
-  background-color: #080303a7;
+  background-color: #080303e7;
   transition: 500ms;
-
+  z-index: 3;
+  padding-bottom: 10vh;
   li::before {
     content: "";
     display: inline-block;
@@ -82,7 +92,7 @@ export const StyledSideBar = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    top:80px;
+    top: 80px;
     margin: 0 auto;
     flex-direction: row;
     gap: 8px;

@@ -3,7 +3,7 @@ import mainBG from "./cute-pikachu-6o-2560x1440.jpg";
 
 export const StyledMain = styled.main`
   width: 100%;
-  margin: 6vw auto 10vh auto;
+  margin: 6vw auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +14,11 @@ export const StyledMain = styled.main`
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin: 80px auto;
   }
+`;
+
+export const Empty = styled.div`
+width: 20%;
+height: 100%;
 `;
 
 export const MainBanner = styled.div`

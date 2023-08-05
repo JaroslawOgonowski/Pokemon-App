@@ -67,6 +67,7 @@ export const BallImg = styled(Ball)`
   z-index: 0;
   overflow: hidden;
   animation: rotateAnim 8s linear infinite;
+  pointer-events: none;
   @keyframes rotateAnim {
     0% {
       transform: rotate(0);

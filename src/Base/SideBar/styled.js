@@ -20,14 +20,16 @@ export const SidebarTitle = styled.button`
   transition: 500ms;
   background-color: #080303a7;
 
-  @media (max-width: 1000px) {
-    margin-top: 3vh;
-  }
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    margin-top: 1vh;
-    font-size: 20px;
+    font-size: 50px;
   }
-
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  top: 80px;
+  left: auto;
+  right: 0;
+  width: 60px;
+  height: 60px;
+}
   @media (max-width: 550px) {
     top: 80px;
     max-width: 100%;
@@ -40,6 +42,11 @@ export const SidebarTitle = styled.button`
     css`
       transform: translateX(17vw);
       background-color: transparent;
+
+      @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        transform: translateX(0);
+        background: none;
+      }
     `};
 `;
 

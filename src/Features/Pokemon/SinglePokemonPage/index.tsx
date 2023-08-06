@@ -13,12 +13,13 @@ import { Error } from "../../../Base/Error";
 import { PokemonEvolve, SoloPokemonInfo } from "./singlePokemonInterfaces";
 import { Moves } from "./Moves";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
+import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
 
 export const SinglePokemonPage = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const pokeId = searchParams.get("pokeId");
-
+  useScrollToTop();
   const {
     isLoading: isLoadingInfo,
     isError: isErrorInfo,

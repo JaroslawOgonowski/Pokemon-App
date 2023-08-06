@@ -14,12 +14,13 @@ import {
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { PokemonTile } from "../../../Common/PokemonTile";
 import { BallImg } from "../../Moves/MovePage/styled";
+import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
 
 export const AbilityPage = (): JSX.Element => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const abilityId = searchParams.get("id");
-
+  useScrollToTop();
   const { isLoading, isError, data } = useQuery<any>(
     ["ability", { abilityId }],
     () => fetchAbility(abilityId)

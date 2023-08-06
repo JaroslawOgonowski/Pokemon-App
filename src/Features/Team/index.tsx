@@ -16,6 +16,7 @@ import {
   TitleBanner,
 } from "./styled";
 import { PokemonTile } from "../../Common/PokemonTile";
+import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
 
 type Pokemon = {
   id: number;
@@ -30,7 +31,7 @@ export const Team = () => {
   const [savedTeams, setSavedTeams] = useState<SavedTeams>([]);
   const [currentTeam, setCurrentTeam] = useState<Pokemon[]>([]);
   const [isTeamSaved, setIsTeamSaved] = useState(false);
-
+  useScrollToTop();
   useOffsetFromLocationSearch(startIndex, setStartIndex);
   const { isLoading, isError, data } = useQuery(
     ["team", { limit: limit, offset: startIndex }],

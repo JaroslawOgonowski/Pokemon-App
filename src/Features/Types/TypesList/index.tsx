@@ -8,7 +8,6 @@ import { StyledTypesList, TypesP, TypesRealationsImg } from "./styled";
 import { CenteredTitle } from "../../../Common/CenteredTitle";
 import typesRelationsNormal from "./0ot60vi6qmax.png";
 import typesRelationsMobile from "./af1ba9d66bbe3862749f40a5f36441b9.jpg";
-import { Team } from "../../Team";
 
 export const TypesList = () => {
   const limit = 50;

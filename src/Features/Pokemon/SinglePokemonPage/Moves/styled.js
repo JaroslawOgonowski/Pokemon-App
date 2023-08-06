@@ -11,7 +11,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   border: none;
-  font-family: 'Agdasima', sans-serif;
+  font-family: "Agdasima", sans-serif;
   border-radius: 5px;
   color: white;
   font-size: 1.6vw;

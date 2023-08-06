@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
-import {
-  ListItem,
-  SidebarTitle,
-  StyledA,
-  StyledSideBar,
-} from "./styled";
+import { useState } from "react";
+import { ListItem, SidebarTitle, StyledA, StyledSideBar } from "./styled";
 
 export const SideBar = () => {
   const [sideBarOn, setSideBarOn] = useState(true);
 
   return (
     <>
-      <SidebarTitle sideBarOn={!sideBarOn} onClick={() => setSideBarOn(!sideBarOn)}>
+      <SidebarTitle
+        sideBarOn={!sideBarOn}
+        onClick={() => setSideBarOn(!sideBarOn)}
+      >
         {sideBarOn ? "≡" : "×"}
       </SidebarTitle>
       <StyledSideBar sideBarOn={sideBarOn}>

@@ -17,7 +17,7 @@ interface Props {
 }
 
 export const MovesTable: React.FC<Props> = ({ moveList }) => {
-
+  useScrollToTop();
   const movesArray = Object.entries(allMovesJSON).map(([key, value]) => ({
     object: key,
     ...value,
@@ -45,19 +45,19 @@ export const MovesTable: React.FC<Props> = ({ moveList }) => {
 
   return (
     <>
-    <TableContainer>
-      <Table>
-        <MovesTableHeader
-          handleSort={(key, direction) => handleSort(key, direction)}
-          sortKey={sortKey}
-          sortDirection={sortDirection}
-        />
-        <tbody>
-          {sortedMoves.map((move: AllMovesData) => (
-            <MovesTableRow key={move.name} move={move} />
-          ))}
-        </tbody>
-      </Table>
+      <TableContainer>
+        <Table>
+          <MovesTableHeader
+            handleSort={(key, direction) => handleSort(key, direction)}
+            sortKey={sortKey}
+            sortDirection={sortDirection}
+          />
+          <tbody>
+            {sortedMoves.map((move: AllMovesData) => (
+              <MovesTableRow key={move.name} move={move} />
+            ))}
+          </tbody>
+        </Table>
       </TableContainer>
     </>
   );

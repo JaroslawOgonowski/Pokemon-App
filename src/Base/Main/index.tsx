@@ -14,7 +14,7 @@ export const Main = (props: MainProps) => {
     <>
       <StyledMain key={props.titleContent}>
         <MainBanner>
-          <Empty/>
+          <Empty />
           <ArticleColumn>
             <Title titleContent={props.titleContent} />
             <Article

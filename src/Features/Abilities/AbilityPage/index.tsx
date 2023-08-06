@@ -45,13 +45,13 @@ export const AbilityPage = (): JSX.Element => {
   else
     return (
       <StyledAbilityPage>
-        <Banner/>
+        <Banner />
         <CenteredTitle content={`${abilityName} (Ability)`} />
         <TextBox>
           <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>
           <Description>{data.effect_entries[1]?.effect}</Description>
         </TextBox>
-        <BallImg/>
+        <BallImg />
         <CenteredTitle content={"Pokemons with this ability:"} />
         <PokeAbility>
           {data.pokemon?.map((item: any) =>

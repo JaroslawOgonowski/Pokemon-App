@@ -54,7 +54,7 @@ export const AllAbilities = () => {
     <StyledAbilities>
       <Title ref={topRef}>Abilities List</Title>
       <AllAbilitiesContainer>
-        <BallImg/>
+        <BallImg />
         <Button disabled={offset === 0} onClick={handlePrevPageClick}>
           ◀
         </Button>

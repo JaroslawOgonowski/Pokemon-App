@@ -17,7 +17,7 @@ export const StyledTitle = styled.h1`
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 5s ease infinite;
-  
+
   @media (max-width: 550px) {
     width: 96%;
     font-size: 30px;

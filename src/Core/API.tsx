@@ -1,5 +1,3 @@
-//export const imageAPI = (id: number) => { `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg` }
-
 export const fetchGallery = async (
   limit: number,
   offset: number
@@ -75,9 +73,7 @@ export const fetchMoveById = async (moveId: string | null): Promise<any> => {
   );
 };
 
- export const fetchAllTypes = async (
-  limit: number,
-): Promise<any> => {
+export const fetchAllTypes = async (limit: number): Promise<any> => {
   const params = new URLSearchParams({
     limit: String(limit),
   });

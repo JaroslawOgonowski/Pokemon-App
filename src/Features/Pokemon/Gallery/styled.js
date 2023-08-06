@@ -71,9 +71,8 @@ export const Search = styled.input`
     font-size: 18px;
     border-radius: 35px;
     &:focus {
-    transform: scale(1.02);
-  }
-  
+      transform: scale(1.02);
+    }
   }
 `;
 

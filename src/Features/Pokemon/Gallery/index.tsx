@@ -113,8 +113,7 @@ export const Gallery = () => {
       />
       <GalleryBox>
         <ButtonBox>
-          <BaseButton disabled={startIndex === 0} 
-          onClick={handlePrevPageClick}>
+          <BaseButton disabled={startIndex === 0} onClick={handlePrevPageClick}>
             <Prev />
           </BaseButton>
           <FastButton
@@ -155,7 +154,7 @@ export const Gallery = () => {
           </FastButton>
         </ButtonBox>
       </GalleryBox>
-      <Footer/>
+      <Footer />
     </>
   ) : null;
 };

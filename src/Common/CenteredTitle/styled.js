@@ -8,10 +8,10 @@ export const Title = styled.h2`
   font-family: "Righteous", cursive;
   margin: 0 0 2vw 0;
   background-image: linear-gradient(
-  45deg,
-  rgba(109, 100, 100, 1) 0%,
-  rgba(211, 204, 204, 1) 100%
-);
+    45deg,
+    rgba(109, 100, 100, 1) 0%,
+    rgba(211, 204, 204, 1) 100%
+  );
 
   -webkit-background-clip: text;
   background-clip: text;

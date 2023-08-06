@@ -78,7 +78,6 @@ export const PokemonId = styled.div`
   color: rgba(120, 120, 120, 0.719);
   transition: color 500ms ease 0s;
 
-  
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     top: 60%;
   }

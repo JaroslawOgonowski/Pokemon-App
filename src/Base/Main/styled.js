@@ -17,10 +17,10 @@ export const StyledMain = styled.main`
 `;
 
 export const Empty = styled.div`
-width: 20%;
-height: 100%;
+  width: 20%;
+  height: 100%;
 
-@media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     display: none;
   }
 `;

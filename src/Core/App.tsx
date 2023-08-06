@@ -24,7 +24,7 @@ function App() {
         <ThemeProvider theme={normalTheme}>
           <GlobalStyle />
           <Header />
-          <SideBar/>
+          <SideBar />
           <Routes>
             <Route path="/pokemon" element={<Pokemon />} />
             <Route path="/abilities" element={<Abilities />} />

@@ -15,7 +15,7 @@ import {
 } from "./styled";
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 import { useEffect, useState } from "react";
-import { BallImg} from "../../../Moves/MovePage/styled";
+import { BallImg } from "../../../Moves/MovePage/styled";
 export interface Generation {
   name: string;
 }

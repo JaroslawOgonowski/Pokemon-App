@@ -78,6 +78,7 @@ export const StyledSideBar = styled.ul`
   transition: 500ms;
   z-index: 3;
   padding-bottom: 10vh;
+  border-radius: 0 0 0.5vw 0;
   li::before {
     content: "";
     display: inline-block;

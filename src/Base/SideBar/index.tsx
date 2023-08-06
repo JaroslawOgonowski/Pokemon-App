@@ -7,15 +7,7 @@ import {
 } from "./styled";
 
 export const SideBar = () => {
-  const [sideBarOn, setSideBarOn] = useState(window.innerWidth <= 550);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setSideBarOn(window.innerWidth <= 550);
-    };
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+  const [sideBarOn, setSideBarOn] = useState(true);
 
   return (
     <>

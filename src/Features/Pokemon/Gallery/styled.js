@@ -107,7 +107,12 @@ export const ButtonBox = styled.div`
   gap: 0;
   margin-top: 6vw;
   position: sticky;
-  top: 20%;
+  top: 16%;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    height: 60vh;
+    top: 25%;
+  }
 `;
 
 export const BaseButton = styled.button`

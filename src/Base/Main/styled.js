@@ -19,6 +19,10 @@ export const StyledMain = styled.main`
 export const Empty = styled.div`
 width: 20%;
 height: 100%;
+
+@media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    display: none;
+  }
 `;
 
 export const MainBanner = styled.div`

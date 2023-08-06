@@ -22,19 +22,19 @@ export const SidebarTitle = styled.button`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 50px;
+    width: 60px;
+    height: 60px;
   }
+
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-  top: 80px;
-  left: auto;
-  right: 0;
-  width: 60px;
-  height: 60px;
-}
-  @media (max-width: 550px) {
+    position: fixed;
     top: 80px;
-    max-width: 100%;
-    text-align: center;
+    left: auto;
+    right: 0;
+    border-radius: 0 0 0 10px;
     background-color: #080303a7;
+    text-align: center;
+    font-size: 50px;
   }
 
   ${({ sideBarOn }) =>
@@ -42,6 +42,13 @@ export const SidebarTitle = styled.button`
     css`
       transform: translateX(17vw);
       background-color: transparent;
+
+      @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+        transform: translateX(15vw);
+      }
+      @media (max-width: 820px) {
+        transform: translateX(14vw);
+      }
 
       @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
         transform: translateX(0);
@@ -55,6 +62,7 @@ export const StyledSideBar = styled.ul`
   top: 6vw;
   left: 0;
   width: 20%;
+  height: 80vh;
   flex-grow: 1;
   padding: 1vw;
   padding-top: 3%;
@@ -66,7 +74,7 @@ export const StyledSideBar = styled.ul`
   gap: 1vw;
   animation: sideBarAnimation 0.5s ease;
   flex-wrap: wrap;
-  background-color: #080303e7;
+  background-color: #080303f4;
   transition: 500ms;
   z-index: 3;
   padding-bottom: 10vh;
@@ -96,9 +104,14 @@ export const StyledSideBar = styled.ul`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     gap: 4vw;
+    padding-top: 50px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    height: 73vh;
+    position: fixed;
+    width: 100%;
+    padding-top: 60px;
     top: 80px;
     margin: 0 auto;
     flex-direction: row;
@@ -107,10 +120,7 @@ export const StyledSideBar = styled.ul`
     align-items: center;
     padding-bottom: 1.5vh;
   }
-  @media (max-width: 550px) {
-    width: 100%;
-    padding-top: 60px;
-  }
+
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     flex-wrap: wrap;
   }
@@ -154,10 +164,10 @@ export const ListItem = styled.li`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: fit-content;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     justify-content: center;
+    padding: 16px 0;
   }
+
   @media (max-width: 550px) {
     padding: 8px 0;
   }
@@ -180,12 +190,7 @@ export const StyledA = styled.a`
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    margin-left: 12px;
-    font-size: 14px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   &:hover {

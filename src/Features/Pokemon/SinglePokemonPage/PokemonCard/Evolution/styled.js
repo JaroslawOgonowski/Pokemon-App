@@ -28,6 +28,9 @@ export const EvolutionTitle = styled.h2`
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 20px;
   }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    align-self: center;
+  }
 `;
 
 export const StyledEvolutinImage = styled.img`
@@ -53,6 +56,9 @@ export const EvolutionBox = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     margin-left: 0;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    align-self: center;
   }
 `;
 

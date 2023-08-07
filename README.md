@@ -1,5 +1,12 @@
-# Project in the initial phase 😎🚧
+# Open no redux project
 
+Project goal was, of course, to enhance my programming skills encompassing the realm of frontend development. Throughout the project, I harnessed a toolkit that included React, Styled-Components, TypeScript, TanStack Query, Color Thief, and React Router DOM. A conscious decision was made to fully explore the capabilities of TanStack Query, thereby forgoing the use of Redux or Sagas. Instead, I opted to manage individual states directly within the components. The results were nothing short of astonishing - TanStack Query emerged as a seamlessly integrated companion to React, elevating data fetching and management to new heights.
+
+By embracing this approach, I empowered components to wield their own data management responsibilities, leading to a streamlined and highly efficient architecture. The strategic synergy of React and TanStack Query transformed mundane data fetching into a dynamic and fluid experience. With queries and mutations seamlessly integrated into components, the entire ecosystem became more responsive, ensuring that data flows harmoniously between the server and the user interface.
+
+Furthermore, the decision to bypass the conventional Redux path in favor of a TanStack Query-powered paradigm showcased a commitment to innovation and modern development paradigms. This approach underscores a dedication to staying on the cutting edge of industry trends, all while leveraging the full power of the React ecosystem.
+
+Incorporating TanStack Query has opened a gateway to a future where frontend development embraces not just the present, but also the promise of tomorrow. The project's journey, bolstered by the capabilities of TanStack Query, serves as a testament to the ability of modern tooling to elevate the art of frontend development to new dimensions. As a developer, this exploration not only deepened my technical prowess but also expanded my horizons, transforming me into a purveyor of efficient and forward-looking frontend experiences.
 # Fan-made Pokemon Application
 Welcome to our fan-made Pokemon application! This app is dedicated to providing you with a comprehensive collection of Pokemon information, including a gallery of Pokemon images, details about their attacks, abilities, and evolution.
 

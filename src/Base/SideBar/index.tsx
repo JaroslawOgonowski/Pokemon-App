@@ -2,13 +2,12 @@ import { useState } from "react";
 import { ListItem, SidebarTitle, StyledA, StyledSideBar } from "./styled";
 
 export const SideBar = () => {
-
   const sideBarOnScreenWidth = () => {
-    if (window.innerWidth >= 767 ) return false
-    else return true
-  }
+    if (window.innerWidth >= 767) return false;
+    else return true;
+  };
 
-  const [sideBarOn, setSideBarOn] = useState(sideBarOnScreenWidth() );
+  const [sideBarOn, setSideBarOn] = useState(sideBarOnScreenWidth());
 
   return (
     <>

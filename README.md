@@ -7,6 +7,15 @@ By embracing this approach, I empowered components to wield their own data manag
 Furthermore, the decision to bypass the conventional Redux path in favor of a TanStack Query-powered paradigm showcased a commitment to innovation and modern development paradigms. This approach underscores a dedication to staying on the cutting edge of industry trends, all while leveraging the full power of the React ecosystem.
 
 Incorporating TanStack Query has opened a gateway to a future where frontend development embraces not just the present, but also the promise of tomorrow. The project's journey, bolstered by the capabilities of TanStack Query, serves as a testament to the ability of modern tooling to elevate the art of frontend development to new dimensions. As a developer, this exploration not only deepened my technical prowess but also expanded my horizons, transforming me into a purveyor of efficient and forward-looking frontend experiences.
+
+## Style
+The visual layer itself proved to be quite a substantial challenge - while implementing the concept using Styled Components was relatively straightforward, devising and maintaining a consistent design across all layers posed a considerably greater difficulty. Given that this is my original project, a significant amount of time was dedicated to conceptualizing the visual aspects and ensuring their cohesiveness.
+
+The journey of visual realization brought to light the intricate dance between creativity and technical execution. Translating an idea into a tangible, harmonious design extended beyond the realms of code, requiring a delicate balance of aesthetics, usability, and innovation. In this pursuit, every pixel and interaction carried the weight of intent, and each decision played a role in weaving a tapestry of user experience.
+
+The process of crafting a unified design language, one that seamlessly spans from the user interface to the underlying architecture, was akin to orchestrating a symphony. Striking the right chords across diverse components, layouts, and interactions was an art that demanded meticulous attention to detail and an unwavering commitment to achieving visual resonance.
+
+This journey, marked by the pursuit of design coherence, encapsulated the essence of craftsmanship in the digital realm. It served as a reminder that while technology empowers us with tools, it's the creative vision and dedication to aesthetic excellence that breathe life into a project. As the custodian of this endeavor, I not only refined my ability to translate ideas into visuals but also embraced the artistry that elevates a digital creation into an immersive and captivating experience.
 # Fan-made Pokemon Application
 Welcome to our fan-made Pokemon application! This app is dedicated to providing you with a comprehensive collection of Pokemon information, including a gallery of Pokemon images, details about their attacks, abilities, and evolution.
 

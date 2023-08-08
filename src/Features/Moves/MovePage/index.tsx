@@ -138,26 +138,27 @@ export const MovePage = () => {
               <BallImg />
             </Movestats>
           </MoveBaseInfo>
-
           <AdditionalInfoBanner>
             <SubTitle>More...</SubTitle>
           </AdditionalInfoBanner>
+          <BallImg2 />
           <AdditionalInfo>
             <AdditionalInfoContent>
-              <BallImg2 />
               Contest Type:{" "}
               {data?.contest_type
                 ? ItemNamesEdit(data?.contest_type?.name)
                 : "None"}
               <SubTitle>Pokemon that can learn to move:</SubTitle>
               <PokeAbility>
-                {data.learned_by_pokemon?.map((item: any) => (
-                  <PokemonTile
-                    key={item.name}
-                    id={getPokeIdValue(item.url)}
-                    name={item.name}
-                  />
-                ))}
+                {data.learned_by_pokemon?.map((item: any) =>
+                  getPokeIdValue(item.url) <= 1010 ? (
+                    <PokemonTile
+                      key={item.name}
+                      id={getPokeIdValue(item.url)}
+                      name={item.name}
+                    />
+                  ) : null
+                )}
               </PokeAbility>
             </AdditionalInfoContent>
           </AdditionalInfo>

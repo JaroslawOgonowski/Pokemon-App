@@ -140,7 +140,7 @@ export const AdditionalInfoContent = styled.div`
 `;
 
 export const BallImg2 = styled(BallImg)`
-  top: 110%;
+  top: 110vh;
   left: -340px;
   color: rgba(16, 16, 17, 0.442);
 `;

@@ -49,6 +49,15 @@ export const Header = () => {
           Types
         </StyledNavLink>
       );
+    } else if (location.includes("/randomTeam")) {
+      return (
+        <StyledNavLink
+          to="/randomTeam"
+          activator={location.includes("randomTeam") ? activator : null}
+        >
+          Team
+        </StyledNavLink>
+      );
     } else
       return (
         <StyledNavLink
@@ -66,15 +75,7 @@ export const Header = () => {
         <LogoLink href="https://jaroslawogonowski.github.io/Pokemon-App/">
           <Logo src={logo} />
         </LogoLink>
-        <StyledNavigation>
-          {activeLink()}
-          <StyledNavLink
-            to="/randomTeam"
-            activator={location.includes("/randomTeam") ? activator : null}
-          >
-            My Team
-          </StyledNavLink>
-        </StyledNavigation>
+        <StyledNavigation>{activeLink()}</StyledNavigation>
       </StyledHeader>
     </>
   );

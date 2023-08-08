@@ -31,12 +31,13 @@ import {
 import TypeIcon from "../../../Common/TypeIcon";
 import { PokeAbility } from "../../Abilities/AbilityPage/styled";
 import { PokemonTile } from "../../../Common/PokemonTile";
+import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
 
 export const MovePage = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const moveId = searchParams.get("id");
-
+  useScrollToTop();
   const { isLoading, isError, data } = useQuery<any>(
     ["moveById", { moveId }],
     () => fetchMoveById(moveId)

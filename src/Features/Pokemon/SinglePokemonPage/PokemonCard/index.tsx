@@ -12,10 +12,12 @@ import {
   Traits,
   Trait,
   ContentBox,
+  AddToFav,
 } from "./styled";
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 import { useEffect, useState } from "react";
 import { BallImg } from "../../../Moves/MovePage/styled";
+import { ReactComponent as Star } from "../../../Favorite/star.svg";
 export interface Generation {
   name: string;
 }
@@ -77,6 +79,9 @@ export const PokemonCard = ({
     <Wrapper>
       <BallImg />
       <CardImage color={color}>
+        <AddToFav>
+          <Star />
+        </AddToFav>
         <img alt={pokemonName} src={currentSource} />
       </CardImage>
       <Traits>

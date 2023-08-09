@@ -1,7 +1,7 @@
 import { readableColor } from "polished";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+import star from "../../../Favorite/star.svg"
 export const Wrapper = styled.div`
   margin-top: 2vw;
   width: 98%;
@@ -15,6 +15,38 @@ export const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
+
+export const AddToFav = styled.div`
+  width: 5vh;
+  height: 5vh;
+  z-index: 999;
+  color: #948c8cdb;
+  position: absolute;
+  left: 10%;
+  top: 200px;
+  cursor: pointer;
+
+  &:hover::before {
+    content: "Add to favorite";
+    position: absolute;
+    left: 12%;
+    top: 37%;
+    transform: translateY(-50%); 
+    color: #e9f420;
+    width: 150px; 
+    background-color: white; 
+    padding: 5px; 
+    border-radius: 5px; 
+    text-align: center; 
+    transition: all 0.3s ease; 
+  }
+
+  &:hover {
+    color: #e9f420;
+    width: 15vh;
+  }
+`;
+
 
 export const CardImage = styled.div`
   width: 20vw;

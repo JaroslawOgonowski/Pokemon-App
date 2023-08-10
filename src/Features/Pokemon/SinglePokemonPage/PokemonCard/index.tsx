@@ -16,6 +16,7 @@ import {
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 import { useEffect, useState } from "react";
 import { BallImg } from "../../../Moves/MovePage/styled";
+import { AddToFav } from "../../../../Common/AddToFav";
 
 export interface Generation {
   name: string;
@@ -76,6 +77,10 @@ export const PokemonCard = ({
 
   return (
     <Wrapper>
+      <AddToFav
+      top={16}
+      left={10}
+      />
       <BallImg />
       <CardImage color={color}>        
         <img alt={pokemonName} src={currentSource} />

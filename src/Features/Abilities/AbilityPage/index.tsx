@@ -15,6 +15,7 @@ import { CenteredTitle } from "../../../Common/CenteredTitle";
 import { PokemonTile } from "../../../Common/PokemonTile";
 import { BallImg } from "../../Moves/MovePage/styled";
 import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
+import AddToFav from "../../../Common/AddToFav";
 
 export const AbilityPage = (): JSX.Element => {
   const location = useLocation();
@@ -47,6 +48,7 @@ export const AbilityPage = (): JSX.Element => {
       <StyledAbilityPage>
         <Banner />
         <CenteredTitle content={`${abilityName} (Ability)`} />
+        <AddToFav/>
         <TextBox>
           <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>
           <Description>{data.effect_entries[1]?.effect}</Description>

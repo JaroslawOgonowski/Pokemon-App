@@ -14,6 +14,7 @@ import { PokemonEvolve, SoloPokemonInfo } from "./singlePokemonInterfaces";
 import { Moves } from "./Moves";
 import { ItemNamesEdit } from "../../../Common/reusableFunctions/itemNamesEdit";
 import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
+import AddToFav from "../../../Common/AddToFav";
 
 export const SinglePokemonPage = () => {
   const location = useLocation();
@@ -63,6 +64,7 @@ export const SinglePokemonPage = () => {
         <PokemonName>
           {ItemNamesEdit(data?.name)} #{pokeId}
         </PokemonName>
+        <AddToFav />
       </TitleBanner>
       <PokemonCard
         pokeId={pokeId}

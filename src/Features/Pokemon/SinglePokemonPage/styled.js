@@ -40,8 +40,10 @@ export const TitleBanner = styled.div`
   background-size: cover;
   background-position: 50% 0%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  box-shadow: 0px 10px 30px 10px rgba(12, 13, 12, 0.542);
+  
+box-shadow: 0px 10px 30px 10px rgba(12, 13, 12, 0.542);
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 15vh;
   }
@@ -51,7 +53,9 @@ export const PokemonName = styled.h1`
   width: 100%;
   font-size: 3vw;
   font-family: "Righteous", cursive;
-  margin: 2vw 10%;
+  margin-left: 20%;
+  margin-top: 7vh;
+  margin-bottom: 2vh;
   background-image: linear-gradient(
     90deg,
     rgba(231, 241, 241, 1) 0%,

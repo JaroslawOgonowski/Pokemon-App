@@ -33,12 +33,10 @@ export const StyledAddToFav = styled.div`
   width: 5vh;
   height: 5vh;
   color: #948c8cdb;
-  position: absolute;
-  left: ${(props)=>props.left}%;
-  top: ${(props)=>props.top}vh;
   cursor: pointer;
   transition: 500ms;
-
+  align-self: flex-start;
+  margin-left: 10%;
   &:hover {
     color: #e9f420;
 

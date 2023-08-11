@@ -1,15 +1,9 @@
-import React from "react";
 import { FavText, StyledAddToFav, StyledStar } from "./styled";
 
-interface AddToFavProps {
-  top: number;
-  left: number;
 
-}
-
-export const AddToFav: React.FC<AddToFavProps> = ({ top, left }) => {
+export const AddToFav = () => {
   return (
-    <StyledAddToFav top={top} left={left}>
+    <StyledAddToFav>
       <StyledStar />
       <FavText>Add to favorite</FavText>
     </StyledAddToFav>

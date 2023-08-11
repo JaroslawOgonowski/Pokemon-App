@@ -1,3 +1,4 @@
+
 import { MoveEntry } from "./Moves/movesInterface";
 import { Abilities, Generation, Habitat, PokemonType } from "./PokemonCard";
 

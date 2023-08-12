@@ -16,6 +16,7 @@ import { TypePage } from "../Features/Types/TypePage";
 import { Footer } from "../Base/Footer";
 import { Team } from "../Features/Team";
 import { SideBar } from "../Base/SideBar";
+import { Favorite } from "../Features/Favorite";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/types" element={<TypesPage />} />
             <Route path="/type" element={<TypePage />} />
             <Route path="/randomTeam" element={<Team />} />
+            <Route path="/favorite" element={<Favorite />} />
             <Route path="/" element={<Pokemon />} />
           </Routes>
           <Footer />

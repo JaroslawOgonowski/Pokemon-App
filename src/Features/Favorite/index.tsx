@@ -1,5 +1,11 @@
+import { Banner, FavoriteStyledPage, Title } from "./styled";
+
 export const Favorite = () => {
-  return(
-    <h1>Favorite</h1>
-  )
-}
+  return (
+    <FavoriteStyledPage>
+      <Banner>
+        <Title>Favorite</Title>
+      </Banner>
+    </FavoriteStyledPage>
+  );
+};

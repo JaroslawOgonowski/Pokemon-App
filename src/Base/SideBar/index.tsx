@@ -58,6 +58,14 @@ export const SideBar = () => {
             All moves
           </StyledA>
         </ListItem>
+        <ListItem>
+          <StyledA
+            onClick={() => setSideBarOn(!sideBarOn)}
+            href="/Pokemon-App#/favorite"
+          >
+            Favorite
+          </StyledA>
+        </ListItem>
       </StyledSideBar>
     </>
   );

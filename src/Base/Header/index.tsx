@@ -58,6 +58,15 @@ export const Header = () => {
           Team
         </StyledNavLink>
       );
+    } else if (location.includes("/favorite")) {
+      return (
+        <StyledNavLink
+          to="/favorite"
+          activator={location.includes("favorite") ? activator : null}
+        >
+          Favorite
+        </StyledNavLink>
+      );
     } else
       return (
         <StyledNavLink

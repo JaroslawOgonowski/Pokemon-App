@@ -42,10 +42,12 @@ export const TitleBanner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-box-shadow: 0px 10px 30px 10px rgba(12, 13, 12, 0.542);
+  box-shadow: 0px 10px 30px 10px rgba(12, 13, 12, 0.542);
+
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    height: 15vh;
+    justify-content: center;
+    height: 18vh;
+    gap: 3vh;
   }
 `;
 
@@ -90,5 +92,10 @@ export const PokemonName = styled.h1`
       rgba(248, 254, 254, 1) 0%,
       rgba(212, 218, 234, 0.971) 100%
     );
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 20px;
+    margin-left: 10%;
   }
 `;

@@ -29,6 +29,7 @@ export const StyledAbilityPage = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     padding-top: 80px;
+    gap: 2vh;
   }
 `;
 

@@ -19,7 +19,7 @@ export const FavText = styled.div`
   width: 22vh;
   font-size: 2.5vh;
   margin-top: -2.5vh;
-  margin-left: -2vh;
+  margin-left: -1vh;
   transform: translateY(-50%);
   color: white;
   background-color: #0c0b0bdb;
@@ -45,6 +45,11 @@ export const StyledAddToFav = styled.div`
       visibility: visible;
       animation: ${fadeIn} 0.5s ease-in-out;
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 20px;
+    margin-left: 10%;
   }
 `;
 

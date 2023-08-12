@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Pokemon-App/static/js/main.39de1428.js",
+    "main.js": "/Pokemon-App/static/js/main.94eb0aa4.js",
     "static/js/787.a8fe51ff.chunk.js": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js",
     "static/media/0ot60vi6qmax.png": "/Pokemon-App/static/media/0ot60vi6qmax.f31760db813535f8b89a.png",
     "static/media/cute-pikachu-6o-2560x1440.jpg": "/Pokemon-App/static/media/cute-pikachu-6o-2560x1440.56b5039c9431a0cf9754.jpg",
@@ -22,6 +22,7 @@
     "static/media/pokemon_play_pokemon_banner-green.jpg": "/Pokemon-App/static/media/pokemon_play_pokemon_banner-green.53e1c6c3bde8016774d3.jpg",
     "static/media/GO_Fighting.png": "/Pokemon-App/static/media/GO_Fighting.e257c155c9da9fd6b3be.png",
     "static/media/pokeball-svgrepo-com.svg": "/Pokemon-App/static/media/pokeball-svgrepo-com.e8e0b112fb6e9090350024b0c294ceb9.svg",
+    "static/media/star.svg": "/Pokemon-App/static/media/star.2bb9edc0212ffac215f7eb766927db86.svg",
     "index.html": "/Pokemon-App/index.html",
     "static/media/Perish.svg": "/Pokemon-App/static/media/Perish.a0e737cd130d67192dca795e8326fa09.svg",
     "static/media/right-arrow-next-svgrepo-com.svg": "/Pokemon-App/static/media/right-arrow-next-svgrepo-com.c8f19b4787229351bbb029c05fb0197d.svg",
@@ -48,10 +49,10 @@
     "static/media/silence.svg": "/Pokemon-App/static/media/silence.f4dc596def223012fdb1be1ac70ebc54.svg",
     "static/media/elektro.svg": "/Pokemon-App/static/media/elektro.6f01d10cec8b2fa5a266482dddfec67b.svg",
     "static/media/bolt_FILL0_wght400_GRAD0_opsz48.svg": "/Pokemon-App/static/media/bolt_FILL0_wght400_GRAD0_opsz48.6f41745e7000983f40ca37dd4dce53c4.svg",
-    "main.39de1428.js.map": "/Pokemon-App/static/js/main.39de1428.js.map",
+    "main.94eb0aa4.js.map": "/Pokemon-App/static/js/main.94eb0aa4.js.map",
     "787.a8fe51ff.chunk.js.map": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.39de1428.js"
+    "static/js/main.94eb0aa4.js"
   ]
 }

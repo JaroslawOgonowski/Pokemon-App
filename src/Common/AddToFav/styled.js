@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as Star } from "./star.svg";
 import { keyframes } from "styled-components";
+import { css } from "styled-components";
 
 const fadeIn = keyframes`
   from {
@@ -50,4 +51,11 @@ export const StyledAddToFav = styled.div`
 export const StyledStar = styled(Star)`
   z-index: 1;
   position: relative;
+  color: #948c8cdb;
+
+  ${({ isSaved }) =>
+    isSaved &&
+    css`
+      color: #e9f420;
+    `}
 `;

@@ -1,30 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FavText, StyledAddToFav, StyledStar } from "./styled";
 
 interface Props {
+  category: string;
   savedInfo: any;
 }
 
-interface SavedFav {
-  // Zdefiniuj odpowiedni interfejs dla SavedFav, jeśli to konieczne
-  // np. { id: number; title: string; ... }
+interface SavedFavItem {
+  category: string;
+  info: any;
 }
 
-const AddToFav: React.FC<Props> = ({ savedInfo }) => {
+const AddToFav: React.FC<Props> = ({ category, savedInfo }) => {
   const [isSaved, setIsSaved] = useState(false);
-  const [savedFav, setSavedFav] = useState<SavedFav[]>([]);
+  const [savedFav, setSavedFav] = useState<SavedFavItem[]>([]);
 
-  const handleAddToFav = () => {
-    const updatedSavedFav: SavedFav[] = [...savedFav, savedInfo];
-    setSavedFav(updatedSavedFav);
-    localStorage.setItem("savedFav", JSON.stringify(updatedSavedFav));
-    setIsSaved(true);
+  useEffect(() => {
+    const savedFavFromLocalStorage = localStorage.getItem("savedFav");
+    if (savedFavFromLocalStorage) {
+      setSavedFav(JSON.parse(savedFavFromLocalStorage));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("savedFav", JSON.stringify(savedFav));
+  }, [savedFav]);
+
+  useEffect(() => {
+    const existingSavedItem = savedFav.find(item => item.info === savedInfo);
+    if (existingSavedItem) {
+      setIsSaved(true);
+    } else {
+      setIsSaved(false);
+    }
+  }, [savedFav, category]);
+
+  const handleToggleFav = () => {
+    const existingSavedItem = savedFav.find(item => item.info === savedInfo);
+
+    if (!existingSavedItem) {
+      const updatedSavedFav: SavedFavItem[] = [...savedFav, { category, info: savedInfo }];
+      setSavedFav(updatedSavedFav);
+    } else {
+      const updatedSavedFav = savedFav.filter(item => item.info !== savedInfo);
+      setSavedFav(updatedSavedFav);
+    }
   };
 
   return (
-    <StyledAddToFav onClick={handleAddToFav}>
-      <StyledStar />
-      <FavText>{isSaved ? "Added to favorite" : "Add to favorite"}</FavText>
+    <StyledAddToFav onClick={handleToggleFav}>
+      <StyledStar isSaved={isSaved} />
+      <FavText>{isSaved ? "Added to favorites" : "Add to favorites"}</FavText>
     </StyledAddToFav>
   );
 };

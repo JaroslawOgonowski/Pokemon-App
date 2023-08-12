@@ -42,6 +42,7 @@ export const TypeDiv = styled.div`
 `;
 
 export const MoveBaseInfo = styled.div`
+  padding-top: 2vh;
   margin: 0 auto;
   padding-bottom: 50px;
   display: flex;

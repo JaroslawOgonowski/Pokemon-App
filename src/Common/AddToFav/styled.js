@@ -49,7 +49,7 @@ export const StyledAddToFav = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 20px;
-    margin-left: 10%;
+    margin-left: 16px;
   }
 `;
 

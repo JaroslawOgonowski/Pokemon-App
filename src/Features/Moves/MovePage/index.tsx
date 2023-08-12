@@ -32,6 +32,7 @@ import TypeIcon from "../../../Common/TypeIcon";
 import { PokeAbility } from "../../Abilities/AbilityPage/styled";
 import { PokemonTile } from "../../../Common/PokemonTile";
 import { useScrollToTop } from "../../../Common/reusableFunctions/useScrollToTop";
+import AddToFav from "../../../Common/AddToFav";
 
 export const MovePage = () => {
   const location = useLocation();
@@ -74,6 +75,7 @@ export const MovePage = () => {
             </TypeDiv>
           </Banner>
           <MoveBaseInfo>
+            <AddToFav category="move" savedInfo={data.name} />
             <Movestats>
               <Description>
                 {englishFlavorText.flavor_text}

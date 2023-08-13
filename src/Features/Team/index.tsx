@@ -31,6 +31,7 @@ export const Team = () => {
   const [savedTeams, setSavedTeams] = useState<SavedTeams>([]);
   const [currentTeam, setCurrentTeam] = useState<Pokemon[]>([]);
   const [isTeamSaved, setIsTeamSaved] = useState(false);
+  
   useScrollToTop();
   useOffsetFromLocationSearch(startIndex, setStartIndex);
   const { isLoading, isError, data } = useQuery(

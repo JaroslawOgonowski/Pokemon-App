@@ -64,7 +64,7 @@ export const SinglePokemonPage = () => {
         <PokemonName>
           {ItemNamesEdit(data?.name)} #{pokeId}
         </PokemonName>
-        <AddToFav savedInfo={data?.name} category="pokemon"/>
+        <AddToFav savedInfo={{ id: pokeId, name: data?.name }} category="pokemon" />
       </TitleBanner>
       <PokemonCard
         pokeId={pokeId}

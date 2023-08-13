@@ -99,3 +99,7 @@ export const PokemonName = styled.h1`
     margin-left: 10%;
   }
 `;
+
+export const FavPokemon = styled.div`
+
+`;

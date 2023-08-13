@@ -81,3 +81,7 @@ export const Title = styled.h1`
 export const FavMoves = styled.div`
 
 `;
+
+export const FavAbilities = styled.div`
+
+`;

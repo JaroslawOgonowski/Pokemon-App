@@ -48,7 +48,7 @@ export const AbilityPage = (): JSX.Element => {
       <StyledAbilityPage>
         <Banner />
         <CenteredTitle content={`${abilityName} (Ability)`} />
-        <AddToFav savedInfo={data.name} category="ability"/>
+        <AddToFav savedInfo={data.name} category="ability" favAdditionalInfo=""/>
         <TextBox>
           <GenInfo>First saw in: {data.generation.name.toUpperCase()}</GenInfo>
           <Description>{data.effect_entries[1]?.effect}</Description>

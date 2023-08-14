@@ -11,20 +11,11 @@ import { PokeAbility } from "../Abilities/AbilityPage/styled";
 import { MovesTable } from "../Moves/MovesTable";
 import { AbilityItem, StyledLink } from "../Abilities/AllAbilities/styled";
 import { ItemNamesEdit } from "../../Common/reusableFunctions/itemNamesEdit";
-
-interface Pokemon {
-  id: number;
-  name: string;
-}
-
-interface Move {
-  url: string;
-  name: string;
-}
-
 interface FavoriteItems {
+  favAdditionalInfo: any;
   category: string;
-  info: Pokemon | Move | string;
+  info: string;
+  additionalInfo: string | null;
 }
 
 const NoFavoriteItems: React.FC = () => (
@@ -33,26 +24,28 @@ const NoFavoriteItems: React.FC = () => (
   </div>
 );
 
-export const Favorite = () => {
-  const [favoritePokemons, setFavoritePokemons] = useState<Pokemon[]>([]);
-  const [favoriteMoves, setFavoriteMoves] = useState<Move[]>([]);
-  const [favoriteAbilities, setFavoriteAbilities] = useState<string[]>([]);
+export const Favorite: React.FC = () => {
+  const [favoritePokemons, setFavoritePokemons] = useState<FavoriteItems[]>([]);
+  const [favoriteMoves, setFavoriteMoves] = useState<FavoriteItems[]>([]);
+  const [favoriteAbilities, setFavoriteAbilities] = useState<FavoriteItems[]>(
+    []
+  );
 
   useEffect(() => {
     const savedFavFromLocalStorage = localStorage.getItem("savedFav");
     if (savedFavFromLocalStorage) {
       const savedFavParsed = JSON.parse(savedFavFromLocalStorage);
-      const favoritePokemons = savedFavParsed
-        .filter((item: FavoriteItems) => item.category === "pokemon")
-        .map((item: FavoriteItems) => item.info as Pokemon);
+      const favoritePokemons = savedFavParsed.filter(
+        (item: FavoriteItems) => item.category === "pokemon"
+      );
 
-      const favoriteMoves = savedFavParsed
-        .filter((item: FavoriteItems) => item.category === "moves")
-        .map((item: FavoriteItems) => item.info as Move);
+      const favoriteMoves = savedFavParsed.filter(
+        (item: FavoriteItems) => item.category === "move"
+      );
 
-      const favoriteAbilities = savedFavParsed
-        .filter((item: FavoriteItems) => item.category === "ability")
-        .map((item: FavoriteItems) => item.info as string);
+      const favoriteAbilities = savedFavParsed.filter(
+        (item: FavoriteItems) => item.category === "ability"
+      );
 
       setFavoritePokemons(favoritePokemons);
       setFavoriteMoves(favoriteMoves);
@@ -60,11 +53,10 @@ export const Favorite = () => {
     }
   }, []);
 
-  const hasFavoriteItems = (
+  const hasFavoriteItems =
     favoritePokemons.length > 0 ||
     favoriteMoves.length > 0 ||
-    favoriteAbilities.length > 0
-  );
+    favoriteAbilities.length > 0;
 
   return (
     <FavoriteStyledPage>
@@ -73,39 +65,47 @@ export const Favorite = () => {
       </Banner>
       {hasFavoriteItems ? (
         <>
-          {favoritePokemons.length !== 0 ? (
+          {favoritePokemons.length !== 0 && (
             <>
               <Title>Favorite Pokemons</Title>
               <PokeAbility>
                 {favoritePokemons.map((pokemon, index) => (
                   <PokemonTile
                     key={index}
-                    name={pokemon.name}
-                    id={pokemon.id - 1}
+                    name={pokemon.info}
+                    id={Number(pokemon.favAdditionalInfo) -1}
                   />
                 ))}
               </PokeAbility>
             </>
-          ) : null}
-          {favoriteMoves.length !== 0 ? (
+          )}
+          {favoriteMoves.length !== 0 && (
             <>
               <Title>Favorite moves</Title>
               <FavMoves>
-                <MovesTable moveList={favoriteMoves} />
+                <MovesTable
+                  moveList={favoriteMoves.map((item) => ({
+                    name: item.info,
+                    url: item.additionalInfo ? item.additionalInfo : "",
+                  }))}
+                />
               </FavMoves>{" "}
             </>
-          ) : null}
-          {favoriteAbilities.length !== 0 ? (
+          )}
+          {favoriteAbilities.length !== 0 && (
             <FavAbilities>
               {favoriteAbilities.map((ability, index) => (
-                <StyledLink key={`${ability}Link`} to={`/ability?id=${ability}`}>
+                <StyledLink
+                  key={`${ability.info}Link`}
+                  to={`/ability?id=${ability.info}`}
+                >
                   <AbilityItem key={index}>
-                    {ItemNamesEdit(`${ability}`)}
+                    {ItemNamesEdit(ability.info)}
                   </AbilityItem>
                 </StyledLink>
               ))}
             </FavAbilities>
-          ) : null}
+          )}
         </>
       ) : (
         <NoFavoriteItems />

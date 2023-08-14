@@ -4,14 +4,16 @@ import { FavText, StyledAddToFav, StyledStar } from "./styled";
 interface Props {
   category: string;
   savedInfo: any;
+  favAdditionalInfo: string | null;
 }
 
 interface SavedFavItem {
   category: string;
   info: any;
+  favAdditionalInfo: string | null;
 }
 
-const AddToFav: React.FC<Props> = ({ category, savedInfo }) => {
+const AddToFav: React.FC<Props> = ({ category, savedInfo, favAdditionalInfo }) => {
   const [isSaved, setIsSaved] = useState(false);
   const [savedFav, setSavedFav] = useState<SavedFavItem[]>([]);
 
@@ -39,7 +41,7 @@ const AddToFav: React.FC<Props> = ({ category, savedInfo }) => {
     const existingSavedItem = savedFav.find(item => item.info === savedInfo);
 
     if (!existingSavedItem) {
-      const updatedSavedFav: SavedFavItem[] = [...savedFav, { category, info: savedInfo }];
+      const updatedSavedFav: SavedFavItem[] = [...savedFav, { category, info: savedInfo, favAdditionalInfo }];
       setSavedFav(updatedSavedFav);
     } else {
       const updatedSavedFav = savedFav.filter(item => item.info !== savedInfo);

@@ -4,12 +4,17 @@ import {
   FavAbilities,
   FavMoves,
   FavoriteStyledPage,
+  Subtitle,
   Title,
 } from "./styled";
 import { PokemonTile } from "../../Common/PokemonTile";
 import { PokeAbility } from "../Abilities/AbilityPage/styled";
 import { MovesTable } from "../Moves/MovesTable";
-import { AbilityItem, StyledLink } from "../Abilities/AllAbilities/styled";
+import {
+  AbilityItem,
+  AbilityList,
+  StyledLink,
+} from "../Abilities/AllAbilities/styled";
 import { ItemNamesEdit } from "../../Common/reusableFunctions/itemNamesEdit";
 
 interface FavoriteItems {
@@ -90,11 +95,12 @@ export const Favorite: React.FC = () => {
         <>
           {favoritePokemons.length !== 0 && (
             <>
-              <Title>Favorite Pokemons</Title>
+              <Subtitle>Favorite Pokemons</Subtitle>
               <PokeAbility>
                 {favoritePokemons.map((pokemon, index) => (
-                  <div key={index}>
+                  <>
                     <PokemonTile
+                      key={`pkmnFav${index}`}
                       name={pokemon.info}
                       id={Number(pokemon.favAdditionalInfo) - 1}
                     />
@@ -103,41 +109,42 @@ export const Favorite: React.FC = () => {
                     >
                       Remove
                     </button>
-                  </div>
+                  </>
                 ))}
               </PokeAbility>
             </>
           )}
           {favoriteMoves.length !== 0 && (
             <>
-              <Title>Favorite moves</Title>
               <FavMoves>
+                <Subtitle>Favorite moves table </Subtitle>
                 <MovesTable
                   moveList={favoriteMoves.map((item) => ({
                     name: item.info,
                     url: item.additionalInfo ? item.additionalInfo : "",
                   }))}
-                />
-              </FavMoves>{" "}
+                ></MovesTable>
+              </FavMoves>
             </>
           )}
           {favoriteAbilities.length !== 0 && (
             <FavAbilities>
-              {favoriteAbilities.map((ability, index) => (
-                <StyledLink
-                  key={`${ability.info}Link`}
-                  to={`/ability?id=${ability.info}`}
-                >
-                  <div key={index}>
+              <Subtitle>Favorite Abilities</Subtitle>
+              <AbilityList>
+                {favoriteAbilities.map((ability, index) => (
+                  <StyledLink
+                    key={`${ability.info}Link`}
+                    to={`/ability?id=${ability.info}`}
+                  >
                     <AbilityItem>{ItemNamesEdit(ability.info)}</AbilityItem>
                     <button
                       onClick={() => handleRemoveFavorite("ability", index)}
                     >
                       Remove
                     </button>
-                  </div>
-                </StyledLink>
-              ))}
+                  </StyledLink>
+                ))}
+              </AbilityList>
             </FavAbilities>
           )}
         </>

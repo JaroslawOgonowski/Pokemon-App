@@ -4,7 +4,7 @@ import banner from "./Lugia-pokemon-fictional-creatures-artwork-fantasy-art-1664
 export const FavoriteStyledPage = styled.main`
   padding-top: 6vw;
   margin: 0;
-
+  padding-bottom: 30vh;
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     padding-top: 80px;
   }
@@ -28,7 +28,7 @@ export const Banner = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 3vw;
+  font-size: 3.5vw;
   font-family: "Righteous", cursive;
   margin-left: -20%;
   background-image: linear-gradient(
@@ -77,11 +77,69 @@ export const Title = styled.h1`
     );
   }
 `;
+export const Subtitle = styled.h2`
+  width: 100%;
+  font-size: 3vw;
+  padding-top: 4vh;
+  font-family: "Righteous", cursive;
+  text-align: center;
+  background-image: linear-gradient(
+    90deg,
+    rgba(207, 228, 226, 1) 0%,
+    rgba(141, 255, 240, 0.871) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 5s ease infinite;
+
+  @keyframes gradientAnimation {
+    0% {
+      background-size: 400% 400%;
+      background-position: 0% 50%;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: 100% 50%;
+    }
+    100% {
+      background-size: 400% 400%;
+      background-position: 0% 50%;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 26px;
+    margin: 0 8px;
+
+    background-image: linear-gradient(
+      90deg,
+      rgba(248, 254, 254, 1) 0%,
+      rgba(212, 218, 234, 0.971) 100%
+    );
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 24px;
+    margin-left: 10%;
+    background-image: linear-gradient(
+      90deg,
+      rgba(19, 20, 20, 1) 0%,
+      rgba(34, 35, 38, 0.971) 100%
+    );
+  }
+`;
 
 export const FavMoves = styled.div`
-
+  width: 100%;
+  margin: 0;
+  padding: 0%;
+  background-color: #050d43d9;
 `;
 
 export const FavAbilities = styled.div`
-
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 `;

@@ -56,7 +56,6 @@ export const Button = styled.button`
 
 export const AbilityList = styled.ul`
   width: 75%;
-  min-height: 100vh;
   padding: 0;
   list-style: none;
   display: flex;

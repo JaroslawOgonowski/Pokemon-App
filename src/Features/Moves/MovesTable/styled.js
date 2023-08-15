@@ -6,7 +6,8 @@ export const TableContainer = styled.div`
   background: linear-gradient(45deg, #000000, #2e0833);
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
-
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   @keyframes gradientAnimation {
     0% {
       background-position: 0% 50%;

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Pokemon-App/static/js/main.94eb0aa4.js",
+    "main.js": "/Pokemon-App/static/js/main.c48ca297.js",
     "static/js/787.a8fe51ff.chunk.js": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js",
     "static/media/0ot60vi6qmax.png": "/Pokemon-App/static/media/0ot60vi6qmax.f31760db813535f8b89a.png",
     "static/media/cute-pikachu-6o-2560x1440.jpg": "/Pokemon-App/static/media/cute-pikachu-6o-2560x1440.56b5039c9431a0cf9754.jpg",
@@ -10,6 +10,7 @@
     "static/media/jpg": "/Pokemon-App/static/media/af1ba9d66bbe3862749f40a5f36441b9.df34f4d9e7877be35ce9.jpg",
     "static/media/titan-palkia-kaiju-pokemon-fan-art-4k-p3-1366x768.jpg": "/Pokemon-App/static/media/titan-palkia-kaiju-pokemon-fan-art-4k-p3-1366x768.8a6a4d6fab92f6dbaea6.jpg",
     "static/media/2022-TC-Web-banner-Pikachu-5.png": "/Pokemon-App/static/media/2022-TC-Web-banner-Pikachu-5.81b635ac2467651f23ce.png",
+    "static/media/Lugia-pokemon-fictional-creatures-artwork-fantasy-art-1664273-wallhere.com.jpg": "/Pokemon-App/static/media/Lugia-pokemon-fictional-creatures-artwork-fantasy-art-1664273-wallhere.com.3903a57390b40c354a30.jpg",
     "static/media/International_Pokémon_logo.png": "/Pokemon-App/static/media/International_Pokémon_logo.de85592808a317c50539.png",
     "static/media/unnamed.jpg": "/Pokemon-App/static/media/unnamed.6eab5278d147d960078b.jpg",
     "static/media/topBanner.jpg": "/Pokemon-App/static/media/topBanner.8984ae41224decb47196.jpg",
@@ -49,10 +50,10 @@
     "static/media/silence.svg": "/Pokemon-App/static/media/silence.f4dc596def223012fdb1be1ac70ebc54.svg",
     "static/media/elektro.svg": "/Pokemon-App/static/media/elektro.6f01d10cec8b2fa5a266482dddfec67b.svg",
     "static/media/bolt_FILL0_wght400_GRAD0_opsz48.svg": "/Pokemon-App/static/media/bolt_FILL0_wght400_GRAD0_opsz48.6f41745e7000983f40ca37dd4dce53c4.svg",
-    "main.94eb0aa4.js.map": "/Pokemon-App/static/js/main.94eb0aa4.js.map",
+    "main.c48ca297.js.map": "/Pokemon-App/static/js/main.c48ca297.js.map",
     "787.a8fe51ff.chunk.js.map": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.94eb0aa4.js"
+    "static/js/main.c48ca297.js"
   ]
 }

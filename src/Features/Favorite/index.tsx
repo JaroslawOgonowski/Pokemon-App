@@ -11,6 +11,7 @@ import { PokeAbility } from "../Abilities/AbilityPage/styled";
 import { MovesTable } from "../Moves/MovesTable";
 import { AbilityItem, StyledLink } from "../Abilities/AllAbilities/styled";
 import { ItemNamesEdit } from "../../Common/reusableFunctions/itemNamesEdit";
+
 interface FavoriteItems {
   favAdditionalInfo: any;
   category: string;
@@ -58,6 +59,28 @@ export const Favorite: React.FC = () => {
     favoriteMoves.length > 0 ||
     favoriteAbilities.length > 0;
 
+  const handleRemoveFavorite = (category: string, index: number) => {
+    const updatedFavorites = [...favoritePokemons];
+    updatedFavorites.splice(index, 1);
+    setFavoritePokemons(updatedFavorites);
+
+    const savedFavFromLocalStorage = localStorage.getItem("savedFav");
+    if (savedFavFromLocalStorage) {
+      const updatedLocalStorage = JSON.parse(savedFavFromLocalStorage)
+        .map((item: FavoriteItems) => {
+          if (
+            item.category === category &&
+            item.info === favoritePokemons[index].info
+          ) {
+            return null;
+          }
+          return item;
+        })
+        .filter(Boolean);
+      localStorage.setItem("savedFav", JSON.stringify(updatedLocalStorage));
+    }
+  };
+
   return (
     <FavoriteStyledPage>
       <Banner>
@@ -70,11 +93,17 @@ export const Favorite: React.FC = () => {
               <Title>Favorite Pokemons</Title>
               <PokeAbility>
                 {favoritePokemons.map((pokemon, index) => (
-                  <PokemonTile
-                    key={index}
-                    name={pokemon.info}
-                    id={Number(pokemon.favAdditionalInfo) -1}
-                  />
+                  <div key={index}>
+                    <PokemonTile
+                      name={pokemon.info}
+                      id={Number(pokemon.favAdditionalInfo) - 1}
+                    />
+                    <button
+                      onClick={() => handleRemoveFavorite("pokemon", index)}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 ))}
               </PokeAbility>
             </>
@@ -99,9 +128,14 @@ export const Favorite: React.FC = () => {
                   key={`${ability.info}Link`}
                   to={`/ability?id=${ability.info}`}
                 >
-                  <AbilityItem key={index}>
-                    {ItemNamesEdit(ability.info)}
-                  </AbilityItem>
+                  <div key={index}>
+                    <AbilityItem>{ItemNamesEdit(ability.info)}</AbilityItem>
+                    <button
+                      onClick={() => handleRemoveFavorite("ability", index)}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </StyledLink>
               ))}
             </FavAbilities>

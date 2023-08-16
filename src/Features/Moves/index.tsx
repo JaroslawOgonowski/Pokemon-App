@@ -29,7 +29,7 @@ export const Moves = () => {
         Moves in Pokémon games are a crucial element of strategy, and choosing the right moves and balancing them can greatly impact success in battles. Well - thought - out move combinations can help gain an advantage over opponents and secure victory in challenging encounters."
         }
       />
-      <MovesTable />
+      <MovesTable favorite={false} />
     </>
   );
 };

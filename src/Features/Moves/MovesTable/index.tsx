@@ -14,9 +14,10 @@ interface Move {
 
 interface Props {
   moveList?: Move[];
+  favorite: boolean | null;
 }
 
-export const MovesTable: React.FC<Props> = ({ moveList }) => {
+export const MovesTable: React.FC<Props> = ({ moveList, favorite }) => {
   useScrollToTop();
   const movesArray = Object.entries(allMovesJSON).map(([key, value]) => ({
     object: key,

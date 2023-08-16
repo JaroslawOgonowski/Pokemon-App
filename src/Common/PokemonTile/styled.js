@@ -118,9 +118,9 @@ export const Wrapper = styled(Link)`
     rgba(6, 10, 27, 0.907) 43%,
     ${(props) => props.dominantcolor} 100%
   );
-  -webkit-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
-  -moz-box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
-  box-shadow: 8px 8px 24px 2px ${(props) => props.dominantcolor};
+  -webkit-box-shadow: 8px 8px 12px 2px ${(props) => props.dominantcolor};
+  -moz-box-shadow: 8px 8px 10px 2px ${(props) => props.dominantcolor};
+  box-shadow: 8px 8px 10px 2px ${(props) => props.dominantcolor};
   filter: brightness(100%);
   animation: TileAnimation 1s ease 0s 1 normal forwards;
   visibility: ${({ inview }) => (inview ? "visible" : "hidden")};

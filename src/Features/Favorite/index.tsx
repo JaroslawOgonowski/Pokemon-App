@@ -121,6 +121,7 @@ export const Favorite: React.FC = () => {
               <FavMoves>
                 <Subtitle>Favorite moves table </Subtitle>
                 <MovesTable
+                favorite= {true}
                   moveList={favoriteMoves.map((item) => ({
                     name: item.info,
                     url: item.additionalInfo ? item.additionalInfo : "",

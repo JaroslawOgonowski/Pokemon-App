@@ -138,8 +138,70 @@ export const FavMoves = styled.div`
 `;
 
 export const FavAbilities = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const RemovePokemonButton = styled.button`
+cursor: pointer;
+font-family: 'Agdasima', sans-serif;
+font-size: 1.5vw;
+writing-mode: vertical-lr;
+padding: 0 1vw;
+border: none;
+border-radius: 0.5vw;
+background: linear-gradient(135deg, #780404, #a10b0b);
+  box-shadow: 0 6px 20px rgba(161, 11, 11, 0.3);
+  color: white;
+  transition: 300ms;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(161, 11, 11, 0.4);
+
+    &:before,
+    &:after {
+      background: rgba(255, 255, 255, 0.081);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
+  }
+
+`;
+
+export const RemoveAbilityButton = styled.button`
+  cursor: pointer;
+  width: 80%;
+  font-size: 1.2vw;
+  margin: 2vh 6% 1vh 7%;
+  justify-content: center;
+  border: none;
+  border-radius: 0.5vw;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  background: linear-gradient(135deg, #780404, #a10b0b);
+  box-shadow: 0 6px 20px rgba(161, 11, 11, 0.3);
+  color: white;
+  transition: 300ms;
+  font-family: 'Agdasima', sans-serif;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(161, 11, 11, 0.4);
+
+    &:before,
+    &:after {
+      background: rgba(255, 255, 255, 0.081);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
+  }
 `;

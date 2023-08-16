@@ -4,6 +4,8 @@ import {
   FavAbilities,
   FavMoves,
   FavoriteStyledPage,
+  RemoveAbilityButton,
+  RemovePokemonButton,
   Subtitle,
   Title,
 } from "./styled";
@@ -104,11 +106,11 @@ export const Favorite: React.FC = () => {
                       name={pokemon.info}
                       id={Number(pokemon.favAdditionalInfo) - 1}
                     />
-                    <button
+                    <RemovePokemonButton
                       onClick={() => handleRemoveFavorite("pokemon", index)}
                     >
                       Remove
-                    </button>
+                    </RemovePokemonButton>
                   </>
                 ))}
               </PokeAbility>
@@ -137,11 +139,11 @@ export const Favorite: React.FC = () => {
                     to={`/ability?id=${ability.info}`}
                   >
                     <AbilityItem>{ItemNamesEdit(ability.info)}</AbilityItem>
-                    <button
+                    <RemoveAbilityButton
                       onClick={() => handleRemoveFavorite("ability", index)}
                     >
                       Remove
-                    </button>
+                    </RemoveAbilityButton>
                   </StyledLink>
                 ))}
               </AbilityList>

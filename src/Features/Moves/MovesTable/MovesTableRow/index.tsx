@@ -1,3 +1,4 @@
+import React from "react";
 import TypeIcon from "../../../../Common/TypeIcon";
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 import { AllMovesData } from "../moveInterface";
@@ -6,7 +7,14 @@ import {
   ailment,
   damageClass,
 } from "../../../../Common/reusableFunctions/tableSwitches";
-export const MovesTableRow = ({ move }: { move: AllMovesData }) => {
+import { RemoveAbilityButton } from "../../../Favorite/styled";
+
+interface MovesTableRowProps {
+  move: AllMovesData;
+  favorite: boolean;
+}
+
+export const MovesTableRow: React.FC<MovesTableRowProps> = ({ move, favorite }) => {
   return (
     <TableRow key={move.name}>
       <TableCell>
@@ -41,6 +49,13 @@ export const MovesTableRow = ({ move }: { move: AllMovesData }) => {
       <TableCell mobileHidden>{move.meta.drain}</TableCell>
       <TableCell mobileHidden>{move.meta.flinch_chance}</TableCell>
       <TableCell mobileHidden>{move.meta.healing}</TableCell>
+      {favorite ? (
+        <TableCell>
+          <RemoveAbilityButton>Remove</RemoveAbilityButton>
+        </TableCell>
+      ) : null}
     </TableRow>
   );
 };
+
+export default MovesTableRow;

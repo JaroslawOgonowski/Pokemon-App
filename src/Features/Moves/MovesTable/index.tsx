@@ -10,11 +10,12 @@ import { sortMoves } from "./MovesSorter";
 interface Move {
   name: string;
   url: string;
+  favorite?: boolean;
 }
 
 interface Props {
   moveList?: Move[];
-  favorite: boolean | null;
+  favorite?: boolean;
 }
 
 export const MovesTable: React.FC<Props> = ({ moveList, favorite }) => {
@@ -52,10 +53,11 @@ export const MovesTable: React.FC<Props> = ({ moveList, favorite }) => {
             handleSort={(key, direction) => handleSort(key, direction)}
             sortKey={sortKey}
             sortDirection={sortDirection}
+            favorite={favorite}
           />
           <tbody>
             {sortedMoves.map((move: AllMovesData) => (
-              <MovesTableRow key={move.name} move={move} />
+              <MovesTableRow key={move.name} move={move} favorite={favorite} /> // Pass the optional favorite prop
             ))}
           </tbody>
         </Table>

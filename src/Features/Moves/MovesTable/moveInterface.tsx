@@ -1,5 +1,6 @@
 export interface AllMovesData {
   pp: any;
+  favorite?: boolean;
   power: any;
   accuracy: any;
   damage_class: any;

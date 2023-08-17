@@ -5,12 +5,14 @@ interface MovesTableHeaderProps {
   handleSort: ((key: string, direction: "asc" | "desc") => void) | null;
   sortKey: string;
   sortDirection: "asc" | "desc";
+  favorite?: boolean;
 }
 
-const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({
+export const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({
   handleSort,
   sortKey,
   sortDirection,
+  favorite,
 }) => {
   const [clickedHeader, setClickedHeader] = useState<string | null>("");
   const [currentSortDirection, setCurrentSortDirection] = useState<
@@ -47,6 +49,7 @@ const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({
         >
           Name {getSortArrow("name")}
         </TableHead>
+
         <TableHead
           onClick={() => handleHeaderClick("type")}
           sortOn={isHeaderClicked("type") ? "clicked" : ""}
@@ -114,6 +117,8 @@ const MovesTableHeader: React.FC<MovesTableHeaderProps> = ({
         >
           Healing {getSortArrow("healing")}
         </TableHead>
+
+        {favorite ? <TableHead>Favorite</TableHead> : null}
       </TableRow>
     </thead>
   );

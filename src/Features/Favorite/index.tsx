@@ -71,6 +71,8 @@ export const Favorite: React.FC = () => {
     updatedFavorites.splice(index, 1);
     setFavoritePokemons(updatedFavorites);
 
+    const handleRemoveMoveFromFavorite = (category: string, name: string) => {};
+   
     const savedFavFromLocalStorage = localStorage.getItem("savedFav");
     if (savedFavFromLocalStorage) {
       const updatedLocalStorage = JSON.parse(savedFavFromLocalStorage)
@@ -121,7 +123,7 @@ export const Favorite: React.FC = () => {
               <FavMoves>
                 <Subtitle>Favorite moves table </Subtitle>
                 <MovesTable
-                favorite= {true}
+                  favorite={true}
                   moveList={favoriteMoves.map((item) => ({
                     name: item.info,
                     url: item.additionalInfo ? item.additionalInfo : "",

@@ -45,6 +45,12 @@ export const MovesTable: React.FC<Props> = ({ moveList, favorite }) => {
     sortedMoves = sortMoves(movesArray, sortKey, sortDirection);
   }
 
+  const handleRemoveMove = (move: AllMovesData) => {
+    if (moveList) {
+      const updatedMoveList = moveList.filter((m) => m.name !== move.name);
+    }
+  };
+
   return (
     <>
       <TableContainer>
@@ -57,7 +63,12 @@ export const MovesTable: React.FC<Props> = ({ moveList, favorite }) => {
           />
           <tbody>
             {sortedMoves.map((move: AllMovesData) => (
-              <MovesTableRow key={move.name} move={move} favorite={favorite} /> // Pass the optional favorite prop
+              <MovesTableRow
+                key={move.name}
+                move={move}
+                favorite={favorite || false}
+                onRemove={handleRemoveMove}
+              />
             ))}
           </tbody>
         </Table>

@@ -7,14 +7,22 @@ import {
   ailment,
   damageClass,
 } from "../../../../Common/reusableFunctions/tableSwitches";
-import { RemoveAbilityButton } from "../../../Favorite/styled";
 
 interface MovesTableRowProps {
   move: AllMovesData;
   favorite: boolean;
+  onRemove: (move: AllMovesData) => void;
 }
 
-export const MovesTableRow: React.FC<MovesTableRowProps> = ({ move, favorite }) => {
+export const MovesTableRow: React.FC<MovesTableRowProps> = ({
+  move,
+  favorite,
+  onRemove,
+}) => {
+  const handleRemove = () => {
+    onRemove(move);
+  };
+
   return (
     <TableRow key={move.name}>
       <TableCell>
@@ -51,7 +59,7 @@ export const MovesTableRow: React.FC<MovesTableRowProps> = ({ move, favorite }) 
       <TableCell mobileHidden>{move.meta.healing}</TableCell>
       {favorite ? (
         <TableCell>
-          <RemoveAbilityButton>Remove</RemoveAbilityButton>
+          <button onClick={handleRemove}>Remove</button>
         </TableCell>
       ) : null}
     </TableRow>

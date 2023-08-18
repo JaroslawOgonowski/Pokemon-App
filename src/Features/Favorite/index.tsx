@@ -71,7 +71,24 @@ export const Favorite: React.FC = () => {
     updatedFavorites.splice(index, 1);
     setFavoritePokemons(updatedFavorites);
 
-    const handleRemoveMoveFromFavorite = (category: string, name: string) => {};
+    const handleRemoveMoveFromFavorite = (name: string) => {
+      const updatedMoves = [...favoriteMoves].filter(
+        (move) => move.info !== name
+      );
+      setFavoriteMoves(updatedMoves);
+  
+      const updatedLocalStorage = JSON.parse(
+        localStorage.getItem("savedFav") || "[]"
+      )
+        .map((item: FavoriteItems) => {
+          if (item.category === "move" && item.info === name) {
+            return null;
+          }
+          return item;
+        })
+        .filter(Boolean);
+      localStorage.setItem("savedFav", JSON.stringify(updatedLocalStorage));
+    };
    
     const savedFavFromLocalStorage = localStorage.getItem("savedFav");
     if (savedFavFromLocalStorage) {

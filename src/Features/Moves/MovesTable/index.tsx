@@ -16,9 +16,15 @@ interface Move {
 interface Props {
   moveList?: Move[];
   favorite?: boolean;
+  onRemove?: (name: string) => void;
 }
 
-export const MovesTable: React.FC<Props> = ({ moveList, favorite }) => {
+export const MovesTable: React.FC<Props> = ({
+  moveList,
+  favorite,
+  onRemove,
+}) => {
+  
   useScrollToTop();
   const movesArray = Object.entries(allMovesJSON).map(([key, value]) => ({
     object: key,
@@ -45,12 +51,6 @@ export const MovesTable: React.FC<Props> = ({ moveList, favorite }) => {
     sortedMoves = sortMoves(movesArray, sortKey, sortDirection);
   }
 
-  const handleRemoveMove = (move: AllMovesData) => {
-    if (moveList) {
-      const updatedMoveList = moveList.filter((m) => m.name !== move.name);
-    }
-  };
-
   return (
     <>
       <TableContainer>
@@ -67,7 +67,7 @@ export const MovesTable: React.FC<Props> = ({ moveList, favorite }) => {
                 key={move.name}
                 move={move}
                 favorite={favorite || false}
-                onRemove={handleRemoveMove}
+                onRemove={onRemove}
               />
             ))}
           </tbody>

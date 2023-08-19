@@ -16,13 +16,11 @@ interface Move {
 interface Props {
   moveList?: Move[];
   favorite?: boolean;
-  onRemove?: (name: string) => void;
 }
 
 export const MovesTable: React.FC<Props> = ({
   moveList,
   favorite,
-  onRemove,
 }) => {
   
   useScrollToTop();
@@ -67,7 +65,6 @@ export const MovesTable: React.FC<Props> = ({
                 key={move.name}
                 move={move}
                 favorite={favorite || false}
-                onRemove={onRemove as ((name: string) => void)}
               />
             ))}
           </tbody>

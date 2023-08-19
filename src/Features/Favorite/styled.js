@@ -145,14 +145,14 @@ export const FavAbilities = styled.div`
 `;
 
 export const RemovePokemonButton = styled.button`
-cursor: pointer;
-font-family: 'Agdasima', sans-serif;
-font-size: 1.5vw;
-writing-mode: vertical-lr;
-padding: 0 1vw;
-border: none;
-border-radius: 0.5vw;
-background: linear-gradient(135deg, #780404, #a10b0b);
+  cursor: pointer;
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.5vw;
+  writing-mode: vertical-lr;
+  padding: 0 1vw;
+  border: none;
+  border-radius: 0.5vw;
+  background: linear-gradient(135deg, #780404, #a10b0b);
   box-shadow: 0 6px 20px rgba(161, 11, 11, 0.3);
   color: white;
   transition: 300ms;
@@ -171,7 +171,14 @@ background: linear-gradient(135deg, #780404, #a10b0b);
     transform: scale(0.95);
     box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
   }
-
+`;
+export const AbilityDiv = styled.div`
+  max-width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const RemoveAbilityButton = styled.button`
@@ -188,8 +195,8 @@ export const RemoveAbilityButton = styled.button`
   box-shadow: 0 6px 20px rgba(161, 11, 11, 0.3);
   color: white;
   transition: 300ms;
-  font-family: 'Agdasima', sans-serif;
-  
+  font-family: "Agdasima", sans-serif;
+
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(161, 11, 11, 0.4);

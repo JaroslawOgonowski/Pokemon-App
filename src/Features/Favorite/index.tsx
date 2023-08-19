@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  AbilityDiv,
   Banner,
   FavAbilities,
   FavMoves,
@@ -66,44 +67,53 @@ export const Favorite: React.FC = () => {
     favoriteMoves.length > 0 ||
     favoriteAbilities.length > 0;
 
-  const handleRemoveFavorite = (category: string, index: number) => {
-    const updatedFavorites = [...favoritePokemons];
-    updatedFavorites.splice(index, 1);
-    setFavoritePokemons(updatedFavorites);
+  const handleRemoveFavorite = (category: string, info: string) => {
+    const updatedLocalStorage = JSON.parse(
+      localStorage.getItem("savedFav") || "[]"
+    );
 
-    const handleRemoveMoveFromFavorite = (name: string) => {
+    if (category === "pokemon") {
+      const updatedFavorites = [...favoritePokemons];
+      const index = updatedFavorites.findIndex(
+        (pokemon) => pokemon.info === info
+      );
+      if (index !== -1) {
+        updatedFavorites.splice(index, 1);
+        setFavoritePokemons(updatedFavorites);
+      }
+    } else if (category === "move") {
       const updatedMoves = [...favoriteMoves].filter(
-        (move) => move.info !== name
+        (move) => move.info !== info
       );
       setFavoriteMoves(updatedMoves);
-  
-      const updatedLocalStorage = JSON.parse(
-        localStorage.getItem("savedFav") || "[]"
-      )
+
+      updatedLocalStorage
         .map((item: FavoriteItems) => {
-          if (item.category === "move" && item.info === name) {
+          if (item.category === "move" && item.info === info) {
             return null;
           }
           return item;
         })
         .filter(Boolean);
-      localStorage.setItem("savedFav", JSON.stringify(updatedLocalStorage));
-    };
-   
-    const savedFavFromLocalStorage = localStorage.getItem("savedFav");
-    if (savedFavFromLocalStorage) {
-      const updatedLocalStorage = JSON.parse(savedFavFromLocalStorage)
+    } else if (category === "ability") {
+      const updatedAbilities = favoriteAbilities.filter(
+        (ability) => ability.info !== info
+      );
+      setFavoriteAbilities(updatedAbilities);
+
+      const updatedLocalStorageAbilities = updatedLocalStorage
         .map((item: FavoriteItems) => {
-          if (
-            item.category === category &&
-            item.info === favoritePokemons[index].info
-          ) {
+          if (item.category === "ability" && item.info === info) {
             return null;
           }
           return item;
         })
         .filter(Boolean);
-      localStorage.setItem("savedFav", JSON.stringify(updatedLocalStorage));
+
+      localStorage.setItem(
+        "savedFav",
+        JSON.stringify(updatedLocalStorageAbilities)
+      );
     }
   };
 
@@ -126,7 +136,9 @@ export const Favorite: React.FC = () => {
                       id={Number(pokemon.favAdditionalInfo) - 1}
                     />
                     <RemovePokemonButton
-                      onClick={() => handleRemoveFavorite("pokemon", index)}
+                      onClick={() =>
+                        handleRemoveFavorite("pokemon", pokemon.info)
+                      }
                     >
                       Remove
                     </RemovePokemonButton>
@@ -154,17 +166,21 @@ export const Favorite: React.FC = () => {
               <Subtitle>Favorite Abilities</Subtitle>
               <AbilityList>
                 {favoriteAbilities.map((ability, index) => (
-                  <StyledLink
-                    key={`${ability.info}Link`}
-                    to={`/ability?id=${ability.info}`}
-                  >
-                    <AbilityItem>{ItemNamesEdit(ability.info)}</AbilityItem>
+                  <AbilityDiv>
+                    <StyledLink
+                      key={`${ability.info}Link`}
+                      to={`/ability?id=${ability.info}`}
+                    >
+                      <AbilityItem>{ItemNamesEdit(ability.info)}</AbilityItem>
+                    </StyledLink>
                     <RemoveAbilityButton
-                      onClick={() => handleRemoveFavorite("ability", index)}
+                      onClick={() =>
+                        handleRemoveFavorite("ability", ability.info)
+                      }
                     >
                       Remove
                     </RemoveAbilityButton>
-                  </StyledLink>
+                  </AbilityDiv>
                 ))}
               </AbilityList>
             </FavAbilities>

@@ -67,7 +67,7 @@ export const MovesTable: React.FC<Props> = ({
                 key={move.name}
                 move={move}
                 favorite={favorite || false}
-                onRemove={onRemove}
+                onRemove={onRemove as ((name: string) => void)}
               />
             ))}
           </tbody>

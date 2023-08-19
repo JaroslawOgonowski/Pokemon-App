@@ -11,7 +11,7 @@ import {
 interface MovesTableRowProps {
   move: AllMovesData;
   favorite: boolean;
-  onRemove: (name: string) => void;
+  onRemove: (name: string) => void | undefined;
 }
 
 export const MovesTableRow: React.FC<MovesTableRowProps> = ({
@@ -20,7 +20,9 @@ export const MovesTableRow: React.FC<MovesTableRowProps> = ({
   onRemove,
 }) => {
   const handleRemove = () => {
-    onRemove(move.name);
+    if (onRemove) {
+      onRemove(move.name);
+    }
   };
 
   return (

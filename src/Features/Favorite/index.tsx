@@ -19,6 +19,7 @@ import {
   StyledLink,
 } from "../Abilities/AllAbilities/styled";
 import { ItemNamesEdit } from "../../Common/reusableFunctions/itemNamesEdit";
+import { NoFavorites } from "../../Base/NoFavorites";
 
 interface FavoriteItems {
   favAdditionalInfo: any;
@@ -26,12 +27,6 @@ interface FavoriteItems {
   info: string;
   additionalInfo: string | null;
 }
-
-const NoFavoriteItems: React.FC = () => (
-  <div>
-    <p>No favorite items available.</p>
-  </div>
-);
 
 export const Favorite: React.FC = () => {
   const [favoritePokemons, setFavoritePokemons] = useState<FavoriteItems[]>([]);
@@ -187,7 +182,7 @@ export const Favorite: React.FC = () => {
           )}
         </>
       ) : (
-        <NoFavoriteItems />
+        <NoFavorites />
       )}
     </FavoriteStyledPage>
   );

@@ -9,6 +9,12 @@ export const SideBar = () => {
 
   const [sideBarOn, setSideBarOn] = useState(sideBarOnScreenWidth());
 
+  const sidebarOnClick = () => {
+    if (window.innerWidth <= 767) {
+      setSideBarOn(!sideBarOn);
+    } else return;
+  };
+
   return (
     <>
       <SidebarTitle
@@ -20,7 +26,7 @@ export const SideBar = () => {
       <StyledSideBar sideBarOn={sideBarOn}>
         <ListItem>
           <StyledA
-            onClick={() => setSideBarOn(!sideBarOn)}
+            onClick={() => sidebarOnClick}
             href="/Pokemon-App#/pokemon"
           >
             Pokemon
@@ -28,7 +34,7 @@ export const SideBar = () => {
         </ListItem>
         <ListItem>
           <StyledA
-            onClick={() => setSideBarOn(!sideBarOn)}
+            onClick={() => sidebarOnClick}
             href="/Pokemon-App#/randomTeam"
           >
             Team
@@ -36,7 +42,7 @@ export const SideBar = () => {
         </ListItem>
         <ListItem>
           <StyledA
-            onClick={() => setSideBarOn(!sideBarOn)}
+            onClick={() => sidebarOnClick}
             href="/Pokemon-App#/types"
           >
             Pokemon Types
@@ -44,7 +50,7 @@ export const SideBar = () => {
         </ListItem>
         <ListItem>
           <StyledA
-            onClick={() => setSideBarOn(!sideBarOn)}
+            onClick={() => sidebarOnClick}
             href="/Pokemon-App#/abilities"
           >
             Pokemon Abilities
@@ -52,7 +58,7 @@ export const SideBar = () => {
         </ListItem>
         <ListItem>
           <StyledA
-            onClick={() => setSideBarOn(!sideBarOn)}
+            onClick={() => sidebarOnClick}
             href="/Pokemon-App#/moves"
           >
             All moves
@@ -60,7 +66,7 @@ export const SideBar = () => {
         </ListItem>
         <ListItem>
           <StyledA
-            onClick={() => setSideBarOn(!sideBarOn)}
+            onClick={() => sidebarOnClick}
             href="/Pokemon-App#/favorite"
           >
             Favorite

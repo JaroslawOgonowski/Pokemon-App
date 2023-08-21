@@ -7,6 +7,7 @@ import { Loader } from "../../Base/Loader";
 import {
   DeleteButton,
   GenerateButton,
+  Padding,
   PkmBox,
   RandomTeamPage,
   SaveButton,
@@ -81,7 +82,7 @@ export const Team = () => {
   return (
     <>
       <RandomTeamPage>
-        <TitleBanner>RANDOM TEAM GENERATOR</TitleBanner>
+        <TitleBanner>RANDOM TEAM GENERATOR<Padding/></TitleBanner>
         {currentTeam.length > 0 && (
           <StyledTeam>
             <Title>YOUR RANDOM TEAM </Title>

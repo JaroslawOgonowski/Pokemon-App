@@ -3,7 +3,11 @@ import { Gallery } from "./Gallery";
 import { PokemonContainer } from "./styled";
 import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
 
-export const Pokemon = () => {
+interface SideBarProps {
+  sideBarOn: boolean;
+}
+
+export const Pokemon: React.FC<SideBarProps> = ({ sideBarOn }) => {
   useScrollToTop();
   return (
     <>

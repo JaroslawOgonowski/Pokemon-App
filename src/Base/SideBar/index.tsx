@@ -5,10 +5,6 @@ interface SideBarProps {
 }
 
 export const SideBar: React.FC<SideBarProps> = ({ sideBarOn, setSideBarOn }) => {
-  const sideBarOnScreenWidth = () => {
-    if (window.innerWidth >= 767) return false;
-    else return true;
-  };
 
   const sidebarOnClick = () => {
     if (window.innerWidth <= 767) {

@@ -29,7 +29,7 @@ export const TitleBanner = styled.h1`
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   font-size: 3vw;
   font-family: "Righteous", cursive;
   color: #e0d4d4;
@@ -48,6 +48,10 @@ export const TitleBanner = styled.h1`
     max-width: 100%;
     padding-left: 16px;
   }
+`;
+
+export const Padding= styled.div`
+width: 10%;
 `;
 
 export const Title = styled.h2`

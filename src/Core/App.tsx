@@ -20,7 +20,12 @@ import { Favorite } from "../Features/Favorite";
 import { useState } from "react";
 
 function App() {
-  const [sideBarOn, setSideBarOn] = useState(false);
+  const sideBarOnScreenWidth = () => {
+    if (window.innerWidth >= 767) return false;
+    else return true;
+  };
+
+  const [sideBarOn, setSideBarOn] = useState(sideBarOnScreenWidth());
 
   return (
     <StyledPage>
@@ -29,9 +34,12 @@ function App() {
           <GlobalStyle />
           <Header />
           <SideBar sideBarOn={sideBarOn} setSideBarOn={setSideBarOn} />
-          <StyledRoutes sideBarOn={sideBarOn} >
+          <StyledRoutes sideBarOn={sideBarOn}>
             <Routes>
-              <Route path="/pokemon" element={<Pokemon />} />
+              <Route
+                path="/pokemon"
+                element={<Pokemon sideBarOn={sideBarOn} />}
+              />
               <Route path="/abilities" element={<Abilities />} />
               <Route path="/moves" element={<Moves />} />
               <Route path="/pokemonDetails" element={<SinglePokemonPage />} />
@@ -41,7 +49,7 @@ function App() {
               <Route path="/type" element={<TypePage />} />
               <Route path="/randomTeam" element={<Team />} />
               <Route path="/favorite" element={<Favorite />} />
-              <Route path="/" element={<Pokemon />} />
+              <Route path="/" element={<Pokemon sideBarOn={sideBarOn}/>} />
             </Routes>
           </StyledRoutes>
           <Footer />

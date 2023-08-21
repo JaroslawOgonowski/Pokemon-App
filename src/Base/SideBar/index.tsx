@@ -1,20 +1,20 @@
-import { useState } from "react";
 import { ListItem, SidebarTitle, StyledA, StyledSideBar } from "./styled";
+interface SideBarProps {
+  sideBarOn: boolean;
+  setSideBarOn: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export const SideBar = () => {
+export const SideBar: React.FC<SideBarProps> = ({ sideBarOn, setSideBarOn }) => {
   const sideBarOnScreenWidth = () => {
     if (window.innerWidth >= 767) return false;
     else return true;
   };
-
-  const [sideBarOn, setSideBarOn] = useState(sideBarOnScreenWidth());
 
   const sidebarOnClick = () => {
     if (window.innerWidth <= 767) {
       setSideBarOn(!sideBarOn);
     } else return;
   };
-
   return (
     <>
       <SidebarTitle
@@ -25,10 +25,7 @@ export const SideBar = () => {
       </SidebarTitle>
       <StyledSideBar sideBarOn={sideBarOn}>
         <ListItem>
-          <StyledA
-            onClick={() => sidebarOnClick}
-            href="/Pokemon-App#/pokemon"
-          >
+          <StyledA onClick={() => sidebarOnClick} href="/Pokemon-App#/pokemon">
             Pokemon
           </StyledA>
         </ListItem>
@@ -41,10 +38,7 @@ export const SideBar = () => {
           </StyledA>
         </ListItem>
         <ListItem>
-          <StyledA
-            onClick={() => sidebarOnClick}
-            href="/Pokemon-App#/types"
-          >
+          <StyledA onClick={() => sidebarOnClick} href="/Pokemon-App#/types">
             Pokemon Types
           </StyledA>
         </ListItem>
@@ -57,18 +51,12 @@ export const SideBar = () => {
           </StyledA>
         </ListItem>
         <ListItem>
-          <StyledA
-            onClick={() => sidebarOnClick}
-            href="/Pokemon-App#/moves"
-          >
+          <StyledA onClick={() => sidebarOnClick} href="/Pokemon-App#/moves">
             All moves
           </StyledA>
         </ListItem>
         <ListItem>
-          <StyledA
-            onClick={() => sidebarOnClick}
-            href="/Pokemon-App#/favorite"
-          >
+          <StyledA onClick={() => sidebarOnClick} href="/Pokemon-App#/favorite">
             Favorite
           </StyledA>
         </ListItem>

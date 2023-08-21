@@ -27,10 +27,9 @@ export const TitleBanner = styled.h1`
   width: 100%;
   height: 20vh;
   margin: 0;
-  padding-right: 10%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   font-size: 3vw;
   font-family: "Righteous", cursive;
   color: #e0d4d4;

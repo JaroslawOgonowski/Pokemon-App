@@ -3,7 +3,7 @@ import ball from "./images/Poké_Ball_icon.png";
 import { css } from "styled-components";
 
 export const SidebarTitle = styled.button`
-  position: absolute;
+  position: fixed;
   top: 6vw;
   left: 0;
   z-index: 99;
@@ -58,7 +58,7 @@ export const SidebarTitle = styled.button`
 `;
 
 export const StyledSideBar = styled.ul`
-  position: absolute;
+  position: fixed;
   top: 6vw;
   left: 0;
   width: 20%;

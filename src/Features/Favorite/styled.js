@@ -139,10 +139,10 @@ export const Subtitle = styled.h2`
 `;
 
 export const FavoritePokemons = styled.div`
-width: 80%;
-display: flex;
-flex-direction: column;
-justify-content: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const FavMoves = styled.div`

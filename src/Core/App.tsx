@@ -10,35 +10,40 @@ import { Abilities } from "../Features/Abilities";
 import { AbilityPage } from "../Features/Abilities/AbilityPage";
 import ScrollToTopButton from "../Base/ScrollToTopButton/ScrollToTop ";
 import { MovePage } from "../Features/Moves/MovePage";
-import { StyledPage } from "./styled";
+import { StyledPage, StyledRoutes } from "./styled";
 import { TypesPage } from "../Features/Types";
 import { TypePage } from "../Features/Types/TypePage";
 import { Footer } from "../Base/Footer";
 import { Team } from "../Features/Team";
 import { SideBar } from "../Base/SideBar";
 import { Favorite } from "../Features/Favorite";
+import { useState } from "react";
 
 function App() {
+  const [sideBarOn, setSideBarOn] = useState(false);
+
   return (
     <StyledPage>
       <HashRouter>
         <ThemeProvider theme={normalTheme}>
           <GlobalStyle />
           <Header />
-          <SideBar />
-          <Routes>
-            <Route path="/pokemon" element={<Pokemon />} />
-            <Route path="/abilities" element={<Abilities />} />
-            <Route path="/moves" element={<Moves />} />
-            <Route path="/pokemonDetails" element={<SinglePokemonPage />} />
-            <Route path="/ability" element={<AbilityPage />} />
-            <Route path="/move" element={<MovePage />} />
-            <Route path="/types" element={<TypesPage />} />
-            <Route path="/type" element={<TypePage />} />
-            <Route path="/randomTeam" element={<Team />} />
-            <Route path="/favorite" element={<Favorite />} />
-            <Route path="/" element={<Pokemon />} />
-          </Routes>
+          <SideBar sideBarOn={sideBarOn} setSideBarOn={setSideBarOn} />
+          <StyledRoutes sideBarOn={sideBarOn} >
+            <Routes>
+              <Route path="/pokemon" element={<Pokemon />} />
+              <Route path="/abilities" element={<Abilities />} />
+              <Route path="/moves" element={<Moves />} />
+              <Route path="/pokemonDetails" element={<SinglePokemonPage />} />
+              <Route path="/ability" element={<AbilityPage />} />
+              <Route path="/move" element={<MovePage />} />
+              <Route path="/types" element={<TypesPage />} />
+              <Route path="/type" element={<TypePage />} />
+              <Route path="/randomTeam" element={<Team />} />
+              <Route path="/favorite" element={<Favorite />} />
+              <Route path="/" element={<Pokemon />} />
+            </Routes>
+          </StyledRoutes>
           <Footer />
           <ScrollToTopButton />
         </ThemeProvider>

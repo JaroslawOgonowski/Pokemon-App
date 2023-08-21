@@ -4,7 +4,9 @@ import {
   Banner,
   FavAbilities,
   FavMoves,
+  FavoritePokemons,
   FavoriteStyledPage,
+  FirstSection,
   RemoveAbilityButton,
   RemovePokemonButton,
   Subtitle,
@@ -20,6 +22,7 @@ import {
 } from "../Abilities/AllAbilities/styled";
 import { ItemNamesEdit } from "../../Common/reusableFunctions/itemNamesEdit";
 import { NoFavorites } from "../../Base/NoFavorites";
+import { Empty, MainBanner } from "../../Base/Main/styled";
 
 interface FavoriteItems {
   favAdditionalInfo: any;
@@ -120,27 +123,30 @@ export const Favorite: React.FC = () => {
       {hasFavoriteItems ? (
         <>
           {favoritePokemons.length !== 0 && (
-            <>
-              <Subtitle>Favorite Pokemons</Subtitle>
-              <PokeAbility>
-                {favoritePokemons.map((pokemon, index) => (
-                  <>
-                    <PokemonTile
-                      key={`pkmnFav${index}`}
-                      name={pokemon.info}
-                      id={Number(pokemon.favAdditionalInfo) - 1}
-                    />
-                    <RemovePokemonButton
-                      onClick={() =>
-                        handleRemoveFavorite("pokemon", pokemon.info)
-                      }
-                    >
-                      Remove
-                    </RemovePokemonButton>
-                  </>
-                ))}
-              </PokeAbility>
-            </>
+            <FirstSection>
+              <Empty />
+              <FavoritePokemons>
+                <Subtitle>Favorite Pokemons</Subtitle>
+                <PokeAbility>
+                  {favoritePokemons.map((pokemon, index) => (
+                    <>
+                      <PokemonTile
+                        key={`pkmnFav${index}`}
+                        name={pokemon.info}
+                        id={Number(pokemon.favAdditionalInfo) - 1}
+                      />
+                      <RemovePokemonButton
+                        onClick={() =>
+                          handleRemoveFavorite("pokemon", pokemon.info)
+                        }
+                      >
+                        Remove
+                      </RemovePokemonButton>
+                    </>
+                  ))}
+                </PokeAbility>
+              </FavoritePokemons>
+            </FirstSection>
           )}
           {favoriteMoves.length !== 0 && (
             <>

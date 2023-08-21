@@ -77,6 +77,14 @@ export const Title = styled.h1`
     );
   }
 `;
+
+export const FirstSection = styled.section`
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+`;
+
 export const Subtitle = styled.h2`
   width: 100%;
   font-size: 3vw;
@@ -128,6 +136,13 @@ export const Subtitle = styled.h2`
       rgba(34, 35, 38, 0.971) 100%
     );
   }
+`;
+
+export const FavoritePokemons = styled.div`
+width: 80%;
+display: flex;
+flex-direction: column;
+justify-content: center;
 `;
 
 export const FavMoves = styled.div`

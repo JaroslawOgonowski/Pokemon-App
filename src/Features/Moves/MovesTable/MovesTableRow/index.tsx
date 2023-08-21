@@ -22,21 +22,24 @@ export const MovesTableRow: React.FC<MovesTableRowProps> = ({
   const handleRemove = () => {
     if (!isRemoving) {
       setIsRemoving(true);
+  
       const savedFavFromLocalStorage = localStorage.getItem("savedFav");
-
+  
       if (savedFavFromLocalStorage) {
         const savedFavParsed = JSON.parse(savedFavFromLocalStorage);
+  
+        // Usuwanie tylko tego konkretnego ruchu z ulubionych
         const updatedMoves = savedFavParsed.filter(
-          (item: any) => item.category === "move" && item.info !== move.name
+          (item: any) => !(item.category === "move" && item.info === move.name)
         );
-
+  
         localStorage.setItem("savedFav", JSON.stringify(updatedMoves));
         setIsRemoving(false);
         window.location.reload();
       }
     }
   };
-
+  
   return (
     <TableRow key={move.name}>
       <TableCell>

@@ -236,3 +236,17 @@ export const LeechSeed = styled(Ailment)`
   background-color: #41aa09;
   box-shadow: 0vw 0vw 0.6959vw 0.1099vw #41aa09;
 `;
+
+export const RemoveButton = styled.button`
+  cursor: pointer;
+  border: none;
+  border-radius: 1vw;
+  padding: 0.6vw;
+  font-family: "Righteous", cursive;
+  background: linear-gradient(45deg, #ba0c0c, #420948);
+  color: #a49797;
+  transition: 500ms;
+  &:hover {
+    filter: brightness(130%);
+  }
+`;

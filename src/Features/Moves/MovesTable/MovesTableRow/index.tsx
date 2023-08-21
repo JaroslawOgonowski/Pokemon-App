@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TypeIcon from "../../../../Common/TypeIcon";
 import { ItemNamesEdit } from "../../../../Common/reusableFunctions/itemNamesEdit";
 import { AllMovesData } from "../moveInterface";
-import { DmgImg, MoveName, TableCell, TableRow } from "../styled";
+import { DmgImg, MoveName, RemoveButton, TableCell, TableRow } from "../styled";
 import {
   ailment,
   damageClass,
@@ -22,24 +22,22 @@ export const MovesTableRow: React.FC<MovesTableRowProps> = ({
   const handleRemove = () => {
     if (!isRemoving) {
       setIsRemoving(true);
-  
+
       const savedFavFromLocalStorage = localStorage.getItem("savedFav");
-  
+
       if (savedFavFromLocalStorage) {
         const savedFavParsed = JSON.parse(savedFavFromLocalStorage);
-  
-        // Usuwanie tylko tego konkretnego ruchu z ulubionych
         const updatedMoves = savedFavParsed.filter(
           (item: any) => !(item.category === "move" && item.info === move.name)
         );
-  
+
         localStorage.setItem("savedFav", JSON.stringify(updatedMoves));
         setIsRemoving(false);
         window.location.reload();
       }
     }
   };
-  
+
   return (
     <TableRow key={move.name}>
       <TableCell>
@@ -76,9 +74,9 @@ export const MovesTableRow: React.FC<MovesTableRowProps> = ({
       <TableCell mobileHidden>{move.meta.healing}</TableCell>
       {favorite ? (
         <TableCell>
-          <button onClick={handleRemove} disabled={isRemoving}>
+          <RemoveButton onClick={handleRemove} disabled={isRemoving}>
             {isRemoving ? "Removing..." : "Remove"}
-          </button>
+          </RemoveButton>
         </TableCell>
       ) : null}
     </TableRow>

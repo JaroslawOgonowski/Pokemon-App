@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 
 export const TopMarker = styled.div`
   top: -10vh;
@@ -77,14 +78,28 @@ export const Search = styled.input`
 `;
 
 export const GalleryBox = styled.div`
-  width: 96%;
+  width: 76%;
   margin: 0 auto;
   display: flex;
   gap: 1vw;
   justify-content: center;
   position: absolute;
-  left: 0;
-  right: 0;
+  right: 1vw;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 96%;
+    right: 0;
+    left: 0;
+  }
+  ${({ sideBarOn }) =>
+    sideBarOn &&
+    css`
+      @media (min-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        width: 96%;
+        right: 0;
+        left: 0;
+      }
+    `}
 `;
 
 export const StyledGallery = styled.div`

@@ -26,6 +26,7 @@ import {
 import { useOffsetFromLocationSearch } from "../../../Common/reusableFunctions/useOffsetFromLocationSearch";
 import { scrollToTop } from "../../../Common/reusableFunctions/scrollToTop";
 import { Footer } from "../../../Base/Footer";
+import { GalleryProps } from "..";
 
 interface Pokemon {
   url: string;
@@ -38,7 +39,8 @@ interface GalleryData {
   count: number;
 }
 
-export const Gallery = () => {
+export const Gallery: React.FC<GalleryProps> = ({ sideBarOn }) => {
+
   const navigate = useNavigate();
   const offset = 0;
   const limit = 1010;
@@ -111,7 +113,7 @@ export const Gallery = () => {
         onChange={handleSearch}
         placeholder="Search pokemon..."
       />
-      <GalleryBox>
+      <GalleryBox sideBarOn={sideBarOn}>
         <ButtonBox>
           <BaseButton disabled={startIndex === 0} onClick={handlePrevPageClick}>
             <Prev />

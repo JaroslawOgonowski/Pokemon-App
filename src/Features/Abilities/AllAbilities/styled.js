@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledAbilities = styled.div`
-  margin-top: -13vh;
   background-image: linear-gradient(
     126deg,
     rgba(1, 3, 6, 1) 0%,

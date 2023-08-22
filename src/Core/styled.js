@@ -14,6 +14,7 @@ export const StyledRoutes = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 100%;
   }
+  
   ${({ sideBarOn }) =>
     sideBarOn &&
     css`

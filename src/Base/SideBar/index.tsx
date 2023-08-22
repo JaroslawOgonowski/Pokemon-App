@@ -1,11 +1,9 @@
+import { useSidebar } from "../../Core/SideBarContext";
 import { ListItem, SidebarTitle, StyledA, StyledSideBar } from "./styled";
-interface SideBarProps {
-  sideBarOn: boolean;
-  setSideBarOn: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-export const SideBar: React.FC<SideBarProps> = ({ sideBarOn, setSideBarOn }) => {
+export const SideBar = () => {
 
+  const { sideBarOn, setSideBarOn } = useSidebar();
   const sidebarOnClick = () => {
     if (window.innerWidth <= 767) {
       setSideBarOn(!sideBarOn);

@@ -2,12 +2,10 @@ import { Main } from "../../Base/Main";
 import { Gallery } from "./Gallery";
 import { PokemonContainer } from "./styled";
 import { useScrollToTop } from "../../Common/reusableFunctions/useScrollToTop";
+import { useSidebar } from "../../Core/SideBarContext";
 
-export interface GalleryProps {
-  sideBarOn: boolean;
-}
-
-export const Pokemon: React.FC<GalleryProps> = ({ sideBarOn }) => {
+export const Pokemon = () => {
+  const { sideBarOn } = useSidebar();
   useScrollToTop();
   return (
     <>
@@ -32,7 +30,7 @@ export const Pokemon: React.FC<GalleryProps> = ({ sideBarOn }) => {
       In summary, Pokémon is a story full of fascinating characters, unforgettable adventures, and the opportunity for collecting. This phenomenal world of gaming and entertainment continues to evolve and capture new generations of fans."
           }
         />
-        <Gallery sideBarOn={sideBarOn} />
+        <Gallery />
       </PokemonContainer>
     </>
   );

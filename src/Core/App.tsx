@@ -17,41 +17,34 @@ import { Footer } from "../Base/Footer";
 import { Team } from "../Features/Team";
 import { SideBar } from "../Base/SideBar";
 import { Favorite } from "../Features/Favorite";
-import { useState } from "react";
+import { SidebarProvider } from "./SideBarContext";
+import { MainContent } from "../Base/MainContent";
 
 function App() {
-  const sideBarOnScreenWidth = () => {
-    if (window.innerWidth >= 767) return false;
-    else return true;
-  };
-
-  const [sideBarOn, setSideBarOn] = useState(sideBarOnScreenWidth());
-
   return (
     <StyledPage>
       <HashRouter>
         <ThemeProvider theme={normalTheme}>
           <GlobalStyle />
           <Header />
-          <SideBar sideBarOn={sideBarOn} setSideBarOn={setSideBarOn} />
-          <StyledRoutes sideBarOn={sideBarOn}>
-            <Routes>
-              <Route
-                path="/pokemon"
-                element={<Pokemon sideBarOn={sideBarOn} />}
-              />
-              <Route path="/abilities" element={<Abilities />} />
-              <Route path="/moves" element={<Moves />} />
-              <Route path="/pokemonDetails" element={<SinglePokemonPage />} />
-              <Route path="/ability" element={<AbilityPage />} />
-              <Route path="/move" element={<MovePage />} />
-              <Route path="/types" element={<TypesPage />} />
-              <Route path="/type" element={<TypePage />} />
-              <Route path="/randomTeam" element={<Team />} />
-              <Route path="/favorite" element={<Favorite />} />
-              <Route path="/" element={<Pokemon sideBarOn={sideBarOn}/>} />
-            </Routes>
-          </StyledRoutes>
+          <SidebarProvider>
+            <SideBar />
+            <MainContent>
+              <Routes>
+                <Route path="/pokemon" element={<Pokemon />} />
+                <Route path="/abilities" element={<Abilities />} />
+                <Route path="/moves" element={<Moves />} />
+                <Route path="/pokemonDetails" element={<SinglePokemonPage />} />
+                <Route path="/ability" element={<AbilityPage />} />
+                <Route path="/move" element={<MovePage />} />
+                <Route path="/types" element={<TypesPage />} />
+                <Route path="/type" element={<TypePage />} />
+                <Route path="/randomTeam" element={<Team />} />
+                <Route path="/favorite" element={<Favorite />} />
+                <Route path="/" element={<Pokemon />} />
+              </Routes>
+            </MainContent>
+          </SidebarProvider>
           <Footer />
           <ScrollToTopButton />
         </ThemeProvider>

@@ -85,7 +85,7 @@ export const SubTitle = styled.h2`
   padding: 2vw 0;
   font-family: "Righteous", cursive;
   font-size: 3vw;
-  color: #e1e4d0;
+  color: #c6c9b8;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 3.8vw;
@@ -96,28 +96,27 @@ export const SubTitle = styled.h2`
 `;
 
 export const RelationBox = styled.div`
-  width: 100%;
+  width: 96%;
   margin: 0 auto;
   color: white;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: center;
-  gap: 0.5vw;
+  justify-content: space-around;
+  gap: 2vh;
 `;
 
 export const RelationDiv = styled.div`
   width: 32%;
   color: white;
   display: flex;
-  margin: 0 auto;
   align-content: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1%;
   text-align: center;
-  background-color: #3d083543;
+  background-color: #0a0009c9;
   font-size: 1.5vw;
+  border-radius: 0.5vw;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 18px;
@@ -132,7 +131,7 @@ export const RelationTitle = styled.h3`
   height: 6vh;
   font-family: "Righteous", cursive;
   font-size: 2vw;
-  color: #cdcbd0;
+  color: #87848b;
   transition: 200ms;
   animation: animation 5s ease infinite;
 

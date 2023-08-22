@@ -85,7 +85,7 @@ export const GalleryBox = styled.div`
   justify-content: center;
   position: absolute;
   right: 1vw;
-
+  transition: 500ms;
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 96%;
     right: 0;

@@ -7,9 +7,8 @@ export const StyledTypesList = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2vh;
-  margin-top: -14vh;
-  padding-top: 12vh;
-  padding-bottom: 10vh;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
   background-image: linear-gradient(
     0deg,
     rgba(10, 10, 10, 0.963) 19%,

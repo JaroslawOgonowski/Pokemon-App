@@ -16,7 +16,6 @@ export const Banner = styled.div`
   background-image: url(${banner});
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 8vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +29,7 @@ export const Banner = styled.div`
 export const Title = styled.h1`
   font-size: 3.5vw;
   font-family: "Righteous", cursive;
-  margin-left: -20%;
+  margin: 0 0 0 -20%;
   background-image: linear-gradient(
     90deg,
     rgba(207, 228, 226, 1) 0%,
@@ -88,7 +87,8 @@ export const FirstSection = styled.section`
 export const Subtitle = styled.h2`
   width: 100%;
   font-size: 3vw;
-  padding-top: 4vh;
+  padding: 2vh;
+  margin: 0;
   font-family: "Righteous", cursive;
   text-align: center;
   background-image: linear-gradient(
@@ -149,7 +149,7 @@ export const FavMoves = styled.div`
   width: 100%;
   margin: 0;
   padding: 0%;
-  background-color: #050d43d9;
+  background-color: #190320fc;
 `;
 
 export const FavAbilities = styled.div`

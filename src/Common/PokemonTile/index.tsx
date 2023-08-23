@@ -11,6 +11,8 @@ import ColorThief from "colorthief";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { ItemNamesEdit } from "../reusableFunctions/itemNamesEdit";
+import { useSidebar } from "../../Core/SideBarContext";
+
 
 interface PokemonTileProps {
   id: number;
@@ -18,6 +20,7 @@ interface PokemonTileProps {
 }
 
 export const PokemonTile = ({ id, name }: PokemonTileProps) => {
+    const {sideBarOn} = useSidebar();
   const pokemonName = ItemNamesEdit(name);
   const realID = id + 1;
   const [dominantcolor, setDominantColor] = useState("");
@@ -47,16 +50,16 @@ export const PokemonTile = ({ id, name }: PokemonTileProps) => {
     };
     image.src = imageUrl;
   };
-
+    
   return (
     <Wrapper
       ref={ref}
       dominantcolor={dominantcolor}
       to={`/pokemonDetails?pokeId=${realID}`}
       inview={inview ? "true" : undefined}
-    >
+    >{console.log(sideBarOn)}
       <CornerBall />
-      <PokemonId>{realID < 1011 ? `#${realID}` : `${realID}`}</PokemonId>
+      <PokemonId sideBarOn={sideBarOn}>{realID < 1011 ? `#${realID}` : `${realID}`}</PokemonId>
       {realID < 1011 ? (
         <PokemonImage
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${realID}.png`}

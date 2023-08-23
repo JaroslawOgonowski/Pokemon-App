@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import MiniBall from "./images/pokeball-svgrepo-com.svg";
+import { css } from "styled-components";
 
 export const CornerBall = styled.div`
   z-index: -2;
@@ -74,9 +75,15 @@ export const PokemonId = styled.div`
   top: 60%;
   right: 4%;
   font-family: Righteous, cursive;
-  font-size: 9.8vh;
+  font-size: 6vh;
   color: rgba(120, 120, 120, 0.719);
   transition: color 500ms ease 0s;
+
+  ${({ sideBarOn }) =>
+    sideBarOn &&
+    css`
+      font-size: 9.5vh;
+    `}
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     top: 60%;

@@ -11,6 +11,12 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5vh;
+
+  @media (max-width: 767px) {
+    width: 96%;
+    height: 40vh;
+    margin-top: 20vh;
+  }
 `;
 
 const Title = styled.h1`
@@ -19,10 +25,18 @@ const Title = styled.h1`
   font-size: 3vw;
   font-family: "Righteous", cursive;
   color: black;
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
 `;
 
 const Adjust = styled.div`
   font-size: 1.8vw;
+  
+  @media (max-width: 767px) {
+    font-size: 17px;
+  }
 `;
 
 export const NoFavorites = () => (

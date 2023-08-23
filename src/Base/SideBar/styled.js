@@ -109,7 +109,7 @@ export const StyledSideBar = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    height: 73vh;
+    height: 76vh;
     position: fixed;
     width: 100%;
     padding-top: 60px;

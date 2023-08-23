@@ -249,4 +249,8 @@ export const RemoveButton = styled.button`
   &:hover {
     filter: brightness(130%);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 16px;
+  }
 `;

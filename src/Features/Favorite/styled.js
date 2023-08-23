@@ -186,6 +186,10 @@ export const RemovePokemonButton = styled.button`
     transform: scale(0.95);
     box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 16px;
+  }
 `;
 export const AbilityDiv = styled.div`
   max-width: 25%;
@@ -225,5 +229,10 @@ export const RemoveAbilityButton = styled.button`
   &:active {
     transform: scale(0.95);
     box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
+  }
+
+  
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    font-size: 16px;
   }
 `;

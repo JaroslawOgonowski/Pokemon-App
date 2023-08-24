@@ -1,4 +1,4 @@
-# Open no redux project
+# My **NO REDUX** project
 
 Project goal was, of course, to enhance my programming skills encompassing the realm of frontend development. Throughout the project, I harnessed a toolkit that included React, Styled-Components, TypeScript, TanStack Query, Color Thief, and React Router DOM. A conscious decision was made to fully explore the capabilities of TanStack Query, thereby forgoing the use of Redux or Sagas. Instead, I opted to manage individual states directly within the components. The results were nothing short of astonishing - TanStack Query emerged as a seamlessly integrated companion to React, elevating data fetching and management to new heights.
 
@@ -8,6 +8,38 @@ Furthermore, the decision to bypass the conventional Redux path in favor of a Ta
 
 Incorporating TanStack Query has opened a gateway to a future where frontend development embraces not just the present, but also the promise of tomorrow. The project's journey, bolstered by the capabilities of TanStack Query, serves as a testament to the ability of modern tooling to elevate the art of frontend development to new dimensions. As a developer, this exploration not only deepened my technical prowess but also expanded my horizons, transforming me into a purveyor of efficient and forward-looking frontend experiences.
 
+## **Technical Stack:**
+Libraries and Technical Specifications Used:
+- "@tanstack/react-query": "^4.29.12"
+- "@tanstack/react-query-devtools": "^4.29.13"
+- "@types/jest": "^27.5.2"
+- "@types/node": "^16.18.34"
+- "@types/react": "^18.2.9"
+- "@types/react-dom": "^18.2.4"
+- "axios": "^1.4.0"
+- "axios-cache-interceptor": "^1.2.0"
+- "colorthief": "^2.4.0"
+- "gh-pages": "^5.0.0"
+- "polished": "^4.2.2"
+- "react": "^18.2.0"
+- "react-dom": "^18.2.0"
+- "react-intersection-observer": "^9.5.0"
+- "react-query": "^3.39.3"
+- "react-router-dom": "^6.12.1"
+- "react-scripts": "5.0.1"
+- "styled-components": "^5.3.10"
+- "typescript": "^4.9.5"
+
+**Additional Notes:**
+Incorporating modern development practices, the project utilizes a variety of libraries to enhance its functionality and provide an optimal user experience. The "@tanstack/react-query" and "@tanstack/react-query-devtools" packages offer seamless data management and debugging capabilities. For type safety, "@types" packages for Jest, Node.js, React, and React DOM ensure robust code foundations.
+
+The integration of "axios" alongside "axios-cache-interceptor" empowers efficient data fetching and caching. The "colorthief" library contributes to image analysis, while "polished" aids in styling and design refinement. Navigation is facilitated through "react-router-dom" version 6, enhancing the user's interaction with the application.
+
+Furthermore, the project embraces the power of the "styled-components" library for a component-oriented styling approach, augmenting code maintainability and reusability. The "react-intersection-observer" package facilitates responsive behavior based on element visibility.
+
+While employing the essential React hooks like useState, useEffect, useContext, and useRef, the application attains dynamic interactivity and data management. TypeScript, with version 4.9.5, reinforces strong typing, thereby minimizing runtime errors and improving developer productivity.
+
+By adhering to these advanced practices and leveraging these technologies, the project fosters a robust, efficient, and user-friendly environment that caters to both developer needs and end-user expectations.
 ## Style
 The visual layer itself proved to be quite a substantial challenge - while implementing the concept using Styled Components was relatively straightforward, devising and maintaining a consistent design across all layers posed a considerably greater difficulty. Given that this is my original project, a significant amount of time was dedicated to conceptualizing the visual aspects and ensuring their cohesiveness.
 
@@ -16,8 +48,29 @@ The journey of visual realization brought to light the intricate dance between c
 The process of crafting a unified design language, one that seamlessly spans from the user interface to the underlying architecture, was akin to orchestrating a symphony. Striking the right chords across diverse components, layouts, and interactions was an art that demanded meticulous attention to detail and an unwavering commitment to achieving visual resonance.
 
 This journey, marked by the pursuit of design coherence, encapsulated the essence of craftsmanship in the digital realm. It served as a reminder that while technology empowers us with tools, it's the creative vision and dedication to aesthetic excellence that breathe life into a project. As the custodian of this endeavor, I not only refined my ability to translate ideas into visuals but also embraced the artistry that elevates a digital creation into an immersive and captivating experience.
+
 # Fan-made Pokemon Application
 Welcome to our fan-made Pokemon application! This app is dedicated to providing you with a comprehensive collection of Pokemon information, including a gallery of Pokemon images, details about their attacks, abilities, and evolution.
+
+# Favorites
+"Enhanced Favorites" is a feature-rich tool designed for Pokémon enthusiasts to curate their cherished collection. This application empowers users to assemble a catalog of their favorite Pokémon, moves, and abilities, fostering a personalized experience. All data is securely stored within the local storage of your device, eliminating the need for account creation or logging in. Additionally, the local storage functionality extends to saving randomly generated teams if desired, enhancing the element of surprise and spontaneity.
+
+Key Features:
+
+- Personalized Collections: Create and manage your selection of beloved Pokémon, moves, and abilities, tailoring the experience to your preferences.
+
+- Seamless Local Storage: Embrace the convenience of saving all your valuable data within your device's local storage. No account creation or login required.
+
+- Random Team Generation: Unleash the thrill of unpredictability by allowing the local storage to craft random Pokémon teams at your request.
+
+Usage:
+
+- Favorites Management: Easily add and remove your favorite Pokémon, moves, and abilities to build a comprehensive collection reflecting your tastes.
+
+- Local Storage: Your data remains exclusively stored within your device, ensuring your privacy and convenience.
+
+- Random Team Generation: Invoke the local storage's capacity to generate surprise Pokémon teams for spontaneous battles or experimentation.
+
 
 ## Explore the Gallery
 Immerse yourself in the world of Pokemon by browsing through our extensive gallery. Discover stunning artwork and official illustrations of your favorite Pokemon. Get ready to be captivated by the vibrant colors and unique designs that bring these creatures to life.

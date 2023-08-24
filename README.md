@@ -9,6 +9,20 @@ Furthermore, the decision to bypass the conventional Redux path in favor of a Ta
 Incorporating TanStack Query has opened a gateway to a future where frontend development embraces not just the present, but also the promise of tomorrow. The project's journey, bolstered by the capabilities of TanStack Query, serves as a testament to the ability of modern tooling to elevate the art of frontend development to new dimensions. As a developer, this exploration not only deepened my technical prowess but also expanded my horizons, transforming me into a purveyor of efficient and forward-looking frontend experiences.
 
 ## **Technical Stack:**
+
+<div style="display:flex; flex-wrap: wrap;">
+<img src="https://cdn.iconscout.com/icon/free/png-256/free-react-1-282599.png" alt="React" width="80px" style="margin: 10px">
+<img src="https://www.styled-components.com/atom.png" alt="styled-components" width="80px" style="margin: 10px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png" alt="JavaScript" height="80px" style="margin: 10px">
+<img src="https://live.staticflickr.com/7306/16407404782_8b9c57eab3_w.jpg" alt="es6" width="80" style="margin: 10px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png" alt="CSS3" width="80" style="margin: 10px">
+<img src="https://reactrouter.com/twitterimage.jpg" alt="reactrouter" height="80px" style="margin: 10px">
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/collections/github-pages-examples/github-pages-examples.png" alt="GitHub pages" height="80px" style="margin: 10px">
+</br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI1yTWEJhL2OoD4f-5JxhUcxPA-AVikenrA&usqp=CAU" alt="HTML" height="80px" style="margin: 10px">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI1yTWEJhL2OoD4f-5JxhUcxPA-AVikenrA&usqp=CAU" alt="HTML" height="80px" style="margin: 10px">
+</div>
+  
+
 Libraries and Technical Specifications Used:
 - "@tanstack/react-query": "^4.29.12"
 - "@tanstack/react-query-devtools": "^4.29.13"

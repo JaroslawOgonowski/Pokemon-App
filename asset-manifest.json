@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Pokemon-App/static/js/main.20a26d8a.js",
+    "main.js": "/Pokemon-App/static/js/main.43dabfbc.js",
     "static/js/787.a8fe51ff.chunk.js": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js",
     "static/media/0ot60vi6qmax.png": "/Pokemon-App/static/media/0ot60vi6qmax.f31760db813535f8b89a.png",
     "static/media/cute-pikachu-6o-2560x1440.jpg": "/Pokemon-App/static/media/cute-pikachu-6o-2560x1440.56b5039c9431a0cf9754.jpg",
@@ -50,10 +50,10 @@
     "static/media/silence.svg": "/Pokemon-App/static/media/silence.f4dc596def223012fdb1be1ac70ebc54.svg",
     "static/media/elektro.svg": "/Pokemon-App/static/media/elektro.6f01d10cec8b2fa5a266482dddfec67b.svg",
     "static/media/bolt_FILL0_wght400_GRAD0_opsz48.svg": "/Pokemon-App/static/media/bolt_FILL0_wght400_GRAD0_opsz48.6f41745e7000983f40ca37dd4dce53c4.svg",
-    "main.20a26d8a.js.map": "/Pokemon-App/static/js/main.20a26d8a.js.map",
+    "main.43dabfbc.js.map": "/Pokemon-App/static/js/main.43dabfbc.js.map",
     "787.a8fe51ff.chunk.js.map": "/Pokemon-App/static/js/787.a8fe51ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.20a26d8a.js"
+    "static/js/main.43dabfbc.js"
   ]
 }

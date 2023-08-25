@@ -19,7 +19,7 @@ Incorporating TanStack Query has opened a gateway to a future where frontend dev
 <img src="https://reactrouter.com/twitterimage.jpg" alt="reactrouter" height="80px" style="margin: 10px">
 <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/collections/github-pages-examples/github-pages-examples.png" alt="GitHub pages" height="80px" style="margin: 10px">
 </br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI1yTWEJhL2OoD4f-5JxhUcxPA-AVikenrA&usqp=CAU" alt="HTML" height="80px" style="margin: 10px">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI1yTWEJhL2OoD4f-5JxhUcxPA-AVikenrA&usqp=CAU" alt="HTML" height="80px" style="margin: 10px">
+<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcangsdarm.github.io%2Freact-query-web-i18n%2Freact%2Fdoc_template&psig=AOvVaw14iGwqF8AqwLd6ue-N5YNv&ust=1693067471757000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJDG8Pud-IADFQAAAAAdAAAAABAs" alt="Tanstack Query" height="80px" style="margin: 10px">
 </div>
   
 
@@ -64,6 +64,12 @@ The process of crafting a unified design language, one that seamlessly spans fro
 This journey, marked by the pursuit of design coherence, encapsulated the essence of craftsmanship in the digital realm. It served as a reminder that while technology empowers us with tools, it's the creative vision and dedication to aesthetic excellence that breathe life into a project. As the custodian of this endeavor, I not only refined my ability to translate ideas into visuals but also embraced the artistry that elevates a digital creation into an immersive and captivating experience.
 
 # Fan-made Pokemon Application
+
+<p align="center">
+  <img src="./public/images/titleWRandomPokemons.gif" alt="Random Pokemon GIF">
+</p>
+
+
 Welcome to our fan-made Pokemon application! This app is dedicated to providing you with a comprehensive collection of Pokemon information, including a gallery of Pokemon images, details about their attacks, abilities, and evolution.
 
 # Favorites
@@ -76,6 +82,11 @@ Key Features:
 - Seamless Local Storage: Embrace the convenience of saving all your valuable data within your device's local storage. No account creation or login required.
 
 - Random Team Generation: Unleash the thrill of unpredictability by allowing the local storage to craft random Pokémon teams at your request.
+  
+<p align="center">
+  <img src="./public/images/rtg.gif" alt="Random Team Generator GIF">
+</p>
+
 
 Usage:
 

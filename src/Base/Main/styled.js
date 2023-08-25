@@ -10,9 +10,21 @@ export const StyledMain = styled.main`
   gap: 2vw;
   justify-content: center;
   box-shadow: 1px 14px 58px 1px rgba(0, 0, 0, 1);
+  animation: mainAnimation 0.5s ease;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin: 80px auto;
+  }
+
+  @keyframes mainAnimation {
+    0% {
+      opacity: 0.5;
+      transform: translateX(30vw);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 `;
 
@@ -50,7 +62,6 @@ export const ArticleColumn = styled.div`
   justify-content: space-between;
   width: calc(80% - 2vw);
   min-height: 80vh;
-  animation: articleColumnAnimation 0.5s ease;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 100%;
@@ -58,16 +69,5 @@ export const ArticleColumn = styled.div`
 
   @media (max-width: 550px) {
     justify-content: space-evenly;
-  }
-
-  @keyframes articleColumnAnimation {
-    0% {
-      opacity: 0.5;
-      transform: translateX(30vw);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
   }
 `;

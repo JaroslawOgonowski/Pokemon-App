@@ -100,6 +100,10 @@ Usage:
 ## Explore the Gallery
 Immerse yourself in the world of Pokemon by browsing through our extensive gallery. Discover stunning artwork and official illustrations of your favorite Pokemon. Get ready to be captivated by the vibrant colors and unique designs that bring these creatures to life.
 
+<p align="center">
+  <img src="./public/images/search.gif" alt="Search gallery gif">
+</p>
+
 ## Attack Insights
 Unleash the power of knowledge with our detailed information on Pokemon attacks. Dive deep into the movesets of different Pokemon and learn about their strengths, weaknesses, and effects. Whether you're a seasoned trainer or just starting your journey, our attack insights will help you strategize and plan your battles.
 

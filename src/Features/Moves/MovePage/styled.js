@@ -17,6 +17,9 @@ export const Banner = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     background-position: right;
     margin-bottom: -5px;
+    @media (orientation: landscape) {
+      gap: 0.5vh;
+    }
   }
 `;
 
@@ -33,6 +36,14 @@ export const Title = styled.h1`
   box-shadow: rgb(0 0 0) 0px 0px 35px 20px;
   top: 20%;
   right: 10%;
+
+  @media (max-width: 767px) {
+    @media (orientation: landscape) {
+      margin-bottom: 0;
+      top: 0;
+      font-size: 16px;
+    }
+  }
 `;
 
 export const TypeDiv = styled.div`

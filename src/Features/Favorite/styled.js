@@ -7,6 +7,9 @@ export const FavoriteStyledPage = styled.main`
   padding-bottom: 30vh;
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     padding-top: 80px;
+    @media (orientation: landscape) {
+      padding-top: 40px;
+    }
   }
 `;
 
@@ -180,6 +183,7 @@ export const RemovePokemonButton = styled.button`
   box-shadow: 0 6px 20px rgba(161, 11, 11, 0.3);
   color: white;
   transition: 300ms;
+  margin: 30px 20px 30px 10px;
 
   &:hover {
     transform: scale(1.05);
@@ -195,10 +199,12 @@ export const RemovePokemonButton = styled.button`
     transform: scale(0.95);
     box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
   }
+
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     margin-left: 12px;
     border-radius: 5px;
   }
+
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 16px;
   }
@@ -248,7 +254,7 @@ export const RemoveAbilityButton = styled.button`
     box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
   }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+  @media (max-width: 767px) {
     font-size: 16px;
   }
 `;

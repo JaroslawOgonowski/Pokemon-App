@@ -20,6 +20,9 @@ export const RandomTeamPage = styled.main`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin: 80px auto 0 auto;
+    @media (orientation: landscape) {
+      margin-top: 40px;
+    }
   }
 `;
 
@@ -50,8 +53,8 @@ export const TitleBanner = styled.h1`
   }
 `;
 
-export const Padding= styled.div`
-width: 10%;
+export const Padding = styled.div`
+  width: 10%;
 `;
 
 export const Title = styled.h2`

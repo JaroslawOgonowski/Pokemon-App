@@ -126,6 +126,10 @@ export const ButtonBox = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 60vh;
     top: 25%;
+
+    @media (orientation: landscape) {
+      top: 30%;
+    }
   }
 `;
 
@@ -153,6 +157,10 @@ export const BaseButton = styled.button`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     width: 5vw;
+
+    @media (orientation: landscape) {
+      height: 30vh;
+    }
   }
 `;
 

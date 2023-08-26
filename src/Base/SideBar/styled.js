@@ -35,6 +35,9 @@ export const SidebarTitle = styled.button`
     background-color: #080303a7;
     text-align: center;
     font-size: 50px;
+    @media (orientation: landscape) {
+      top: 40px;
+    }
   }
 
   ${({ sideBarOn }) =>
@@ -120,6 +123,12 @@ export const StyledSideBar = styled.ul`
     justify-content: center;
     align-items: center;
     padding-bottom: 1.5vh;
+    
+    @media (orientation: landscape) {
+      top: 40px;
+      gap: 4px;
+      padding-top: 30px;
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
@@ -167,6 +176,9 @@ export const ListItem = styled.li`
     height: fit-content;
     justify-content: center;
     padding: 16px 0;
+    @media (orientation: landscape) {
+      width: 45%;
+    }
   }
 
   @media (max-width: 550px) {

@@ -15,6 +15,9 @@ const StyledMain = styled.main`
 
   @media (max-width: 767px) {
     margin: 80px auto 0 auto;
+    @media (orientation: landscape) {
+      margin-top: 40px;
+    }
   }
 `;
 

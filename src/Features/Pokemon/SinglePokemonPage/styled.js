@@ -29,6 +29,10 @@ export const StyledPokemonPage = styled.main`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     padding-top: 80px;
+        
+    @media (orientation: landscape) {
+      padding-top: 40px;
+  }
   }
 `;
 

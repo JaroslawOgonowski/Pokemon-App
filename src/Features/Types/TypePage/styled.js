@@ -28,6 +28,9 @@ export const TitleBox = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     top: 5vh;
+    @media (orientation: landscape) {
+      top: 1vh;
+    }
   }
 
   @media (max-width: 500px) {

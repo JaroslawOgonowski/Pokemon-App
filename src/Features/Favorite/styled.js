@@ -145,7 +145,7 @@ export const FavoritePokemons = styled.div`
   width: 100%;
   display: flex;
   text-align: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding-bottom: 10vh;

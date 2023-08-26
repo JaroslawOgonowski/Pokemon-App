@@ -123,11 +123,12 @@ export const StyledSideBar = styled.ul`
     justify-content: center;
     align-items: center;
     padding-bottom: 1.5vh;
-    
+
     @media (orientation: landscape) {
       top: 40px;
       gap: 4px;
-      padding-top: 30px;
+      padding-top: 1%;
+      align-self: center;
     }
   }
 
@@ -172,12 +173,14 @@ export const ListItem = styled.li`
   display: flex;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+  @media (max-width: 767px) {
     height: fit-content;
     justify-content: center;
-    padding: 16px 0;
+    padding: 8px 0;
+
     @media (orientation: landscape) {
       width: 45%;
+      height: 3vw;
     }
   }
 

@@ -80,6 +80,7 @@ export const PokeAbility = styled.div`
   gap: 2vh 1%;
   justify-content: flex-start;
 
+
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     margin-left: 6vw;
   }

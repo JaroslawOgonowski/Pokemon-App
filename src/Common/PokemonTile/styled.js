@@ -32,9 +32,11 @@ export const CornerBall = styled.div`
     top: -0.8vw;
     left: -0.8vw;
   }
+
   @media (min-width: 1100px) {
     top: -0.2vw;
     left: -0.2vw;
+  
   }
 `;
 

@@ -22,7 +22,6 @@ import {
 } from "../Abilities/AllAbilities/styled";
 import { ItemNamesEdit } from "../../Common/reusableFunctions/itemNamesEdit";
 import { NoFavorites } from "../../Base/NoFavorites";
-import { Empty, MainBanner } from "../../Base/Main/styled";
 
 interface FavoriteItems {
   favAdditionalInfo: any;

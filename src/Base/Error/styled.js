@@ -41,6 +41,10 @@ export const ErrorText = styled.div`
   margin: 2vw 0;
   width: 60%;
   font-size: 1.6vw;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    font-size: 14px;
+  }
 `;
 
 export const Image = styled.img`

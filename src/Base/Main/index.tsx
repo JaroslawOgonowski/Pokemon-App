@@ -1,6 +1,6 @@
 import { Article } from "../../Common/Article";
 import { Title } from "../../Common/Title";
-import { ArticleColumn, Empty, MainBanner, StyledMain } from "./styled";
+import { ArticleColumn, MainBanner, StyledMain } from "./styled";
 
 interface MainProps {
   titleContent: string;

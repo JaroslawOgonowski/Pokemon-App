@@ -9,6 +9,12 @@ export const StyledFooter = styled.footer`
   height: 3vh;
   color: white;
   z-index: 99;
+
+  @media (max-width: 767px) {        
+    @media (orientation: landscape) {
+   height: auto;
+  }
+  }
 `;
 
 export const Title = styled.h2`

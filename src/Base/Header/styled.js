@@ -16,7 +16,10 @@ export const StyledHeader = styled.header`
   z-index: 999;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    height: 80px;
+    height: 80px;     
+    @media (orientation: landscape) {
+    height: 40px;
+  }
   }
 `;
 
@@ -36,6 +39,9 @@ export const Logo = styled.img`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     height: 40px;
+    @media (orientation: landscape) {
+    height: 30px;
+  }
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     height: 20px;

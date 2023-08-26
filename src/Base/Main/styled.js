@@ -14,6 +14,9 @@ export const StyledMain = styled.main`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     margin: 80px auto;
+    @media (orientation: landscape) {
+      margin: 40px auto;
+    }
   }
 
   @keyframes mainAnimation {
@@ -25,15 +28,6 @@ export const StyledMain = styled.main`
       opacity: 1;
       transform: translateX(0);
     }
-  }
-`;
-
-export const Empty = styled.div`
-  width: 20%;
-  height: 100%;
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    display: none;
   }
 `;
 
@@ -52,6 +46,7 @@ export const MainBanner = styled.div`
   @media (max-width: 550px) {
     flex-direction: column;
     min-height: 80vh;
+    
   }
 `;
 

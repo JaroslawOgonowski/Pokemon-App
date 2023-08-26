@@ -124,9 +124,8 @@ export const Favorite: React.FC = () => {
         <>
           {favoritePokemons.length !== 0 && (
             <FirstSection>
-              <Empty />
               <FavoritePokemons>
-                <Subtitle>Favorite Pokemons</Subtitle>
+                <Subtitle>Favorite Pokemons </Subtitle>
                 <PokeAbility>
                   {favoritePokemons.map((pokemon, index) => (
                     <>
@@ -151,7 +150,7 @@ export const Favorite: React.FC = () => {
           {favoriteMoves.length !== 0 && (
             <>
               <FavMoves>
-                <Subtitle>Favorite moves table </Subtitle>
+                <Subtitle>Favorite moves table</Subtitle>
                 <MovesTable
                   favorite={true}
                   moveList={favoriteMoves.map((item) => ({

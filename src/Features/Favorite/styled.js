@@ -87,7 +87,7 @@ export const FirstSection = styled.section`
 export const Subtitle = styled.h2`
   width: 100%;
   font-size: 3vw;
-  padding: 2vh;
+  padding: 3vh;
   margin: 0;
   font-family: "Righteous", cursive;
   text-align: center;
@@ -139,17 +139,25 @@ export const Subtitle = styled.h2`
 `;
 
 export const FavoritePokemons = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-bottom: 10vh;
+  padding-top: 2vh;
 `;
 
 export const FavMoves = styled.div`
   width: 100%;
   margin: 0;
   padding: 0%;
-  background-color: #190320fc;
+  background-color: #5dc60dfc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const FavAbilities = styled.div`
@@ -157,6 +165,7 @@ export const FavAbilities = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 `;
 
 export const RemovePokemonButton = styled.button`
@@ -186,18 +195,26 @@ export const RemovePokemonButton = styled.button`
     transform: scale(0.95);
     box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
   }
-
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    margin-left: 12px;
+    border-radius: 5px;
+  }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 16px;
   }
 `;
 export const AbilityDiv = styled.div`
-  max-width: 25%;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   gap: 2vh;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+    max-width: 96%;
+    gap: 0.1vh;
+  }
 `;
 
 export const RemoveAbilityButton = styled.button`
@@ -231,7 +248,6 @@ export const RemoveAbilityButton = styled.button`
     box-shadow: 0 3px 10px rgba(161, 11, 11, 0.4);
   }
 
-  
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 16px;
   }

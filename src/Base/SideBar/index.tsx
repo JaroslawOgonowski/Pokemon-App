@@ -2,58 +2,36 @@ import { useSidebar } from "../../Core/SideBarContext";
 import { ListItem, SidebarTitle, StyledA, StyledSideBar } from "./styled";
 
 export const SideBar = () => {
-
   const { sideBarOn, setSideBarOn } = useSidebar();
+
   const sidebarOnClick = () => {
     if (window.innerWidth <= 767) {
       setSideBarOn(!sideBarOn);
     } else return;
   };
+
+  const sidebarItems = [
+    { label: "Pokemon", href: "/Pokemon-App#/pokemon" },
+    { label: "Team", href: "/Pokemon-App#/randomTeam" },
+    { label: "Pokemon Types", href: "/Pokemon-App#/types" },
+    { label: "Pokemon Abilities", href: "/Pokemon-App#/abilities" },
+    { label: "All moves", href: "/Pokemon-App#/moves" },
+    { label: "Favorite", href: "/Pokemon-App#/favorite" },
+  ];
+
   return (
     <>
-      <SidebarTitle
-        sideBarOn={!sideBarOn}
-        onClick={() => setSideBarOn(!sideBarOn)}
-      >
+      <SidebarTitle sideBarOn={!sideBarOn} onClick={() => setSideBarOn(!sideBarOn)}>
         {sideBarOn ? "≡" : "×"}
       </SidebarTitle>
       <StyledSideBar sideBarOn={sideBarOn}>
-        <ListItem>
-          <StyledA onClick={() => sidebarOnClick} href="/Pokemon-App#/pokemon">
-            Pokemon
-          </StyledA>
-        </ListItem>
-        <ListItem>
-          <StyledA
-            onClick={() => sidebarOnClick}
-            href="/Pokemon-App#/randomTeam"
-          >
-            Team
-          </StyledA>
-        </ListItem>
-        <ListItem>
-          <StyledA onClick={() => sidebarOnClick} href="/Pokemon-App#/types">
-            Pokemon Types
-          </StyledA>
-        </ListItem>
-        <ListItem>
-          <StyledA
-            onClick={() => sidebarOnClick}
-            href="/Pokemon-App#/abilities"
-          >
-            Pokemon Abilities
-          </StyledA>
-        </ListItem>
-        <ListItem>
-          <StyledA onClick={() => sidebarOnClick} href="/Pokemon-App#/moves">
-            All moves
-          </StyledA>
-        </ListItem>
-        <ListItem>
-          <StyledA onClick={() => sidebarOnClick} href="/Pokemon-App#/favorite">
-            Favorite
-          </StyledA>
-        </ListItem>
+        {sidebarItems.map((item, index) => (
+          <ListItem key={index}>
+            <StyledA onClick={() => sidebarOnClick()} href={item.href}>
+              {item.label}
+            </StyledA>
+          </ListItem>
+        ))}
       </StyledSideBar>
     </>
   );

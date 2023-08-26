@@ -80,4 +80,8 @@ export const PokeAbility = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     margin-left: 6vw;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    margin-left: 25%;
+  }
 `;

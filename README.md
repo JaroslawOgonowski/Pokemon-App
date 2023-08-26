@@ -8,6 +8,57 @@ Furthermore, the decision to bypass the conventional Redux path in favor of a Ta
 
 Incorporating TanStack Query has opened a gateway to a future where frontend development embraces not just the present, but also the promise of tomorrow. The project's journey, bolstered by the capabilities of TanStack Query, serves as a testament to the ability of modern tooling to elevate the art of frontend development to new dimensions. As a developer, this exploration not only deepened my technical prowess but also expanded my horizons, transforming me into a purveyor of efficient and forward-looking frontend experiences.
 
+# Features:
+
+<p align="center">
+  <img src="./public/images/features.gif" alt="Random Pokemon GIF">
+</p>
+
+
+1. <b>Pokemon Gallery</b> with Search and Details
+Explore the vast world of Pokemon through our extensive gallery. Utilize the powerful search functionality to quickly find your favorite Pokemon. Each Pokemon entry provides comprehensive details including:
+Moves: Discover the unique moves a Pokemon can learn in various game series.
+Statistics: Dive into the in-depth statistics of each Pokemon, understanding their strengths and weaknesses.
+Sprites: View a collection of sprites showcasing the Pokemon's appearance across different games.
+Evolution Chain: Follow the evolutionary journey of a Pokemon, understanding how it transforms over time.
+Description: Learn about the lore and characteristics that define each Pokemon.
+
+<p align="center">
+  <img src="./public/images/gallery.gif" alt="Search gallery gif">
+</p>
+
+2. <b>Move Database</b> with Sorting
+Our app boasts an exhaustive database of Pokemon moves. This interactive table presents all available moves in the games, complete with statistics. The intuitive sorting feature allows you to arrange moves based on various categories, aiding your tactical decision-making.
+
+<p align="center">
+  <img src="./public/images/moves.gif" alt="Moves table GIF">
+</p>
+
+3. <b>Abilities Encyclopedia</b>
+Uncover the hidden abilities that Pokemon possess. Our app provides a comprehensive list of abilities, each accompanied by detailed descriptions. Understand how these abilities impact battles and learn which Pokemon possess them. Dive into the intricate relationships between abilities and their effects.
+
+<p align="center">
+  <img src="./public/images/abilities.gif" alt="Random Team Generator GIF">
+</p>
+
+4. <b>Pokemon Types</b> with Descriptions
+Master the elemental landscape of Pokemon battles. Immerse yourself in the world of types and their associated strengths and weaknesses. Our app features a comprehensive breakdown of Pokemon types, complete with detailed descriptions. Understand the intricate web of damage dependencies and learn how to strategize based on type advantages.
+<p align="center">
+  <img src="./public/images/types.gif" alt="Random Team Generator GIF">
+</p>
+5. <b>Random Team Generator</b> with Storage
+Feeling spontaneous? Let our app generate a random Pokemon team for you! With the added ability to save teams in local storage, you can revisit and fine-tune your generated lineups at any time. Whether you're seeking a challenge or just some casual fun, the random team generator has you covered.
+<p align="center">
+  <img src="./public/images/rtg.gif" alt="Random Team Generator GIF">
+</p>
+
+6. <b>Favorites for Quick Access</b>
+Personalize your Pokemon experience with the Favorites feature. Quickly access your most cherished Pokemon, moves, and abilities. With a single click, immerse yourself in the world of your preferred content, streamlining your exploration and planning.
+
+Conclusion
+The Pokemon App is your comprehensive guide to the captivating world of Pokemon. With features like the Pokemon Gallery, Move Database, Abilities Encyclopedia, Type Breakdown, Random Team Generator, and Favorites, this app caters to both casual trainers and competitive battlers. Embark on a journey to become a Pokemon master armed with knowledge and strategy.
+
+Download the app now and unleash the power of information in your Pokemon adventures!
 ## **Technical Stack:**
 
 <div style="display:flex; flex-wrap: wrap;">
@@ -19,7 +70,7 @@ Incorporating TanStack Query has opened a gateway to a future where frontend dev
 <img src="https://reactrouter.com/twitterimage.jpg" alt="reactrouter" height="80px" style="margin: 10px">
 <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/collections/github-pages-examples/github-pages-examples.png" alt="GitHub pages" height="80px" style="margin: 10px">
 </br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI1yTWEJhL2OoD4f-5JxhUcxPA-AVikenrA&usqp=CAU" alt="HTML" height="80px" style="margin: 10px">
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcangsdarm.github.io%2Freact-query-web-i18n%2Freact%2Fdoc_template&psig=AOvVaw14iGwqF8AqwLd6ue-N5YNv&ust=1693067471757000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJDG8Pud-IADFQAAAAAdAAAAABAs" alt="Tanstack Query" height="80px" style="margin: 10px">
+<img src="https://cangsdarm.github.io/react-query-web-i18n/assets/images/logo-76c54b13c0a41c0ca164d394db8dba7b.svg" alt="Tanstack Query" height="80px" style="margin: 10px">
 </div>
   
 
@@ -69,7 +120,6 @@ This journey, marked by the pursuit of design coherence, encapsulated the essenc
   <img src="./public/images/titleWRandomPokemons.gif" alt="Random Pokemon GIF">
 </p>
 
-
 Welcome to our fan-made Pokemon application! This app is dedicated to providing you with a comprehensive collection of Pokemon information, including a gallery of Pokemon images, details about their attacks, abilities, and evolution.
 
 # Favorites
@@ -82,10 +132,6 @@ Key Features:
 - Seamless Local Storage: Embrace the convenience of saving all your valuable data within your device's local storage. No account creation or login required.
 
 - Random Team Generation: Unleash the thrill of unpredictability by allowing the local storage to craft random Pokémon teams at your request.
-  
-<p align="center">
-  <img src="./public/images/rtg.gif" alt="Random Team Generator GIF">
-</p>
 
 
 Usage:
@@ -98,6 +144,7 @@ Usage:
 
 
 ## Explore the Gallery
+
 Immerse yourself in the world of Pokemon by browsing through our extensive gallery. Discover stunning artwork and official illustrations of your favorite Pokemon. Get ready to be captivated by the vibrant colors and unique designs that bring these creatures to life.
 
 <p align="center">

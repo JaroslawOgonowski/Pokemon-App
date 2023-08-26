@@ -28,6 +28,15 @@ export const FavText = styled.div`
   text-align: center;
   z-index: -100;
   visibility: hidden;
+
+  @media (max-width: 767px) {
+    @media (orientation: landscape) {
+      font-size: 13px;
+      margin-top: -4.5vh;
+      margin-left: -1vh;
+      width: 35vh;
+    }
+  }
 `;
 
 export const StyledAddToFav = styled.div`
@@ -38,6 +47,7 @@ export const StyledAddToFav = styled.div`
   transition: 500ms;
   align-self: flex-start;
   margin-left: 10%;
+  margin-bottom: 8px;
   &:hover {
     color: #e9f420;
 
@@ -50,6 +60,11 @@ export const StyledAddToFav = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
     font-size: 20px;
     margin-left: 16px;
+
+    @media (orientation: landscape) {
+      font-size: 24px;
+      margin-left: 28px;
+    }
   }
 `;
 

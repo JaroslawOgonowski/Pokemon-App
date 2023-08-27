@@ -71,7 +71,7 @@ export const MoveBaseInfo = styled.div`
 export const BallImg = styled(Ball)`
   max-width: none;
   position: absolute;
-  top: 21%;
+  top: 40%;
   right: -340px;
   width: 700px;
   height: 700px;

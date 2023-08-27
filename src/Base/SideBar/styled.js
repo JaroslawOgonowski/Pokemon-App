@@ -6,7 +6,7 @@ export const SidebarTitle = styled.button`
   position: fixed;
   top: 6vw;
   left: 0;
-  z-index: 99;
+  z-index: 999999;
   width: 3.5vw;
   height: 3.5vw;
   border: none;
@@ -106,9 +106,15 @@ export const StyledSideBar = styled.ul`
     gap: 1.5vw;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    gap: 4vw;
+  @media (max-width: 950px) {
+    gap: 2vw;
     padding-top: 50px;
+
+    @media (orientation: landscape) {
+      gap: 4px;
+      padding-top: 2%;
+      align-self: center;
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
@@ -129,6 +135,7 @@ export const StyledSideBar = styled.ul`
       gap: 4px;
       padding-top: 1%;
       align-self: center;
+      height: 81%;
     }
   }
 

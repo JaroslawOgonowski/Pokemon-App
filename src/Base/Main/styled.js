@@ -13,9 +13,9 @@ export const StyledMain = styled.main`
   animation: mainAnimation 0.5s ease;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    margin: 80px auto;
+    margin: 80px auto 0 auto;
     @media (orientation: landscape) {
-      margin: 40px auto;
+      margin: 40px auto 0 auto;
     }
   }
 

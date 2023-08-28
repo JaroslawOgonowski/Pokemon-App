@@ -6,15 +6,10 @@ export const StyledFooter = styled.footer`
   left: 0;
   width: 100%;
   background-color: #060505;
-  height: 3vh;
+  height: auto;
   color: white;
   z-index: 99;
 
-  @media (max-width: 767px) {        
-    @media (orientation: landscape) {
-   height: auto;
-  }
-  }
 `;
 
 export const Title = styled.h2`

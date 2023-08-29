@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 export const Button = styled.button`
   cursor: pointer;
   width: 10%;
-  height: 0.2vh;
-  z-index: 9;
+  height: 12vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,14 +22,22 @@ export const Button = styled.button`
     rgba(14, 26, 66, 1) 100%
   );
   transition: 500ms;
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    font-size: 13px;
-  }
 
   &:hover {
     filter: brightness(180%);
     height: 9vh;
     color: #c9c4c4;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    height: 5vh;
+    &:hover {
+      height: 9vh;
+    }
   }
 `;
 

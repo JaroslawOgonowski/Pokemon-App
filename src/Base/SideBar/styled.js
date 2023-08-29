@@ -79,7 +79,7 @@ export const StyledSideBar = styled.ul`
   flex-wrap: wrap;
   background-color: #080303f4;
   transition: 500ms;
-  z-index: 3;
+  z-index: 9999;
   padding-bottom: 10vh;
   border-radius: 0 0 0.5vw 0;
   li::before {
@@ -150,17 +150,6 @@ export const StyledSideBar = styled.ul`
       height: 100%;
     }
 
-    ${({ sideBarOn }) =>
-      sideBarOn &&
-      css`
-        transform: translateX(-100%);
-
-        @media (max-width: 550px) {
-          transform: translateX(-0) translateY(-140%);
-          display: none;
-        }
-      `};
-
     @keyframes sideBarAnimation {
       0% {
         opacity: 0;
@@ -172,6 +161,12 @@ export const StyledSideBar = styled.ul`
       }
     }
   }
+
+  ${({ sideBarOn }) =>
+      sideBarOn &&
+      css`
+        transform: translateX(-100%);
+      `};
 `;
 
 export const ListItem = styled.li`

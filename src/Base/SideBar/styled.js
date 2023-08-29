@@ -74,7 +74,7 @@ export const StyledSideBar = styled.ul`
   display: flex;
   align-content: flex-start;
   flex-direction: column;
-  gap: 6vw;
+  gap: 8vh;
   animation: sideBarAnimation 0.5s ease;
   flex-wrap: wrap;
   background-color: #080303f4;

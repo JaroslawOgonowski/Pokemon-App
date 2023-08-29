@@ -65,16 +65,16 @@ export const StyledSideBar = styled.ul`
   top: 6vw;
   left: 0;
   width: 20%;
-  height: 80vh;
+  height: 100%;
   flex-grow: 1;
   padding: 1vw;
   padding-top: 3%;
   margin: 0;
   list-style: none;
   display: flex;
-  align-self: stretch;
+  align-content: flex-start;
   flex-direction: column;
-  gap: 1vw;
+  gap: 6vw;
   animation: sideBarAnimation 0.5s ease;
   flex-wrap: wrap;
   background-color: #080303f4;
@@ -95,7 +95,7 @@ export const StyledSideBar = styled.ul`
     }
 
     @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-      padding: 2vw;
+      padding: 2vh;
     }
     @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
       padding: 3vw;
@@ -107,73 +107,74 @@ export const StyledSideBar = styled.ul`
   }
 
   @media (max-width: 950px) {
-    gap: 2vw;
+    gap: 2vh;
     padding-top: 50px;
 
     @media (orientation: landscape) {
-      gap: 4px;
-      padding-top: 2%;
+      gap: 5vh;
+      padding-top: 4%;
       align-self: center;
     }
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    height: 76vh;
+    height: 100%;
     position: fixed;
     width: 100%;
-    padding-top: 60px;
+    padding-top: 40px;
     top: 80px;
     margin: 0 auto;
     flex-direction: row;
-    gap: 8px;
     justify-content: center;
     align-items: center;
     padding-bottom: 1.5vh;
+    gap: 7vh;
 
     @media (orientation: landscape) {
       top: 40px;
-      gap: 4px;
-      padding-top: 1%;
+      gap: 20vh 0;
+      padding-top: 8%;
       align-self: center;
-      height: 81%;
-    }
-  }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    flex-wrap: wrap;
-  }
-  @media (max-width: 550px) {
-    margin-bottom: 50px;
-    padding-bottom: 40px;
-    height: 70vh;
-    background-color: #080303f6;
-  }
-
-  ${({ sideBarOn }) =>
-    sideBarOn &&
-    css`
-      transform: translateX(-100%);
-
-      @media (max-width: 550px) {
-        transform: translateX(-0) translateY(-140%);
-        display: none;
+      @media (max-height: 300px) {
+        gap: 13vh 0;
       }
-    `};
-
-  @keyframes sideBarAnimation {
-    0% {
-      opacity: 0;
-      transform: translateX(-30vw);
     }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 550px) {
+      margin-bottom: 50px;
+      padding-bottom: 40px;
+      height: 100%;
+    }
+
+    ${({ sideBarOn }) =>
+      sideBarOn &&
+      css`
+        transform: translateX(-100%);
+
+        @media (max-width: 550px) {
+          transform: translateX(-0) translateY(-140%);
+          display: none;
+        }
+      `};
+
+    @keyframes sideBarAnimation {
+      0% {
+        opacity: 0;
+        transform: translateX(-30vw);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
 `;
 
 export const ListItem = styled.li`
-  height: 5vw;
   width: 96%;
   padding: 0;
   margin: 0;
@@ -181,9 +182,7 @@ export const ListItem = styled.li`
   align-items: center;
 
   @media (max-width: 767px) {
-    height: fit-content;
     justify-content: center;
-    padding: 8px 0;
 
     @media (orientation: landscape) {
       width: 45%;

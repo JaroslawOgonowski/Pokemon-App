@@ -122,7 +122,9 @@ export const RelationDiv = styled.div`
   border-radius: 0.5vw;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    width: 100%;
     font-size: 18px;
+    padding-bottom: 3vh;
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
     font-size: 14px;
@@ -140,9 +142,7 @@ export const RelationTitle = styled.h3`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     font-size: 18px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMin}px) {
-    margin-bottom: 40px;
+    margin-bottom: 3vh;
   }
 
   @keyframes animation {

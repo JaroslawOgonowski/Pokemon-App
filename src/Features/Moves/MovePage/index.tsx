@@ -75,7 +75,11 @@ export const MovePage = () => {
             </TypeDiv>
           </Banner>
           <MoveBaseInfo>
-            <AddToFav category="move" savedInfo={data.name} favAdditionalInfo={`https://pokeapi.co/api/v2/move/${data.name}/`} />
+            <AddToFav
+              category="move"
+              savedInfo={data.name}
+              favAdditionalInfo={`https://pokeapi.co/api/v2/move/${data.name}/`}
+            />
             <Movestats>
               <Description>
                 {englishFlavorText.flavor_text}

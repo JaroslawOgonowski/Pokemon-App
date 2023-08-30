@@ -32,7 +32,7 @@ export const Team = () => {
   const [savedTeams, setSavedTeams] = useState<SavedTeams>([]);
   const [currentTeam, setCurrentTeam] = useState<Pokemon[]>([]);
   const [isTeamSaved, setIsTeamSaved] = useState(false);
-  
+
   useScrollToTop();
   useOffsetFromLocationSearch(startIndex, setStartIndex);
   const { isLoading, isError, data } = useQuery(
@@ -82,7 +82,10 @@ export const Team = () => {
   return (
     <>
       <RandomTeamPage>
-        <TitleBanner>RANDOM TEAM GENERATOR<Padding/></TitleBanner>
+        <TitleBanner>
+          RANDOM TEAM GENERATOR
+          <Padding />
+        </TitleBanner>
         {currentTeam.length > 0 && (
           <StyledTeam>
             <Title>YOUR RANDOM TEAM </Title>

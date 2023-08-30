@@ -13,7 +13,11 @@ interface SavedFavItem {
   favAdditionalInfo: string | null;
 }
 
-const AddToFav: React.FC<Props> = ({ category, savedInfo, favAdditionalInfo }) => {
+const AddToFav: React.FC<Props> = ({
+  category,
+  savedInfo,
+  favAdditionalInfo,
+}) => {
   const [isSaved, setIsSaved] = useState(false);
   const [savedFav, setSavedFav] = useState<SavedFavItem[]>([]);
 
@@ -29,7 +33,7 @@ const AddToFav: React.FC<Props> = ({ category, savedInfo, favAdditionalInfo }) =
   }, [savedFav]);
 
   useEffect(() => {
-    const existingSavedItem = savedFav.find(item => item.info === savedInfo);
+    const existingSavedItem = savedFav.find((item) => item.info === savedInfo);
     if (existingSavedItem) {
       setIsSaved(true);
     } else {
@@ -38,13 +42,18 @@ const AddToFav: React.FC<Props> = ({ category, savedInfo, favAdditionalInfo }) =
   }, [savedFav, category]);
 
   const handleToggleFav = () => {
-    const existingSavedItem = savedFav.find(item => item.info === savedInfo);
+    const existingSavedItem = savedFav.find((item) => item.info === savedInfo);
 
     if (!existingSavedItem) {
-      const updatedSavedFav: SavedFavItem[] = [...savedFav, { category, info: savedInfo, favAdditionalInfo }];
+      const updatedSavedFav: SavedFavItem[] = [
+        ...savedFav,
+        { category, info: savedInfo, favAdditionalInfo },
+      ];
       setSavedFav(updatedSavedFav);
     } else {
-      const updatedSavedFav = savedFav.filter(item => item.info !== savedInfo);
+      const updatedSavedFav = savedFav.filter(
+        (item) => item.info !== savedInfo
+      );
       setSavedFav(updatedSavedFav);
     }
   };

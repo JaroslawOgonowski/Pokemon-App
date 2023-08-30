@@ -8,7 +8,7 @@ export const StyledEvolution = styled.div`
   align-content: center;
   width: 50%;
   margin-bottom: 2vw;
-    @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
     justify-content: flex-start;
     align-items: flex-start;
   }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Button = styled.button`
   cursor: pointer;
   width: 10%;
-  height: 12vh;
+  height: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +25,7 @@ export const Button = styled.button`
 
   &:hover {
     filter: brightness(180%);
-    height: 9vh;
+    height: 4rem;
     color: #c9c4c4;
   }
 

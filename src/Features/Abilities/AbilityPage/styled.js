@@ -74,18 +74,11 @@ export const Description = styled.div`
 `;
 
 export const PokeAbility = styled.div`
-  margin-left: 3vw;
+  margin-left: 6%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2vh 1%;
   justify-content: flex-start;
-
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.tablet}px) {
-    margin-left: 6vw;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-    margin-left: 25%;
-  }
+  align-self: center;
 `;

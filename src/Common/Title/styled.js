@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledTitle = styled.h1`
@@ -50,5 +51,11 @@ export const TitleBox = styled.div`
 `;
 
 export const PokemonImage = styled.img`
-  width: 20%;
+  width: 100%;
+`;
+
+export const StyledLink = styled(Link)`
+width: 20%;
+margin: 0;
+padding: 0;
 `;

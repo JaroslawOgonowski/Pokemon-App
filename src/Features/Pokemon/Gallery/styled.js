@@ -111,6 +111,10 @@ export const StyledGallery = styled.div`
   gap: 1vw;
   margin: 0 auto;
   padding-bottom: 5vw;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+    padding-bottom: 10vh;
+  }
 `;
 
 export const ButtonBox = styled.div`
